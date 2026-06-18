@@ -10,98 +10,72 @@ const MATIERES_BEPC = [
 const SERIES_BAC = [
   { lettre:'A4', nom:'Lettres & Sciences Humaines',   couleur:'#6b3d9a' },
   { lettre:'D',  nom:'Sciences de la Vie',             couleur:'#1B6B3A' },
-  { lettre:'C',  nom:'Mathématiques & Sciences Phy.', couleur:'#1a6b8a' },
-  { lettre:'A1', nom:'Philosophie & Lettres',          couleur:'#C0392B' },
-  { lettre:'B',  nom:'Sciences Économiques',           couleur:'#e67e22' },
-  { lettre:'E',  nom:'Mathématiques & Technologie',   couleur:'#2c3e50' },
 ];
 
 const DETAIL_SERIES = {
   A4: {
-    description:'Série axée sur les humanités, la philosophie et les langues.',
-    principales:[
-      {nom:'Philosophie',         coeff:4},
-      {nom:'Français',            coeff:4},
-      {nom:'Histoire-Géographie', coeff:3},
-      {nom:'Anglais (LV1)',       coeff:3},
-      {nom:'Langue vivante 2',    coeff:2},
+    description: 'Serie axee sur les humanites, la philosophie et les langues. Ideale pour les eleves passionnes de litterature, d\'histoire et de reflexion.',
+    principales: [
+      { nom:'Philosophie',          coeff:4 },
+      { nom:'Francais',             coeff:4 },
+      { nom:'Histoire-Geographie',  coeff:3 },
+      { nom:'Anglais (LV1)',        coeff:3 },
+      { nom:'Langue vivante 2',     coeff:2 },
     ],
-    secondaires:[
-      {nom:'Mathématiques', coeff:2},
-      {nom:'SVT',           coeff:1},
-      {nom:'EPS',           coeff:1},
-    ]
+    secondaires: [
+      { nom:'Mathematiques', coeff:2 },
+      { nom:'SVT',           coeff:1 },
+      { nom:'EPS',           coeff:1 },
+    ],
+    programme: [
+      { matiere:'Philosophie', chapitres:['La conscience et l\'inconscient','La liberte et le determinisme','L\'Etat et le pouvoir politique','La morale et le devoir','Le bonheur et le sens de la vie','La verite et la science'] },
+      { matiere:'Francais', chapitres:['Le commentaire de texte litteraire','La dissertation litteraire','Les mouvements litteraires (Romantisme, Realisme, Negritude)','L\'argumentation et les figures de style','L\'analyse de l\'image et du discours'] },
+      { matiere:'Histoire-Geographie', chapitres:['Les grandes puissances mondiales','La decolonisation de l\'Afrique','Les organisations internationales (ONU, UA)','La mondialisation et ses enjeux','Le Burkina Faso dans le contexte regional'] },
+      { matiere:'Anglais', chapitres:['Grammar: tenses and modal verbs','Reading comprehension','Essay writing','Civilisation des pays anglophones'] },
+    ],
+    debouches: 'Droit, Lettres, Sciences politiques, Journalisme, Diplomatie, Enseignement, Sciences humaines.'
   },
   D: {
-    description:'Série axée sur les sciences de la nature et de la vie.',
-    principales:[
-      {nom:'SVT',            coeff:5},
-      {nom:'Mathématiques',  coeff:4},
-      {nom:'Physique-Chimie',coeff:4},
-      {nom:'Français',       coeff:3},
+    description: 'Serie axee sur les sciences de la nature et de la vie. Recommandee pour les eleves visant la medecine, la biologie ou l\'agronomie.',
+    principales: [
+      { nom:'SVT',            coeff:5 },
+      { nom:'Mathematiques',  coeff:4 },
+      { nom:'Physique-Chimie',coeff:4 },
+      { nom:'Francais',       coeff:3 },
     ],
-    secondaires:[
-      {nom:'Anglais',      coeff:2},
-      {nom:'Histoire-Géo', coeff:2},
-      {nom:'Philosophie',  coeff:2},
-      {nom:'EPS',          coeff:1},
-    ]
-  },
-  C: {
-    description:'Série axée sur les mathématiques et la physique.',
-    principales:[
-      {nom:'Mathématiques',  coeff:6},
-      {nom:'Physique-Chimie',coeff:5},
-      {nom:'Français',       coeff:3},
+    secondaires: [
+      { nom:'Anglais',      coeff:2 },
+      { nom:'Histoire-Geo', coeff:2 },
+      { nom:'Philosophie',  coeff:2 },
+      { nom:'EPS',          coeff:1 },
     ],
-    secondaires:[
-      {nom:'SVT',          coeff:2},
-      {nom:'Anglais',      coeff:2},
-      {nom:'Histoire-Géo', coeff:2},
-      {nom:'Philosophie',  coeff:2},
-      {nom:'EPS',          coeff:1},
-    ]
-  },
-  A1: {
-    description:'Série philosophie et lettres classiques.',
-    principales:[
-      {nom:'Philosophie',         coeff:5},
-      {nom:'Français',            coeff:5},
-      {nom:'Anglais (LV1)',       coeff:3},
-      {nom:'Histoire-Géographie', coeff:3},
+    programme: [
+      { matiere:'SVT', chapitres:['La genetique et l\'heredite','Le systeme nerveux et hormonal','La reproduction humaine','L\'ecologie et les ecosystemes','L\'immunologie et les defenses de l\'organisme','L\'evolution des especes'] },
+      { matiere:'Mathematiques', chapitres:['Les fonctions numeriques et leurs derivees','Les suites numeriques','Les probabilites et statistiques','La geometrie dans l\'espace','Les equations differentielles simples'] },
+      { matiere:'Physique-Chimie', chapitres:['La mecanique du point','L\'electricite et les circuits','Les reactions acide-base','La chimie organique de base','L\'optique geometrique'] },
+      { matiere:'Francais', chapitres:['Le commentaire de texte','La dissertation','Les textes argumentatifs scientifiques'] },
     ],
-    secondaires:[
-      {nom:'Mathématiques', coeff:2},
-      {nom:'EPS',           coeff:1},
-    ]
-  },
-  B: {
-    description:'Série économique et sociale.',
-    principales:[
-      {nom:'Économie',            coeff:5},
-      {nom:'Mathématiques',       coeff:4},
-      {nom:'Français',            coeff:3},
-      {nom:'Histoire-Géographie', coeff:3},
-    ],
-    secondaires:[
-      {nom:'Anglais',     coeff:2},
-      {nom:'Philosophie', coeff:2},
-      {nom:'EPS',         coeff:1},
-    ]
-  },
-  E: {
-    description:'Série mathématiques et technologie.',
-    principales:[
-      {nom:'Mathématiques',         coeff:6},
-      {nom:'Sciences Technologiques',coeff:5},
-      {nom:'Physique-Chimie',        coeff:4},
-    ],
-    secondaires:[
-      {nom:'Français', coeff:3},
-      {nom:'Anglais',  coeff:2},
-      {nom:'EPS',      coeff:1},
-    ]
+    debouches: 'Medecine, Pharmacie, Biologie, Agronomie, Sciences infirmieres, Veterinaire, Recherche scientifique.'
   }
+};
+
+const CONSEILS_SERIES = {
+  A4: [
+    'Lis regulierement des oeuvres litteraires africaines et classiques pour enrichir ta culture generale.',
+    'Entraine-toi a la dissertation philosophique chaque semaine, meme sur des sujets simples.',
+    'Apprends par coeur 10 a 15 citations de philosophes pour illustrer tes copies.',
+    'Travaille ton expression ecrite : la qualite du francais compte beaucoup dans cette serie.',
+    'Ne neglige pas les Mathematiques et la SVT : elles ont un coefficient plus faible mais peuvent faire la difference.',
+    'Suis l\'actualite internationale pour le Histoire-Geographie et la culture generale.'
+  ],
+  D: [
+    'Maitrise parfaitement les formules de Mathematiques et de Physique-Chimie : elles reviennent souvent.',
+    'Fais des fiches de SVT par chapitre avec des schemas annotes.',
+    'Entraine-toi sur les annales des 3 dernieres annees en conditions chronometrees.',
+    'Travaille la methode de resolution de problemes : presentation claire, etapes logiques.',
+    'Le Francais a un coefficient non negligeable : ne le delaisse pas au profit des sciences.',
+    'Revise tes bases de chimie organique, souvent source d\'erreurs au Bac.'
+  ]
 };
 
 const ANNALES_BEPC = [
@@ -216,6 +190,38 @@ const QUIZ_DATA = {
       {q:"Qui a formulé la théorie de la relativité ?",                      opts:["Isaac Newton","Niels Bohr","Albert Einstein","Max Planck"],                              rep:2, expl:"Albert Einstein : relativité restreinte (1905) et générale (1915)."},
     ]
   }
+};
+
+const QUIZ_BAC_A4 = {
+  titre: 'Quiz Serie A4 -- Philosophie & Litterature',
+  questions: [
+    { q: "Selon Descartes, quelle est la premiere certitude philosophique ?", opts: ["Dieu existe","Je pense donc je suis","Le monde est materiel","L\'ame est immortelle"], rep: 1, expl: "Le cogito de Descartes : 'Je pense, donc je suis' est le point de depart indubitable de sa philosophie." },
+    { q: "Qu\'est-ce que le determinisme en philosophie ?", opts: ["La liberte totale de l\'individu","L\'idee que tout evenement a une cause necessaire","Le hasard absolu","La croyance religieuse"], rep: 1, expl: "Le determinisme soutient que tout phenomene, y compris les actions humaines, est le resultat de causes anterieures necessaires." },
+    { q: "Quel mouvement litteraire valorise la nature et les sentiments au 19e siecle ?", opts: ["Le classicisme","Le romantisme","Le naturalisme","Le symbolisme"], rep: 1, expl: "Le romantisme (debut 19e siecle) valorise l\'expression des sentiments, la nature et l\'individu face a la societe." },
+    { q: "Qu\'est-ce que la negritude en litterature africaine ?", opts: ["Un style d\'ecriture experimental","Un mouvement de revalorisation de la culture noire","Un genre theatral","Une technique poetique"], rep: 1, expl: "La negritude, portee par Senghor, Cesaire et Damas, valorise l\'identite et la culture africaine face a la colonisation." },
+    { q: "Qu\'est-ce que l\'Etat selon les theories du contrat social ?", opts: ["Une institution divine","Le resultat d\'un accord entre individus pour vivre ensemble","Une domination naturelle","Un heritage familial"], rep: 1, expl: "Pour Hobbes, Locke et Rousseau, l\'Etat nait d\'un contrat social ou les individus renoncent a certains droits pour la securite collective." },
+    { q: "Quelle est la difference entre la morale et le droit ?", opts: ["Il n\'y en a aucune","La morale est interieure, le droit est impose par la societe","Le droit n\'existe pas","La morale vient toujours de la religion"], rep: 1, expl: "La morale releve de la conscience individuelle, tandis que le droit est un ensemble de regles imposees et sanctionnees par la societe." },
+    { q: "Dans 'L\'Etranger' de Camus, quel concept philosophique est central ?", opts: ["Le determinisme","L\'absurde","Le devoir kantien","Le contrat social"], rep: 1, expl: "Camus developpe la philosophie de l\'absurde : le sentiment que la vie n\'a pas de sens objectif preetabli." },
+    { q: "Qu\'est-ce qu\'un syllogisme en logique ?", opts: ["Une figure de style","Un raisonnement deductif a partir de deux premisses","Un type de poeme","Une regle de grammaire"], rep: 1, expl: "Le syllogisme est un raisonnement logique : de deux premisses (majeure et mineure) on tire une conclusion necessaire." },
+    { q: "Quel auteur a ecrit 'Le Prince', traite sur le pouvoir politique ?", opts: ["Aristote","Machiavel","Rousseau","Montesquieu"], rep: 1, expl: "Machiavel, dans 'Le Prince' (1532), analyse les strategies du pouvoir politique de maniere pragmatique." },
+    { q: "Qu\'est-ce que la dissertation philosophique exige avant tout ?", opts: ["Une opinion personnelle sans argument","Une analyse rigoureuse du sujet avec une problematique","Un resume de cours","Une liste de citations"], rep: 1, expl: "La dissertation philosophique exige l\'analyse du sujet, la construction d\'une problematique et un raisonnement argumente." },
+  ]
+};
+
+const QUIZ_BAC_D = {
+  titre: 'Quiz Serie D -- Sciences Renforcees',
+  questions: [
+    { q: "Quel est le role de l\'ADN polymerase ?", opts: ["Digerer les proteines","Synthetiser un nouveau brin d\'ADN","Produire de l\'energie","Transporter l\'oxygene"], rep: 1, expl: "L\'ADN polymerase est l\'enzyme qui synthetise un nouveau brin d\'ADN lors de la replication." },
+    { q: "Quelle est la derivee de f(x) = 3x2 + 2x ?", opts: ["6x + 2","3x + 2","6x2","3x2 + 2"], rep: 0, expl: "La derivee de 3x2 est 6x, et celle de 2x est 2. Donc f\'(x) = 6x + 2." },
+    { q: "Qu\'est-ce que la meiose produit chez l\'humain ?", opts: ["Des cellules somatiques","Des gametes (spermatozoides ou ovules)","Des globules rouges","Des neurones"], rep: 1, expl: "La meiose est une division cellulaire qui produit les gametes, avec la moitie du nombre de chromosomes (23 au lieu de 46)." },
+    { q: "Quelle loi relie tension, resistance et intensite ?", opts: ["La loi de Newton","La loi d\'Ohm","La loi de Coulomb","La loi de Joule"], rep: 1, expl: "La loi d\'Ohm : U = R x I, relie la tension (U), la resistance (R) et l\'intensite du courant (I)." },
+    { q: "Qu\'est-ce qu\'un anticorps ?", opts: ["Un type de globule rouge","Une proteine du systeme immunitaire qui neutralise les antigenes","Un neurotransmetteur","Une hormone digestive"], rep: 1, expl: "Les anticorps sont des proteines produites par les lymphocytes B pour neutraliser les agents pathogenes (antigenes)." },
+    { q: "Quelle est la formule de l\'energie cinetique ?", opts: ["Ec = mgh","Ec = (1/2)mv2","Ec = mc2","Ec = Fd"], rep: 1, expl: "L\'energie cinetique d\'un objet en mouvement est Ec = (1/2) x masse x vitesse au carre." },
+    { q: "Quel organe regule la glycemie en secretant l\'insuline ?", opts: ["Le foie","Le pancreas","Le rein","La thyroide"], rep: 1, expl: "Le pancreas secrete l\'insuline (qui abaisse la glycemie) et le glucagon (qui l\'augmente)." },
+    { q: "Que represente le discriminant negatif (Delta < 0) pour une equation du second degre ?", opts: ["Deux solutions reelles distinctes","Une solution double","Aucune solution reelle","Une infinite de solutions"], rep: 2, expl: "Si Delta < 0, l\'equation n\'a pas de solution dans l\'ensemble des nombres reels." },
+    { q: "Qu\'est-ce qu\'un acide selon la chimie ?", opts: ["Une substance qui liberere des ions OH-","Une substance qui libere des ions H+","Un metal pur","Un gaz noble"], rep: 1, expl: "Un acide est une substance qui, en solution, libere des ions H+ (protons)." },
+    { q: "Quel est le role des stomates chez les plantes ?", opts: ["Stocker l\'eau","Permettre les echanges gazeux (CO2, O2, vapeur d\'eau)","Produire le pollen","Ancrer la plante au sol"], rep: 1, expl: "Les stomates, situes sur les feuilles, regulent les echanges gazeux necessaires a la photosynthese et la transpiration." },
+  ]
 };
 
 const METHODOLOGIE_BEPC = [
@@ -356,6 +362,9 @@ function rendrePage() {
     case 'annales-bepc': setBreadcrumb('Accueil › BEPC › Annales');        app.innerHTML = pageAnnalesBEPC();   break;
     case 'annales-bac':  setBreadcrumb('Accueil › BAC › Annales');         app.innerHTML = pageAnnalesBAC();    break;
     case 'serie-detail': rendreSerieDetail();                              break;
+    case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
+    case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
+    case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
     default:             app.innerHTML = pageAccueil();
   }
 }
@@ -453,7 +462,7 @@ function grilleMethodo(liste) {
   return html + '</div>';
 }
 
-function contenuAnnalesBEPC() {
+function contenuAnnalesBEPC_old() {
   var html = '<div class="section-title">📄 Annales BEPC</div>';
   html += '<div class="alerte">📥 Ajoute les PDF dans un dossier <code>annales/</code> pour activer les téléchargements.</div>';
   html += '<div class="annale-grid">';
@@ -504,20 +513,61 @@ function rendreSerieDetail() {
   var lettre = etat.params;
   var d = DETAIL_SERIES[lettre];
   var s = SERIES_BAC.find(function(x){return x.lettre===lettre;});
-  if (!d || !s) { app.innerHTML='<div class="page-section"><p>Série introuvable.</p></div>'; return; }
-  setBreadcrumb('Accueil › BAC › Série '+lettre);
-  var html = '<div class="page-header bac-header"><h1>Série '+lettre+' — '+s.nom+'</h1><p>'+d.description+'</p></div>';
+  if (!d || !s) { app.innerHTML='<div class="page-section"><p>Serie introuvable.</p></div>'; return; }
+  setBreadcrumb('Accueil > BAC > Serie '+lettre);
+  var html = '<div class="page-header bac-header"><h1>Serie '+lettre+' -- '+s.nom+'</h1><p>'+d.description+'</p></div>';
   html += '<div class="page-section"><div class="serie-detail">';
-  html += '<h2>📌 Matières principales</h2><div class="matieres-list">';
+
+  html += '<h2>Matieres principales</h2><div class="matieres-list">';
   d.principales.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'<span class="coeff-badge">Coeff. '+m.coeff+'</span></div>'; });
-  html += '</div><h2>📎 Matières secondaires</h2><div class="matieres-list">';
+  html += '</div>';
+
+  html += '<h2>Matieres secondaires</h2><div class="matieres-list">';
   d.secondaires.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'<span class="coeff-badge" style="background:#aaa">Coeff. '+m.coeff+'</span></div>'; });
-  html += '</div><div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem">' +
-    '<button class="btn btn-bleu" onclick="afficherPage(\'annales-bac\')">📄 Voir les annales</button>' +
-    '<button class="btn btn-outline" onclick="retour()">← Changer de série</button>' +
+  html += '</div>';
+
+  if (d.programme) {
+    html += '<h2>Programme par matiere</h2>';
+    d.programme.forEach(function(p) {
+      html += '<div style="margin-bottom:1rem"><div style="font-family:Lexend,sans-serif;font-weight:700;font-size:.95rem;color:var(--bleu);margin-bottom:.5rem">'+p.matiere+'</div><ul style="padding-left:1.2rem">';
+      p.chapitres.forEach(function(ch) { html += '<li style="font-size:.88rem;margin-bottom:.3rem">'+ch+'</li>'; });
+      html += '</ul></div>';
+    });
+  }
+
+  if (typeof CONSEILS_SERIES !== 'undefined' && CONSEILS_SERIES[lettre]) {
+    html += '<h2>Conseils de revision</h2><div class="alerte" style="background:#eaf5ee;border-left-color:var(--vert);color:#1B6B3A">';
+    html += '<ul style="padding-left:1.2rem;margin:0">';
+    CONSEILS_SERIES[lettre].forEach(function(c) { html += '<li style="margin-bottom:.4rem">'+c+'</li>'; });
+    html += '</ul></div>';
+  }
+
+  if (d.debouches) {
+    html += '<h2>Debouches possibles</h2><p style="font-size:.9rem;color:var(--gris)">'+d.debouches+'</p>';
+  }
+
+  html += '<div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem">' +
+    '<button class="btn btn-or" onclick="afficherPage(\'quiz-serie\',\''+lettre+'\')">Quiz de la serie</button>' +
+    '<button class="btn btn-bleu" onclick="afficherPage(\'annales-bac\')">Voir les annales</button>' +
+    '<button class="btn btn-outline" onclick="retour()">Changer de serie</button>' +
   '</div></div></div>';
   app.innerHTML = html;
 }
+
+function pageQuizSerie() {
+  var lettre = etat.params;
+  var quizMap = { A4: 'QUIZ_BAC_A4', D: 'QUIZ_BAC_D' };
+  var quizVarName = quizMap[lettre];
+  var quizObj = quizVarName === 'QUIZ_BAC_A4' ? (typeof QUIZ_BAC_A4 !== 'undefined' ? QUIZ_BAC_A4 : null) : (typeof QUIZ_BAC_D !== 'undefined' ? QUIZ_BAC_D : null);
+  if (!quizObj) return '<div class="page-section"><p>Quiz non disponible pour cette serie.</p></div>';
+
+  etat.quizActif = 'BAC_' + lettre;
+  etat.quizIdx = 0; etat.quizScore = 0; etat.quizRepondu = false;
+  window['__quizBacActuel'] = quizObj;
+  return '<div class="page-header bac-header"><h1>'+quizObj.titre+'</h1><p>10 questions specifiques a la serie '+lettre+'</p></div>' +
+    '<div class="page-section">' + afficherQuestion(quizObj, 0) + '</div>';
+}
+
 
 function pageAnnalesBAC() {
   var html = '<div class="section-title">📄 Annales BAC</div>';
@@ -600,12 +650,21 @@ function pageCulture() {
 }
 
 function grilleCategories() {
-  return '<div class="section-title">🗂️ Catégories thématiques</div><div class="culture-grid">' +
-    cultureCard('🏺','Histoire & Géographie','Burkina Faso · Afrique · Capitales · Fleuves',"afficherPage('culture-quiz','culture_histoire')") +
-    cultureCard('🔬','Sciences & Inventions','Découvertes · Espace · Physique · Biologie',"afficherPage('culture-quiz','culture_sciences')") +
-    cultureCard('📚','Arts & Littérature','Auteurs · Œuvres · Courants littéraires',"alert('Bientôt disponible !')") +
-    cultureCard('🌐','Monde Contemporain','Géopolitique · ONU · Organisations africaines',"alert('Bientôt disponible !')") +
-  '</div>';
+  var cartes = [
+    {id:'culture_burkina', icon:'🇧🇫', nom:'Burkina Faso', sub:'Histoire · Culture · Traditions'},
+    {id:'culture_afrique', icon:'🌍', nom:'Afrique', sub:'Histoire · Géographie · Leaders'},
+    {id:'culture_sciences', icon:'🔬', nom:'Sciences', sub:'Découvertes · Espace · Biologie'},
+    {id:'culture_svt_pc', icon:'⚗️', nom:'SVT & Physique-Chimie', sub:'Biologie · Chimie · Physique'},
+    {id:'culture_arts', icon:'🎨', nom:'Arts & Philosophie', sub:'Littérature · Peinture · Penseurs'},
+    {id:'culture_monde', icon:'🌐', nom:'Monde Contemporain', sub:'Géopolitique · ONU · Économie'},
+    {id:'culture_maths_langues', icon:'➗', nom:'Maths & Langues', sub:'Calcul · Français · Anglais'},
+    {id:'culture_divers', icon:'💡', nom:'Informatique & Divers', sub:'Tech · Écologie · Histoire'},
+  ];
+  var html = '<div class="section-title">🗂️ Catégories thématiques</div><div class="culture-grid">';
+  cartes.forEach(function(c) {
+    html += cultureCard(c.icon, c.nom, c.sub, "afficherPage('culture-quiz','"+c.id+"')");
+  });
+  return html + '</div>';
 }
 
 function cultureCard(icon, nom, sub, onclick) {
@@ -631,13 +690,13 @@ function pageQuiz() {
 }
 
 function pageQuizCulture() {
-  var d = QUIZ_DATA[etat.params];
+  var d = QUIZ_DATA[etat.params] || (typeof QUIZ_CULTURE !== 'undefined' ? QUIZ_CULTURE[etat.params] : undefined);
   return '<div class="page-header cult-header"><h1>'+(d?d.titre:'Quiz Culture')+'</h1><p>5 questions · Réponds puis découvre l\'explication</p></div>' +
     '<div class="page-section">'+buildQuiz(etat.params)+'</div>';
 }
 
 function buildQuiz(id) {
-  var d = QUIZ_DATA[id];
+  var d = QUIZ_DATA[id] || (typeof QUIZ_CULTURE !== 'undefined' ? QUIZ_CULTURE[id] : undefined);
   if (!d) return '<p>Quiz introuvable.</p>';
   etat.quizActif = id; etat.quizIdx = 0; etat.quizScore = 0; etat.quizRepondu = false;
   return afficherQuestion(d, 0);
@@ -662,10 +721,17 @@ function afficherQuestion(data, idx) {
   return html;
 }
 
+function getQuizActuel() {
+  if (etat.quizActif && etat.quizActif.indexOf('BAC_') === 0 && window.__quizBacActuel) {
+    return window.__quizBacActuel;
+  }
+  return getQuizActuel();
+}
+
 function repondre(choix) {
   if (etat.quizRepondu) return;
   etat.quizRepondu = true;
-  var d    = QUIZ_DATA[etat.quizActif];
+  var d    = getQuizActuel();
   var q    = d.questions[etat.quizIdx];
   var opts = document.querySelectorAll('.quiz-opt');
   var fb   = document.getElementById('qfb');
@@ -690,7 +756,7 @@ function repondre(choix) {
 function suivant() {
   etat.quizIdx++;
   etat.quizRepondu=false;
-  var data = QUIZ_DATA[etat.quizActif];
+  var data = getQuizActuel();
   var wrap = document.getElementById('qwrap');
   var tmp  = document.createElement('div');
   tmp.innerHTML = afficherQuestion(data, etat.quizIdx);
@@ -698,7 +764,7 @@ function suivant() {
 }
 
 function resultat() {
-  var d    = QUIZ_DATA[etat.quizActif];
+  var d    = getQuizActuel();
   var total= d.questions.length;
   var pct  = Math.round(etat.quizScore/total*100);
   var m    = pct>=80?'🏆 Excellent !':pct>=60?'👍 Bien !':pct>=40?'📖 Revois tes fiches.':'💪 Courage, réessaie !';
@@ -712,7 +778,7 @@ function resultat() {
 
 function buildQuizRefaire() {
   etat.quizIdx=0; etat.quizScore=0; etat.quizRepondu=false;
-  var data = QUIZ_DATA[etat.quizActif];
+  var data = getQuizActuel();
   var wrap = document.getElementById('qwrap');
   var tmp  = document.createElement('div');
   tmp.innerHTML = afficherQuestion(data, 0);
@@ -720,3 +786,73 @@ function buildQuizRefaire() {
 }
 
 document.addEventListener('DOMContentLoaded', function(){ afficherPage('accueil'); });
+
+/* ── ANNALES REELLES BEPC ── */
+const ANNALES_BEPC_REELLES = {
+  maths: [
+    { label:'Sujet Maths 2026 — 1er Tour',     fichier:'annales/bepc/maths/sujet_2026_tour1.pdf' },
+    { label:'Sujet Maths 2025 — Probable',      fichier:'annales/bepc/maths/sujet_probable_2025.pdf' },
+    { label:'Sujet Maths 2025 — Blanc National',fichier:'annales/bepc/maths/blanc_national_2025.pdf' },
+    { label:'Sujet Maths 2025 — Blanc Kadiogo', fichier:'annales/bepc/maths/blanc_kadiogo_2025.pdf' },
+    { label:'Sujet Maths 2024 — 2ème Tour',     fichier:'annales/bepc/maths/sujet_2024_tour2.pdf' },
+  ],
+  physique: [
+    { label:'Sujet PC 2026 — 1er Tour',         fichier:'annales/bepc/physique/sujet_2026_tour1.pdf' },
+    { label:'Sujet PC 2025 — Probable',         fichier:'annales/bepc/physique/sujet_probable_2025.pdf' },
+    { label:'Sujet PC 2025 — Blanc AEEMB',      fichier:'annales/bepc/physique/blanc_aeemb_2025.pdf' },
+    { label:'Prépa PC 2024',                    fichier:'annales/bepc/physique/prepa_2024.pdf' },
+    { label:'Recueil PC 2010-2022',             fichier:'annales/bepc/physique/recueil_2010_2022.pdf' },
+  ],
+  svt: [
+    { label:'Sujet SVT 2026 — 1er Tour',        fichier:'annales/bepc/svt/sujet_2026_tour1.pdf' },
+    { label:'Sujet SVT 2025 — Probable',        fichier:'annales/bepc/svt/sujet_probable_2025.pdf' },
+    { label:'Sujet SVT 2025 — Blanc',           fichier:'annales/bepc/svt/blanc_2025.pdf' },
+  ],
+  francais: [
+    { label:'Sujet Français 2026 — 1er Tour',   fichier:'annales/bepc/francais/sujet_2026_tour1.pdf' },
+    { label:'Sujet Français 2024 — 2ème Tour',  fichier:'annales/bepc/francais/sujet_2024_tour2.pdf' },
+    { label:'Sujet Français 2025 — Blanc AEEMB',fichier:'annales/bepc/francais/blanc_aeemb_2025.pdf' },
+    { label:'Étude de texte 2014',              fichier:'annales/bepc/francais/sujet_etude_texte_2014.pdf' },
+  ],
+  anglais: [
+    { label:'Sujet Anglais 2026 — 1er Tour',    fichier:'annales/bepc/anglais/sujet_2026_tour1.pdf' },
+    { label:'Sujet Anglais 2025 — Blanc',       fichier:'annales/bepc/anglais/blanc_2025.pdf' },
+    { label:'Sujet Anglais — École Catholique p1', fichier:'annales/bepc/anglais/sujet_anglais_p1.pdf' },
+    { label:'Sujet Anglais — École Catholique p2', fichier:'annales/bepc/anglais/sujet_anglais_p2.pdf' },
+  ],
+  histoire: [
+    { label:'Sujet Histoire-Géo 2026 — 1er Tour', fichier:'annales/bepc/histoire/sujet_2026_tour1.pdf' },
+  ],
+};
+
+function pageAnnalesBEPCReelles() {
+  var html = '<div class="section-title">📄 Annales BEPC — Sujets réels</div>';
+  var matieres = [
+    { id:'maths',    icon:'➗', nom:'Mathématiques'   },
+    { id:'physique', icon:'⚡', nom:'Physique-Chimie' },
+    { id:'svt',      icon:'🌿', nom:'SVT'             },
+    { id:'francais', icon:'✍️', nom:'Français'        },
+    { id:'anglais',  icon:'🗣️', nom:'Anglais'         },
+    { id:'histoire', icon:'🏺', nom:'Histoire-Géo'    },
+  ];
+  matieres.forEach(function(m) {
+    var liste = ANNALES_BEPC_REELLES[m.id];
+    if (!liste || liste.length === 0) return;
+    html += '<div style="margin-bottom:2rem">';
+    html += '<h3 style="font-family:Lexend,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--vert)">'+m.icon+' '+m.nom+'</h3>';
+    html += '<div class="annale-grid">';
+    liste.forEach(function(a) {
+      html += '<div class="annale-card">' +
+        '<h3>'+a.label+'</h3>' +
+        '<div class="annale-btns">' +
+          '<a class="btn btn-vert btn-sm" href="'+a.fichier+'" target="_blank">📥 Ouvrir le PDF</a>' +
+        '</div></div>';
+    });
+    html += '</div></div>';
+  });
+  return html;
+}
+
+function contenuAnnalesBEPC() {
+  return pageAnnalesBEPCReelles();
+}

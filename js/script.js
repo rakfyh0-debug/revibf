@@ -195,32 +195,32 @@ const QUIZ_DATA = {
 const QUIZ_BAC_A4 = {
   titre: 'Quiz Serie A4 -- Philosophie & Litterature',
   questions: [
-    { q: "Selon Descartes, quelle est la premiere certitude philosophique ?", opts: ["Dieu existe","Je pense donc je suis","Le monde est materiel","L\'ame est immortelle"], rep: 1, expl: "Le cogito de Descartes : 'Je pense, donc je suis' est le point de depart indubitable de sa philosophie." },
-    { q: "Qu\'est-ce que le determinisme en philosophie ?", opts: ["La liberte totale de l\'individu","L\'idee que tout evenement a une cause necessaire","Le hasard absolu","La croyance religieuse"], rep: 1, expl: "Le determinisme soutient que tout phenomene, y compris les actions humaines, est le resultat de causes anterieures necessaires." },
-    { q: "Quel mouvement litteraire valorise la nature et les sentiments au 19e siecle ?", opts: ["Le classicisme","Le romantisme","Le naturalisme","Le symbolisme"], rep: 1, expl: "Le romantisme (debut 19e siecle) valorise l\'expression des sentiments, la nature et l\'individu face a la societe." },
-    { q: "Qu\'est-ce que la negritude en litterature africaine ?", opts: ["Un style d\'ecriture experimental","Un mouvement de revalorisation de la culture noire","Un genre theatral","Une technique poetique"], rep: 1, expl: "La negritude, portee par Senghor, Cesaire et Damas, valorise l\'identite et la culture africaine face a la colonisation." },
-    { q: "Qu\'est-ce que l\'Etat selon les theories du contrat social ?", opts: ["Une institution divine","Le resultat d\'un accord entre individus pour vivre ensemble","Une domination naturelle","Un heritage familial"], rep: 1, expl: "Pour Hobbes, Locke et Rousseau, l\'Etat nait d\'un contrat social ou les individus renoncent a certains droits pour la securite collective." },
-    { q: "Quelle est la difference entre la morale et le droit ?", opts: ["Il n\'y en a aucune","La morale est interieure, le droit est impose par la societe","Le droit n\'existe pas","La morale vient toujours de la religion"], rep: 1, expl: "La morale releve de la conscience individuelle, tandis que le droit est un ensemble de regles imposees et sanctionnees par la societe." },
-    { q: "Dans 'L\'Etranger' de Camus, quel concept philosophique est central ?", opts: ["Le determinisme","L\'absurde","Le devoir kantien","Le contrat social"], rep: 1, expl: "Camus developpe la philosophie de l\'absurde : le sentiment que la vie n\'a pas de sens objectif preetabli." },
-    { q: "Qu\'est-ce qu\'un syllogisme en logique ?", opts: ["Une figure de style","Un raisonnement deductif a partir de deux premisses","Un type de poeme","Une regle de grammaire"], rep: 1, expl: "Le syllogisme est un raisonnement logique : de deux premisses (majeure et mineure) on tire une conclusion necessaire." },
-    { q: "Quel auteur a ecrit 'Le Prince', traite sur le pouvoir politique ?", opts: ["Aristote","Machiavel","Rousseau","Montesquieu"], rep: 1, expl: "Machiavel, dans 'Le Prince' (1532), analyse les strategies du pouvoir politique de maniere pragmatique." },
-    { q: "Qu\'est-ce que la dissertation philosophique exige avant tout ?", opts: ["Une opinion personnelle sans argument","Une analyse rigoureuse du sujet avec une problematique","Un resume de cours","Une liste de citations"], rep: 1, expl: "La dissertation philosophique exige l\'analyse du sujet, la construction d\'une problematique et un raisonnement argumente." },
+    { q: "Selon Descartes, quelle est la premiere certitude philosophique ?", opts: ["Dieu existe","Le monde est materiel","Je pense donc je suis","L\'ame est immortelle"], rep: 2, expl: "Le cogito de Descartes : 'Je pense, donc je suis' est le point de depart indubitable de sa philosophie." },
+    { q: "Qu\'est-ce que le determinisme en philosophie ?", opts: ["La liberte totale de l\'individu","Le hasard absolu","La croyance religieuse","L\'idee que tout evenement a une cause necessaire"], rep: 3, expl: "Le determinisme soutient que tout phenomene, y compris les actions humaines, est le resultat de causes anterieures necessaires." },
+    { q: "Quel mouvement litteraire valorise la nature et les sentiments au 19e siecle ?", opts: ["Le classicisme","Le naturalisme","Le romantisme","Le symbolisme"], rep: 2, expl: "Le romantisme (debut 19e siecle) valorise l\'expression des sentiments, la nature et l\'individu face a la societe." },
+    { q: "Qu\'est-ce que la negritude en litterature africaine ?", opts: ["Un style d\'ecriture experimental","Un genre theatral","Une technique poetique","Un mouvement de revalorisation de la culture noire"], rep: 3, expl: "La negritude, portee par Senghor, Cesaire et Damas, valorise l\'identite et la culture africaine face a la colonisation." },
+    { q: "Qu\'est-ce que l\'Etat selon les theories du contrat social ?", opts: ["Une institution divine","Une domination naturelle","Le resultat d\'un accord entre individus pour vivre ensemble","Un heritage familial"], rep: 2, expl: "Pour Hobbes, Locke et Rousseau, l\'Etat nait d\'un contrat social ou les individus renoncent a certains droits pour la securite collective." },
+    { q: "Quelle est la difference entre la morale et le droit ?", opts: ["Il n\'y en a aucune","Le droit n\'existe pas","La morale vient toujours de la religion","La morale est interieure, le droit est impose par la societe"], rep: 3, expl: "La morale releve de la conscience individuelle, tandis que le droit est un ensemble de regles imposees et sanctionnees par la societe." },
+    { q: "Dans 'L\'Etranger' de Camus, quel concept philosophique est central ?", opts: ["Le determinisme","Le devoir kantien","Le contrat social","L\'absurde"], rep: 3, expl: "Camus developpe la philosophie de l\'absurde : le sentiment que la vie n\'a pas de sens objectif preetabli." },
+    { q: "Qu\'est-ce qu\'un syllogisme en logique ?", opts: ["Une figure de style","Un type de poeme","Une regle de grammaire","Un raisonnement deductif a partir de deux premisses"], rep: 3, expl: "Le syllogisme est un raisonnement logique : de deux premisses (majeure et mineure) on tire une conclusion necessaire." },
+    { q: "Quel auteur a ecrit 'Le Prince', traite sur le pouvoir politique ?", opts: ["Aristote","Rousseau","Montesquieu","Machiavel"], rep: 3, expl: "Machiavel, dans 'Le Prince' (1532), analyse les strategies du pouvoir politique de maniere pragmatique." },
+    { q: "Qu\'est-ce que la dissertation philosophique exige avant tout ?", opts: ["Une opinion personnelle sans argument","Un resume de cours","Une liste de citations","Une analyse rigoureuse du sujet avec une problematique"], rep: 3, expl: "La dissertation philosophique exige l\'analyse du sujet, la construction d\'une problematique et un raisonnement argumente." },
   ]
 };
 
 const QUIZ_BAC_D = {
   titre: 'Quiz Serie D -- Sciences Renforcees',
   questions: [
-    { q: "Quel est le role de l\'ADN polymerase ?", opts: ["Digerer les proteines","Synthetiser un nouveau brin d\'ADN","Produire de l\'energie","Transporter l\'oxygene"], rep: 1, expl: "L\'ADN polymerase est l\'enzyme qui synthetise un nouveau brin d\'ADN lors de la replication." },
+    { q: "Quel est le role de l\'ADN polymerase ?", opts: ["Digerer les proteines","Produire de l\'energie","Synthetiser un nouveau brin d\'ADN","Transporter l\'oxygene"], rep: 2, expl: "L\'ADN polymerase est l\'enzyme qui synthetise un nouveau brin d\'ADN lors de la replication." },
     { q: "Quelle est la derivee de f(x) = 3x2 + 2x ?", opts: ["6x + 2","3x + 2","6x2","3x2 + 2"], rep: 0, expl: "La derivee de 3x2 est 6x, et celle de 2x est 2. Donc f\'(x) = 6x + 2." },
-    { q: "Qu\'est-ce que la meiose produit chez l\'humain ?", opts: ["Des cellules somatiques","Des gametes (spermatozoides ou ovules)","Des globules rouges","Des neurones"], rep: 1, expl: "La meiose est une division cellulaire qui produit les gametes, avec la moitie du nombre de chromosomes (23 au lieu de 46)." },
-    { q: "Quelle loi relie tension, resistance et intensite ?", opts: ["La loi de Newton","La loi d\'Ohm","La loi de Coulomb","La loi de Joule"], rep: 1, expl: "La loi d\'Ohm : U = R x I, relie la tension (U), la resistance (R) et l\'intensite du courant (I)." },
-    { q: "Qu\'est-ce qu\'un anticorps ?", opts: ["Un type de globule rouge","Une proteine du systeme immunitaire qui neutralise les antigenes","Un neurotransmetteur","Une hormone digestive"], rep: 1, expl: "Les anticorps sont des proteines produites par les lymphocytes B pour neutraliser les agents pathogenes (antigenes)." },
-    { q: "Quelle est la formule de l\'energie cinetique ?", opts: ["Ec = mgh","Ec = (1/2)mv2","Ec = mc2","Ec = Fd"], rep: 1, expl: "L\'energie cinetique d\'un objet en mouvement est Ec = (1/2) x masse x vitesse au carre." },
-    { q: "Quel organe regule la glycemie en secretant l\'insuline ?", opts: ["Le foie","Le pancreas","Le rein","La thyroide"], rep: 1, expl: "Le pancreas secrete l\'insuline (qui abaisse la glycemie) et le glucagon (qui l\'augmente)." },
+    { q: "Qu\'est-ce que la meiose produit chez l\'humain ?", opts: ["Des cellules somatiques","Des globules rouges","Des neurones","Des gametes (spermatozoides ou ovules)"], rep: 3, expl: "La meiose est une division cellulaire qui produit les gametes, avec la moitie du nombre de chromosomes (23 au lieu de 46)." },
+    { q: "Quelle loi relie tension, resistance et intensite ?", opts: ["La loi de Newton","La loi de Coulomb","La loi de Joule","La loi d\'Ohm"], rep: 3, expl: "La loi d\'Ohm : U = R x I, relie la tension (U), la resistance (R) et l\'intensite du courant (I)." },
+    { q: "Qu\'est-ce qu\'un anticorps ?", opts: ["Un type de globule rouge","Un neurotransmetteur","Une hormone digestive","Une proteine du systeme immunitaire qui neutralise les antigenes"], rep: 3, expl: "Les anticorps sont des proteines produites par les lymphocytes B pour neutraliser les agents pathogenes (antigenes)." },
+    { q: "Quelle est la formule de l\'energie cinetique ?", opts: ["Ec = mgh","Ec = mc2","Ec = Fd","Ec = (1/2)mv2"], rep: 3, expl: "L\'energie cinetique d\'un objet en mouvement est Ec = (1/2) x masse x vitesse au carre." },
+    { q: "Quel organe regule la glycemie en secretant l\'insuline ?", opts: ["Le foie","Le rein","La thyroide","Le pancreas"], rep: 3, expl: "Le pancreas secrete l\'insuline (qui abaisse la glycemie) et le glucagon (qui l\'augmente)." },
     { q: "Que represente le discriminant negatif (Delta < 0) pour une equation du second degre ?", opts: ["Deux solutions reelles distinctes","Une solution double","Aucune solution reelle","Une infinite de solutions"], rep: 2, expl: "Si Delta < 0, l\'equation n\'a pas de solution dans l\'ensemble des nombres reels." },
-    { q: "Qu\'est-ce qu\'un acide selon la chimie ?", opts: ["Une substance qui liberere des ions OH-","Une substance qui libere des ions H+","Un metal pur","Un gaz noble"], rep: 1, expl: "Un acide est une substance qui, en solution, libere des ions H+ (protons)." },
-    { q: "Quel est le role des stomates chez les plantes ?", opts: ["Stocker l\'eau","Permettre les echanges gazeux (CO2, O2, vapeur d\'eau)","Produire le pollen","Ancrer la plante au sol"], rep: 1, expl: "Les stomates, situes sur les feuilles, regulent les echanges gazeux necessaires a la photosynthese et la transpiration." },
+    { q: "Qu\'est-ce qu\'un acide selon la chimie ?", opts: ["Une substance qui libere des ions OH-","Un metal pur","Un gaz noble","Une substance qui libere des ions H+"], rep: 3, expl: "Un acide est une substance qui, en solution, libere des ions H+ (protons)." },
+    { q: "Quel est le role des stomates chez les plantes ?", opts: ["Stocker l\'eau","Produire le pollen","Ancrer la plante au sol","Permettre les echanges gazeux (CO2, O2, vapeur d\'eau)"], rep: 3, expl: "Les stomates, situes sur les feuilles, regulent les echanges gazeux necessaires a la photosynthese et la transpiration." },
   ]
 };
 
@@ -702,14 +702,30 @@ function buildQuiz(id) {
   return afficherQuestion(d, 0);
 }
 
+function melangerOptions(question) {
+  // Cree un tableau [0,1,2,3...] puis le melange, en gardant la trace
+  // de la nouvelle position de la bonne reponse.
+  var indices = question.opts.map(function(_, i) { return i; });
+  for (var i = indices.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = indices[i];
+    indices[i] = indices[j];
+    indices[j] = tmp;
+  }
+  var nouvellesOpts = indices.map(function(idx) { return question.opts[idx]; });
+  var nouvelleRep = indices.indexOf(question.rep);
+  return { q: question.q, opts: nouvellesOpts, rep: nouvelleRep, expl: question.expl };
+}
+
 function afficherQuestion(data, idx) {
-  var q = data.questions[idx];
+  var q = melangerOptions(data.questions[idx]);
   var total = data.questions.length;
   var html = '<div class="quiz-wrap" id="qwrap">' +
     '<div class="quiz-titre">'+data.titre+' — Question '+(idx+1)+'/'+total+'</div>' +
     '<div class="score-bar"><div class="score-fill" id="sfill" style="width:'+(idx/total*100)+'%"></div></div>' +
     '<div class="quiz-question">'+q.q+'</div>' +
     '<div class="quiz-options" id="qopts">';
+  window.__questionActuelle = q;
   q.opts.forEach(function(o,i){ html += '<button class="quiz-opt" onclick="repondre('+i+')">'+o+'</button>'; });
   html += '</div><div class="quiz-feedback" id="qfb" style="display:none"></div>' +
     '<div class="quiz-nav" id="qnav" style="display:none">' +
@@ -732,7 +748,7 @@ function repondre(choix) {
   if (etat.quizRepondu) return;
   etat.quizRepondu = true;
   var d    = getQuizActuel();
-  var q    = d.questions[etat.quizIdx];
+  var q    = window.__questionActuelle || d.questions[etat.quizIdx];
   var opts = document.querySelectorAll('.quiz-opt');
   var fb   = document.getElementById('qfb');
   var total = d.questions.length;
@@ -774,7 +790,11 @@ function resultat() {
   document.getElementById('qnav').innerHTML=
     '<button class="btn btn-vert" onclick="buildQuizRefaire()">🔄 Recommencer</button>' +
     '<button class="btn btn-outline" onclick="retour()">↩ Retour</button>';
-}
+
+    if (pct >= 80) {
+      res.classList.add('excellent');
+      if (typeof lancerConfettis === 'function') lancerConfettis();
+    }}
 
 function buildQuizRefaire() {
   etat.quizIdx=0; etat.quizScore=0; etat.quizRepondu=false;

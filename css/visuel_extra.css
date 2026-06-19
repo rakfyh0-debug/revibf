@@ -1,0 +1,139 @@
+
+/* ═══════════════════════════════════════
+   AMELIORATIONS VISUELLES — RéviBF
+   ═══════════════════════════════════════ */
+
+/* Animation d'entree douce pour les cartes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.matiere-card, .exam-card, .annale-card, .methodo-card,
+.serie-card, .culture-card, .info-card, .citation-card {
+  animation: fadeInUp .45s ease both;
+}
+
+/* Decalage progressif pour un effet "cascade" sur les grilles */
+.matiere-grid > *:nth-child(1), .culture-grid > *:nth-child(1), .series-grid > *:nth-child(1) { animation-delay: .02s; }
+.matiere-grid > *:nth-child(2), .culture-grid > *:nth-child(2), .series-grid > *:nth-child(2) { animation-delay: .08s; }
+.matiere-grid > *:nth-child(3), .culture-grid > *:nth-child(3), .series-grid > *:nth-child(3) { animation-delay: .14s; }
+.matiere-grid > *:nth-child(4), .culture-grid > *:nth-child(4), .series-grid > *:nth-child(4) { animation-delay: .20s; }
+.matiere-grid > *:nth-child(5), .culture-grid > *:nth-child(5), .series-grid > *:nth-child(5) { animation-delay: .26s; }
+.matiere-grid > *:nth-child(6), .culture-grid > *:nth-child(6), .series-grid > *:nth-child(6) { animation-delay: .32s; }
+.matiere-grid > *:nth-child(7), .culture-grid > *:nth-child(7) { animation-delay: .38s; }
+.matiere-grid > *:nth-child(8), .culture-grid > *:nth-child(8) { animation-delay: .44s; }
+
+.exam-grid > *:nth-child(1) { animation-delay: .05s; }
+.exam-grid > *:nth-child(2) { animation-delay: .15s; }
+.exam-grid > *:nth-child(3) { animation-delay: .25s; }
+
+/* Boutons : effet de pression au clic */
+.btn, .quiz-opt, .tab-btn, .matiere-card, .exam-card, .culture-card, .serie-card {
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:active, .quiz-opt:active:not(:disabled) { transform: scale(.96); }
+
+/* Logo : petit clin d'oeil au survol */
+.logo {
+  transition: transform .25s ease;
+}
+.logo:hover { transform: rotate(-2deg) scale(1.04); }
+
+/* Hero : motif discret inspire des textiles burkinabe (losanges) en fond */
+.hero {
+  background-image:
+    linear-gradient(135deg, var(--vert) 0%, #0d3d20 100%),
+    repeating-linear-gradient(45deg, rgba(245,166,35,.05) 0 2px, transparent 2px 22px),
+    repeating-linear-gradient(-45deg, rgba(245,166,35,.05) 0 2px, transparent 2px 22px);
+}
+
+/* Drapeau flottant discret pres du badge */
+.hero-badge {
+  position: relative;
+  animation: floatBadge 3.2s ease-in-out infinite;
+}
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* Score bar : petit effet de remplissage avec brillance */
+.score-fill {
+  background: linear-gradient(90deg, var(--vert), #2a9d56);
+  position: relative;
+  overflow: hidden;
+}
+.score-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  animation: shine 1.8s ease-in-out infinite;
+}
+@keyframes shine {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Feedback quiz : petit "pop" a l'apparition */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.quiz-feedback, .quiz-resultat { animation: popIn .3s ease both; }
+
+/* Resultat final : halo dore si excellent score */
+.quiz-resultat.excellent {
+  background: linear-gradient(135deg, #fff8e6, #ffe9b3) !important;
+  border: 1.5px solid var(--or);
+  box-shadow: 0 0 24px rgba(245,166,35,.35);
+}
+
+/* Canvas confettis */
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Petit liseré tricolore discret en bas de chaque page-header */
+.page-header, .hero {
+  position: relative;
+}
+.page-header::after, .hero::after {
+  /* on garde le clip-path existant du .hero, mais on ajoute le filet pour page-header */
+}
+.page-header {
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, var(--vert) 33%, var(--or) 33% 66%, var(--rouge) 66%) 1;
+}
+
+/* Badge "nouveau" optionnel reutilisable */
+.badge-new {
+  display: inline-block;
+  background: var(--rouge);
+  color: #fff;
+  font-size: .65rem;
+  font-weight: 700;
+  padding: .12rem .45rem;
+  border-radius: 99px;
+  margin-left: .4rem;
+  vertical-align: middle;
+  animation: pulseBadge 1.6s ease-in-out infinite;
+}
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .55; }
+}
+
+/* Respect des preferences d'accessibilite : reduire les animations si demande */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

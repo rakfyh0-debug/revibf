@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rakfyh0-debug.github.io/revibf/sitemap.xml

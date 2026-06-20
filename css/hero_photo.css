@@ -1,0 +1,20 @@
+
+/* ═══════════════════════════════════════
+   HERO AVEC PHOTO — RéviBF
+   Remplace le fond degrade par une vraie photo
+   avec un overlay pour garder le texte lisible
+   ═══════════════════════════════════════ */
+
+.hero {
+  background-image:
+    linear-gradient(135deg, rgba(13,61,32,.88) 0%, rgba(27,107,58,.82) 100%),
+    url('../images/hero-etude.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+}
+
+/* On retire le motif en losanges qui ne s'accorde plus avec une vraie photo */
+.hero::before {
+  content: none;
+}

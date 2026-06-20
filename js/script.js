@@ -307,6 +307,17 @@ const METHODOLOGIE_BAC = [
   },
 ];
 
+var __sonActif = true;
+
+function toggleSon() {
+  __sonActif = !__sonActif;
+  var btn = document.getElementById('son-toggle');
+  if (btn) {
+    btn.textContent = __sonActif ? '🔊' : '🔇';
+    btn.classList.toggle('muted', !__sonActif);
+  }
+}
+
 let etat = {
   page:'accueil', historique:[], params:null,
   quizActif:null, quizIdx:0, quizScore:0, quizRepondu:false,
@@ -346,6 +357,7 @@ function setBreadcrumb(texte) {
 }
 
 function changerTab(ctx, id) {
+  if (__sonActif && typeof jouerSonClic === 'function') jouerSonClic();
   etat.tabActif[ctx] = id;
   rendrePage();
 }
@@ -379,12 +391,12 @@ function pageAccueil() {
       '<button class="btn btn-blanc" onclick="afficherPage(\'bac\')">Préparer le BAC</button>' +
     '</div></div>' +
   '<div class="stats">' +
-    stat('6','Matières BEPC') + stat('6','Séries BAC') + stat('30+','Questions quiz') + stat('100%','Gratuit') +
+    stat('6','Matières BEPC') + stat('2','Séries BAC') + stat('30+','Questions quiz') + stat('100%','Gratuit') +
   '</div>' +
   '<div class="page-section"><div class="section-title">🎯 Que veux-tu faire ?</div>' +
   '<div class="exam-grid">' +
     examCard('card-bepc',  '📚','BEPC',            'Matières · Annales · Méthodologie · Quiz pour les élèves de 3ème.','bepc') +
-    examCard('card-bac',   '🎓','BAC',             'Séries A4, D, C, B, E · Annales · Dissertations · Candidats libres.','bac') +
+    examCard('card-bac',   '🎓','BAC',             'Séries A4 et D · Annales · Dissertations · Candidats libres.','bac') +
     examCard('card-culture','🌍','Culture Générale','Quiz du jour · Histoire africaine · Sciences · Littérature.','culture') +
   '</div></div>';
 }
@@ -393,8 +405,18 @@ function stat(nb, lb) {
   return '<div class="stat"><div class="stat-nb">'+nb+'</div><div class="stat-lb">'+lb+'</div></div>';
 }
 
+var ICONES_SVG_CARTES = {
+  'BEPC': `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="14" width="44" height="38" rx="3" fill="#fff" opacity="0.15"/><path d="M12 20c0-3.3 2.7-6 6-6h12v36H18c-3.3 0-6-2.7-6-6V20z" fill="#fff" opacity="0.9"/><path d="M52 20c0-3.3-2.7-6-6-6H34v36h12c3.3 0 6-2.7 6-6V20z" fill="#fff" opacity="0.7"/><line x1="32" y1="16" x2="32" y2="50" stroke="#1B6B3A" stroke-width="1.5"/></svg>`,
+  'BAC': `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 12L8 24l24 12 24-12-24-12z" fill="#fff" opacity="0.9"/><path d="M16 28v12c0 2 7 8 16 8s16-6 16-8V28" stroke="#fff" stroke-width="2.5" opacity="0.7"/><circle cx="52" cy="26" r="2" fill="#fff"/><line x1="52" y1="26" x2="52" y2="40" stroke="#fff" stroke-width="2"/></svg>`,
+  'Culture Générale': `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="20" fill="#fff" opacity="0.15"/><circle cx="32" cy="32" r="20" stroke="#fff" stroke-width="2" opacity="0.9"/><path d="M12 32c4-6 10-10 20-10s16 4 20 10" stroke="#fff" stroke-width="1.5" opacity="0.6" fill="none"/><path d="M12 32c4 6 10 10 20 10s16-4 20-10" stroke="#fff" stroke-width="1.5" opacity="0.6" fill="none"/><line x1="32" y1="12" x2="32" y2="52" stroke="#fff" stroke-width="1.5" opacity="0.6"/></svg>`
+};
+
 function examCard(cls, emoji, titre, desc, page) {
-  return '<div class="exam-card '+cls+'" data-emoji="'+emoji+'" onclick="afficherPage(\''+page+'\')">' +
+  var svgIcon = ICONES_SVG_CARTES[titre] || '';
+  var iconHtml = svgIcon ? '<div class="exam-card-icon">'+svgIcon+'</div>' : '';
+  var clsFinal = svgIcon ? cls + ' has-svg-icon' : cls;
+  return '<div class="exam-card '+clsFinal+'" data-emoji="'+emoji+'" onclick="afficherPage(\''+page+'\')">' +
+    iconHtml +
     '<h2>'+titre+'</h2><p>'+desc+'</p>' +
     '<button class="btn btn-or btn-sm">Commencer →</button></div>';
 }
@@ -569,20 +591,86 @@ function pageQuizSerie() {
 }
 
 
+
+const ANNALES_BAC_REELLES = {
+  A4: {
+    maths: [
+      { label:'Sujet et corrige Maths 2024', fichier:'annales/bac/a4/maths/sujet_corrige_2024.pdf' },
+      { label:'Maths Blanc National 2025', fichier:'annales/bac/a4/maths/blanc_national_2025.pdf' },
+      { label:'Maths Probable 2025', fichier:'annales/bac/a4/maths/sujet_probable_2025.pdf' },
+    ],
+    philosophie: [
+      { label:'Sujet Philosophie 2024', fichier:'annales/bac/a4/philosophie/sujet_2024.pdf' },
+      { label:'Prepa Philosophie 2024', fichier:'annales/bac/a4/philosophie/prepa_2024.pdf' },
+    ],
+    francais: [
+      { label:'Sujet Francais 2014 (Remplacement)', fichier:'annales/bac/a4/francais/sujet_2014_remplacement.pdf' },
+      { label:'Sujet Francais 2014 (2eme Tour)', fichier:'annales/bac/a4/francais/sujet_2014_tour2.pdf' },
+      { label:'Sujet Francais 2016 (2eme Tour)', fichier:'annales/bac/a4/francais/sujet_2016_tour2.pdf' },
+    ],
+    histoire: [
+      { label:'Histoire-Geo 2024 (2nd Tour)', fichier:'annales/bac/a4/histoire/sujet_2024_tour2.pdf' },
+    ],
+    anglais: [
+      { label:'Sujet Anglais 2017', fichier:'annales/bac/a4/anglais/sujet_2017.pdf' },
+    ],
+  },
+  D: {
+    maths: [
+      { label:'Maths 2025 (1er Tour)', fichier:'annales/bac/d/maths/sujet_2025_tour1.pdf' },
+      { label:'Maths Blanc National 2025', fichier:'annales/bac/d/maths/blanc_national_2025.pdf' },
+      { label:'Maths Blanc National 2026', fichier:'annales/bac/d/maths/blanc_national_2026.pdf' },
+      { label:'Maths Probable 2025', fichier:'annales/bac/d/maths/sujet_probable_2025.pdf' },
+    ],
+    physique: [
+      { label:'Physique-Chimie Blanc National 2026', fichier:'annales/bac/d/physique/blanc_national_2026.pdf' },
+    ],
+    svt: [
+      { label:'SVT 2014 (1er Tour)', fichier:'annales/bac/d/svt/sujet_2014_tour1.pdf' },
+      { label:'SVT 2016 (1er Tour)', fichier:'annales/bac/d/svt/sujet_2016_tour1.pdf' },
+      { label:'SVT 2017 (1er Tour)', fichier:'annales/bac/d/svt/sujet_2017_tour1.pdf' },
+      { label:'SVT 2024 (2nd Tour)', fichier:'annales/bac/d/svt/sujet_2024_tour2.pdf' },
+    ],
+    francais: [
+      { label:'Francais 2024 (Series C-D)', fichier:'annales/bac/d/francais/sujet_2024_serie_cd.pdf' },
+    ],
+  }
+};
+
 function pageAnnalesBAC() {
-  var html = '<div class="section-title">📄 Annales BAC</div>';
-  html += '<div class="alerte">📥 Ajoute les PDF dans un dossier <code>annales/</code> pour activer les téléchargements.</div>';
-  html += '<div class="annale-grid">';
-  ANNALES_BAC.forEach(function(a) {
-    var c = a.difficulte==='Difficile'?'#C0392B':a.difficulte==='Moyen'?'#e67e22':'#1B6B3A';
-    html += '<div class="annale-card"><h3>'+a.annee+' — '+a.matiere+' <small style="color:var(--gris)">'+a.serie+'</small></h3><p>'+a.sujet+'</p>' +
-      '<span style="font-size:.75rem;font-weight:700;color:'+c+'">● '+a.difficulte+'</span>' +
-      '<div class="annale-btns">' +
-        '<button class="btn btn-bleu btn-sm" onclick="alert(\'PDF à venir.\')">📥 Sujet</button>' +
-        '<button class="btn btn-outline btn-sm" onclick="alert(\'Corrigé à venir.\')">✅ Corrigé</button>' +
-      '</div></div>';
+  var lettre = (etat.serieSelectionnee || etat.params || 'A4');
+  if (lettre !== 'A4' && lettre !== 'D') lettre = 'A4';
+  var data = ANNALES_BAC_REELLES[lettre];
+  var noms = { maths:'Mathematiques', svt:'SVT', physique:'Physique-Chimie', francais:'Francais', anglais:'Anglais', histoire:'Histoire-Geo', philosophie:'Philosophie' };
+
+  var html = '<div class="section-title">Annales BAC -- Serie ' + lettre + '</div>';
+  html += '<div class="tab-bar" style="padding:0 0 1rem 0;border-bottom:none">' +
+    '<button class="tab-btn ' + (lettre==='A4'?'bac-active':'') + '" onclick="etat.serieSelectionnee=\'A4\';rendrePage()">Serie A4</button>' +
+    '<button class="tab-btn ' + (lettre==='D'?'bac-active':'') + '" onclick="etat.serieSelectionnee=\'D\';rendrePage()">Serie D</button>' +
+  '</div>';
+
+  if (!data) {
+    html += '<p>Aucune annale disponible pour cette serie.</p>';
+    return html;
+  }
+
+  Object.keys(data).forEach(function(matiere) {
+    var liste = data[matiere];
+    if (!liste || liste.length === 0) return;
+    html += '<div style="margin-bottom:1.8rem">';
+    html += '<h3 style="font-family:Lexend,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--bleu)">' + (noms[matiere] || matiere) + '</h3>';
+    html += '<div class="annale-grid">';
+    liste.forEach(function(a) {
+      html += '<div class="annale-card">' +
+        '<h3>' + a.label + '</h3>' +
+        '<div class="annale-btns">' +
+          '<a class="btn btn-bleu btn-sm" href="' + a.fichier + '" target="_blank">Ouvrir le PDF</a>' +
+        '</div></div>';
+    });
+    html += '</div></div>';
   });
-  return html + '</div>';
+
+  return html;
 }
 
 function contenuCandidats() {
@@ -741,7 +829,7 @@ function getQuizActuel() {
   if (etat.quizActif && etat.quizActif.indexOf('BAC_') === 0 && window.__quizBacActuel) {
     return window.__quizBacActuel;
   }
-  return getQuizActuel();
+  return QUIZ_DATA[etat.quizActif] || (typeof QUIZ_CULTURE !== 'undefined' ? QUIZ_CULTURE[etat.quizActif] : undefined);
 }
 
 function repondre(choix) {
@@ -759,6 +847,7 @@ function repondre(choix) {
     fb.textContent='✅ Correct ! '+q.expl;
     etat.quizScore++;
   } else {
+    if (__sonActif && typeof jouerSonMauvaiseReponse === 'function') jouerSonMauvaiseReponse();
     opts[choix].classList.add('incorrect');
     opts[q.rep].classList.add('correct');
     fb.className='quiz-feedback feedback-ko';
@@ -794,6 +883,7 @@ function resultat() {
     if (pct >= 80) {
       res.classList.add('excellent');
       if (typeof lancerConfettis === 'function') lancerConfettis();
+      if (__sonActif && typeof jouerSonVictoire === 'function') jouerSonVictoire();
     }}
 
 function buildQuizRefaire() {

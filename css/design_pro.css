@@ -1,0 +1,103 @@
+
+/* ═══════════════════════════════════════
+   DESIGN PRO — RéviBF
+   Icones SVG, motifs et finitions visuelles
+   ═══════════════════════════════════════ */
+
+/* ── Icones SVG pour les cartes principales (remplacent les emojis) ── */
+.exam-card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: .8rem;
+  display: block;
+}
+.exam-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* On masque l'ancien pseudo-element emoji en arriere-plan quand une icone SVG est presente */
+.exam-card.has-svg-icon::before {
+  display: none;
+}
+
+/* ── Icones SVG pour les cartes matieres / culture / series ── */
+.matiere-icon-svg, .culture-icon-svg {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+.matiere-icon-svg svg, .culture-icon-svg svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Hero ameliore : superposition degradee + motif plus riche ── */
+.hero {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(245,166,35,.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255,255,255,.08) 0%, transparent 40%),
+    linear-gradient(135deg, var(--vert) 0%, #0d3d20 100%),
+    repeating-linear-gradient(45deg, rgba(245,166,35,.04) 0 2px, transparent 2px 22px),
+    repeating-linear-gradient(-45deg, rgba(245,166,35,.04) 0 2px, transparent 2px 22px);
+}
+
+/* ── Bandeau decoratif tricolore fin en haut de la navbar ── */
+#navbar {
+  position: relative;
+}
+#navbar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--vert) 33%, var(--or) 33% 66%, var(--rouge) 66%);
+}
+
+/* ── Cartes avec ombre plus douce et profondeur ── */
+.matiere-card, .exam-card, .culture-card, .serie-card {
+  box-shadow: 0 2px 8px rgba(26,26,46,.06), 0 8px 24px rgba(26,26,46,.04);
+}
+.matiere-card:hover, .culture-card:hover, .serie-card:hover {
+  box-shadow: 0 4px 14px rgba(26,26,46,.10), 0 14px 32px rgba(26,26,46,.08);
+}
+
+/* ── Footer enrichi avec petit motif ── */
+footer {
+  background-image:
+    linear-gradient(180deg, var(--encre), #0f0f1f),
+    repeating-linear-gradient(45deg, rgba(245,166,35,.03) 0 2px, transparent 2px 18px);
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--vert) 33%, var(--or) 33% 66%, var(--rouge) 66%);
+}
+
+/* ── Toggle son (icone haut-parleur) ── */
+.son-toggle {
+  background: none;
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  transition: background .2s, transform .15s;
+  margin-left: .5rem;
+}
+.son-toggle:hover { background: rgba(255,255,255,.15); }
+.son-toggle:active { transform: scale(.92); }
+.son-toggle.muted { opacity: .5; }
+
+@media (max-width: 640px) {
+  .son-toggle { display: none; }
+}

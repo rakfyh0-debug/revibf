@@ -469,7 +469,7 @@ function grilleQuizBepc() {
     html += '<div class="matiere-card" onclick="afficherPage(\'quiz\',\''+m.id+'\')">' +
       '<div class="matiere-icon">'+m.icon+'</div>' +
       '<div class="matiere-nom">'+m.nom+'</div>' +
-      '<div class="matiere-sub">5 questions · BEPC</div></div>';
+      '<div class="matiere-sub">'+(QUIZ_DATA[m.id]?QUIZ_DATA[m.id].questions.length:5)+' questions · BEPC</div></div>';
   });
   return html + '</div>';
 }
@@ -541,11 +541,11 @@ function rendreSerieDetail() {
   html += '<div class="page-section"><div class="serie-detail">';
 
   html += '<h2>Matieres principales</h2><div class="matieres-list">';
-  d.principales.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'<span class="coeff-badge">Coeff. '+m.coeff+'</span></div>'; });
+  d.principales.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'</div>'; });
   html += '</div>';
 
   html += '<h2>Matieres secondaires</h2><div class="matieres-list">';
-  d.secondaires.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'<span class="coeff-badge" style="background:#aaa">Coeff. '+m.coeff+'</span></div>'; });
+  d.secondaires.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'</div>'; });
   html += '</div>';
 
   if (d.programme) {
@@ -773,13 +773,15 @@ function quizJour() {
 
 function pageQuiz() {
   var d = QUIZ_DATA[etat.params];
-  return '<div class="page-header"><h1>'+(d?d.titre:'Quiz')+'</h1><p>5 questions · Réponds puis découvre l\'explication</p></div>' +
+  var nb = d ? d.questions.length : 0;
+  return '<div class="page-header"><h1>'+(d?d.titre:'Quiz')+'</h1><p>'+nb+' questions · Réponds puis découvre l\'explication</p></div>' +
     '<div class="page-section">'+buildQuiz(etat.params)+'</div>';
 }
 
 function pageQuizCulture() {
   var d = QUIZ_DATA[etat.params] || (typeof QUIZ_CULTURE !== 'undefined' ? QUIZ_CULTURE[etat.params] : undefined);
-  return '<div class="page-header cult-header"><h1>'+(d?d.titre:'Quiz Culture')+'</h1><p>5 questions · Réponds puis découvre l\'explication</p></div>' +
+  var nb = d ? d.questions.length : 0;
+  return '<div class="page-header cult-header"><h1>'+(d?d.titre:'Quiz Culture')+'</h1><p>'+nb+' questions · Réponds puis découvre l\'explication</p></div>' +
     '<div class="page-section">'+buildQuiz(etat.params)+'</div>';
 }
 
@@ -966,3 +968,23 @@ function pageAnnalesBEPCReelles() {
 function contenuAnnalesBEPC() {
   return pageAnnalesBEPCReelles();
 }
+
+
+// Enregistrement du Service Worker pour la PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('Service Worker enregistré avec succès !', reg.scope))
+      .catch(err => console.log('Échec de l\'enregistrement du Service Worker :', err));
+  });
+}
+
+// Enregistrement du Service Worker pour la PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(reg => console.log('Service Worker enregistré avec succès !', reg.scope))
+      .catch(err => console.log('Échec de l\'enregistrement du Service Worker :', err));
+  });
+}
+

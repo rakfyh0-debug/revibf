@@ -1,0 +1,38 @@
+{
+  "name": "RéviBF - Révisions BAC & BEPC",
+  "short_name": "RéviBF",
+  "description": "Plateforme de révision gratuite pour le BAC et le BEPC au Burkina Faso.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#1D6D3A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/hero-etude.jpg",
+      "sizes": "864x1141",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Écran d'accueil sur Mobile"
+    },
+    {
+      "src": "images/desktop-screen.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Écran d'accueil sur PC"
+    }
+  ]
+}

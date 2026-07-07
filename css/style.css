@@ -389,3 +389,83 @@ footer strong { color: #fff; }
   .quiz-wrap { padding: 1.2rem; }
   .tab-btn { font-size: .8rem; padding: .5rem .8rem; }
 }
+
+/* ========== DARK MODE ========== */
+body.dark {
+  --creme: #121218;
+  --encre: #e0e0e0;
+  --gris: #aaa;
+  --carte: #1e1e30;
+  --ombre: 0 4px 24px rgba(0,0,0,.5);
+  background: var(--creme);
+  color: var(--encre);
+}
+
+body.dark .annale-card,
+body.dark .matiere-card,
+body.dark .methodo-card,
+body.dark .serie-card,
+body.dark .info-card,
+body.dark .quiz-wrap,
+body.dark .culture-card,
+body.dark .citation-card {
+  background: var(--carte);
+  color: var(--encre);
+}
+
+body.dark .alerte {
+  background: #2a2a2a;
+  color: #ffc107;
+  border-left-color: var(--or);
+}
+
+body.dark .tab-bar {
+  border-bottom-color: #333;
+}
+
+body.dark .tab-btn {
+  color: #aaa;
+}
+
+body.dark .tab-btn:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+body.dark .tab-btn.active,
+body.dark .tab-btn.bac-active,
+body.dark .tab-btn.cult-active {
+  color: #fff;
+}
+
+body.dark footer {
+  background: #0a0a14;
+}
+
+body.dark .quiz-opt {
+  background: #2a2a3a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark .quiz-opt:hover:not(:disabled) {
+  background: #3a3a4a;
+  border-color: var(--vert);
+}
+
+body.dark .score-bar {
+  background: #333;
+}
+
+body.dark #breadcrumb {
+  background: rgba(255,255,255,0.05);
+  border-bottom-color: #333;
+}
+
+body.dark .breadcrumb-inner button {
+  border-color: var(--vert);
+  color: var(--vert);
+}
+
+body.dark .matiere-row {
+  background: #1e1e30;
+}

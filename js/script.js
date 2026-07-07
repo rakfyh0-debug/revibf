@@ -71,7 +71,7 @@ const CONSEILS_SERIES = {
   D: [
     'Maitrise parfaitement les formules de Mathematiques et de Physique-Chimie : elles reviennent souvent.',
     'Fais des fiches de SVT par chapitre avec des schemas annotes.',
-    'Entraine-toi sur les annales des 3 dernieres annees en conditions chronometrees.',
+    'Entraine-toi sur les sujets des 3 dernieres annees en conditions chronometrees.',
     'Travaille la methode de resolution de problemes : presentation claire, etapes logiques.',
     'Le Francais a un coefficient non negligeable : ne le delaisse pas au profit des sciences.',
     'Revise tes bases de chimie organique, souvent source d\'erreurs au Bac.'
@@ -309,6 +309,23 @@ const METHODOLOGIE_BAC = [
 
 var __sonActif = true;
 
+// Gestion du mode sombre
+function toggleDark() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  var btn = document.getElementById("dark-toggle");
+  if (btn) btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+// Appliquer le thème sauvegardé
+(function() {
+  if (localStorage.getItem("theme") === "dark" || (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.body.classList.add("dark");
+    var btn = document.getElementById("dark-toggle");
+    if (btn) btn.textContent = "☀️";
+  }
+})();
+
 function toggleSon() {
   __sonActif = !__sonActif;
   var btn = document.getElementById('son-toggle');
@@ -318,7 +335,7 @@ function toggleSon() {
   }
 }
 
-let etat = {
+let etat = { serieSelectionnee: null,
   page:'accueil', historique:[], params:null,
   quizActif:null, quizIdx:0, quizScore:0, quizRepondu:false,
   tabActif:{}
@@ -371,12 +388,15 @@ function rendrePage() {
     case 'culture':      setBreadcrumb('Accueil › Culture Générale');      app.innerHTML = pageCulture();       break;
     case 'quiz':         setBreadcrumb('Accueil › BEPC › Quiz');           app.innerHTML = pageQuiz();          break;
     case 'culture-quiz': setBreadcrumb('Accueil › Culture › Quiz');        app.innerHTML = pageQuizCulture();   break;
-    case 'annales-bepc': setBreadcrumb('Accueil › BEPC › Annales');        app.innerHTML = pageAnnalesBEPC();   break;
-    case 'annales-bac':  setBreadcrumb('Accueil › BAC › Annales');         app.innerHTML = pageAnnalesBAC();    break;
+    case 'annales-bepc': setBreadcrumb('Accueil › BEPC › Sujets');        app.innerHTML = pageAnnalesBEPC();   break;
+    case 'corriges-bepc': setBreadcrumb('Accueil › BEPC › Corrigés'); app.innerHTML = pageCorrigesBEPC(); break;
+    case 'annales-bac':  setBreadcrumb('Accueil › BAC › Sujets');         app.innerHTML = pageAnnalesBAC();    break;
+    case 'corriges-bac':  setBreadcrumb('Accueil › BAC › Corrigés'); app.innerHTML = pageCorrigesBAC(); break;
     case 'serie-detail': rendreSerieDetail();                              break;
     case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
     case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
     case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
+    case 'parametres': setBreadcrumb('Accueil > Paramètres'); app.innerHTML = pageParametres(); break;
     default:             app.innerHTML = pageAccueil();
   }
 }
@@ -385,7 +405,7 @@ function pageAccueil() {
   return '<div class="hero">' +
     '<div class="hero-badge">🇧🇫 Burkina Faso · BEPC · BAC · Culture</div>' +
     '<h1>Révise mieux,<br>réussis tes <em>examens</em></h1>' +
-    '<p>Fiches, quiz interactifs et annales pour les élèves burkinabè en classe d\'examen.</p>' +
+    '<p>Fiches, quiz interactifs et sujets pour les élèves burkinabè en classe d\'examen.</p>' +
     '<div class="btn-group">' +
       '<button class="btn btn-or"    onclick="afficherPage(\'bepc\')">Préparer le BEPC</button>' +
       '<button class="btn btn-blanc" onclick="afficherPage(\'bac\')">Préparer le BAC</button>' +
@@ -395,8 +415,8 @@ function pageAccueil() {
   '</div>' +
   '<div class="page-section"><div class="section-title">🎯 Que veux-tu faire ?</div>' +
   '<div class="exam-grid">' +
-    examCard('card-bepc',  '📚','BEPC',            'Matières · Annales · Méthodologie · Quiz pour les élèves de 3ème.','bepc') +
-    examCard('card-bac',   '🎓','BAC',             'Séries A4 et D · Annales · Dissertations · Candidats libres.','bac') +
+    examCard('card-bepc',  '📚','BEPC',            'Matières · Sujets · Méthodologie · Quiz pour les élèves de 3ème.','bepc') +
+    examCard('card-bac',   '🎓','BAC',             'Séries A4 et D · Sujets · Dissertations · Candidats libres.','bac') +
     examCard('card-culture','🌍','Culture Générale','Quiz du jour · Histoire africaine · Sciences · Littérature.','culture') +
   '</div></div>';
 }
@@ -426,7 +446,7 @@ function pageBEPC() {
   var html = '<div class="page-header"><h1>📚 Espace BEPC — Classe de 3ème</h1><p>Tout ce qu\'il te faut pour réussir ton BEPC</p></div>';
   html += '<div class="tab-bar">' +
     tb('matieres','📖 Matières',    actif,'bepc') +
-    tb('annales', '📄 Annales',     actif,'bepc') +
+    tb('annales', '📄 Sujets',     actif,'bepc') +
     tb('methodo', '💡 Méthodologie',actif,'bepc') +
     tb('quiz',    '🎯 Quiz',        actif,'bepc') +
   '</div><div class="page-section">';
@@ -484,34 +504,21 @@ function grilleMethodo(liste) {
   return html + '</div>';
 }
 
-function contenuAnnalesBEPC_old() {
-  var html = '<div class="section-title">📄 Annales BEPC</div>';
-  html += '<div class="alerte">📥 Ajoute les PDF dans un dossier <code>annales/</code> pour activer les téléchargements.</div>';
-  html += '<div class="annale-grid">';
-  ANNALES_BEPC.forEach(function(a) {
-    var c = a.difficulte==='Difficile'?'#C0392B':a.difficulte==='Moyen'?'#e67e22':'#1B6B3A';
-    html += '<div class="annale-card"><h3>'+a.annee+' — '+a.matiere+'</h3><p>'+a.sujet+'</p>' +
-      '<span style="font-size:.75rem;font-weight:700;color:'+c+'">● '+a.difficulte+'</span>' +
-      '<div class="annale-btns">' +
-        '<button class="btn btn-vert btn-sm" onclick="alert(\'PDF à venir.\')">📥 Sujet</button>' +
-        '<button class="btn btn-outline btn-sm" onclick="alert(\'Corrigé à venir.\')">✅ Corrigé</button>' +
-      '</div></div>';
-  });
-  return html + '</div>';
-}
 
 function pageBAC() {
   var actif = etat.tabActif['bac'] || 'series';
   var html = '<div class="page-header bac-header"><h1>🎓 Espace BAC</h1><p>Choisir ta série et accéder aux ressources adaptées</p></div>';
   html += '<div class="tab-bar">' +
     tb2('series',   '🎓 Séries',            actif,'bac') +
-    tb2('annales',  '📄 Annales',           actif,'bac') +
+    tb2('corriges', '📝 Corrigés',           actif,'bac') +
+    tb2('annales',  '📄 Sujets',           actif,'bac') +
     tb2('methodo',  '💡 Méthodologie',      actif,'bac') +
     tb2('candidats','🧑 Candidats Libres',   actif,'bac') +
     tb2('citations','📜 Citations',          actif,'bac') +
   '</div><div class="page-section">';
   if (actif==='series')    html += grilleSeries();
   if (actif==='annales')   html += pageAnnalesBAC();
+  if (actif==='corriges')  html += pageCorrigesBAC();
   if (actif==='methodo')   html += grilleMethodo(METHODOLOGIE_BAC);
   if (actif==='candidats') html += contenuCandidats();
   if (actif==='citations') html += grilleCitations();
@@ -643,7 +650,7 @@ function pageAnnalesBAC() {
   var data = ANNALES_BAC_REELLES[lettre];
   var noms = { maths:'Mathematiques', svt:'SVT', physique:'Physique-Chimie', francais:'Francais', anglais:'Anglais', histoire:'Histoire-Geo', philosophie:'Philosophie' };
 
-  var html = '<div class="section-title">Annales BAC -- Serie ' + lettre + '</div>';
+  var html = '<div class="section-title">Sujets BAC -- Serie ' + lettre + '</div>';
   html += '<div class="tab-bar" style="padding:0 0 1rem 0;border-bottom:none">' +
     '<button class="tab-btn ' + (lettre==='A4'?'bac-active':'') + '" onclick="etat.serieSelectionnee=\'A4\';rendrePage()">Serie A4</button>' +
     '<button class="tab-btn ' + (lettre==='D'?'bac-active':'') + '" onclick="etat.serieSelectionnee=\'D\';rendrePage()">Serie D</button>' +
@@ -700,7 +707,7 @@ function contenuCandidats() {
       'Planning de révision <strong>6 mois avant</strong> les épreuves',
       'Réviser 4 à 6 heures par jour les 2 derniers mois',
       'Prioriser les matières à fort coefficient de ta série',
-      'Faire des annales en conditions réelles (minuterie)',
+      'Faire des sujets en conditions réelles (minuterie)',
       'Rejoindre des groupes d\'étude même à distance',
     ]) +
   '</div>';
@@ -938,7 +945,7 @@ const ANNALES_BEPC_REELLES = {
 };
 
 function pageAnnalesBEPCReelles() {
-  var html = '<div class="section-title">📄 Annales BEPC — Sujets réels</div>';
+  var html = '<div class="section-title">📄 Sujets BEPC</div>';
   var matieres = [
     { id:'maths',    icon:'➗', nom:'Mathématiques'   },
     { id:'physique', icon:'⚡', nom:'Physique-Chimie' },
@@ -970,7 +977,87 @@ function contenuAnnalesBEPC() {
 }
 
 
+function pageCorrigesBEPC() {
+  var html = '<div class="section-title">📝 Corrigés BEPC</div>';
+  html += '<p style="margin-bottom:1rem;">Corrigés officiels à venir. Une préparation est disponible ci-dessous.</p>';
+  
+  var corriges = [
+    { label: 'Physique-Chimie — Préparation 2024', fichier: 'annales/bepc/physique/prepa_2024.pdf' }
+  ];
+  
+  html += '<div class="annale-grid">';
+  corriges.forEach(function(c) {
+    html += '<div class="annale-card">' +
+      '<h3>' + c.label + '</h3>' +
+      '<div class="annale-btns">' +
+        '<a class="btn btn-vert btn-sm" href="' + c.fichier + '" target="_blank">📥 Télécharger</a>' +
+      '</div></div>';
+  });
+  html += '</div>';
+  return html;
+}
 // Enregistrement du Service Worker pour la PWA
+function pageCorrigesBAC() {
+  var html = '<div class="section-title">📝 Corrigés BAC</div>';
+  html += '<p style="margin-bottom:1rem;">Retrouve ici les corrigés officiels et les préparations.</p>';
+  
+  var corriges = [
+    { label: 'Maths 2024 — Corrigé (Série A4)', fichier: 'annales/bac/a4/maths/sujet_corrige_2024.pdf' },
+    { label: 'Philosophie 2024 — Préparation (Série A4)', fichier: 'annales/bac/a4/philosophie/prepa_2024.pdf' }
+  ];
+  
+  html += '<div class="annale-grid">';
+  corriges.forEach(function(c) {
+    html += '<div class="annale-card">' +
+      '<h3>' + c.label + '</h3>' +
+      '<div class="annale-btns">' +
+        '<a class="btn btn-bleu btn-sm" href="' + c.fichier + '" target="_blank">📥 Télécharger</a>' +
+      '</div></div>';
+  });
+  html += '</div>';
+  return html;
+}
+function pageParametres() {
+  var sombre = document.body.classList.contains("dark");
+  var html = '<div class="page-header"><h1>⚙️ Paramètres</h1><p>Personnalise ton expérience</p></div>';
+  html += '<div class="page-section">';
+  html += '<div style="background:var(--carte); border-radius:12px; box-shadow:var(--ombre); padding:1.5rem; max-width:600px; margin:0 auto;">';
+  
+  html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem;">Apparence</h2>';
+  html += '<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">';
+  html += '<span>Mode sombre</span>';
+  html += '<button class="btn btn-outline" onclick="toggleDark(); rendrePage();" id="btn-dark-param">' + (sombre ? '☀️ Désactiver' : '🌙 Activer') + '</button>';
+  html += '</div>';
+
+  html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem; margin-top:2rem;">À propos</h2>';
+  html += '<button class="btn btn-outline" onclick="var d=document.getElementById(\'apropos-texte\'); d.style.display = d.style.display === \'none\' ? \'block\' : \'none\';">📖 Lire À propos de RéviBF</button>';
+  html += '<div id="apropos-texte" style="display:none; margin-top:1rem; font-size:0.9rem; color:var(--gris); line-height:1.6; background:var(--creme); border-radius:8px; padding:1rem; max-height:300px; overflow-y:auto; white-space:pre-line;">';
+  html += '<strong style="color:var(--encre);">À Propos de RéviBF</strong>\n\n';
+  html += '<strong>1. Mission et Vision Éducative</strong>\n';
+  html += 'RéviBF est une plateforme numérique indépendante dédiée à l\'accompagnement académique des élèves et candidats aux examens au Burkina Faso. Notre mission est de réduire les barrières d\'accès à l\'information en proposant une interface fluide, optimisée et accessible à tous, sans distinction. Nous avons pour ambition d\'offrir un outil performant qui simplifie l\'organisation du travail et favorise la réussite scolaire grâce à une technologie adaptée aux besoins réels des apprenants.\n\n';
+  html += '<strong>2. Philosophie d\'Usage et Accessibilité</strong>\n';
+  html += 'La plateforme est bâtie sur le principe de l\'accessibilité immédiate. Conscients des enjeux de rapidité et d\'efficacité, nous avons conçu RéviBF pour permettre une utilisation sans friction : aucun processus d\'inscription complexe n\'est requis pour accéder aux fonctionnalités de révision. Cette approche "utilisateur-prioritaire" permet à chacun de se concentrer exclusivement sur son apprentissage. La navigation est pensée pour être intuitive, légère et efficace, garantissant une expérience utilisateur fluide sur tout type de support.\n\n';
+  html += '<strong>3. Politique de Confidentialité et Gestion des Données</strong>\n';
+  html += 'La sécurité et la confidentialité sont au cœur de l\'architecture de RéviBF :\n';
+  html += '• Indépendance technique : L\'intégralité de la configuration du site ainsi que le suivi de la progression sont gérés exclusivement en local sur l\'appareil de l\'utilisateur.\n';
+  html += '• Absence de collecte : Le site ne procède à aucune collecte, stockage ou traitement de données personnelles nominatives sur des serveurs distants.\n';
+  html += '• Propriété des données : L\'utilisateur demeure le seul et unique maître de ses informations ; celles-ci étant hébergées dans le cache de son navigateur, elles sont sous son contrôle total et peuvent être effacées à tout moment par ses soins.\n\n';
+  html += '<strong>4. Cadre Juridique et Limitations de Responsabilité</strong>\n';
+  html += 'Clause de non-responsabilité : RéviBF est fourni "tel quel", sans garantie d\'aucune sorte, expresse ou implicite, quant à l\'exactitude, la complétude ou la pertinence des contenus pédagogiques.\n';
+  html += 'Exonération totale : L\'utilisateur reconnaît que l\'utilisation des outils et des ressources proposés sur ce site relève de sa seule et entière responsabilité. En aucun cas, le créateur ou les responsables de RéviBF ne pourront être tenus pour responsables de dommages directs ou indirects, pertes de données ou conséquences académiques résultant de l\'utilisation ou de l\'impossibilité d\'utiliser la plateforme.\n';
+  html += 'Propriété intellectuelle : La structure globale du site, les fonctionnalités logicielles et l\'interface sont protégées par les lois sur la propriété intellectuelle. Toute reproduction, modification ou exploitation commerciale non autorisée est formellement interdite.\n\n';
+  html += '<strong>5. Soutenir le Projet</strong>\n';
+  html += 'RéviBF est un projet indépendant dont la pérennité repose sur la volonté de sa communauté. Afin de maintenir l\'infrastructure, d\'améliorer les outils de révision et de garantir la gratuité du service, nous acceptons le soutien volontaire de nos utilisateurs.\n';
+  html += 'Contribution : Si vous souhaitez soutenir le développement de ce projet, vous pouvez effectuer un don volontaire via le numéro : 0026 07218439.\n';
+  html += 'Nature du soutien : Ce soutien est strictement facultatif et ne constitue en aucun cas une condition préalable à l\'utilisation des services de la plateforme. Aucun droit ou contrepartie n\'est accordé en échange de ces contributions.\n\n';
+  html += '<strong>6. Contact et Support</strong>\n';
+  html += 'Pour toute question, suggestion d\'amélioration ou signalement technique, nous invitons les utilisateurs à communiquer par les voies officielles. Nous restons attentifs aux retours permettant de garantir la qualité du service.\n';
+  html += 'Adresse de contact : rhakoverride@gmail.com';
+  html += '</div>';
+
+  html += '</div></div>';
+  return html;
+}
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./service-worker.js')

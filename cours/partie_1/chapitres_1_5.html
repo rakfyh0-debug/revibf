@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche de cours - RéviBF</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #1a1a2e; }
+  h2 { color: #1B6B3A; border-bottom: 2px solid #1B6B3A; padding-bottom: 8px; margin-top: 40px; }
+  h3 { color: #333; margin-top: 24px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  table { max-width: 100%; }
+</style>
+</head>
+<body>
+<!-- PARTIE 1 : CHAPITRES I A V -->
+
+<h2>CHAPITRE I : NOMBRES REELS</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Les ensembles de nombres</h3>
+<p>Depuis la classe de 6ème, tu as appris à connaître plusieurs ensembles de nombres. Rappelons-les :</p>
+<ul>
+  <li><strong>IN</strong> : l'ensemble des entiers naturels. Ce sont les nombres 0, 1, 2, 3, 4, ...</li>
+  <li><strong>Z</strong> : l'ensemble des entiers relatifs. Ce sont les entiers naturels et leurs opposés : ..., -2, -1, 0, 1, 2, ...</li>
+  <li><strong>D</strong> : l'ensemble des nombres décimaux. Ce sont les nombres qui ont un nombre fini de chiffres après la virgule, par exemple 3,25 ou -7,1.</li>
+  <li><strong>Q</strong> : l'ensemble des nombres rationnels. Ce sont les nombres qui peuvent s'écrire sous forme de fraction a/b, avec a un entier relatif et b un entier relatif non nul. Par exemple 1/3.</li>
+  <li><strong>IR</strong> : l'ensemble des nombres réels. C'est le plus grand ensemble : il contient tous les nombres rationnels ainsi que les nombres irrationnels, comme racine de 2 ou pi, qui ne peuvent pas s'écrire sous forme de fraction.</li>
+</ul>
+<p>On retient l'inclusion suivante, qu'on note :</p>
+<p style="text-align:center;"><strong>IN est inclus dans Z, qui est inclus dans D, qui est inclus dans Q, qui est inclus dans IR</strong></p>
+
+<h3>2. Priorités opératoires</h3>
+<p>Quand un calcul comporte plusieurs opérations, on doit respecter un ordre précis :</p>
+<ol>
+  <li>On calcule d'abord ce qui est entre parenthèses, en commençant par les parenthèses les plus à l'intérieur.</li>
+  <li>On calcule ensuite les puissances.</li>
+  <li>On effectue ensuite les multiplications et les divisions, dans l'ordre où elles se présentent, de gauche à droite.</li>
+  <li>On effectue enfin les additions et les soustractions, dans l'ordre où elles se présentent, de gauche à droite.</li>
+</ol>
+
+<h3>3. Puissances d'un nombre réel</h3>
+<p>Soit a un nombre réel non nul et n un entier relatif.</p>
+<ul>
+  <li>Si n est un entier positif non nul : a puissance n est le produit de n facteurs égaux à a.</li>
+  <li>a puissance 0 est toujours égal à 1.</li>
+  <li>a puissance (-n) est égal à 1 divisé par (a puissance n).</li>
+</ul>
+<p>Règles de calcul à connaître, avec a et b réels non nuls, m et n entiers relatifs :</p>
+<ul>
+  <li>a puissance m multiplié par a puissance n égale a puissance (m + n)</li>
+  <li>a puissance m divisé par a puissance n égale a puissance (m - n)</li>
+  <li>(a puissance m) le tout à la puissance n égale a puissance (m fois n)</li>
+  <li>(a fois b) puissance n égale (a puissance n) fois (b puissance n)</li>
+</ul>
+
+<h3>4. Écriture scientifique</h3>
+<p>Tout nombre décimal non nul peut s'écrire sous la forme d'un produit a fois 10 puissance n, où a est un nombre décimal tel que a est compris entre 1 (inclus) et 10 (exclu) en valeur absolue, et n est un entier relatif. Cette écriture s'appelle l'écriture scientifique du nombre.</p>
+<p>Exemple : 452 000 s'écrit 4,52 fois 10 puissance 5. Et 0,0000318 s'écrit 3,18 fois 10 puissance (-5).</p>
+
+<h3>5. Comparaison de nombres réels et intervalles</h3>
+<p>Pour comparer deux nombres réels a et b, on peut étudier le signe de leur différence (a - b) :</p>
+<ul>
+  <li>Si a - b est positif, alors a est supérieur à b.</li>
+  <li>Si a - b est négatif, alors a est inférieur à b.</li>
+  <li>Si a - b est nul, alors a est égal à b.</li>
+</ul>
+<p>On peut aussi les mettre au même dénominateur (pour des fractions) ou les écrire sous forme décimale.</p>
+<p>Un intervalle de IR est un ensemble de nombres réels compris entre deux bornes. Les notations à connaître sont :</p>
+<ul>
+  <li>[a ; b] désigne l'ensemble des réels x tels que a ≤ x ≤ b (intervalle fermé)</li>
+  <li>]a ; b[ désigne l'ensemble des réels x tels que a &lt; x &lt; b (intervalle ouvert)</li>
+  <li>[a ; b[ et ]a ; b] désignent des intervalles semi-ouverts</li>
+  <li>[a ; +∞[ désigne l'ensemble des réels x tels que x ≥ a</li>
+  <li>]-∞ ; a] désigne l'ensemble des réels x tels que x ≤ a</li>
+</ul>
+
+<h3>6. Valeur absolue d'un nombre réel</h3>
+<p>La valeur absolue d'un nombre réel a, notée |a|, se définit ainsi :</p>
+<ul>
+  <li>Si a est positif ou nul, alors |a| = a</li>
+  <li>Si a est négatif, alors |a| = -a (c'est-à-dire l'opposé de a)</li>
+</ul>
+<p>Propriétés à retenir : |a| est toujours positif ou nul ; |a| = |-a| ; |a fois b| = |a| fois |b|.</p>
+<p>Sur une droite graduée, la distance entre le point d'abscisse a et le point d'abscisse b est égale à |a - b|.</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Calculer, en détaillant les étapes, le nombre A tel que :<br>
+A = 5 - 3 fois (4 - 7) + 2 au carré</p>
+<p><strong>Corrigé :</strong></p>
+<p>D'abord la parenthèse : 4 - 7 = -3<br>
+Ensuite la puissance : 2 au carré = 4<br>
+On obtient : A = 5 - 3 fois (-3) + 4<br>
+On effectue la multiplication : 3 fois (-3) = -9, donc A = 5 - (-9) + 4<br>
+Soustraire un nombre négatif revient à ajouter son opposé : A = 5 + 9 + 4<br>
+A = 18</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Simplifier puis calculer B, sachant que :<br>
+B = (2 puissance 3 fois 2 puissance (-5)) divisé par 2 puissance (-4)</p>
+<p><strong>Corrigé :</strong></p>
+<p>Au numérateur, on additionne les exposants : 2 puissance 3 fois 2 puissance (-5) = 2 puissance (3 + (-5)) = 2 puissance (-2)<br>
+On obtient : B = 2 puissance (-2) divisé par 2 puissance (-4)<br>
+On soustrait les exposants : B = 2 puissance (-2 - (-4)) = 2 puissance 2<br>
+B = 4</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Écrire les nombres suivants en écriture scientifique :<br>
+a) 452 000<br>
+b) 0,0000318</p>
+<p><strong>Corrigé :</strong></p>
+<p>a) On déplace la virgule de 5 rangs vers la gauche pour obtenir un nombre compris entre 1 et 10 :<br>
+452 000 = 4,52 fois 10 puissance 5</p>
+<p>b) On déplace la virgule de 5 rangs vers la droite :<br>
+0,0000318 = 3,18 fois 10 puissance (-5)</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Comparer, sans utiliser de calculatrice, les deux nombres a et b suivants :<br>
+a = 7/9 et b = 5/6</p>
+<p><strong>Corrigé :</strong></p>
+<p>On réduit les deux fractions au même dénominateur. Le plus petit multiple commun de 9 et 6 est 18.<br>
+a = 7/9 = 14/18 (on multiplie le numérateur et le dénominateur par 2)<br>
+b = 5/6 = 15/18 (on multiplie le numérateur et le dénominateur par 3)<br>
+Comme 14 est inférieur à 15, on a 14/18 &lt; 15/18<br>
+Conclusion : a &lt; b, c'est-à-dire 7/9 &lt; 5/6</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> On donne x = -3,5 et y = 2,1.<br>
+1) Calculer |x| et |y|.<br>
+2) Calculer la distance entre x et y sur une droite graduée.</p>
+<p><strong>Corrigé :</strong></p>
+<p>1) x = -3,5 est négatif, donc |x| = -x = 3,5<br>
+y = 2,1 est positif, donc |y| = y = 2,1</p>
+<p>2) La distance entre x et y est égale à |x - y|.<br>
+x - y = -3,5 - 2,1 = -5,6<br>
+|x - y| = |-5,6| = 5,6<br>
+La distance entre les points d'abscisses x et y vaut donc 5,6.</p>
+
+<hr>
+
+<h2>CHAPITRE II : MULTIPLICATION D'UN VECTEUR PAR UN NOMBRE REEL</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Rappel sur les vecteurs</h3>
+<p>Un vecteur est un objet mathématique caractérisé par une direction, un sens et une longueur (appelée norme). On note un vecteur avec une lettre surmontée d'une flèche, par exemple le vecteur u, ou bien le vecteur AB lorsqu'il est défini par deux points A et B (A étant l'origine et B l'extrémité).</p>
+
+<h3>2. Définition de la multiplication d'un vecteur par un nombre réel</h3>
+<p>Soit u un vecteur non nul et k un nombre réel non nul. Le vecteur k fois u (noté k.u) est le vecteur défini ainsi :</p>
+<ul>
+  <li>Si k est strictement positif, alors k.u a la même direction et le même sens que u, et sa longueur est égale à k fois la longueur de u.</li>
+  <li>Si k est strictement négatif, alors k.u a la même direction que u mais un sens opposé, et sa longueur est égale à la valeur absolue de k, fois la longueur de u.</li>
+  <li>Si k est nul, alors k.u est le vecteur nul (le vecteur de longueur zéro).</li>
+  <li>Si u est le vecteur nul, alors k.u est le vecteur nul, quel que soit k.</li>
+</ul>
+
+<h3>3. Propriétés de la multiplication d'un vecteur par un réel</h3>
+<p>Pour tous vecteurs u et v, et pour tous nombres réels k et k prime, on a les égalités suivantes :</p>
+<ul>
+  <li>k fois (u + v) = k fois u + k fois v</li>
+  <li>(k + k prime) fois u = k fois u + k prime fois u</li>
+  <li>k fois (k prime fois u) = (k fois k prime) fois u</li>
+  <li>1 fois u = u</li>
+  <li>(-1) fois u = -u (le vecteur opposé de u)</li>
+</ul>
+
+<h3>4. Vecteurs colinéaires</h3>
+<p>Deux vecteurs non nuls u et v sont dits colinéaires lorsqu'il existe un nombre réel k tel que v = k fois u. Cela signifie que les deux vecteurs ont la même direction (ils sont parallèles).</p>
+<p>Conséquence importante : trois points A, B et C sont alignés si et seulement si les vecteurs AB et AC sont colinéaires.</p>
+<p>De même, deux droites (AB) et (CD) sont parallèles si et seulement si les vecteurs AB et CD sont colinéaires.</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> On donne un vecteur u. Construire le vecteur 3.u puis le vecteur (-2).u, en expliquant la démarche.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Pour construire le vecteur 3.u : on trace un vecteur de même direction et de même sens que u, mais dont la longueur est 3 fois plus grande que celle de u.</p>
+<p>Pour construire le vecteur (-2).u : on trace un vecteur de même direction que u, mais de sens opposé, et dont la longueur est 2 fois plus grande que celle de u (car la valeur absolue de -2 est 2).</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Soit ABCD un parallélogramme. Exprimer le vecteur AC en fonction des vecteurs AB et AD.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Dans un parallélogramme ABCD, on sait que le vecteur AB est égal au vecteur DC, et que le vecteur AD est égal au vecteur BC.</p>
+<p>D'après la relation de Chasles, on peut écrire :<br>
+vecteur AC = vecteur AB + vecteur BC</p>
+<p>Or le vecteur BC est égal au vecteur AD (côtés opposés du parallélogramme), donc :<br>
+vecteur AC = vecteur AB + vecteur AD</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> On donne trois points A, B et C tels que le vecteur AC = 2 fois le vecteur AB. Que peut-on dire des points A, B et C ? Justifier.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Puisque le vecteur AC est égal à 2 fois le vecteur AB, les vecteurs AC et AB sont colinéaires (il existe un nombre réel, ici 2, tel que AC = 2.AB).</p>
+<p>Or, si les vecteurs AB et AC sont colinéaires, alors les points A, B et C sont alignés.</p>
+<p>Conclusion : les points A, B et C sont alignés.</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Simplifier l'expression vectorielle suivante :<br>
+E = 3 fois le vecteur u - 2 fois le vecteur u + 5 fois le vecteur u</p>
+<p><strong>Corrigé :</strong></p>
+<p>On regroupe les coefficients devant le vecteur u, en utilisant la propriété (k + k prime) fois u = k fois u + k prime fois u appliquée en sens inverse :<br>
+E = (3 - 2 + 5) fois u<br>
+E = 6 fois u</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Soit I le milieu du segment [BC]. Exprimer le vecteur AI en fonction des vecteurs AB et AC.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Puisque I est le milieu de [BC], on a la relation : vecteur BI = vecteur IC, et donc vecteur AI = (1/2) fois (vecteur AB + vecteur AC).</p>
+<p>En effet, d'après la relation de Chasles :<br>
+vecteur AI = vecteur AB + vecteur BI<br>
+vecteur AI = vecteur AC + vecteur CI</p>
+<p>En additionnant membre à membre ces deux égalités :<br>
+2 fois vecteur AI = vecteur AB + vecteur AC + vecteur BI + vecteur CI<br>
+Or vecteur BI + vecteur CI = vecteur nul (car I est le milieu de [BC], donc BI et CI sont opposés)<br>
+Donc : 2 fois vecteur AI = vecteur AB + vecteur AC<br>
+D'où : vecteur AI = (1/2) fois (vecteur AB + vecteur AC)</p>
+
+<hr>
+
+<h2>CHAPITRE III : COORDONNEES D'UN VECTEUR</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Repère du plan</h3>
+<p>Un repère du plan est formé d'un point origine O et de deux vecteurs non colinéaires, appelés i et j, qui donnent les directions des axes. On note ce repère (O, i, j). Si les deux vecteurs i et j sont perpendiculaires et de même longueur, on dit que le repère est orthonormal (ou orthonormé).</p>
+
+<h3>2. Coordonnées d'un vecteur</h3>
+<p>Dans un repère (O, i, j), tout vecteur u du plan peut s'écrire de manière unique sous la forme :<br>
+vecteur u = x fois vecteur i + y fois vecteur j</p>
+<p>Les nombres x et y sont appelés les coordonnées du vecteur u. On note u (x ; y).</p>
+
+<h3>3. Coordonnées du vecteur AB</h3>
+<p>Si A a pour coordonnées (xA ; yA) et B a pour coordonnées (xB ; yB) dans un repère donné, alors les coordonnées du vecteur AB sont :</p>
+<p style="text-align:center;"><strong>vecteur AB (xB - xA ; yB - yA)</strong></p>
+
+<h3>4. Somme de vecteurs et coordonnées</h3>
+<p>Si le vecteur u a pour coordonnées (x ; y) et le vecteur v a pour coordonnées (x prime ; y prime), alors le vecteur (u + v) a pour coordonnées (x + x prime ; y + y prime).</p>
+<p>De même, pour un nombre réel k, le vecteur k fois u a pour coordonnées (k fois x ; k fois y).</p>
+
+<h3>5. Condition de colinéarité de deux vecteurs</h3>
+<p>Soit u de coordonnées (x ; y) et v de coordonnées (x prime ; y prime), deux vecteurs non nuls. Les vecteurs u et v sont colinéaires si et seulement si :</p>
+<p style="text-align:center;"><strong>x fois y prime - x prime fois y = 0</strong></p>
+<p>Cette quantité (x fois y prime - x prime fois y) est appelée déterminant des deux vecteurs.</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Le plan est muni d'un repère (O, i, j). On donne les points A(2 ; 3) et B(5 ; -1). Calculer les coordonnées du vecteur AB.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Les coordonnées du vecteur AB sont (xB - xA ; yB - yA).<br>
+xB - xA = 5 - 2 = 3<br>
+yB - yA = -1 - 3 = -4<br>
+Donc le vecteur AB a pour coordonnées (3 ; -4)</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> On donne le vecteur u de coordonnées (2 ; -3) et le vecteur v de coordonnées (-1 ; 4). Calculer les coordonnées du vecteur (u + v), puis celles du vecteur (3.u).</p>
+<p><strong>Corrigé :</strong></p>
+<p>Coordonnées de (u + v) : (2 + (-1) ; -3 + 4) = (1 ; 1)</p>
+<p>Coordonnées de 3.u : (3 fois 2 ; 3 fois (-3)) = (6 ; -9)</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Les vecteurs u(4 ; 6) et v(2 ; 3) sont-ils colinéaires ? Justifier.</p>
+<p><strong>Corrigé :</strong></p>
+<p>On calcule le déterminant : x fois y prime - x prime fois y, avec x = 4, y = 6, x prime = 2, y prime = 3.<br>
+4 fois 3 - 2 fois 6 = 12 - 12 = 0</p>
+<p>Le déterminant est nul, donc les vecteurs u et v sont colinéaires.</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> On donne A(1 ; 2), B(4 ; 5) et C(7 ; 8). Montrer que les points A, B et C sont alignés.</p>
+<p><strong>Corrigé :</strong></p>
+<p>On calcule les coordonnées des vecteurs AB et AC.<br>
+vecteur AB : (4 - 1 ; 5 - 2) = (3 ; 3)<br>
+vecteur AC : (7 - 1 ; 8 - 2) = (6 ; 6)</p>
+<p>On calcule le déterminant de AB et AC :<br>
+3 fois 6 - 6 fois 3 = 18 - 18 = 0</p>
+<p>Le déterminant est nul, donc les vecteurs AB et AC sont colinéaires, ce qui signifie que les points A, B et C sont alignés.</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Déterminer le nombre réel m pour que les vecteurs u(3 ; 2) et v(6 ; m) soient colinéaires.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Les vecteurs u et v sont colinéaires si et seulement si leur déterminant est nul :<br>
+3 fois m - 6 fois 2 = 0<br>
+3m - 12 = 0<br>
+3m = 12<br>
+m = 4</p>
+<p>Donc les vecteurs u et v sont colinéaires lorsque m = 4.</p>
+
+<hr>
+
+<h2>CHAPITRE IV : RACINE CARREE D'UN REEL POSITIF</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Définition</h3>
+<p>Soit a un nombre réel positif ou nul. On appelle racine carrée de a, notée racine de a, l'unique nombre réel positif ou nul dont le carré est égal à a.</p>
+<p>Autrement dit : (racine de a) au carré = a, et racine de a est toujours positif ou nul.</p>
+<p>Remarque importante : la racine carrée d'un nombre négatif n'existe pas dans l'ensemble des nombres réels.</p>
+
+<h3>2. Propriétés des racines carrées</h3>
+<p>Pour tous nombres réels positifs a et b :</p>
+<ul>
+  <li>racine de (a fois b) = racine de a fois racine de b</li>
+  <li>si b est strictement positif : racine de (a divisé par b) = racine de a divisé par racine de b</li>
+  <li>(racine de a) au carré = a</li>
+  <li>racine de (a au carré) = valeur absolue de a</li>
+</ul>
+
+<h3>3. Simplification d'une racine carrée</h3>
+<p>Pour simplifier une racine carrée, on cherche à faire apparaître un facteur carré parfait (4, 9, 16, 25, 36, ...) sous la racine.</p>
+<p>Exemple : racine de 75 = racine de (25 fois 3) = racine de 25 fois racine de 3 = 5 fois racine de 3</p>
+
+<h3>4. Rendre rationnel un dénominateur (rationalisation)</h3>
+<p>Lorsqu'une fraction comporte une racine carrée au dénominateur, on peut « rendre rationnel » ce dénominateur en multipliant le numérateur et le dénominateur par la racine carrée en question.</p>
+<p>Exemple : 1 divisé par racine de 2 = (1 fois racine de 2) divisé par (racine de 2 fois racine de 2) = racine de 2 divisé par 2</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Simplifier les racines carrées suivantes :<br>
+a) racine de 45<br>
+b) racine de 98</p>
+<p><strong>Corrigé :</strong></p>
+<p>a) 45 = 9 fois 5, donc racine de 45 = racine de 9 fois racine de 5 = 3 fois racine de 5</p>
+<p>b) 98 = 49 fois 2, donc racine de 98 = racine de 49 fois racine de 2 = 7 fois racine de 2</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Calculer et simplifier :<br>
+A = racine de 12 + racine de 27 - racine de 3</p>
+<p><strong>Corrigé :</strong></p>
+<p>On simplifie chaque terme :<br>
+racine de 12 = racine de (4 fois 3) = 2 fois racine de 3<br>
+racine de 27 = racine de (9 fois 3) = 3 fois racine de 3</p>
+<p>On remplace :<br>
+A = 2 fois racine de 3 + 3 fois racine de 3 - racine de 3<br>
+A = (2 + 3 - 1) fois racine de 3<br>
+A = 4 fois racine de 3</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Rendre rationnel le dénominateur de l'expression suivante :<br>
+B = 5 divisé par racine de 3</p>
+<p><strong>Corrigé :</strong></p>
+<p>On multiplie le numérateur et le dénominateur par racine de 3 :<br>
+B = (5 fois racine de 3) divisé par (racine de 3 fois racine de 3)<br>
+B = (5 fois racine de 3) divisé par 3</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Calculer C, sachant que :<br>
+C = (racine de 5 - 2) fois (racine de 5 + 2)</p>
+<p><strong>Corrigé :</strong></p>
+<p>On reconnaît une identité remarquable de la forme (a - b)(a + b) = a au carré - b au carré, avec a = racine de 5 et b = 2 :<br>
+C = (racine de 5) au carré - 2 au carré<br>
+C = 5 - 4<br>
+C = 1</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Résoudre dans l'ensemble des réels positifs l'équation :<br>
+x au carré = 49</p>
+<p><strong>Corrigé :</strong></p>
+<p>On cherche le nombre positif dont le carré vaut 49.<br>
+On sait que 7 au carré = 49<br>
+Donc x = racine de 49 = 7</p>
+<p>La solution positive de l'équation est x = 7.</p>
+
+<hr>
+
+<h2>CHAPITRE V : EQUATIONS - INEQUATIONS DANS IR</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Équation du premier degré à une inconnue</h3>
+<p>Une équation du premier degré à une inconnue x est une équation qui peut se mettre sous la forme :</p>
+<p style="text-align:center;"><strong>a fois x + b = 0</strong></p>
+<p>où a et b sont des nombres réels donnés, avec a non nul.</p>
+<p>Pour résoudre cette équation, on isole x :<br>
+a fois x = -b<br>
+x = -b divisé par a</p>
+<p>Méthode générale de résolution d'une équation : on regroupe les termes contenant x d'un côté de l'égalité, et les termes constants de l'autre côté, en veillant à changer le signe d'un terme lorsqu'il change de côté.</p>
+
+<h3>2. Inéquation du premier degré à une inconnue</h3>
+<p>Une inéquation se résout comme une équation, à une différence essentielle près :</p>
+<p style="text-align:center;"><strong>Lorsqu'on multiplie ou qu'on divise les deux membres d'une inéquation par un nombre négatif, le sens de l'inégalité change.</strong></p>
+<p>Exemple : si -2x &gt; 6, alors en divisant les deux membres par -2, on obtient x &lt; -3 (le signe supérieur devient inférieur).</p>
+
+<h3>3. Ensemble des solutions</h3>
+<p>Pour une équation, l'ensemble des solutions contient en général un seul nombre (ou aucun, ou une infinité selon les cas particuliers).</p>
+<p>Pour une inéquation, l'ensemble des solutions est en général un intervalle de IR, que l'on peut représenter sur une droite graduée et écrire avec la notation des intervalles vue au chapitre I.</p>
+
+<h3>4. Cas particuliers d'équations</h3>
+<ul>
+  <li>Si, après résolution, on obtient une égalité toujours vraie (par exemple 0 = 0), alors l'équation admet une infinité de solutions : tout nombre réel est solution.</li>
+  <li>Si, après résolution, on obtient une égalité toujours fausse (par exemple 0 = 5), alors l'équation n'admet aucune solution.</li>
+</ul>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Résoudre dans IR l'équation suivante :<br>
+5x - 3 = 2x + 9</p>
+<p><strong>Corrigé :</strong></p>
+<p>On regroupe les termes en x à gauche et les constantes à droite :<br>
+5x - 2x = 9 + 3<br>
+3x = 12<br>
+x = 12 divisé par 3<br>
+x = 4</p>
+<p>L'ensemble des solutions est : S = {4}</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Résoudre dans IR l'équation suivante :<br>
+3(x - 2) = 2(x + 5)</p>
+<p><strong>Corrigé :</strong></p>
+<p>On développe d'abord les deux membres :<br>
+3x - 6 = 2x + 10</p>
+<p>On regroupe les termes en x à gauche et les constantes à droite :<br>
+3x - 2x = 10 + 6<br>
+x = 16</p>
+<p>L'ensemble des solutions est : S = {16}</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Résoudre dans IR l'inéquation suivante, puis représenter l'ensemble des solutions sur une droite graduée :<br>
+4x + 5 ≤ 2x + 13</p>
+<p><strong>Corrigé :</strong></p>
+<p>On regroupe les termes en x à gauche et les constantes à droite :<br>
+4x - 2x ≤ 13 - 5<br>
+2x ≤ 8<br>
+x ≤ 4 (on divise par 2, qui est positif, donc le sens de l'inégalité ne change pas)</p>
+<p>L'ensemble des solutions est l'intervalle ]-∞ ; 4]</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Résoudre dans IR l'inéquation suivante :<br>
+-3x + 6 &gt; 0</p>
+<p><strong>Corrigé :</strong></p>
+<p>On isole le terme en x :<br>
+-3x &gt; -6</p>
+<p>On divise les deux membres par -3, qui est négatif, donc le sens de l'inégalité change :<br>
+x &lt; 2</p>
+<p>L'ensemble des solutions est l'intervalle ]-∞ ; 2[</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Résoudre dans IR l'équation suivante et préciser le nombre de solutions :<br>
+2(x + 3) = 2x + 6</p>
+<p><strong>Corrigé :</strong></p>
+<p>On développe le premier membre :<br>
+2x + 6 = 2x + 6</p>
+<p>On soustrait 2x de chaque côté :<br>
+6 = 6</p>
+<p>Cette égalité est toujours vraie, quel que soit x. L'équation admet donc une infinité de solutions.</p>
+<p>L'ensemble des solutions est : S = IR (l'ensemble des nombres réels)</p>
+
+</body>
+</html>

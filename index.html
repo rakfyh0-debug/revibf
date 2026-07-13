@@ -24,17 +24,21 @@
   <meta name="twitter:title" content="RéviBF — Révision BEPC et BAC gratuit au Burkina Faso" />
   <meta name="twitter:description" content="Sujets PDF, quiz interactifs et fiches de révision gratuites pour réussir le BEPC et le BAC au Burkina Faso." />
   <meta name="twitter:image" content="https://rakfyh0-debug.github.io/revibf/images/hero-etude.jpg" />
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&family=Noto+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/visuel_extra.css"/>
   <link rel="stylesheet" href="css/design_pro.css"/>
   <link rel="stylesheet" href="css/hero_photo.css"/>
+<link rel="stylesheet" href="css/app_nav.css"/>
+    <link rel="icon" type="image/svg+xml" href="images/logo-icone.svg">
+    <link rel="icon" type="image/png" href="images/favicon-32.png">
 <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 <header id="navbar">
   <nav>
-    <div class="logo" onclick="afficherPage('accueil')">Révi<span>BF</span></div>
+    <a class="logo" onclick="afficherPage('accueil')"><img src="images/logo.svg" alt="RéviBF" style="height: 40px; vertical-align: middle;"></a>
     <ul id="nav-links">
       <li><a onclick="afficherPage('accueil')">Accueil</a></li>
       <li><a onclick="afficherPage('bepc')">BEPC</a></li>
@@ -54,6 +58,26 @@
   </div>
 </div>
 <main id="app"></main>
+
+<nav class="app-tabbar" id="app-tabbar">
+  <button class="app-tab" data-page="accueil" onclick="afficherPage('accueil')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>
+    <span>Accueil</span>
+  </button>
+  <button class="app-tab" data-page="bepc" onclick="afficherPage('bepc')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+    <span>BEPC</span>
+  </button>
+  <button class="app-tab" data-page="bac" onclick="afficherPage('bac')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 10L12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+    <span>BAC</span>
+  </button>
+  <button class="app-tab" data-page="culture" onclick="afficherPage('culture')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9Z"/></svg>
+    <span>Culture</span>
+  </button>
+</nav>
+
 <footer>
   <p><strong>RéviBF</strong> — Plateforme gratuite pour les élèves du Burkina Faso</p>
   <p>BEPC · BAC · Culture Générale &nbsp;&nbsp;|&nbsp;&nbsp; 👥 <img src="https://hits.sh/rakfyh0-debug.github.io/revibf.svg?url=https%3A%2F%2Frakfyh0-debug.github.io%2Frevibf%2F&color=1D6D3A&label=Visites&start=1" alt="Visiteurs" style="vertical-align: middle; border-radius: 3px; height: 18px;">

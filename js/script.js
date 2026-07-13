@@ -1,10 +1,10 @@
 const MATIERES_BEPC = [
-  { icon:'➗', nom:'Mathématiques',   sub:'Algèbre · Géométrie · Calcul',         id:'maths'   },
-  { icon:'⚡', nom:'Physique-Chimie', sub:'Mécanique · Électricité · Chimie',     id:'physique' },
-  { icon:'🌿', nom:'SVT',             sub:'Biologie · Géologie · Écologie',       id:'svt'     },
-  { icon:'✍️', nom:'Français',        sub:'Grammaire · Littérature · Expression', id:'francais'},
-  { icon:'🗣️', nom:'Anglais',         sub:'Grammar · Vocabulary · Tenses',        id:'anglais' },
-  { icon:'🏺', nom:'Histoire-Géo',    sub:'Burkina Faso · Afrique · Monde',       id:'histoire'},
+  { icon:'<i class="fas fa-divide"></i>', nom:'Mathématiques',   sub:'Algèbre · Géométrie · Calcul',         id:'maths'   },
+  { icon:'<i class="fas fa-bolt"></i>', nom:'Physique-Chimie', sub:'Mécanique · Électricité · Chimie',     id:'physique' },
+  { icon:'<i class="fas fa-leaf"></i>', nom:'SVT',             sub:'Biologie · Géologie · Écologie',       id:'svt'     },
+  { icon:'<i class="fas fa-pen"></i>', nom:'Français',        sub:'Grammaire · Littérature · Expression', id:'francais'},
+  { icon:'<i class="fas fa-comments"></i>', nom:'Anglais',         sub:'Grammar · Vocabulary · Tenses',        id:'anglais' },
+  { icon:'<i class="fas fa-landmark"></i>', nom:'Histoire-Géo',    sub:'Burkina Faso · Afrique · Monde',       id:'histoire'},
 ];
 
 const SERIES_BAC = [
@@ -111,7 +111,7 @@ const CITATIONS = [
 
 const QUIZ_DATA = {
   maths:{
-    titre:'➗ Quiz Mathématiques — BEPC',
+    titre:'<i class="fas fa-divide"></i> Quiz Mathématiques — BEPC',
     questions:[
       {q:"Quelle est l'aire d'un cercle de rayon 5 cm ?",    opts:["25π cm²","10π cm²","5π cm²","50π cm²"],                                       rep:0, expl:"Aire = π × r² = π × 5² = 25π cm²."},
       {q:"Quelle est la valeur de √144 ?",                    opts:["11","12","13","14"],                                                            rep:1, expl:"12 × 12 = 144, donc √144 = 12."},
@@ -121,7 +121,7 @@ const QUIZ_DATA = {
     ]
   },
   svt:{
-    titre:'🌿 Quiz SVT — BEPC',
+    titre:'<i class="fas fa-leaf"></i> Quiz SVT — BEPC',
     questions:[
       {q:"Quel gaz les plantes absorbent-elles lors de la photosynthèse ?", opts:["O₂","CO₂","N₂","H₂O"],                                           rep:1, expl:"Les plantes absorbent le CO₂ et rejettent de l'O₂."},
       {q:"Dans quelle structure se déroule la photosynthèse ?",             opts:["Mitochondrie","Noyau","Chloroplaste","Ribosome"],                   rep:2, expl:"Le chloroplaste contient la chlorophylle nécessaire."},
@@ -131,7 +131,7 @@ const QUIZ_DATA = {
     ]
   },
   physique:{
-    titre:'⚡ Quiz Physique-Chimie — BEPC',
+    titre:'<i class="fas fa-bolt"></i> Quiz Physique-Chimie — BEPC',
     questions:[
       {q:"Si U = 12 V et R = 4 Ω, quelle est l'intensité I ?",   opts:["3 A","8 A","48 A","16 A"],                                                  rep:0, expl:"Loi d'Ohm : I = U ÷ R = 12 ÷ 4 = 3 A."},
       {q:"Quel est le symbole chimique de l'or ?",                opts:["Or","Ag","Au","Fe"],                                                          rep:2, expl:"L'or = Au (latin Aurum)."},
@@ -141,7 +141,7 @@ const QUIZ_DATA = {
     ]
   },
   histoire:{
-    titre:'🏺 Quiz Histoire-Géographie — BEPC',
+    titre:'<i class="fas fa-landmark"></i> Quiz Histoire-Géographie — BEPC',
     questions:[
       {q:"En quelle année la Haute-Volta est-elle devenue le Burkina Faso ?", opts:["1960","1975","1984","1987"],                                      rep:2, expl:"Le 4 août 1984, Thomas Sankara rebaptise le pays."},
       {q:"En quelle année la Haute-Volta a-t-elle obtenu son indépendance ?", opts:["1958","1960","1962","1945"],                                      rep:1, expl:"Indépendance le 5 août 1960."},
@@ -151,7 +151,7 @@ const QUIZ_DATA = {
     ]
   },
   francais:{
-    titre:'✍️ Quiz Français — BEPC',
+    titre:'<i class="fas fa-pen"></i> Quiz Français — BEPC',
     questions:[
       {q:"Nature grammaticale de « rapidement » ?",                          opts:["Adjectif qualificatif","Adverbe","Verbe","Nom commun"],             rep:1, expl:"Adverbe de manière formé sur l'adjectif « rapide »."},
       {q:"Laquelle utilise le subjonctif correctement ?",                    opts:["Je veux qu'il vient.","Il faut que tu fasses tes devoirs.","Bien qu'il a de la chance.","Pour qu'elle réussit."], rep:1, expl:"Après « il faut que », le subjonctif est obligatoire."},
@@ -161,7 +161,7 @@ const QUIZ_DATA = {
     ]
   },
   anglais:{
-    titre:'🗣️ Quiz Anglais — BEPC',
+    titre:'<i class="fas fa-comments"></i> Quiz Anglais — BEPC',
     questions:[
       {q:"Which sentence is in the passive voice?",                           opts:["She reads books.","Books are read by her.","She is reading.","She has read."],         rep:1, expl:"Passive = to be + past participle."},
       {q:"Complete: 'He ___ to school every day.'",                           opts:["go","goes","is going","went"],                                                         rep:1, expl:"Habitual action → simple present. He/she/it → verb+s."},
@@ -171,7 +171,7 @@ const QUIZ_DATA = {
     ]
   },
   culture_histoire:{
-    titre:'🏺 Quiz — Histoire & Géographie Afrique',
+    titre:'<i class="fas fa-landmark"></i> Quiz — Histoire & Géographie Afrique',
     questions:[
       {q:"Quelle est la monnaie utilisée au Burkina Faso ?",                  opts:["Le naira","Le franc CFA (XOF)","Le cedi","Le dalasi"],                                 rep:1, expl:"Le Burkina utilise le franc CFA de l'UEMOA (XOF)."},
       {q:"Quel pays africain n'a jamais été colonisé ?",                     opts:["Le Ghana","L'Éthiopie","Le Sénégal","Le Nigeria"],                                     rep:1, expl:"L'Éthiopie n'a jamais été colonisée (victoire d'Adoua 1896)."},
@@ -181,7 +181,7 @@ const QUIZ_DATA = {
     ]
   },
   culture_sciences:{
-    titre:'🔬 Quiz — Sciences & Inventions',
+    titre:'<i class="fas fa-flask"></i> Quiz — Sciences & Inventions',
     questions:[
       {q:"Qui a découvert la pénicilline ?",                                  opts:["Louis Pasteur","Alexander Fleming","Marie Curie","Albert Einstein"],                    rep:1, expl:"Alexander Fleming a découvert la pénicilline en 1928."},
       {q:"Quelle planète est la plus proche du Soleil ?",                    opts:["Vénus","Terre","Mercure","Mars"],                                                        rep:2, expl:"Mercure est la planète la plus proche du Soleil."},
@@ -226,7 +226,7 @@ const QUIZ_BAC_D = {
 
 const METHODOLOGIE_BEPC = [
   {
-    titre:'✍️ Comment rédiger un résumé de texte', couleur:'#6b3d9a',
+    titre:'<i class="fas fa-pen"></i> Comment rédiger un résumé de texte', couleur:'#6b3d9a',
     etapes:[
       'Lire le texte une première fois pour comprendre le thème général.',
       'Relire en soulignant les idées principales (1 idée par paragraphe).',
@@ -237,7 +237,7 @@ const METHODOLOGIE_BEPC = [
     ]
   },
   {
-    titre:'➗ Comment résoudre un problème de maths', couleur:'#1B6B3A',
+    titre:'<i class="fas fa-divide"></i> Comment résoudre un problème de maths', couleur:'#1B6B3A',
     etapes:[
       'Lire l\'énoncé DEUX fois. Identifier les données et ce qu\'on cherche.',
       'Faire un schéma ou tableau si possible.',
@@ -248,7 +248,7 @@ const METHODOLOGIE_BEPC = [
     ]
   },
   {
-    titre:'🔬 Comment répondre à une question de SVT', couleur:'#4a7c59',
+    titre:'<i class="fas fa-flask"></i> Comment répondre à une question de SVT', couleur:'#4a7c59',
     etapes:[
       'Repérer les mots-clés de la question (comparer, expliquer, justifier…).',
       'Observer attentivement les schémas ou tableaux fournis.',
@@ -259,7 +259,7 @@ const METHODOLOGIE_BEPC = [
     ]
   },
   {
-    titre:'🏺 Comment traiter un sujet d\'Histoire-Géo', couleur:'#7a4a1e',
+    titre:'<i class="fas fa-landmark"></i> Comment traiter un sujet d\'Histoire-Géo', couleur:'#7a4a1e',
     etapes:[
       'Analyser le sujet : période, espace géographique, acteurs.',
       'Délimiter le sujet dans le temps et l\'espace.',
@@ -273,7 +273,7 @@ const METHODOLOGIE_BEPC = [
 
 const METHODOLOGIE_BAC = [
   {
-    titre:'📝 La Dissertation Philosophique', couleur:'#6b3d9a',
+    titre:'<i class="fas fa-file-pen"></i> La Dissertation Philosophique', couleur:'#6b3d9a',
     etapes:[
       'ANALYSER le sujet : définir chaque terme. Ne jamais commencer sans cette étape.',
       'PROBLÉMATISER : trouver le paradoxe caché dans la question.',
@@ -284,7 +284,7 @@ const METHODOLOGIE_BAC = [
     ]
   },
   {
-    titre:'📖 Le Commentaire de Texte', couleur:'#C0392B',
+    titre:'<i class="fas fa-book-open"></i> Le Commentaire de Texte', couleur:'#C0392B',
     etapes:[
       'Lire le texte 3 fois : survol → compréhension → analyse fine.',
       'Identifier : auteur, œuvre, date, genre, registre, thème.',
@@ -295,7 +295,7 @@ const METHODOLOGIE_BAC = [
     ]
   },
   {
-    titre:'⚗️ Résolution Physique-Chimie BAC', couleur:'#1a6b8a',
+    titre:'<i class="fas fa-vial"></i> Résolution Physique-Chimie BAC', couleur:'#1a6b8a',
     etapes:[
       'Identifier le type de problème : mécanique, électricité, chimie…',
       'Lister les données avec leurs unités. Convertir si nécessaire.',
@@ -314,7 +314,7 @@ function toggleDark() {
   document.body.classList.toggle("dark");
   localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
   var btn = document.getElementById("dark-toggle");
-  if (btn) btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  if (btn) btn.innerHTML = document.body.classList.contains("dark") ? "<i class='fas fa-sun'></i>" : "<i class='fas fa-moon'></i>";
 }
 
 // Appliquer le thème sauvegardé
@@ -322,7 +322,7 @@ function toggleDark() {
   if (localStorage.getItem("theme") === "dark" || (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
     document.body.classList.add("dark");
     var btn = document.getElementById("dark-toggle");
-    if (btn) btn.textContent = "☀️";
+    if (btn) btn.innerHTML = "<i class='fas fa-sun'></i>";
   }
 })();
 
@@ -330,7 +330,7 @@ function toggleSon() {
   __sonActif = !__sonActif;
   var btn = document.getElementById('son-toggle');
   if (btn) {
-    btn.textContent = __sonActif ? '🔊' : '🔇';
+    btn.innerHTML = __sonActif ? `<i class="fas fa-volume-up"></i>` : `<i class="fas fa-volume-mute"></i>`;
     btn.classList.toggle('muted', !__sonActif);
   }
 }
@@ -347,9 +347,13 @@ function afficherPage(page, params) {
   etat.params = params || null;
   rendrePage();
   window.scrollTo({top:0, behavior:'smooth'});
+  history.pushState({page:page, params:params}, '', '#'+page);
 }
 
 function retour() {
+  history.back();
+}
+window.addEventListener('popstate', function(e){
   if (etat.historique.length > 0) {
     var d = etat.historique.pop();
     etat.page   = d.page;
@@ -357,7 +361,7 @@ function retour() {
     rendrePage();
     window.scrollTo({top:0, behavior:'smooth'});
   }
-}
+});
 
 function toggleMenu() {
   document.querySelector('#nav-links').classList.toggle('open');
@@ -381,6 +385,7 @@ function changerTab(ctx, id) {
 
 function rendrePage() {
   var app = document.getElementById('app');
+  syncTabbar();
   switch(etat.page) {
     case 'accueil':      setBreadcrumb(null);                              app.innerHTML = pageAccueil();       break;
     case 'bepc':         setBreadcrumb('Accueil › BEPC');                  app.innerHTML = pageBEPC();          break;
@@ -389,6 +394,8 @@ function rendrePage() {
     case 'quiz':         setBreadcrumb('Accueil › BEPC › Quiz');           app.innerHTML = pageQuiz();          break;
     case 'culture-quiz': setBreadcrumb('Accueil › Culture › Quiz');        app.innerHTML = pageQuizCulture();   break;
     case 'annales-bepc': setBreadcrumb('Accueil › BEPC › Sujets');        app.innerHTML = pageAnnalesBEPC();   break;
+    case 'fiches-bepc': setBreadcrumb('Accueil › BEPC › Fiches'); app.innerHTML = pageFichesBEPC(); break;
+    case 'fiches-matiere': setBreadcrumb('Accueil › BEPC › Fiches'); app.innerHTML = pageFichesMatiere(etat.params); break;
     case 'corriges-bepc': setBreadcrumb('Accueil › BEPC › Corrigés'); app.innerHTML = pageCorrigesBEPC(); break;
     case 'annales-bac':  setBreadcrumb('Accueil › BAC › Sujets');         app.innerHTML = pageAnnalesBAC();    break;
     case 'corriges-bac':  setBreadcrumb('Accueil › BAC › Corrigés'); app.innerHTML = pageCorrigesBAC(); break;
@@ -403,17 +410,14 @@ function rendrePage() {
 
 function pageAccueil() {
   return '<div class="hero">' +
-    '<div class="hero-badge">🇧🇫 Burkina Faso · BEPC · BAC · Culture</div>' +
+    '<div class="hero-badge"><span class="bf-flag">🇧🇫</span> Burkina Faso · BEPC · BAC · Culture</div>' +
     '<h1>Révise mieux,<br>réussis tes <em>examens</em></h1>' +
     '<p>Fiches, quiz interactifs et sujets pour les élèves burkinabè en classe d\'examen.</p>' +
     '<div class="btn-group">' +
       '<button class="btn btn-or"    onclick="afficherPage(\'bepc\')">Préparer le BEPC</button>' +
       '<button class="btn btn-blanc" onclick="afficherPage(\'bac\')">Préparer le BAC</button>' +
     '</div></div>' +
-  '<div class="stats">' +
-    stat('6','Matières BEPC') + stat('2','Séries BAC') + stat('30+','Questions quiz') + stat('100%','Gratuit') +
-  '</div>' +
-  '<div class="page-section"><div class="section-title">🎯 Que veux-tu faire ?</div>' +
+  '<div class="page-section"><div class="section-title"><i class="fas fa-bullseye"></i> Que veux-tu faire ?</div>' +
   '<div class="exam-grid">' +
     examCard('card-bepc',  '📚','BEPC',            'Matières · Sujets · Méthodologie · Quiz pour les élèves de 3ème.','bepc') +
     examCard('card-bac',   '🎓','BAC',             'Séries A4 et D · Sujets · Dissertations · Candidats libres.','bac') +
@@ -443,12 +447,13 @@ function examCard(cls, emoji, titre, desc, page) {
 
 function pageBEPC() {
   var actif = etat.tabActif['bepc'] || 'matieres';
-  var html = '<div class="page-header"><h1>📚 Espace BEPC — Classe de 3ème</h1><p>Tout ce qu\'il te faut pour réussir ton BEPC</p></div>';
+  var html = '<div class="page-header"><h1><i class="fas fa-book"></i> Espace BEPC — Classe de 3ème</h1><p>Tout ce qu\'il te faut pour réussir ton BEPC</p></div>';
   html += '<div class="tab-bar">' +
-    tb('matieres','📖 Matières',    actif,'bepc') +
-    tb('annales', '📄 Sujets',     actif,'bepc') +
-    tb('methodo', '💡 Méthodologie',actif,'bepc') +
-    tb('quiz',    '🎯 Quiz',        actif,'bepc') +
+    tb('matieres','<i class="fas fa-book-open"></i> Matières & Fiches',    actif,'bepc') +
+    tb('fiches', '📖 Fiches',     actif,'bepc') +
+    tb('annales', '<i class="fas fa-file-pdf"></i> Sujets',     actif,'bepc') +
+    tb('methodo', '<i class="fas fa-lightbulb"></i> Méthodologie',actif,'bepc') +
+    tb('quiz',    '<i class="fas fa-bullseye"></i> Quiz',        actif,'bepc') +
   '</div><div class="page-section">';
   if (actif==='matieres') html += grilleMatieres();
   if (actif==='annales')  html += contenuAnnalesBEPC();
@@ -473,9 +478,9 @@ function tb3(id, label, actif, ctx) {
 }
 
 function grilleMatieres() {
-  var html = '<div class="section-title">📖 Matières du BEPC</div><div class="matiere-grid">';
+  var html = '<div class="section-title"><i class="fas fa-book-open"></i> Matières du BEPC</div><div class="matiere-grid">';
   MATIERES_BEPC.forEach(function(m) {
-    html += '<div class="matiere-card" onclick="afficherPage(\'quiz\',\''+m.id+'\')">' +
+    html += '<div class="matiere-card" onclick="afficherPage(\'fiches-matiere\',\''+m.id+'\')">' +
       '<div class="matiere-icon">'+m.icon+'</div>' +
       '<div class="matiere-nom">'+m.nom+'</div>' +
       '<div class="matiere-sub">'+m.sub+'</div></div>';
@@ -484,7 +489,7 @@ function grilleMatieres() {
 }
 
 function grilleQuizBepc() {
-  var html = '<div class="section-title">🎯 Choisir un quiz par matière</div><div class="matiere-grid">';
+  var html = '<div class="section-title"><i class="fas fa-bullseye"></i> Choisir un quiz par matière</div><div class="matiere-grid">';
   MATIERES_BEPC.forEach(function(m) {
     html += '<div class="matiere-card" onclick="afficherPage(\'quiz\',\''+m.id+'\')">' +
       '<div class="matiere-icon">'+m.icon+'</div>' +
@@ -495,7 +500,7 @@ function grilleQuizBepc() {
 }
 
 function grilleMethodo(liste) {
-  var html = '<div class="section-title">💡 Méthodologie</div><div class="methodo-grid">';
+  var html = '<div class="section-title"><i class="fas fa-lightbulb"></i> Méthodologie</div><div class="methodo-grid">';
   liste.forEach(function(m) {
     html += '<div class="methodo-card"><div class="methodo-header" style="background:'+m.couleur+'">'+m.titre+'</div><div class="methodo-body"><ol>';
     m.etapes.forEach(function(e){ html += '<li>'+e+'</li>'; });
@@ -507,14 +512,14 @@ function grilleMethodo(liste) {
 
 function pageBAC() {
   var actif = etat.tabActif['bac'] || 'series';
-  var html = '<div class="page-header bac-header"><h1>🎓 Espace BAC</h1><p>Choisir ta série et accéder aux ressources adaptées</p></div>';
+  var html = '<div class="page-header bac-header"><h1><i class="fas fa-graduation-cap"></i> Espace BAC</h1><p>Choisir ta série et accéder aux ressources adaptées</p></div>';
   html += '<div class="tab-bar">' +
-    tb2('series',   '🎓 Séries',            actif,'bac') +
-    tb2('corriges', '📝 Corrigés',           actif,'bac') +
-    tb2('annales',  '📄 Sujets',           actif,'bac') +
-    tb2('methodo',  '💡 Méthodologie',      actif,'bac') +
+    tb2('series',   '<i class="fas fa-graduation-cap"></i> Séries',            actif,'bac') +
+    tb2('corriges', '<i class="fas fa-file-pen"></i> Corrigés',           actif,'bac') +
+    tb2('annales',  '<i class="fas fa-file-pdf"></i> Sujets',           actif,'bac') +
+    tb2('methodo',  '<i class="fas fa-lightbulb"></i> Méthodologie',      actif,'bac') +
     tb2('candidats','🧑 Candidats Libres',   actif,'bac') +
-    tb2('citations','📜 Citations',          actif,'bac') +
+    tb2('citations','<i class="fas fa-scroll"></i> Citations',          actif,'bac') +
   '</div><div class="page-section">';
   if (actif==='series')    html += grilleSeries();
   if (actif==='annales')   html += pageAnnalesBAC();
@@ -526,8 +531,8 @@ function pageBAC() {
 }
 
 function grilleSeries() {
-  var html = '<div class="section-title">🎓 Choisir ta série</div>';
-  html += '<div class="alerte">💡 Clique sur ta série pour voir les matières et coefficients.</div>';
+  var html = '<div class="section-title"><i class="fas fa-graduation-cap"></i> Choisir ta série</div>';
+  html += '<div class="alerte"><i class="fas fa-lightbulb"></i> Clique sur ta série pour voir les matières et coefficients.</div>';
   html += '<div class="series-grid">';
   SERIES_BAC.forEach(function(s) {
     html += '<div class="serie-card" onclick="afficherPage(\'serie-detail\',\''+s.lettre+'\')" style="border-top-color:'+s.couleur+'">' +
@@ -558,7 +563,7 @@ function rendreSerieDetail() {
   if (d.programme) {
     html += '<h2>Programme par matiere</h2>';
     d.programme.forEach(function(p) {
-      html += '<div style="margin-bottom:1rem"><div style="font-family:Lexend,sans-serif;font-weight:700;font-size:.95rem;color:var(--bleu);margin-bottom:.5rem">'+p.matiere+'</div><ul style="padding-left:1.2rem">';
+      html += '<div style="margin-bottom:1rem"><div style="font-family:Inter,sans-serif;font-weight:700;font-size:.95rem;color:var(--bleu);margin-bottom:.5rem">'+p.matiere+'</div><ul style="padding-left:1.2rem">';
       p.chapitres.forEach(function(ch) { html += '<li style="font-size:.88rem;margin-bottom:.3rem">'+ch+'</li>'; });
       html += '</ul></div>';
     });
@@ -665,7 +670,7 @@ function pageAnnalesBAC() {
     var liste = data[matiere];
     if (!liste || liste.length === 0) return;
     html += '<div style="margin-bottom:1.8rem">';
-    html += '<h3 style="font-family:Lexend,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--bleu)">' + (noms[matiere] || matiere) + '</h3>';
+    html += '<h3 style="font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--bleu)">' + (noms[matiere] || matiere) + '</h3>';
     html += '<div class="annale-grid">';
     liste.forEach(function(a) {
       html += '<div class="annale-card">' +
@@ -720,8 +725,8 @@ function infoCard(titre, items) {
 }
 
 function grilleCitations() {
-  var html = '<div class="section-title">📜 Citations à connaître</div>';
-  html += '<div class="alerte">💡 Fréquemment demandées en Philosophie et Français (séries A4, A1, D).</div>';
+  var html = '<div class="section-title"><i class="fas fa-scroll"></i> Citations à connaître</div>';
+  html += '<div class="alerte"><i class="fas fa-lightbulb"></i> Fréquemment demandées en Philosophie et Français (séries A4, A1, D).</div>';
   html += '<div class="citations-grid">';
   CITATIONS.forEach(function(c) {
     html += '<div class="citation-card">' +
@@ -734,10 +739,10 @@ function grilleCitations() {
 
 function pageCulture() {
   var actif = etat.tabActif['culture'] || 'categories';
-  var html = '<div class="page-header cult-header"><h1>🌍 Culture Générale</h1><p>Apprends en t\'amusant</p></div>';
+  var html = '<div class="page-header cult-header"><h1><i class="fas fa-globe-africa"></i> Culture Générale</h1><p>Apprends en t\'amusant</p></div>';
   html += '<div class="tab-bar">' +
     tb3('categories','🗂️ Thèmes',      actif,'culture') +
-    tb3('quiz-jour', '⚡ Quiz du Jour', actif,'culture') +
+    tb3('quiz-jour', '<i class="fas fa-bolt"></i> Quiz du Jour', actif,'culture') +
   '</div><div class="page-section">';
   if (actif==='categories') html += grilleCategories();
   if (actif==='quiz-jour')  html += quizJour();
@@ -746,14 +751,14 @@ function pageCulture() {
 
 function grilleCategories() {
   var cartes = [
-    {id:'culture_burkina', icon:'🇧🇫', nom:'Burkina Faso', sub:'Histoire · Culture · Traditions'},
-    {id:'culture_afrique', icon:'🌍', nom:'Afrique', sub:'Histoire · Géographie · Leaders'},
-    {id:'culture_sciences', icon:'🔬', nom:'Sciences', sub:'Découvertes · Espace · Biologie'},
-    {id:'culture_svt_pc', icon:'⚗️', nom:'SVT & Physique-Chimie', sub:'Biologie · Chimie · Physique'},
-    {id:'culture_arts', icon:'🎨', nom:'Arts & Philosophie', sub:'Littérature · Peinture · Penseurs'},
-    {id:'culture_monde', icon:'🌐', nom:'Monde Contemporain', sub:'Géopolitique · ONU · Économie'},
-    {id:'culture_maths_langues', icon:'➗', nom:'Maths & Langues', sub:'Calcul · Français · Anglais'},
-    {id:'culture_divers', icon:'💡', nom:'Informatique & Divers', sub:'Tech · Écologie · Histoire'},
+    {id:'culture_burkina', icon:'<span class="bf-flag"><span class="bf-flag">🇧🇫</span></span>', nom:'Burkina Faso', sub:'Histoire · Culture · Traditions'},
+    {id:'culture_afrique', icon:'<i class="fas fa-globe-africa"></i>', nom:'Afrique', sub:'Histoire · Géographie · Leaders'},
+    {id:'culture_sciences', icon:'<i class="fas fa-flask"></i>', nom:'Sciences', sub:'Découvertes · Espace · Biologie'},
+    {id:'culture_svt_pc', icon:'<i class="fas fa-vial"></i>', nom:'SVT & Physique-Chimie', sub:'Biologie · Chimie · Physique'},
+    {id:'culture_arts', icon:'<i class="fas fa-palette"></i>', nom:'Arts & Philosophie', sub:'Littérature · Peinture · Penseurs'},
+    {id:'culture_monde', icon:'<i class="fas fa-globe"></i>', nom:'Monde Contemporain', sub:'Géopolitique · ONU · Économie'},
+    {id:'culture_maths_langues', icon:'<i class="fas fa-divide"></i>', nom:'Maths & Langues', sub:'Calcul · Français · Anglais'},
+    {id:'culture_divers', icon:'<i class="fas fa-lightbulb"></i>', nom:'Informatique & Divers', sub:'Tech · Écologie · Histoire'},
   ];
   var html = '<div class="section-title">🗂️ Catégories thématiques</div><div class="culture-grid">';
   cartes.forEach(function(c) {
@@ -773,8 +778,8 @@ function quizJour() {
   var cles = Object.keys(QUIZ_DATA);
   var aleatoire = cles[Math.floor(Math.random() * cles.length)];
   etat.params = aleatoire;
-  return '<div class="section-title">⚡ Quiz du Jour</div>' +
-    '<div class="alerte">🎲 Un quiz aléatoire sélectionné pour toi !</div>' +
+  return '<div class="section-title"><i class="fas fa-bolt"></i> Quiz du Jour</div>' +
+    '<div class="alerte"><i class="fas fa-dice"></i> Un quiz aléatoire sélectionné pour toi !</div>' +
     buildQuiz(aleatoire);
 }
 
@@ -828,7 +833,7 @@ function afficherQuestion(data, idx) {
     '<div class="quiz-nav" id="qnav" style="display:none">' +
       (idx+1<total
         ? '<button class="btn btn-vert" onclick="suivant()">Question suivante →</button>'
-        : '<button class="btn btn-or"   onclick="resultat()">Voir mon score 🏆</button>') +
+        : '<button class="btn btn-or"   onclick="resultat()">Voir mon score <i class="fas fa-trophy"></i></button>') +
       '<button class="btn btn-outline" onclick="retour()">↩ Retour</button>' +
     '</div><div class="quiz-resultat" id="qres"></div></div>';
   return html;
@@ -881,12 +886,12 @@ function resultat() {
   var d    = getQuizActuel();
   var total= d.questions.length;
   var pct  = Math.round(etat.quizScore/total*100);
-  var m    = pct>=80?'🏆 Excellent !':pct>=60?'👍 Bien !':pct>=40?'📖 Revois tes fiches.':'💪 Courage, réessaie !';
+  var m    = pct>=80?'<i class="fas fa-trophy"></i> Excellent !':pct>=60?'👍 Bien !':pct>=40?'<i class="fas fa-book-open"></i> Revois tes fiches.':'💪 Courage, réessaie !';
   var res  = document.getElementById('qres');
   res.style.display='block';
   res.textContent='Score : '+etat.quizScore+'/'+total+' ('+pct+'%) — '+m;
   document.getElementById('qnav').innerHTML=
-    '<button class="btn btn-vert" onclick="buildQuizRefaire()">🔄 Recommencer</button>' +
+    '<button class="btn btn-vert" onclick="buildQuizRefaire()"><i class="fas fa-redo"></i> Recommencer</button>' +
     '<button class="btn btn-outline" onclick="retour()">↩ Retour</button>';
 
     if (pct >= 80) {
@@ -944,21 +949,61 @@ const ANNALES_BEPC_REELLES = {
   ],
 };
 
+const FICHES_BEPC = {
+  maths: [
+    { label: "Chapitres 1 à 5 — Nombres et Calculs", fichier: "cours/partie_1/chapitres_1_5.html" },
+    { label: "Chapitres 6 à 10 — Géométrie et Mesures", fichier: "cours/partie_2/chapitres_6_10.html" },
+    { label: "Chapitres 11 à 15 — Algèbre et Fonctions", fichier: "cours/partie_3/chapitres_11_15.html" },
+    { label: "Chapitres 16 à 20 — Statistiques et Probabilités", fichier: "cours/partie_4/chapitres_16_20.html" }
+  ],
+  physique: [
+    { label: "Électricité (Chapitres 1 à 9)", fichier: "cours/physique/physique_electricite.html" },
+    { label: "Mécanique (Chapitres 10 à 13)", fichier: "cours/physique/physique_mecanique.html" },
+    { label: "Optique (Chapitres 14 à 19)", fichier: "cours/physique/physique_optique.html" },
+    { label: "Chimie : Ions métalliques (Chapitres 1 à 4)", fichier: "cours/chimie/chimie_ions_metalliques.html" },
+    { label: "Chimie : Corps moléculaires (Chapitres 5 à 7)", fichier: "cours/chimie/chimie_corps_moleculaires.html" },
+    { label: "Chimie : Corps solides (Chapitres 8 à 10)", fichier: "cours/chimie/chimie_corps_solides.html" }
+  ],
+  svt: [
+    { label: "Parties 0 & 1 — Le Monde Vivant", fichier: "cours/svt/partie0_1.html" },
+    { label: "Partie 2 — Reproduction et Génétique", fichier: "cours/svt/partie2.html" },
+    { label: "Partie 3 — Relations dans l'organisme", fichier: "cours/svt/partie3.html" },
+    { label: "Partie 4 — Écologie et Environnement", fichier: "cours/svt/partie4.html" },
+    { label: "Partie 5 — Le Corps Humain et la Santé", fichier: "cours/svt/partie5.html" }
+  ],
+  francais: [
+    { label: "Cours complet — Grammaire, Conjugaison, Orthographe", fichier: "cours/francais/bepc.html" },
+    { label: "Récapitulatif — Fiches de révision rapide", fichier: "cours/francais/recapitulatif.html" }
+  ],
+  anglais: [
+    { label: "Cours complet — Grammar, Vocabulary, Tenses", fichier: "cours/anglais/bepc.html" },
+    { label: "Récapitulatif — Fiches de révision rapide", fichier: "cours/anglais/recapitulatif.html" }
+  ],
+  histoire: [
+    { label: "Histoire Partie 1 — Le Burkina Faso précolonial", fichier: "cours/histoire/partie1.html" },
+    { label: "Histoire Partie 2 — La colonisation et les indépendances", fichier: "cours/histoire/partie2.html" },
+    { label: "Histoire Partie 3 — Le monde contemporain", fichier: "cours/histoire/partie3.html" },
+    { label: "Géographie Partie 1 — Le Burkina Faso physique et humain", fichier: "cours/histoire/geographie_partie1.html" },
+    { label: "Géographie Partie 2 — L'Afrique", fichier: "cours/histoire/geographie_partie2.html" },
+    { label: "Géographie Partie 3 — Le monde et la mondialisation", fichier: "cours/histoire/geographie_partie3.html" }
+  ]
+};
+
 function pageAnnalesBEPCReelles() {
-  var html = '<div class="section-title">📄 Sujets BEPC</div>';
+  var html = '<div class="section-title"><i class="fas fa-file-pdf"></i> Sujets BEPC</div>';
   var matieres = [
-    { id:'maths',    icon:'➗', nom:'Mathématiques'   },
-    { id:'physique', icon:'⚡', nom:'Physique-Chimie' },
-    { id:'svt',      icon:'🌿', nom:'SVT'             },
-    { id:'francais', icon:'✍️', nom:'Français'        },
-    { id:'anglais',  icon:'🗣️', nom:'Anglais'         },
-    { id:'histoire', icon:'🏺', nom:'Histoire-Géo'    },
+    { id:'maths',    icon:'<i class="fas fa-divide"></i>', nom:'Mathématiques'   },
+    { id:'physique', icon:'<i class="fas fa-bolt"></i>', nom:'Physique-Chimie' },
+    { id:'svt',      icon:'<i class="fas fa-leaf"></i>', nom:'SVT'             },
+    { id:'francais', icon:'<i class="fas fa-pen"></i>', nom:'Français'        },
+    { id:'anglais',  icon:'<i class="fas fa-comments"></i>', nom:'Anglais'         },
+    { id:'histoire', icon:'<i class="fas fa-landmark"></i>', nom:'Histoire-Géo'    },
   ];
   matieres.forEach(function(m) {
     var liste = ANNALES_BEPC_REELLES[m.id];
     if (!liste || liste.length === 0) return;
     html += '<div style="margin-bottom:2rem">';
-    html += '<h3 style="font-family:Lexend,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--vert)">'+m.icon+' '+m.nom+'</h3>';
+    html += '<h3 style="font-family:Inter,sans-serif;font-size:1rem;font-weight:700;margin-bottom:.8rem;color:var(--vert)">'+m.icon+' '+m.nom+'</h3>';
     html += '<div class="annale-grid">';
     liste.forEach(function(a) {
       html += '<div class="annale-card">' +
@@ -978,9 +1023,8 @@ function contenuAnnalesBEPC() {
 
 
 function pageCorrigesBEPC() {
-  var html = '<div class="section-title">📝 Corrigés BEPC</div>';
+  var html = '<div class="section-title"><i class="fas fa-file-pen"></i> Corrigés BEPC</div>';
   html += '<p style="margin-bottom:1rem;">Corrigés officiels à venir. Une préparation est disponible ci-dessous.</p>';
-  
   var corriges = [
     { label: 'Physique-Chimie — Préparation 2024', fichier: 'annales/bepc/physique/prepa_2024.pdf' }
   ];
@@ -996,9 +1040,58 @@ function pageCorrigesBEPC() {
   html += '</div>';
   return html;
 }
+
+function pageFichesMatiere(matiereId) {
+  var noms = { maths: 'Mathématiques', physique: 'Physique-Chimie', svt: 'SVT', francais: 'Français', anglais: 'Anglais', histoire: 'Histoire-Géo' };
+  var nom = noms[matiereId] || matiereId;
+  var fiches = (typeof FICHES_BEPC !== 'undefined' && FICHES_BEPC[matiereId]) ? FICHES_BEPC[matiereId] : [];
+
+  var html = '<div class="page-header"><h1>📖 Fiches de ' + nom + ' — BEPC</h1><p>Choisis une fiche pour réviser</p></div>';
+  html += '<div class="page-section">';
+  html += '<button class="btn btn-outline" onclick="retour()" style="margin-bottom:1.5rem;">← Retour aux matières</button>';
+  
+  if (fiches.length === 0) {
+    html += '<div class="alerte">Aucune fiche disponible pour le ' + nom + ' pour le moment. Reviens bientôt !</div>';
+  } else {
+    html += '<div class="annale-grid">';
+    fiches.forEach(function(f) {
+      html += '<div class="annale-card">' +
+        '<h3>' + f.label + '</h3>' +
+        '<div class="annale-btns">' +
+          '<a class="btn btn-vert btn-sm" href="' + f.fichier + '" target="_blank">📥 Ouvrir la fiche</a>' +
+        '</div></div>';
+    });
+    html += '</div>';
+  }
+  return html;
+}
+
+function pageFichesBEPC() {
+  var html = '<div class="section-title">📖 Fiches de Mathématiques BEPC</div>';
+  html += '<p style="margin-bottom:1rem;">Retrouve ici les fiches de révision en mathématiques, classées par chapitres.</p>';
+
+  var fiches = [
+    { label: 'Chapitres 1 à 5 — Nombres et Calculs', fichier: 'cours/partie_1/chapitres_1_5.html' },
+    { label: 'Chapitres 6 à 10 — Géométrie et Mesures', fichier: 'cours/partie_2/chapitres_6_10.html' },
+    { label: 'Chapitres 11 à 15 — Algèbre et Fonctions', fichier: 'cours/partie_3/chapitres_11_15.html' },
+    { label: 'Chapitres 16 à 20 — Statistiques et Probabilités', fichier: 'cours/partie_4/chapitres_16_20.html' }
+  ];
+
+  html += '<div class="annale-grid">';
+  fiches.forEach(function(f) {
+    html += '<div class="annale-card">' +
+      '<h3>' + f.label + '</h3>' +
+      '<div class="annale-btns">' +
+        '<a class="btn btn-vert btn-sm" href="' + f.fichier + '" target="_blank">📥 Ouvrir la fiche</a>' +
+      '</div></div>';
+  });
+  html += '</div>';
+  return html;
+
+}
 // Enregistrement du Service Worker pour la PWA
 function pageCorrigesBAC() {
-  var html = '<div class="section-title">📝 Corrigés BAC</div>';
+  var html = '<div class="section-title"><i class="fas fa-file-pen"></i> Corrigés BAC</div>';
   html += '<p style="margin-bottom:1rem;">Retrouve ici les corrigés officiels et les préparations.</p>';
   
   var corriges = [
@@ -1019,19 +1112,19 @@ function pageCorrigesBAC() {
 }
 function pageParametres() {
   var sombre = document.body.classList.contains("dark");
-  var html = '<div class="page-header"><h1>⚙️ Paramètres</h1><p>Personnalise ton expérience</p></div>';
+  var html = '<div class="page-header"><h1><i class="fas fa-gear"></i> Paramètres</h1><p>Personnalise ton expérience</p></div>';
   html += '<div class="page-section">';
-  html += '<div style="background:var(--carte); border-radius:12px; box-shadow:var(--ombre); padding:1.5rem; max-width:600px; margin:0 auto;">';
+  html += '<div style="background:var(--carte); border-radius:12px; box-shadow:var(--ombre); padding:1.5rem; margin:0 auto;">';
   
   html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem;">Apparence</h2>';
   html += '<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">';
   html += '<span>Mode sombre</span>';
-  html += '<button class="btn btn-outline" onclick="toggleDark(); rendrePage();" id="btn-dark-param">' + (sombre ? '☀️ Désactiver' : '🌙 Activer') + '</button>';
+  html += '<button class="btn btn-outline" onclick="toggleDark(); rendrePage();" id="btn-dark-param">' + (sombre ? '<i class="fas fa-sun"></i> Désactiver' : '<i class="fas fa-moon"></i> Activer') + '</button>';
   html += '</div>';
 
   html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem; margin-top:2rem;">À propos</h2>';
-  html += '<button class="btn btn-outline" onclick="var d=document.getElementById(\'apropos-texte\'); d.style.display = d.style.display === \'none\' ? \'block\' : \'none\';">📖 Lire À propos de RéviBF</button>';
-  html += '<div id="apropos-texte" style="display:none; margin-top:1rem; font-size:0.9rem; color:var(--gris); line-height:1.6; background:var(--creme); border-radius:8px; padding:1rem; max-height:300px; overflow-y:auto; white-space:pre-line;">';
+  html += '<button class="btn btn-outline" onclick="document.getElementById(\'apropos-overlay\').style.display=\'flex\'; document.body.style.overflow=\'hidden\';"><i class="fas fa-book-open"></i> Lire À propos de RéviBF</button>';
+  html += '<div id="apropos-overlay" class="apropos-overlay"><div class="apropos-overlay-header"><strong>À propos de RéviBF</strong><button onclick="document.getElementById(\'apropos-overlay\').style.display=\'none\'; document.body.style.overflow=\'\';">✕</button></div><div class="apropos-overlay-body">';
   html += '<strong style="color:var(--encre);">À Propos de RéviBF</strong>\n\n';
   html += '<strong>1. Mission et Vision Éducative</strong>\n';
   html += 'RéviBF est une plateforme numérique indépendante dédiée à l\'accompagnement académique des élèves et candidats aux examens au Burkina Faso. Notre mission est de réduire les barrières d\'accès à l\'information en proposant une interface fluide, optimisée et accessible à tous, sans distinction. Nous avons pour ambition d\'offrir un outil performant qui simplifie l\'organisation du travail et favorise la réussite scolaire grâce à une technologie adaptée aux besoins réels des apprenants.\n\n';
@@ -1075,3 +1168,18 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+
+
+var __TABBAR_MAP__ = {
+  accueil: 'accueil',
+  bepc: 'bepc', 'annales-bepc': 'bepc', 'corriges-bepc': 'bepc', quiz: 'bepc',
+  bac: 'bac', 'annales-bac': 'bac', 'corriges-bac': 'bac',
+  'serie-detail': 'bac', 'quiz-serie': 'bac',
+  culture: 'culture', 'culture-quiz': 'culture', 'culture-quiz-jour': 'culture'
+};
+function syncTabbar() {
+  var cible = __TABBAR_MAP__[etat.page] || null;
+  document.querySelectorAll('.app-tab').forEach(function(t) {
+    t.classList.toggle('active', t.dataset.page === cible);
+  });
+}

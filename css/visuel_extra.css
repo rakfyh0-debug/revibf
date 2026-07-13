@@ -137,3 +137,128 @@
     transition-duration: .001ms !important;
   }
 }
+
+
+/* ── PATCH v5 : neutralisation des animations en boucle (confiance > gadget) ── */
+.hero-badge { animation: none; }
+.score-fill::after { animation: none; display: none; }
+.badge-new { animation: none; opacity: 1; }
+
+
+/* ── PATCH v9 : sécurité de contraste — texte toujours lisible ── */
+.btn-secondary, .btn-blanc, .btn-outline {
+  color: var(--encre) !important;
+}
+.hero p, .hero-badge, .streak {
+  opacity: 1 !important;
+}
+.stat-lb, .matiere-sub, .culture-sub, .serie-nom {
+  color: var(--gris);
+}
+
+.matiere-card, .serie-card, .culture-card {
+  background: linear-gradient(145deg, #ffffff, var(--creme));
+  border: none;
+  border-bottom: 4px solid var(--bleu) !important; background: linear-gradient(145deg, #fff, var(--creme)) !important; border-radius: 18px !important;
+  border-radius: 18px;
+}
+.serie-card { border-bottom-color: var(--bleu); }
+.culture-card { border-bottom-color: var(--violet); }
+.matiere-icon, .culture-icon {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: .7rem;
+}
+
+body.dark .matiere-icon, body.dark .culture-icon {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.matiere-card:hover, .serie-card:hover, .culture-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.matiere-card, .serie-card, .culture-card {
+  background: linear-gradient(145deg, #ffffff, var(--creme));
+  border: none;
+  border-bottom: 4px solid var(--bleu) !important; background: linear-gradient(145deg, #fff, var(--creme)) !important; border-radius: 18px !important;
+  border-radius: 18px;
+}
+.serie-card { border-bottom-color: var(--bleu); }
+.culture-card { border-bottom-color: var(--violet); }
+.matiere-icon, .culture-icon {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: .7rem;
+}
+
+body.dark .matiere-icon, body.dark .culture-icon {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.matiere-card:hover, .serie-card:hover, .culture-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.matiere-card, .serie-card, .culture-card {
+  background: var(--carte) !important;
+  border-radius: 24px 24px 24px 6px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.matiere-icon, .culture-icon {
+  background: rgba(0,0,0,0.1);
+  color: #000;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: .7rem;
+}
+
+body.dark .matiere-icon, body.dark .culture-icon {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.serie-card .serie-lettre {
+  background: var(--bleu); color:#fff;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .5rem;
+}
+
+#apropos-texte {
+  max-width: 100% !important;
+  width: 100%;
+}
+.page-section:has(#apropos-texte) > div {
+  max-width: 100% !important;
+}
+
+
+/* Overlay plein écran pour À propos */
+.apropos-overlay {
+  display:none; position:fixed; inset:0; z-index:500;
+  background:var(--creme); flex-direction:column;
+}
+.apropos-overlay-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem 1.2rem; background:var(--vert); color:#fff;
+  font-size:1.05rem;
+}
+.apropos-overlay-header button {
+  background:none; border:none; color:#fff; font-size:1.3rem; cursor:pointer;
+}
+.apropos-overlay-body {
+  flex:1; overflow-y:auto; padding:1.2rem 1.5rem 2rem;
+  font-size:0.95rem; line-height:1.7; color:var(--encre); white-space:pre-line;
+}

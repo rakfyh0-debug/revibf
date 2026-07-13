@@ -1,0 +1,63 @@
+<svg viewBox="0 0 220 196" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8B84B"/>
+      <stop offset="100%" stop-color="#C89530"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Anneau or -->
+  <circle cx="110" cy="98" r="88" fill="none" stroke="url(#goldRing)" stroke-width="4"/>
+  <!-- Fond vert du badge -->
+  <circle cx="110" cy="98" r="80" fill="#1B6B3A"/>
+
+  <!-- Petites feuilles/etoiles or autour du cercle -->
+  <g fill="#E8B84B">
+    <circle cx="110" cy="14" r="3.5"/>
+    <circle cx="164" cy="34" r="3"/>
+    <circle cx="56" cy="34" r="3"/>
+    <circle cx="184" cy="98" r="3"/>
+    <circle cx="36" cy="98" r="3"/>
+    <circle cx="164" cy="162" r="3"/>
+    <circle cx="56" cy="162" r="3"/>
+    <circle cx="110" cy="182" r="3.5"/>
+  </g>
+
+  <!-- Elephant stylise, profil, tourne vers la droite -->
+  <g>
+    <!-- Oreille (sur le cote, tombante) -->
+    <path d="M 130,80
+             C 108,68 86,76 88,100
+             C 90,118 108,126 124,114
+             C 129,104 131,92 130,80 Z" fill="#E8B84B" opacity="0.85"/>
+
+    <!-- Queue -->
+    <path d="M 58,100 C 50,110 48,122 54,130" fill="none" stroke="#FDF6E8" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="55" cy="132" r="3.5" fill="#FDF6E8"/>
+
+    <!-- Corps -->
+    <ellipse cx="96" cy="112" rx="42" ry="27" fill="#FDF6E8"/>
+
+    <!-- Tete -->
+    <circle cx="140" cy="90" r="25" fill="#FDF6E8"/>
+
+    <!-- Trompe -->
+    <path d="M 159,92
+             C 174,96 180,114 172,130
+             C 167,140 158,147 148,148
+             C 155,140 160,128 158,116
+             C 157,106 154,98 150,92 Z" fill="#FDF6E8"/>
+
+    <!-- Defense (petite, sous la trompe) -->
+    <path d="M 148,118 C 154,120 157,126 154,132 C 150,128 148,123 148,118 Z" fill="#FFFFFF"/>
+
+    <!-- Pattes -->
+    <rect x="72" y="128" width="13" height="34" rx="6" fill="#FDF6E8"/>
+    <rect x="89" y="132" width="13" height="30" rx="6" fill="#FDF6E8"/>
+    <rect x="106" y="132" width="13" height="30" rx="6" fill="#FDF6E8"/>
+    <rect x="123" y="128" width="13" height="34" rx="6" fill="#FDF6E8"/>
+  </g>
+
+  <!-- Oeil -->
+  <circle cx="146" cy="83" r="3" fill="#1B6B3A"/>
+</svg>

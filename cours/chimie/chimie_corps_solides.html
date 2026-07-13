@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche de cours - RéviBF</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #1a1a2e; }
+  h2 { color: #1B6B3A; border-bottom: 2px solid #1B6B3A; padding-bottom: 8px; margin-top: 40px; }
+  h3 { color: #333; margin-top: 24px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  table { max-width: 100%; }
+</style>
+</head>
+<body>
+<!-- PARTIE CHIMIE : CORPS SOLIDES (Chapitres 8 à 10) -->
+
+<article class="chapitre">
+  <h1>CHAPITRE 8 : SOLIDES CRISTALLINS ET SOLIDES AMORPHES</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Qu'est-ce qu'un solide ?</h3>
+    <p>Un solide est un état de la matière caractérisé par une <strong>forme propre</strong> et un <strong>volume propre</strong> (contrairement aux liquides et aux gaz). Les particules (atomes, ions, molécules) qui le constituent sont très proches les unes des autres et sont quasiment immobiles : elles ne peuvent que vibrer autour de positions fixes.</p>
+
+    <h3>2. Les deux grandes familles de solides</h3>
+    <p>On distingue :</p>
+    <ul>
+      <li><strong>Les solides cristallins :</strong> les particules sont ordonnées de façon régulière et périodique dans les trois directions de l'espace. Cette organisation géométrique s'appelle un <strong>cristal</strong> (ou réseau cristallin). Exemples : sel de cuisine (NaCl), sucre, quartz, diamant, métaux.</li>
+      <li><strong>Les solides amorphes :</strong> les particules sont disposées de manière désordonnée, comme dans un liquide figé. Il n'y a pas de périodicité. Exemples : verre, plastiques, caoutchouc, paraffine.</li>
+    </ul>
+
+    <h3>3. Caractéristiques des solides cristallins</h3>
+    <p>Un cristal est un empilement régulier de particules. L'unité de base qui se répète est la <strong>maille</strong>. La forme extérieure du cristal reflète souvent la symétrie de sa structure interne. Les solides cristallins ont des propriétés caractéristiques :</p>
+    <ul>
+      <li><strong>Température de fusion fixe</strong> (point de fusion net). La glace fond à 0°C, le sel fond à 801°C.</li>
+      <li><strong>Anisotropie</strong> : certaines propriétés (conductivité thermique, résistance mécanique) peuvent varier selon la direction du cristal.</li>
+      <li><strong>Forme géométrique</strong> naturelle pour les minéraux (pyrite cubique, quartz hexagonal).</li>
+    </ul>
+
+    <h3>4. Caractéristiques des solides amorphes</h3>
+    <p>Contrairement aux cristaux, les solides amorphes n'ont pas d'ordre à longue distance. Leurs propriétés sont différentes :</p>
+    <ul>
+      <li><strong>Pas de point de fusion fixe</strong> : ils se ramollissent progressivement avant de devenir liquides (transition vitreuse). Exemple : le verre chauffé devient pâteux.</li>
+      <li><strong>Isotropie</strong> : leurs propriétés sont les mêmes dans toutes les directions.</li>
+      <li><strong>Pas de forme géométrique</strong> naturelle : ils se cassent en donnant des surfaces courbes (fracture conchoïdale du verre).</li>
+    </ul>
+
+    <h3>5. Exemples courants</h3>
+    <table border="1" cellpadding="8" style="border-collapse:collapse; margin:20px auto; width:80%; font-family:sans-serif;">
+      <tr style="background:#f0f0f0;"><th>Solides cristallins</th><th>Solides amorphes</th></tr>
+      <tr><td>Sel de cuisine (NaCl)</td><td>Verre à vitre</td></tr>
+      <tr><td>Sucre (saccharose)</td><td>Matières plastiques (polyéthylène)</td></tr>
+      <tr><td>Quartz (SiO₂)</td><td>Plexiglas</td></tr>
+      <tr><td>Métaux (fer, cuivre, or)</td><td>Caoutchouc</td></tr>
+      <tr><td>Glace</td><td>Colle séchée</td></tr>
+    </table>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; background:#fff;">
+        <text x="20" y="25" font-size="14" font-family="sans-serif" font-weight="bold">Structure ordonnée (cristal) vs désordonnée (amorphe)</text>
+        
+        <!-- Cristal (maille cubique simple) -->
+        <text x="70" y="50" font-size="12" font-family="sans-serif" font-weight="bold">Cristallin</text>
+        <!-- Lignes de la maille -->
+        <rect x="40" y="70" width="80" height="80" fill="none" stroke="#2980b9" stroke-width="1.5"/>
+        <circle cx="40" cy="70" r="5" fill="#2980b9"/>
+        <circle cx="120" cy="70" r="5" fill="#2980b9"/>
+        <circle cx="40" cy="150" r="5" fill="#2980b9"/>
+        <circle cx="120" cy="150" r="5" fill="#2980b9"/>
+        <!-- Quelques atomes à l'intérieur -->
+        <circle cx="60" cy="90" r="4" fill="#2980b9" opacity="0.6"/>
+        <circle cx="100" cy="110" r="4" fill="#2980b9" opacity="0.6"/>
+        <circle cx="80" cy="130" r="4" fill="#2980b9" opacity="0.6"/>
+        <text x="40" y="175" font-size="10" font-family="sans-serif">Ordonné, périodique</text>
+        
+        <!-- Amorphe -->
+        <text x="280" y="50" font-size="12" font-family="sans-serif" font-weight="bold">Amorphe</text>
+        <rect x="250" y="70" width="100" height="80" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <circle cx="260" cy="90" r="5" fill="#c0392b"/>
+        <circle cx="310" cy="80" r="5" fill="#c0392b"/>
+        <circle cx="285" cy="120" r="5" fill="#c0392b"/>
+        <circle cx="330" cy="130" r="5" fill="#c0392b"/>
+        <circle cx="270" cy="140" r="4" fill="#c0392b" opacity="0.6"/>
+        <circle cx="300" cy="100" r="4" fill="#c0392b" opacity="0.6"/>
+        <circle cx="320" cy="145" r="4" fill="#c0392b" opacity="0.6"/>
+        <text x="255" y="175" font-size="10" font-family="sans-serif">Désordonné, pas de périodicité</text>
+        
+        <!-- Courbe de fusion -->
+        <text x="40" y="200" font-size="10" font-family="sans-serif">Fusion : température fixe (ex: glace → eau à 0°C)</text>
+        <text x="250" y="200" font-size="10" font-family="sans-serif">Fusion : ramollissement progressif (verre)</text>
+      </svg>
+      <p><em>Figure 1 : comparaison de la structure interne d'un solide cristallin et d'un solide amorphe.</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Classe les solides suivants en cristallins ou amorphes : sucre, verre à vitre, sel de cuisine, plastique, fer, paraffine, quartz.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p><strong>Cristallins :</strong> sucre, sel de cuisine, fer, quartz. Leurs particules sont ordonnées en réseau.</p>
+          <p><strong>Amorphes :</strong> verre à vitre, plastique, paraffine. Leurs particules sont désordonnées.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Explique la différence entre la fusion d'un solide cristallin et celle d'un solide amorphe.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Un solide <strong>cristallin</strong> fond à une température précise et constante (point de fusion). Exemple : la glace fond à 0°C. Un solide <strong>amorphe</strong> n'a pas de point de fusion fixe : il se ramollit progressivement en passant par un état pâteux avant de devenir liquide. Exemple : le verre chauffé devient mou.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Cite un exemple de solide cristallin que tu rencontres dans ta vie quotidienne au Burkina Faso. Décris une de ses propriétés liée à sa structure cristalline.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Le <strong>sel de cuisine</strong> (chlorure de sodium) est un solide cristallin. Il forme des petits cubes réguliers. Sa température de fusion est élevée (801°C). Il est soluble dans l'eau, ce qui est lié à la dissociation des ions Na⁺ et Cl⁻ dans l'eau.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Le verre est souvent considéré comme un "liquide figé". Pourquoi cette expression ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Dans un verre, les particules sont disposées de manière aussi désordonnée que dans un liquide, mais elles sont immobiles (elles ne glissent pas les unes sur les autres). C'est comme si on avait figé un liquide très rapidement. Le verre n'a pas de point de fusion net, il ramollit, ce qui est un comportement intermédiaire.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> On chauffe un solide inconnu. On mesure sa température régulièrement. Celle-ci reste constante à 108°C pendant plusieurs minutes, puis augmente à nouveau. Ce solide est-il cristallin ou amorphe ? Justifie.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>La température reste constante pendant la fusion (palier de fusion), caractéristique d'un solide <strong>cristallin</strong>. Un solide amorphe n'aurait pas de palier, la température continuerait d'augmenter lentement pendant le ramollissement.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+<article class="chapitre">
+  <h1>CHAPITRE 9 : MÉTAUX ET ALLIAGES</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Définition d'un métal</h3>
+    <p>Un <strong>métal</strong> est un corps simple (ou parfois un alliage) caractérisé par des propriétés physiques communes : éclat métallique, bonne conductivité électrique et thermique, malléabilité (se laisse façonner en feuilles) et ductilité (s'étire en fils). Les métaux sont solides à température ambiante, sauf le mercure (liquide).</p>
+    <p>Exemples de métaux usuels : fer (Fe), aluminium (Al), cuivre (Cu), zinc (Zn), or (Au), argent (Ag), plomb (Pb).</p>
+
+    <h3>2. Structure des métaux</h3>
+    <p>Les métaux sont constitués d'ions métalliques positifs (cations) disposés régulièrement dans un réseau cristallin. Les électrons de valence sont libres de se déplacer dans tout le réseau : c'est la "mer d'électrons". Cette mobilité explique :</p>
+    <ul>
+      <li>La <strong>conductivité électrique</strong> : les électrons transportent le courant.</li>
+      <li>La <strong>conductivité thermique</strong> : les électrons transmettent la chaleur.</li>
+      <li>La <strong>malléabilité</strong> et <strong>ductilité</strong> : les couches d'ions peuvent glisser les unes sur les autres sans rupture grâce au liant électronique.</li>
+    </ul>
+
+    <h3>3. Les alliages</h3>
+    <p>Un <strong>alliage</strong> est un mélange de plusieurs métaux (ou d'un métal avec un autre élément) obtenu par fusion et solidification. Les alliages ont souvent des propriétés améliorées par rapport aux métaux purs.</p>
+    <p>Exemples importants :</p>
+    <ul>
+      <li><strong>Acier</strong> : fer + carbone (moins de 2%). Très résistant, utilisé en construction.</li>
+      <li><strong>Fonte</strong> : fer + carbone (plus de 2%). Dure mais cassante.</li>
+      <li><strong>Bronze</strong> : cuivre + étain. Résistant à la corrosion, utilisé pour statues, cloches.</li>
+      <li><strong>Laiton</strong> : cuivre + zinc. Robinetterie, instruments de musique.</li>
+      <li><strong>Duralumin</strong> : aluminium + cuivre + magnésium. Léger et résistant (aéronautique).</li>
+    </ul>
+
+    <h3>4. Réactivité des métaux et corrosion</h3>
+    <p>Certains métaux réagissent avec le dioxygène, l'eau, les acides. Cette réactivité est variable :</p>
+    <ul>
+      <li><strong>Métaux très réactifs</strong> : sodium (Na), potassium (K) → réagissent violemment avec l'eau.</li>
+      <li><strong>Métaux moyennement réactifs</strong> : fer (Fe), zinc (Zn), aluminium (Al) → rouille, oxydation.</li>
+      <li><strong>Métaux nobles</strong> : or (Au), platine (Pt) → ne réagissent pas avec l'air ou l'eau.</li>
+    </ul>
+    <p>La <strong>corrosion</strong> est la dégradation lente d'un métal par réaction chimique avec son environnement. La rouille du fer est l'exemple le plus connu (formation d'oxyde de fer hydraté). L'aluminium se protège naturellement par une couche d'alumine imperméable.</p>
+
+    <h3>5. Métaux au Burkina Faso</h3>
+    <p>Le Burkina Faso exploite principalement l'<strong>or</strong> (plusieurs mines industrielles et artisanales). Le <strong>fer</strong> est également présent sous forme de minerais (collines de fer). L'aluminium, importé, est très utilisé pour les tôles de toiture. Le cuivre et le zinc sont utilisés en plomberie et électricité.</p>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; background:#fff;">
+        <text x="20" y="25" font-size="14" font-family="sans-serif" font-weight="bold">Structure métallique : réseau d'ions dans une mer d'électrons</text>
+        <!-- Ions positifs alignés -->
+        <circle cx="80" cy="100" r="10" fill="#c0392b" opacity="0.8"/><text x="76" y="105" font-size="10" fill="#fff">+</text>
+        <circle cx="130" cy="100" r="10" fill="#c0392b" opacity="0.8"/><text x="126" y="105" font-size="10" fill="#fff">+</text>
+        <circle cx="180" cy="100" r="10" fill="#c0392b" opacity="0.8"/><text x="176" y="105" font-size="10" fill="#fff">+</text>
+        <circle cx="230" cy="100" r="10" fill="#c0392b" opacity="0.8"/><text x="226" y="105" font-size="10" fill="#fff">+</text>
+        <circle cx="105" cy="140" r="10" fill="#c0392b" opacity="0.8"/><text x="101" y="145" font-size="10" fill="#fff">+</text>
+        <circle cx="155" cy="140" r="10" fill="#c0392b" opacity="0.8"/><text x="151" y="145" font-size="10" fill="#fff">+</text>
+        <circle cx="205" cy="140" r="10" fill="#c0392b" opacity="0.8"/><text x="201" y="145" font-size="10" fill="#fff">+</text>
+        <!-- Électrons -->
+        <circle cx="90" cy="90" r="2" fill="#2980b9"/>
+        <circle cx="110" cy="110" r="2" fill="#2980b9"/>
+        <circle cx="140" cy="95" r="2" fill="#2980b9"/>
+        <circle cx="160" cy="115" r="2" fill="#2980b9"/>
+        <circle cx="190" cy="90" r="2" fill="#2980b9"/>
+        <circle cx="210" cy="110" r="2" fill="#2980b9"/>
+        <circle cx="120" cy="130" r="2" fill="#2980b9"/>
+        <circle cx="170" cy="130" r="2" fill="#2980b9"/>
+        <text x="240" y="140" font-size="11" font-family="sans-serif" fill="#2980b9">électrons libres</text>
+        <text x="230" y="100" font-size="11" font-family="sans-serif" fill="#c0392b">ions métalliques</text>
+        <!-- Légende -->
+        <text x="50" y="180" font-size="12" font-family="sans-serif">Bonne conductivité électrique et thermique, malléabilité, ductilité.</text>
+      </svg>
+      <p><em>Figure 2 : modèle simplifié du réseau métallique. Les électrons libres assurent la cohésion et expliquent les propriétés des métaux.</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Qu'est-ce qu'un alliage ? Donne deux exemples d'alliages et précise leurs constituants et une utilisation.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Un alliage est un mélange obtenu par fusion de métaux (ou d'un métal avec un autre élément) qui se solidifie en conservant des propriétés métalliques.</p>
+          <p>Exemple 1 : <strong>Acier</strong> = fer + carbone (moins de 2%). Utilisé pour les barres de fer à béton, les tôles.</p>
+          <p>Exemple 2 : <strong>Bronze</strong> = cuivre + étain. Utilisé pour les statues, les cloches, les médailles.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Explique pourquoi les métaux sont bons conducteurs de l'électricité, en utilisant la notion d'électrons libres.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Dans un métal, les atomes mettent en commun leurs électrons de valence qui forment une "mer d'électrons" libres de se déplacer dans tout le réseau. Lorsqu'on applique une tension, ces électrons se déplacent de façon ordonnée, créant un courant électrique.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Pourquoi utilise-t-on l'aluminium pour fabriquer les tôles de toiture au lieu du fer ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>L'aluminium est plus léger que le fer, malléable (facile à façonner en tôles), et surtout il résiste mieux à la corrosion : il se recouvre d'une fine couche d'alumine protectrice. Le fer rouille rapidement sous l'effet de l'humidité, nécessitant des traitements anticorrosion.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Classe les métaux suivants par réactivité décroissante avec l'air humide : or, fer, sodium, cuivre.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Réactivité décroissante : <strong>sodium</strong> (très réactif, réagit violemment avec l'eau), <strong>fer</strong> (rouille), <strong>cuivre</strong> (s'oxyde lentement), <strong>or</strong> (ne réagit pas).</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> L'orpaillage est une activité importante au Burkina Faso. L'or extrait est souvent purifié. Qu'est-ce que l'or pur ? Comment le distinguer d'un alliage d'or ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>L'or pur (24 carats) est un métal jaune brillant, très dense, malléable et inaltérable à l'air. Les alliages d'or (moins de 24 carats) contiennent d'autres métaux (cuivre, argent) qui modifient la couleur et la dureté. On les distingue par leur couleur (or rose avec du cuivre, or blanc avec du palladium) et par leur densité un peu plus faible.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+<article class="chapitre">
+  <h1>CHAPITRE 10 : MATÉRIAUX DE CONSTRUCTION ET SOLIDES IONIQUES</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Matériaux de construction traditionnels au Burkina Faso</h3>
+    <p>Au Burkina Faso, plusieurs matériaux locaux sont utilisés pour la construction :</p>
+    <ul>
+      <li><strong>Le banco (terre crue) :</strong> mélange d'argile, de sable et d'eau, parfois additionné de paille. Utilisé pour les murs des cases traditionnelles. Il possède une bonne inertie thermique (fraîcheur en saison chaude).</li>
+      <li><strong>La latérite :</strong> roche rouge riche en oxydes de fer et d'aluminium, très répandue. Elle durcit à l'air et sert à fabriquer des briques (BLM : briques de latérite moulée) pour les constructions modernes.</li>
+      <li><strong>Le bois :</strong> utilisé pour les charpentes, les portes, les toitures de terrasse.</li>
+      <li><strong>La paille (secco) :</strong> pour les toitures et les clôtures.</li>
+    </ul>
+
+    <h3>2. Matériaux de construction modernes</h3>
+    <p>Les constructions modernes utilisent des matériaux industriels :</p>
+    <ul>
+      <li><strong>Le ciment :</strong> poudre obtenue par cuisson de calcaire et d'argile. Mélangé à de l'eau, du sable et des graviers, il forme le <strong>béton</strong>, solide après prise (réaction d'hydratation).</li>
+      <li><strong>Le béton armé :</strong> béton coulé autour de barres d'acier pour résister à la traction.</li>
+      <li><strong>Les parpaings (agglos) :</strong> blocs de béton moulé, très utilisés pour les murs.</li>
+      <li><strong>Les tôles en aluminium ou en acier galvanisé :</strong> pour les toitures.</li>
+    </ul>
+
+    <h3>3. Solides ioniques</h3>
+    <p>Un <strong>solide ionique</strong> est un cristal constitué d'ions positifs (cations) et d'ions négatifs (anions) disposés régulièrement dans un réseau tridimensionnel. La cohésion est assurée par les <strong>forces électrostatiques</strong> (attraction entre charges opposées).</p>
+    <p>Exemple typique : le <strong>chlorure de sodium NaCl</strong> (sel de cuisine). Les ions Na⁺ et Cl⁻ alternent dans un réseau cubique. Chaque ion Na⁺ est entouré de 6 ions Cl⁻, et vice versa.</p>
+    <p>Propriétés des solides ioniques :</p>
+    <ul>
+      <li><strong>Température de fusion élevée</strong> (801°C pour NaCl) car les liaisons ioniques sont fortes.</li>
+      <li><strong>Solubles dans l'eau</strong> : les ions se dissocient et la solution devient conductrice.</li>
+      <li><strong>Non conducteurs à l'état solide</strong> (ions fixes), mais conducteurs à l'état fondu ou en solution.</li>
+      <li><strong>Fragiles, cassants</strong> : sous un choc, le glissement des couches provoque des répulsions entre ions de même signe et le cristal se brise.</li>
+    </ul>
+
+    <h3>4. Solides moléculaires</h3>
+    <p>Contrairement aux solides ioniques, les <strong>solides moléculaires</strong> sont constitués de molécules liées entre elles par des forces intermoléculaires faibles (forces de Van der Waals). Exemples : glace (H₂O), sucre (C₁₂H₂₂O₁₁), iode (I₂), paraffine. Leurs températures de fusion sont généralement basses.</p>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; background:#fff;">
+        <text x="20" y="25" font-size="14" font-family="sans-serif" font-weight="bold">Cristal ionique : chlorure de sodium (NaCl)</text>
+        <!-- Maille cubique face centrée simplifiée -->
+        <text x="60" y="50" font-size="12" font-family="sans-serif">Na⁺</text>
+        <circle cx="60" cy="60" r="8" fill="#2980b9"/><text x="56" y="64" font-size="9" fill="#fff">Na⁺</text>
+        <circle cx="120" cy="60" r="8" fill="#2980b9"/><text x="116" y="64" font-size="9" fill="#fff">Na⁺</text>
+        <circle cx="90" cy="90" r="8" fill="#2980b9"/><text x="86" y="94" font-size="9" fill="#fff">Na⁺</text>
+        <circle cx="60" cy="120" r="8" fill="#2980b9"/><text x="56" y="124" font-size="9" fill="#fff">Na⁺</text>
+        <circle cx="120" cy="120" r="8" fill="#2980b9"/><text x="116" y="124" font-size="9" fill="#fff">Na⁺</text>
+        
+        <text x="160" y="50" font-size="12" font-family="sans-serif" fill="#c0392b">Cl⁻</text>
+        <circle cx="90" cy="60" r="10" fill="#c0392b"/><text x="86" y="64" font-size="10" fill="#fff">Cl⁻</text>
+        <circle cx="150" cy="90" r="10" fill="#c0392b"/><text x="146" y="94" font-size="10" fill="#fff">Cl⁻</text>
+        <circle cx="60" cy="90" r="10" fill="#c0392b"/><text x="56" y="94" font-size="10" fill="#fff">Cl⁻</text>
+        <circle cx="120" cy="90" r="10" fill="#c0392b"/><text x="116" y="94" font-size="10" fill="#fff">Cl⁻</text>
+        <circle cx="90" cy="120" r="10" fill="#c0392b"/><text x="86" y="124" font-size="10" fill="#fff">Cl⁻</text>
+        
+        <text x="180" y="140" font-size="11" font-family="sans-serif">Alternance Na⁺ / Cl⁻</text>
+        
+        <!-- Propriétés -->
+        <text x="40" y="200" font-size="11" font-family="sans-serif">• Fond à 801°C</text>
+        <text x="40" y="220" font-size="11" font-family="sans-serif">• Soluble dans l'eau → solution conductrice</text>
+        <text x="40" y="240" font-size="11" font-family="sans-serif">• Solide non conducteur (ions fixes)</text>
+      </svg>
+      <p><em>Figure 3 : structure cristalline du sel de cuisine NaCl. Les ions Na⁺ et Cl⁻ alternent régulièrement.</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Pourquoi le sel solide ne conduit-il pas le courant électrique, alors que la solution d'eau salée le conduit ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Dans le cristal de sel solide, les ions Na⁺ et Cl⁻ sont bloqués dans le réseau et ne peuvent pas se déplacer. Dans l'eau, les ions se dissocient et deviennent libres de se déplacer : la solution est conductrice.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Compare un solide ionique et un solide métallique en termes de conduction électrique et de température de fusion.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <table border="1" cellpadding="5" style="border-collapse:collapse;">
+            <tr><th>Propriété</th><th>Solide ionique (ex: NaCl)</th><th>Solide métallique (ex: fer)</th></tr>
+            <tr><td>Conduction électrique à l'état solide</td><td>Non conducteur</td><td>Bon conducteur</td></tr>
+            <tr><td>Conduction à l'état fondu/en solution</td><td>Conducteur</td><td>Conducteur</td></tr>
+            <tr><td>Température de fusion</td><td>Élevée (801°C)</td><td>Variable (fer : 1538°C)</td></tr>
+            <tr><td>Malléabilité</td><td>Cassant</td><td>Malléable et ductile</td></tr>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Cite trois matériaux de construction utilisés au Burkina Faso et précise leur origine (local ou importé).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>1) <strong>Banco</strong> : origine locale (terre argileuse). 2) <strong>Briques de latérite</strong> : origine locale (roche latéritique). 3) <strong>Ciment</strong> : origine en partie importée ou fabriqué localement à partir de calcaire et d'argile.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Le ciment est une poudre grise. Mélangé à l'eau, il durcit. Explique ce phénomène et précise le nom du matériau obtenu après durcissement.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Le ciment réagit chimiquement avec l'eau (réaction d'hydratation) pour former des composés hydratés qui cristallisent et s'enchevêtrent, donnant une masse dure et résistante. C'est la <strong>prise</strong> du ciment. Le matériau obtenu avec sable et graviers est le <strong>béton</strong>.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> Un échantillon de banco est chauffé. Il ne fond pas à température constante, mais devient de plus en plus mou. S'agit-il d'un solide cristallin ou amorphe ? Justifie.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Le banco ne montre pas de point de fusion fixe : il se ramollit progressivement. C'est un comportement typique d'un solide <strong>amorphe</strong> (comme le verre). Le banco est un mélange complexe de minéraux argileux, de sable et de matières organiques, sans structure cristalline unique.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+</body>
+</html>

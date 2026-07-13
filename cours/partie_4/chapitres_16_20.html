@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche de cours - RéviBF</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #1a1a2e; }
+  h2 { color: #1B6B3A; border-bottom: 2px solid #1B6B3A; padding-bottom: 8px; margin-top: 40px; }
+  h3 { color: #333; margin-top: 24px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  table { max-width: 100%; }
+</style>
+</head>
+<body>
+<!-- PARTIE 4 : CHAPITRES 16 A 20 -->
+
+<h2>CHAPITRE 16 : POSITIONS RELATIVES D'UNE DROITE ET D'UN CERCLE</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Distance d'un point à une droite</h3>
+<p>La distance d'un point O à une droite (d) est la longueur du segment perpendiculaire à (d) joignant O à (d). On la note OH, où H est le pied de la perpendiculaire.</p>
+
+<h3>2. Positions relatives</h3>
+<p>Soit un cercle de centre O et de rayon R, et une droite (d). On note d = OH la distance du centre à la droite.</p>
+<ul>
+  <li>Si d &lt; R : la droite est <strong>sécante</strong> au cercle. Elle coupe le cercle en deux points distincts. La corde [AB] a pour longueur 2 × racine de (R² - d²).</li>
+  <li>Si d = R : la droite est <strong>tangente</strong> au cercle. Elle touche le cercle en un unique point. Le rayon (OH) est perpendiculaire à la droite.</li>
+  <li>Si d &gt; R : la droite est <strong>disjointe</strong> (extérieure) au cercle. Ils n'ont aucun point commun.</li>
+</ul>
+
+<h3>3. Propriété de la tangente</h3>
+<p>En un point M du cercle, la tangente est la droite perpendiculaire au rayon (OM). Réciproquement, si une droite passe par un point du cercle et est perpendiculaire au rayon en ce point, alors elle est tangente au cercle.</p>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#ffffff;">
+  <circle cx="200" cy="150" r="80" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="200" cy="150" r="3" fill="#1a1a2e"/>
+  <text x="206" y="147" font-size="13" font-family="sans-serif">O</text>
+
+  <!-- Sécante -->
+  <line x1="60" y1="100" x2="340" y2="100" stroke="#c0392b" stroke-width="2"/>
+  <text x="350" y="105" font-size="13" font-family="sans-serif" fill="#c0392b">(d1) sécante</text>
+  <line x1="200" y1="150" x2="200" y2="100" stroke="#888888" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="205" y="125" font-size="12" font-family="sans-serif">d1</text>
+
+  <!-- Tangente -->
+  <line x1="120" y1="230" x2="280" y2="70" stroke="#2980b9" stroke-width="2"/>
+  <text x="285" y="65" font-size="13" font-family="sans-serif" fill="#2980b9">(d2) tangente</text>
+  <line x1="200" y1="150" x2="200" y2="150" stroke="none"/>
+  <circle cx="200" cy="150" r="3"/>
+  <!-- point de tangence approximatif -->
+  <circle cx="160" cy="190" r="4" fill="#1a1a2e"/>
+  <text x="130" y="210" font-size="12" font-family="sans-serif">H</text>
+
+  <!-- Disjointe -->
+  <line x1="40" y1="280" x2="360" y2="280" stroke="#27ae60" stroke-width="2"/>
+  <text x="370" y="285" font-size="13" font-family="sans-serif" fill="#27ae60">(d3) extérieure</text>
+  <line x1="200" y1="150" x2="200" y2="280" stroke="#888888" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="205" y="220" font-size="12" font-family="sans-serif">d3</text>
+</svg>
+<p><em>Figure : les trois positions possibles d'une droite par rapport à un cercle (sécante, tangente, extérieure).</em></p>
+</div>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Un cercle de centre O a pour rayon R = 5 cm. La distance de O à une droite (d) est OH = 3 cm. Préciser la position de (d) par rapport au cercle, puis calculer la longueur de la corde découpée par le cercle sur (d).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>OH = 3 cm, R = 5 cm.
+Comme OH &lt; R (3 &lt; 5), la droite est sécante au cercle.
+
+Soit A et B les points d'intersection. Le triangle OHA est rectangle en H.
+D'après Pythagore : OA² = OH² + HA²
+HA² = OA² - OH² = 5² - 3² = 25 - 9 = 16
+HA = racine de 16 = 4 cm.
+La corde AB = 2 × HA = 8 cm.</code></pre>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Trace un cercle de centre O et de rayon 4 cm. Place un point M sur ce cercle. Construis la droite tangente au cercle en M.</p>
+<p><strong>Corrigé :</strong></p>
+<p>On trace le rayon [OM]. En M, on trace la droite perpendiculaire à (OM) à l'aide de l'équerre. Cette droite est la tangente cherchée.</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Un cercle a pour rayon 4 cm. La distance de son centre à une droite est 4 cm. Que peut-on dire de la droite ?</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>d = OH = 4 cm, R = 4 cm.
+d = R, donc la droite est tangente au cercle.
+Le point de contact est le pied de la perpendiculaire H.</code></pre>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Un cercle a pour rayon 5 cm. La distance de son centre à une droite est 6 cm. La droite coupe-t-elle le cercle ?</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>d = 6 cm, R = 5 cm.
+d &gt; R (6 &gt; 5), donc la droite est disjointe (extérieure) au cercle. Elle ne le coupe pas.</code></pre>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Soit un cercle de diamètre [AB] et un point T sur le cercle. Montre que la droite perpendiculaire à (OT) en T est tangente au cercle.</p>
+<p><strong>Corrigé :</strong></p>
+<p>O est le milieu de [AB], donc O est le centre du cercle. T est un point du cercle. La droite passant par T et perpendiculaire au rayon [OT] est, par définition, la tangente au cercle en T. Elle est unique.</p>
+
+<hr>
+
+<h2>CHAPITRE 17 : APPLICATIONS LINEAIRES - APPLICATIONS AFFINES</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Application linéaire</h3>
+<p>Une application linéaire est une fonction de la forme f(x) = a × x, où a est un nombre réel. Sa représentation graphique est une droite passant par l'origine du repère. a est le coefficient directeur.</p>
+
+<h3>2. Application affine</h3>
+<p>Une application affine est une fonction de la forme f(x) = a × x + b, où a et b sont des réels. Sa représentation graphique est une droite de coefficient directeur a et d'ordonnée à l'origine b.</p>
+
+<h3>3. Sens de variation</h3>
+<ul>
+  <li>Si a &gt; 0, la fonction (linéaire ou affine) est croissante.</li>
+  <li>Si a &lt; 0, la fonction est décroissante.</li>
+  <li>Si a = 0, la fonction affine est constante (f(x) = b).</li>
+</ul>
+
+<h3>4. Détermination d'une fonction affine</h3>
+<p>Pour déterminer l'expression f(x) = a x + b à partir de deux points A(xA ; yA) et B(xB ; yB) de la droite :</p>
+<pre><code>a = (yB - yA) divisé par (xB - xA)</code></pre>
+<p>Puis on calcule b en remplaçant x et y par les coordonnées de l'un des points.</p>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#ffffff;">
+  <line x1="40" y1="280" x2="370" y2="280" stroke="#333333" stroke-width="2"/>
+  <polygon points="370,280 358,275 358,285" fill="#333333"/>
+  <text x="375" y="285" font-size="14" font-family="sans-serif">x</text>
+  <line x1="100" y1="300" x2="100" y2="60" stroke="#333333" stroke-width="2"/>
+  <polygon points="100,60 95,72 105,72" fill="#333333"/>
+  <text x="85" y="52" font-size="14" font-family="sans-serif">y</text>
+  <text x="82" y="296" font-size="13" font-family="sans-serif">O</text>
+
+  <!-- Droite linéaire y = 2x -->
+  <line x1="100" y1="280" x2="270" y2="60" stroke="#2980b9" stroke-width="2.5"/>
+  <text x="275" y="58" font-size="13" font-family="sans-serif" fill="#2980b9">y = 2x</text>
+
+  <!-- Droite affine y = 0,5x + 3 -->
+  <line x1="40" y1="220" x2="340" y2="70" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="345" y="68" font-size="13" font-family="sans-serif" fill="#c0392b">y = 0,5x + 3</text>
+
+  <!-- Ordonnée à l'origine -->
+  <circle cx="100" cy="160" r="3" fill="#c0392b"/>
+  <text x="110" y="158" font-size="12" font-family="sans-serif" fill="#c0392b">b=3</text>
+</svg>
+<p><em>Figure : représentation d'une fonction linéaire et d'une fonction affine.</em></p>
+</div>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Parmi les fonctions suivantes, précise si elles sont linéaires, affines ou ni l'un ni l'autre : f(x) = 3x ; g(x) = -2x + 5 ; h(x) = x² + 1.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>f(x) = 3x : forme a x avec a = 3, donc linéaire.
+g(x) = -2x + 5 : forme a x + b avec a = -2, b = 5, donc affine (non linéaire car b ≠ 0).
+h(x) = x² + 1 : présence de x², donc ni linéaire ni affine.</code></pre>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Trace la droite représentant la fonction f(x) = 2x - 1. Donne son coefficient directeur et son ordonnée à l'origine.</p>
+<p><strong>Corrigé :</strong></p>
+<p>Coefficient directeur a = 2, ordonnée à l'origine b = -1. La droite passe par les points (0 ; -1) et (1 ; 1).</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Détermine l'expression de la fonction affine f sachant que f(1) = 5 et f(3) = 9.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>On a f(x) = a x + b.
+f(1) = a×1 + b = a + b = 5
+f(3) = a×3 + b = 3a + b = 9
+Soustraction : (3a + b) - (a + b) = 9 - 5 → 2a = 4 → a = 2.
+Avec a = 2 : 2 + b = 5 → b = 3.
+Donc f(x) = 2x + 3.</code></pre>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Un taxi facture une prise en charge de 500 FCFA puis 200 FCFA par kilomètre parcouru. Exprime le prix P en fonction du nombre x de kilomètres. Quelle est la nature de cette fonction ?</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>P(x) = 200x + 500.
+C'est une fonction affine (a = 200, b = 500).</code></pre>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Résous graphiquement l'équation f(x) = g(x) avec f(x) = x + 2 et g(x) = -2x + 5.</p>
+<p><strong>Corrigé :</strong></p>
+<p>On trace les deux droites. Elles se coupent au point I de coordonnées (1 ; 3). La solution de l'équation est x = 1.</p>
+
+<hr>
+
+<h2>CHAPITRE 18 : ISOMETRIES DU PLAN</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Définition</h3>
+<p>Une isométrie est une transformation du plan qui conserve les distances : quels que soient les points A et B, la distance entre leurs images A' et B' est égale à AB.</p>
+
+<h3>2. Symétrie orthogonale (réflexion)</h3>
+<p>La symétrie par rapport à une droite (d) transforme un point M en M' tel que (d) soit la médiatrice de [MM']. Elle conserve les longueurs, les angles (mais change leur orientation).</p>
+
+<h3>3. Translation</h3>
+<p>La translation de vecteur v transforme M en M' tel que le vecteur MM' = v. Elle conserve les longueurs, les angles et l'orientation.</p>
+
+<h3>4. Rotation</h3>
+<p>La rotation de centre O et d'angle α (en degrés) associe à M un point M' tel que OM' = OM et l'angle (OM, OM') = α. Elle conserve les longueurs et les angles.</p>
+
+<h3>5. Propriétés communes</h3>
+<p>Une isométrie conserve l'alignement, le parallélisme, les périmètres et les aires.</p>
+
+<div style="text-align:center; margin: 20px 0;">
+<svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#ffffff;">
+  <!-- Symétrie axiale -->
+  <line x1="200" y1="40" x2="200" y2="300" stroke="#888888" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="210" y="310" font-size="13" font-family="sans-serif">(d)</text>
+  <!-- Triangle original -->
+  <polygon points="120,100 160,180 80,180" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <text x="70" y="100" font-size="12" font-family="sans-serif" fill="#c0392b">ABC</text>
+  <!-- Triangle image -->
+  <polygon points="280,100 320,180 240,180" fill="none" stroke="#2980b9" stroke-width="2"/>
+  <text x="325" y="100" font-size="12" font-family="sans-serif" fill="#2980b9">A'B'C'</text>
+</svg>
+<p><em>Figure : symétrie orthogonale d'un triangle par rapport à une droite (d).</em></p>
+</div>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Construis l'image d'un triangle ABC par la symétrie d'axe (d) (à main levée, on décrira le protocole).</p>
+<p><strong>Corrigé :</strong></p>
+<p>Pour chaque sommet A, B, C, on trace la perpendiculaire à (d) passant par le point. On reporte la distance de l'autre côté de (d) pour obtenir A', B', C'. On relie A', B', C' dans le même ordre. Le triangle A'B'C' est l'image.</p>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Place deux points A et B. Construis l'image de A par la translation de vecteur AB. Quelle est cette image ?</p>
+<p><strong>Corrigé :</strong></p>
+<p>Par la translation de vecteur AB, l'image de A est le point B lui-même (car le vecteur AA' doit valoir AB, donc A' = B).</p>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Un triangle ABC est tel que AB = 4 cm, AC = 5 cm, BC = 6 cm. On lui applique une rotation de 90° autour d'un point O. Quelles sont les longueurs des côtés du triangle image ?</p>
+<p><strong>Corrigé :</strong></p>
+<p>La rotation étant une isométrie, elle conserve les longueurs. Le triangle image a donc exactement les mêmes dimensions : 4 cm, 5 cm et 6 cm.</p>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Une figure a une aire de 12 cm². On lui applique successivement une symétrie axiale puis une translation. Quelle est l'aire de la figure finale ?</p>
+<p><strong>Corrigé :</strong></p>
+<p>Symétrie et translation sont des isométries, donc elles conservent l'aire. L'aire finale reste 12 cm².</p>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Donne un exemple de transformation qui n'est pas une isométrie.</p>
+<p><strong>Corrigé :</strong></p>
+<p>L'homothétie de rapport k ≠ 1 ne conserve pas les distances (elle les multiplie par |k|). L'agrandissement ou la réduction ne sont pas des isométries. Par exemple, une homothétie de rapport 2 double les longueurs.</p>
+
+<hr>
+
+<h2>CHAPITRE 19 : STATISTIQUES</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Série statistique</h3>
+<p>On étudie un caractère sur une population. Les valeurs du caractère sont les modalités. L'effectif d'une valeur est le nombre d'individus ayant cette valeur. La fréquence est (effectif divisé par effectif total).</p>
+
+<h3>2. Regroupement en classes</h3>
+<p>Quand les données sont nombreuses, on les regroupe par intervalles (classes). Chaque classe a un centre (moyenne des bornes).</p>
+
+<h3>3. Représentations graphiques</h3>
+<ul>
+  <li>Diagramme en bâtons : pour des valeurs discrètes.</li>
+  <li>Histogramme : pour des classes (largeur éventuellement variable).</li>
+  <li>Diagramme circulaire (ou semi-circulaire) : angle proportionnel à l'effectif (ou fréquence).</li>
+</ul>
+
+<h3>4. Moyenne pondérée</h3>
+<pre><code>Moyenne = (somme des produits valeur × effectif) divisé par (effectif total)</code></pre>
+
+<h3>5. Médiane</h3>
+<p>Après avoir rangé les valeurs dans l'ordre croissant, la médiane est la valeur qui partage la série en deux groupes de même effectif. Si l'effectif total N est pair, on prend la moyenne des deux valeurs centrales.</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Voici les notes sur 10 de 12 élèves : 5 ; 7 ; 8 ; 5 ; 9 ; 7 ; 6 ; 5 ; 8 ; 7 ; 6 ; 5. Calcule la moyenne.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Somme = 5+7+8+5+9+7+6+5+8+7+6+5 = 78
+Effectif total = 12
+Moyenne = 78 ÷ 12 = 6,5</code></pre>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Avec les mêmes notes, détermine la médiane.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Tri croissant : 5, 5, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9.
+N = 12 (pair) → médiane entre la 6e et la 7e valeur.
+6e valeur = 6, 7e valeur = 7.
+Médiane = (6 + 7) ÷ 2 = 6,5.</code></pre>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Complète le tableau des effectifs et fréquences (en %) pour la série : 5 (4 fois), 6 (2 fois), 7 (3 fois), 8 (2 fois), 9 (1 fois).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Effectif total = 4+2+3+2+1 = 12
+Fréquences : 5 → (4÷12)×100 ≈ 33,3% ; 6 → 16,7% ; 7 → 25% ; 8 → 16,7% ; 9 → 8,3%.</code></pre>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Représente cette série par un diagramme circulaire (calcule les angles).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Angle total = 360°.
+Pour 5 (4/12) : 4/12 × 360 = 120°
+6 (2/12) : 60°
+7 (3/12) : 90°
+8 (2/12) : 60°
+9 (1/12) : 30°</code></pre>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> Les tailles (en cm) des élèves d'une classe sont regroupées en classes : [150;160[ : 5 élèves ; [160;170[ : 12 élèves ; [170;180[ : 8 élèves. Estime la moyenne (utilise le centre des classes).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Centres : 155, 165, 175.
+Moyenne = (155×5 + 165×12 + 175×8) ÷ (5+12+8) = (775 + 1980 + 1400) ÷ 25 = 4155 ÷ 25 = 166,2 cm.</code></pre>
+
+<hr>
+
+<h2>CHAPITRE 20 : SOLIDES</h2>
+
+<h3>I. Résumé de cours</h3>
+
+<h3>1. Solides usuels</h3>
+<ul>
+  <li><strong>Cube</strong> : 6 faces carrées identiques. Volume V = c³ (c = côté).</li>
+  <li><strong>Pavé droit</strong> : V = L × l × h.</li>
+  <li><strong>Cylindre de révolution</strong> : bases = deux disques. V = π × R² × h. Aire latérale = 2 × π × R × h.</li>
+  <li><strong>Cône de révolution</strong> : V = (1/3) × π × R² × h.</li>
+  <li><strong>Pyramide</strong> : V = (1/3) × (aire de la base) × h.</li>
+  <li><strong>Sphère</strong> : V = (4/3) × π × R³. Aire = 4 × π × R².</li>
+</ul>
+
+<h3>2. Unités de volume</h3>
+<p>1 m³ = 1 000 dm³ ; 1 dm³ = 1 L ; 1 cm³ = 1 mL.</p>
+
+<h3>II. Exercices corrigés</h3>
+
+<h3>Exercice 1</h3>
+<p><strong>Énoncé :</strong> Un cube a une arête de 5 cm. Calcule son volume en cm³, puis en litres.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>V = c³ = 5³ = 125 cm³.
+1 L = 1000 cm³, donc V = 125 ÷ 1000 = 0,125 L.</code></pre>
+
+<h3>Exercice 2</h3>
+<p><strong>Énoncé :</strong> Un cylindre a un rayon de base de 7 cm et une hauteur de 10 cm. Calcule son volume (prendre π ≈ 22/7).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>V = π × R² × h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 7 × 10 = 1540 cm³.</code></pre>
+
+<h3>Exercice 3</h3>
+<p><strong>Énoncé :</strong> Une pyramide a une base carrée de côté 4 cm et une hauteur de 9 cm. Calcule son volume.</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Aire base = 4² = 16 cm².
+V = (1/3) × 16 × 9 = (16 × 9) ÷ 3 = 144 ÷ 3 = 48 cm³.</code></pre>
+
+<h3>Exercice 4</h3>
+<p><strong>Énoncé :</strong> Une sphère a un rayon de 3 cm. Calcule son volume exact puis arrondis au dixième (π ≈ 3,14).</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>V = (4/3) × π × R³ = (4/3) × π × 27 = 36π cm³ (valeur exacte).
+Avec π ≈ 3,14 : V ≈ 36 × 3,14 = 113,04 cm³, soit environ 113,0 cm³.</code></pre>
+
+<h3>Exercice 5</h3>
+<p><strong>Énoncé :</strong> On agrandit un cube de rapport k = 2. Par combien est multiplié son volume ?</p>
+<p><strong>Corrigé :</strong></p>
+<pre><code>Volume initial V = c³.
+Après agrandissement, côté = 2c, donc V' = (2c)³ = 8c³ = 8 × V.
+Le volume est multiplié par 8.</code></pre>
+
+</body>
+</html>

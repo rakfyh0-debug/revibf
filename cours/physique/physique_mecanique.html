@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiche de cours - RéviBF</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #1a1a2e; }
+  h2 { color: #1B6B3A; border-bottom: 2px solid #1B6B3A; padding-bottom: 8px; margin-top: 40px; }
+  h3 { color: #333; margin-top: 24px; }
+  pre { background: #f4f4f4; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  table { max-width: 100%; }
+</style>
+</head>
+<body>
+<!-- PARTIE PHYSIQUE : MÉCANIQUE (Chapitres 10 à 13) -->
+
+<article class="chapitre">
+  <h1>CHAPITRE 10 : MOUVEMENT ET VITESSE</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Référentiel</h3>
+    <p>Pour décrire le mouvement d'un objet, il faut choisir un <strong>référentiel</strong>, c'est-à-dire un objet de référence par rapport auquel on étudie les positions successives du mobile. Le plus courant est le référentiel terrestre (lié au sol). Pour étudier le mouvement des planètes, on utilise le référentiel héliocentrique (lié au Soleil). Un même mouvement peut être décrit différemment selon le référentiel choisi.</p>
+
+    <h3>2. Trajectoire</h3>
+    <p>La trajectoire est l'ensemble des positions occupées par un point du mobile au cours du temps. Elle peut être :</p>
+    <ul>
+      <li><strong>Rectiligne</strong> : la trajectoire est une droite (exemple : une bille qui tombe).</li>
+      <li><strong>Circulaire</strong> : la trajectoire est un cercle (exemple : une nacelle de grande roue).</li>
+      <li><strong>Curviligne</strong> : la trajectoire est une courbe quelconque (exemple : une balle de tennis).</li>
+    </ul>
+
+    <h3>3. Vitesse moyenne</h3>
+    <p>La vitesse moyenne v d'un mobile est le quotient de la distance parcourue d par la durée t du parcours :</p>
+    <pre><code>v = d / t</code></pre>
+    <p>où v est en mètre par seconde (m/s) si d est en mètres (m) et t en secondes (s). On utilise aussi le kilomètre par heure (km/h). Conversion : 1 m/s = 3,6 km/h.</p>
+
+    <h3>4. Vitesse instantanée</h3>
+    <p>La vitesse instantanée est la vitesse à un instant donné. Sur un graphique, elle correspond à la pente de la tangente à la courbe distance-temps. Dans le cas d'un mouvement uniforme, vitesse instantanée et vitesse moyenne sont égales.</p>
+
+    <h3>5. Nature du mouvement</h3>
+    <p>On caractérise le mouvement par l'évolution de la vitesse :</p>
+    <ul>
+      <li><strong>Uniforme</strong> : la vitesse est constante (mouvement rectiligne uniforme ou circulaire uniforme).</li>
+      <li><strong>Accéléré</strong> : la vitesse augmente au cours du temps.</li>
+      <li><strong>Ralenti (ou décéléré)</strong> : la vitesse diminue au cours du temps.</li>
+    </ul>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#fff;">
+        <!-- Schéma de chronophotographie -->
+        <text x="20" y="30" font-size="14" font-family="sans-serif" font-weight="bold">Chronophotographie d'un mobile</text>
+        <!-- trajectoire rectiligne -->
+        <line x1="40" y1="100" x2="460" y2="100" stroke="#333" stroke-width="1.5"/>
+        <!-- positions successives (mouvement accéléré) -->
+        <circle cx="80" cy="100" r="5" fill="#c0392b"/><text x="78" y="85" font-size="10">t1</text>
+        <circle cx="140" cy="100" r="5" fill="#c0392b"/><text x="138" y="85" font-size="10">t2</text>
+        <circle cx="220" cy="100" r="5" fill="#c0392b"/><text x="218" y="85" font-size="10">t3</text>
+        <circle cx="320" cy="100" r="5" fill="#c0392b"/><text x="318" y="85" font-size="10">t4</text>
+        <circle cx="440" cy="100" r="5" fill="#c0392b"/><text x="438" y="85" font-size="10">t5</text>
+        <!-- distances entre positions -->
+        <line x1="80" y1="120" x2="80" y2="135" stroke="gray" stroke-width="1"/>
+        <line x1="140" y1="120" x2="140" y2="135" stroke="gray" stroke-width="1"/>
+        <line x1="220" y1="120" x2="220" y2="135" stroke="gray" stroke-width="1"/>
+        <line x1="320" y1="120" x2="320" y2="135" stroke="gray" stroke-width="1"/>
+        <line x1="440" y1="120" x2="440" y2="135" stroke="gray" stroke-width="1"/>
+        <text x="95" y="145" font-size="10">d1</text>
+        <text x="165" y="145" font-size="10">d2</text>
+        <text x="255" y="145" font-size="10">d3</text>
+        <text x="365" y="145" font-size="10">d4</text>
+        <text x="200" y="170" font-size="12" font-family="sans-serif">Intervalle de temps constant entre chaque position</text>
+      </svg>
+      <p><em>Figure 1 : chronophotographie d'un mobile en mouvement accéléré (les distances parcourues pendant des intervalles de temps égaux augmentent).</em></p>
+    </div>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#fff;">
+        <!-- Graphique distance-temps -->
+        <text x="20" y="30" font-size="14" font-family="sans-serif" font-weight="bold">Graphique d = f(t)</text>
+        <!-- axes -->
+        <line x1="60" y1="220" x2="360" y2="220" stroke="#333" stroke-width="2"/>
+        <polygon points="360,220 350,215 350,225" fill="#333"/>
+        <text x="365" y="225" font-size="12" font-family="sans-serif">t (s)</text>
+        <line x1="60" y1="220" x2="60" y2="30" stroke="#333" stroke-width="2"/>
+        <polygon points="60,30 55,40 65,40" fill="#333"/>
+        <text x="45" y="25" font-size="12" font-family="sans-serif">d (m)</text>
+        <text x="55" y="235" font-size="10" font-family="sans-serif">O</text>
+        <!-- courbe uniforme (droite) -->
+        <line x1="80" y1="180" x2="340" y2="80" stroke="#2980b9" stroke-width="2.5"/>
+        <text x="280" y="70" font-size="11" font-family="sans-serif" fill="#2980b9">mouvement uniforme</text>
+        <!-- courbe accélérée -->
+        <path d="M80,200 Q200,200 340,40" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="200" y="30" font-size="11" font-family="sans-serif" fill="#c0392b">mouvement accéléré</text>
+        <!-- courbe ralentie -->
+        <path d="M80,160 Q200,160 340,190" fill="none" stroke="#27ae60" stroke-width="2.5"/>
+        <text x="260" y="210" font-size="11" font-family="sans-serif" fill="#27ae60">mouvement ralenti</text>
+      </svg>
+      <p><em>Figure 2 : graphiques distance-temps pour différents types de mouvement.</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Un coureur parcourt 400 m en 50 secondes. Calcule sa vitesse moyenne en m/s puis en km/h.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>On applique la formule v = d / t.</p>
+          <pre><code>v = 400 / 50 = 8 m/s.
+Conversion en km/h : 8 × 3,6 = 28,8 km/h.</code></pre>
+          <p>Le coureur a donc une vitesse moyenne de 8 m/s, soit environ 29 km/h.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Une voiture roule à 90 km/h sur une autoroute. Quelle distance parcourt-elle en 2 heures et 30 minutes ? Exprime le résultat en km.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Conversion du temps : 2 h 30 min = 2,5 h.</p>
+          <pre><code>d = v × t = 90 × 2,5 = 225 km.</code></pre>
+          <p>La voiture parcourt 225 km.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Observe la chronophotographie (figure 1). Les intervalles de temps entre deux positions successives sont égaux. La distance entre les points augmente. Comment qualifier ce mouvement ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Puisque la distance parcourue pendant des durées égales augmente, la vitesse augmente : le mouvement est <strong>accéléré</strong>.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Un train quitte Ouagadougou à 8h00 et arrive à Bobo-Dioulasso à 12h30, après avoir parcouru 360 km. Calcule sa vitesse moyenne en km/h et en m/s.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Durée du trajet : 4h30 = 4,5 h.</p>
+          <pre><code>v = 360 / 4,5 = 80 km/h.
+En m/s : 80 / 3,6 ≈ 22,2 m/s.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> Sur un graphique distance-temps, la courbe est une droite qui passe par l'origine. Que peux-tu dire de la vitesse ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Une droite passant par l'origine signifie que la distance est proportionnelle au temps. La vitesse est donc <strong>constante</strong> : c'est un mouvement uniforme. La pente de la droite donne la valeur de la vitesse.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+<article class="chapitre">
+  <h1>CHAPITRE 11 : FORCES</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Définition d'une force</h3>
+    <p>Une force modélise une action mécanique exercée par un objet (l'acteur) sur un autre (le receveur). Elle peut :</p>
+    <ul>
+      <li>Mettre un objet en mouvement ou modifier sa trajectoire.</li>
+      <li>Déformer un objet (ressort, élastique).</li>
+      <li>Maintenir un objet en équilibre.</li>
+    </ul>
+    <p>Une force est représentée par un <strong>vecteur</strong> noté F⃗. Ses caractéristiques sont :</p>
+    <ul>
+      <li><strong>Point d'application</strong> : point où la force s'exerce.</li>
+      <li><strong>Direction</strong> : droite selon laquelle la force agit.</li>
+      <li><strong>Sens</strong> : orientation sur cette droite.</li>
+      <li><strong>Intensité (ou norme)</strong> : valeur de la force, exprimée en <strong>newton (N)</strong>. On la mesure avec un <strong>dynamomètre</strong>.</li>
+    </ul>
+
+    <h3>2. Le poids</h3>
+    <p>Le poids d'un objet est la force d'attraction gravitationnelle exercée par la Terre (ou tout autre astre) sur cet objet. Il est noté <strong>P</strong>.</p>
+    <ul>
+      <li>Point d'application : le centre de gravité G de l'objet.</li>
+      <li>Direction : verticale du lieu (fil à plomb).</li>
+      <li>Sens : vers le bas (vers le centre de la Terre).</li>
+      <li>Intensité : P = m × g, où m est la masse (kg) et g l'intensité de la pesanteur (N/kg). Au Burkina Faso, g ≈ 9,8 N/kg.</li>
+    </ul>
+    <p><strong>Attention :</strong> Ne pas confondre le poids (en N) et la masse (en kg). La masse est invariante, le poids dépend de g (poids plus faible sur la Lune).</p>
+
+    <h3>3. La réaction d'un support</h3>
+    <p>Lorsqu'un objet est posé sur un support, le support exerce une force appelée <strong>réaction</strong>, notée <strong>R</strong>. Si le support est horizontal et sans frottement, la réaction est perpendiculaire au support (on parle de réaction normale). Elle compense le poids si l'objet est immobile.</p>
+
+    <h3>4. Tension d'un ressort</h3>
+    <p>Un ressort étiré ou comprimé exerce une force de rappel proportionnelle à sa déformation (loi de Hooke dans le domaine élastique). La tension est dirigée selon l'axe du ressort.</p>
+
+    <h3>5. Équilibre d'un objet</h3>
+    <p>Un objet est en équilibre si la somme vectorielle des forces qui s'exercent sur lui est nulle (principe d'inertie).</p>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#fff;">
+        <!-- Objet sur une table -->
+        <rect x="120" y="100" width="80" height="60" fill="#f0f0f0" stroke="#333" stroke-width="1.5"/>
+        <text x="155" y="135" font-size="12" font-family="sans-serif">objet</text>
+        <line x1="80" y1="160" x2="240" y2="160" stroke="#333" stroke-width="2"/>
+        <text x="40" y="165" font-size="12" font-family="sans-serif">support</text>
+        
+        <!-- Vecteur poids -->
+        <line x1="160" y1="160" x2="160" y2="210" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrowP)"/>
+        <text x="165" y="225" font-size="13" font-family="sans-serif" fill="#c0392b" font-weight="bold">P</text>
+        <!-- Vecteur réaction -->
+        <line x1="160" y1="100" x2="160" y2="50" stroke="#2980b9" stroke-width="2.5" marker-end="url(#arrowR)"/>
+        <text x="165" y="45" font-size="13" font-family="sans-serif" fill="#2980b9" font-weight="bold">R</text>
+        
+        <!-- Centre de gravité -->
+        <circle cx="160" cy="130" r="3" fill="#1a1a2e"/>
+        <text x="168" y="133" font-size="10" font-family="sans-serif">G</text>
+
+        <defs>
+          <marker id="arrowP" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/>
+          </marker>
+          <marker id="arrowR" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#2980b9"/>
+          </marker>
+        </defs>
+      </svg>
+      <p><em>Figure 3 : objet posé sur une table horizontale. Les forces poids P et réaction R se compensent (équilibre).</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Une personne a une masse de 65 kg. Calcule son poids à Ouagadougou (g = 9,8 N/kg) et sur la Lune (g = 1,6 N/kg).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Terre :</p>
+          <pre><code>P = m × g = 65 × 9,8 = 637 N.</code></pre>
+          <p>Lune :</p>
+          <pre><code>P = 65 × 1,6 = 104 N.</code></pre>
+          <p>Le poids est environ 6 fois plus faible sur la Lune, mais la masse reste 65 kg.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Un dynamomètre indique 8 N lorsqu'on y suspend un objet. Calcule la masse de cet objet (g = 9,8 N/kg).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <pre><code>P = m × g → m = P / g = 8 / 9,8 ≈ 0,816 kg = 816 g.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Sur un schéma, représente le vecteur poids d'une boîte de masse 500 g posée sur une table. Échelle : 1 cm pour 2 N. Décris précisément le tracé.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>P = 0,5 × 9,8 = 4,9 N. Longueur de la flèche : 4,9 / 2 ≈ 2,45 cm.</p>
+          <p>La flèche part du centre de gravité G (centre de la boîte), verticale, orientée vers le bas. On trace une flèche de 2,45 cm.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Une caisse est tirée horizontalement par une force de 50 N. Représente cette force sur un schéma (échelle 1 cm pour 10 N).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Longueur : 50/10 = 5 cm. La flèche est horizontale, partant du point d'attache de la corde, dans le sens de la traction.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> Un livre est posé sur une table. Il est immobile. Quelles forces s'exercent sur lui ? Sont-elles opposées ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Deux forces s'exercent : le poids (vers le bas) et la réaction de la table (vers le haut). Elles ont même direction, des sens opposés et même intensité : elles se compensent, d'où l'immobilité.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+<article class="chapitre">
+  <h1>CHAPITRE 12 : TRAVAIL ET PUISSANCE MÉCANIQUE</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Travail d'une force constante</h3>
+    <p>Lorsqu'une force constante <strong>F</strong> déplace son point d'application de A à B, on définit le <strong>travail</strong> W (en joules, J) par :</p>
+    <pre><code>W = F × AB × cos(α)</code></pre>
+    <p>où α est l'angle entre la direction de la force et celle du déplacement.</p>
+    <ul>
+      <li>Si la force est parallèle au déplacement et de même sens (α = 0°) : W = F × d (travail <strong>moteur</strong>, positif).</li>
+      <li>Si la force est parallèle au déplacement et de sens opposé (α = 180°) : W = -F × d (travail <strong>résistant</strong>, négatif).</li>
+      <li>Si la force est perpendiculaire au déplacement (α = 90°) : W = 0 (travail <strong>nul</strong>).</li>
+    </ul>
+    <p><strong>Exemple :</strong> Une personne porte une valise et marche horizontalement. La force qu'elle exerce pour soutenir la valise (vers le haut) est perpendiculaire au déplacement (horizontal). Le travail de cette force est nul.</p>
+
+    <h3>2. Travail du poids</h3>
+    <p>Pour un objet de masse m se déplaçant verticalement d'une hauteur h :</p>
+    <pre><code>W = m × g × h (si descente, travail moteur ; si montée, travail résistant).</code></pre>
+
+    <h3>3. Puissance mécanique</h3>
+    <p>La puissance P caractérise la rapidité avec laquelle le travail est effectué :</p>
+    <pre><code>P = W / t</code></pre>
+    <p>P en watt (W), W en joules (J), t en secondes (s). Une machine puissante effectue un travail important en peu de temps.</p>
+
+    <h3>4. Rendement</h3>
+    <p>Pour une machine, le rendement η (êta) compare la puissance utile à la puissance absorbée :</p>
+    <pre><code>η = Pu / Pa (souvent exprimé en %).</code></pre>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#fff;">
+        <!-- Schéma force et déplacement -->
+        <rect x="100" y="80" width="80" height="60" fill="#f0f0f0" stroke="#333" stroke-width="1.5"/>
+        <text x="125" y="115" font-size="12" font-family="sans-serif">objet</text>
+        <!-- déplacement -->
+        <line x1="180" y1="110" x2="280" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrowD)"/>
+        <text x="220" y="100" font-size="12" font-family="sans-serif">d</text>
+        <!-- force inclinée -->
+        <line x1="140" y1="110" x2="200" y2="50" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrowF)"/>
+        <text x="170" y="45" font-size="13" font-family="sans-serif" fill="#c0392b">F</text>
+        <text x="200" y="135" font-size="12" font-family="sans-serif">α = angle entre F et d</text>
+        <defs>
+          <marker id="arrowD" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#333"/>
+          </marker>
+          <marker id="arrowF" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/>
+          </marker>
+        </defs>
+      </svg>
+      <p><em>Figure 4 : travail d'une force F lors d'un déplacement d. L'angle α influe sur la valeur du travail.</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Un ouvrier pousse une caisse sur 5 m en exerçant une force horizontale de 200 N. Calcule le travail de cette force.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Force parallèle au déplacement (α = 0°, cos(0)=1) :</p>
+          <pre><code>W = F × d = 200 × 5 = 1000 J.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Une grue soulève une charge de 300 kg sur une hauteur de 12 m en 15 secondes (g = 9,8 N/kg). Calcule le travail du poids de la charge et la puissance mécanique développée par la grue.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Poids : P = 300 × 9,8 = 2940 N.</p>
+          <p>Travail résistant du poids (montée, opposé au déplacement) :</p>
+          <pre><code>W = -P × h = -2940 × 12 = -35 280 J.</code></pre>
+          <p>La grue fournit un travail moteur de 35 280 J (valeur absolue).</p>
+          <p>Puissance :</p>
+          <pre><code>P = |W| / t = 35280 / 15 = 2352 W ≈ 2,35 kW.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Un élève monte un escalier de 3 m de hauteur. Sa masse est 50 kg. Calcule le travail de son poids durant la montée. Même question pour la descente.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Montée : déplacement vers le haut, poids vers le bas → α = 180°, cos(180) = -1.</p>
+          <pre><code>W = m × g × h × cos(180) = 50 × 9,8 × 3 × (-1) = -1470 J.</code></pre>
+          <p>Descente : déplacement vers le bas, même sens que le poids → α = 0°, cos(0) = 1.</p>
+          <pre><code>W = 50 × 9,8 × 3 = 1470 J (travail moteur).</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Une force de 100 N est appliquée avec un angle de 60° par rapport au déplacement de 4 m. Calcule le travail (cos 60° = 0,5).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <pre><code>W = F × d × cos(α) = 100 × 4 × 0,5 = 200 J.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> Une pompe remonte 500 litres d'eau par minute d'un puits de 10 m. Calcule la puissance utile de la pompe (1 L d'eau = 1 kg, g = 9,8 N/kg).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Masse d'eau par minute : 500 kg. Travail par minute : W = m × g × h = 500 × 9,8 × 10 = 49 000 J.</p>
+          <p>Durée : 1 min = 60 s. Puissance :</p>
+          <pre><code>P = 49000 / 60 ≈ 817 W.</code></pre>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+<article class="chapitre">
+  <h1>CHAPITRE 13 : ÉNERGIE MÉCANIQUE</h1>
+
+  <section class="resume">
+    <h2>Rappel de cours</h2>
+
+    <h3>1. Énergie cinétique</h3>
+    <p>L'énergie cinétique Ec est l'énergie que possède un corps du fait de son mouvement. Elle dépend de la masse m et de la vitesse v :</p>
+    <pre><code>Ec = (1/2) × m × v²</code></pre>
+    <p>Ec en joules (J), m en kg, v en m/s.</p>
+    <p><strong>Propriétés :</strong> Ec est toujours positive ; si v double, Ec quadruple. Un camion de masse importante possède une grande énergie cinétique, d'où des distances de freinage plus longues.</p>
+
+    <h3>2. Énergie potentielle de pesanteur</h3>
+    <p>L'énergie potentielle de pesanteur Ep est l'énergie que possède un corps du fait de sa position par rapport à un niveau de référence (souvent le sol). Elle dépend de l'altitude h :</p>
+    <pre><code>Ep = m × g × h</code></pre>
+    <p>Ep en joules (J), h en mètres (m).</p>
+
+    <h3>3. Énergie mécanique</h3>
+    <p>L'énergie mécanique Em d'un système est la somme de son énergie cinétique et de son énergie potentielle :</p>
+    <pre><code>Em = Ec + Ep</code></pre>
+
+    <h3>4. Conservation de l'énergie mécanique</h3>
+    <p>En <strong>absence de frottements</strong>, l'énergie mécanique d'un système isolé se conserve. Cela signifie que toute diminution d'énergie potentielle se transforme intégralement en énergie cinétique (et inversement). Exemple : une bille qui tombe en chute libre.</p>
+    <p>En présence de frottements, une partie de l'énergie mécanique est convertie en énergie thermique (chaleur), et Em diminue.</p>
+
+    <div style="text-align:center; margin:20px 0;">
+      <svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; background:#fff;">
+        <!-- Schéma conversion énergie -->
+        <text x="20" y="30" font-size="14" font-family="sans-serif" font-weight="bold">Conversion d'énergie lors d'une chute libre</text>
+        <!-- positions -->
+        <rect x="150" y="60" width="40" height="40" fill="#f0f0f0" stroke="#333"/>
+        <text x="155" y="85" font-size="11">haut</text>
+        <text x="80" y="85" font-size="11" fill="#2980b9">Ep élevée</text>
+        <text x="80" y="100" font-size="11" fill="#c0392b">Ec faible</text>
+        
+        <rect x="150" y="140" width="40" height="40" fill="#f0f0f0" stroke="#333"/>
+        <text x="155" y="165" font-size="11">milieu</text>
+        
+        <rect x="150" y="220" width="40" height="40" fill="#f0f0f0" stroke="#333"/>
+        <text x="155" y="245" font-size="11">bas</text>
+        <text x="250" y="240" font-size="11" fill="#2980b9">Ep faible</text>
+        <text x="250" y="255" font-size="11" fill="#c0392b">Ec élevée</text>
+        
+        <!-- flèche -->
+        <line x1="170" y1="100" x2="170" y2="130" stroke="#333" marker-end="url(#arrowDown)"/>
+        <line x1="170" y1="180" x2="170" y2="210" stroke="#333" marker-end="url(#arrowDown)"/>
+        <defs>
+          <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#333"/>
+          </marker>
+        </defs>
+      </svg>
+      <p><em>Figure 5 : lors d'une chute libre, l'énergie potentielle diminue et se transforme en énergie cinétique. L'énergie mécanique reste constante (si on néglige les frottements de l'air).</em></p>
+    </div>
+  </section>
+
+  <section class="exercices">
+    <h2>Exercices</h2>
+
+    <div class="exercice">
+      <h3>Exercice 1</h3>
+      <p><strong>Énoncé :</strong> Une voiture de masse 1000 kg roule à 72 km/h. Calcule son énergie cinétique.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Conversion : 72 km/h = 72 / 3,6 = 20 m/s.</p>
+          <pre><code>Ec = 0,5 × 1000 × 20² = 0,5 × 1000 × 400 = 200 000 J = 200 kJ.</code></pre>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 2</h3>
+      <p><strong>Énoncé :</strong> Un marteau de 2 kg est lâché d'une hauteur de 5 m. Calcule son énergie potentielle initiale (g = 9,8 N/kg). Quelle sera son énergie cinétique juste avant de toucher le sol (sans frottements) ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Ep initiale = m × g × h = 2 × 9,8 × 5 = 98 J.</p>
+          <p>Sans frottements, Em se conserve : Ec finale = Ep initiale = 98 J.</p>
+          <p>On peut aussi retrouver la vitesse : v = √(2 × Ec / m) = √(2×98/2) = √98 ≈ 9,9 m/s.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 3</h3>
+      <p><strong>Énoncé :</strong> Un skieur de 80 kg descend une piste de 200 m de dénivelé. En bas, sa vitesse est 25 m/s. Calcule l'énergie mécanique perdue à cause des frottements (g = 9,8 N/kg).</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Perte d'Ep = m × g × h = 80 × 9,8 × 200 = 156 800 J.</p>
+          <p>Gain d'Ec = 0,5 × 80 × 25² = 0,5 × 80 × 625 = 25 000 J.</p>
+          <p>Énergie dissipée par frottements = Perte Ep - Gain Ec = 156 800 - 25 000 = 131 800 J.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 4</h3>
+      <p><strong>Énoncé :</strong> Pourquoi un camion a-t-il une distance de freinage plus grande qu'une voiture à vitesse égale ?</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Le camion a une masse plus grande, donc une énergie cinétique plus élevée pour une même vitesse. Pour l'arrêter, le travail des forces de freinage doit être égal à cette énergie cinétique. Comme les freins ont une limite, la distance est plus longue.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exercice">
+      <h3>Exercice 5</h3>
+      <p><strong>Énoncé :</strong> Une balle de tennis de 58 g est frappée et atteint une vitesse de 180 km/h. Calcule son énergie cinétique.</p>
+      <details>
+        <summary>Voir la correction</summary>
+        <div class="correction">
+          <p>Conversion masse : 58 g = 0,058 kg.</p>
+          <p>Conversion vitesse : 180 km/h = 180 / 3,6 = 50 m/s.</p>
+          <pre><code>Ec = 0,5 × 0,058 × 50² = 0,5 × 0,058 × 2500 = 72,5 J.</code></pre>
+        </div>
+      </details>
+    </div>
+  </section>
+</article>
+
+</body>
+</html>

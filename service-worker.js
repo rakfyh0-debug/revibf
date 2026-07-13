@@ -1,4 +1,4 @@
-const CACHE_NAME = 'revibf-cache-v1';
+const CACHE_NAME = 'revibf-cache-v4';
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -11,11 +11,39 @@ const ASSETS_TO_CACHE = [
   "./js/culture_data.js",
   "./js/confettis.js",
   "./js/sons.js",
-  "./robots.txt"
+  "./images/logo.svg",
+  "./images/logo-icone.svg",
+  "./images/icon-192.png",
+  "./images/icon-512.png",
+  "./images/favicon-32.png",
+  "./cours/physique/physique_electricite.html",
+  "./cours/physique/physique_mecanique.html",
+  "./cours/physique/physique_optique.html",
+  "./cours/chimie/chimie_ions_metalliques.html",
+  "./cours/chimie/chimie_corps_moleculaires.html",
+  "./cours/chimie/chimie_corps_solides.html",
+  "./robots.txt",
+  "./cours/svt_partie0_1.html",
+  "./cours/svt_partie2.html",
+  "./cours/svt_partie3.html",
+  "./cours/svt_partie4.html",
+  "./cours/svt_partie5.html",
+  "./cours/francais_bepc.html",
+  "./cours/francais_recapitulatif.html",
+  "./cours/anglais_bepc.html",
+  "./cours/anglais_recapitulatif.html",
+  "./cours/histoire_partie1.html",
+  "./cours/histoire_partie2.html",
+  "./cours/histoire_partie3.html",
+  "./cours/geographie_partie1.html",
+  "./cours/geographie_partie2.html",
+  "./cours/geographie_partie3.html",
+
 ];
 
 // Installation résiliente
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return Promise.all(
@@ -38,5 +66,15 @@ self.addEventListener('fetch', (event) => {
       }
       return fetch(event.request);
     })
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+      );
+    }).then(() => self.clients.claim())
   );
 });

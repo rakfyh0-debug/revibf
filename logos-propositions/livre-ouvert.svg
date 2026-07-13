@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Livre ouvert -->
+  <path d="M100 60 L60 75 L60 140 L100 125 Z" fill="#58CC02" stroke="#4AA802" stroke-width="2"/>
+  <path d="M100 60 L140 75 L140 140 L100 125 Z" fill="#4AA802" stroke="#58CC02" stroke-width="2"/>
+  <!-- Pages intérieures -->
+  <line x1="100" y1="68" x2="70" y2="85" stroke="#FFC800" stroke-width="1.5"/>
+  <line x1="100" y1="76" x2="70" y2="93" stroke="#FFC800" stroke-width="1.5"/>
+  <line x1="100" y1="84" x2="70" y2="101" stroke="#FFC800" stroke-width="1.5"/>
+  <line x1="100" y1="68" x2="130" y2="85" stroke="#FFC800" stroke-width="1.5"/>
+  <line x1="100" y1="76" x2="130" y2="93" stroke="#FFC800" stroke-width="1.5"/>
+  <line x1="100" y1="84" x2="130" y2="101" stroke="#FFC800" stroke-width="1.5"/>
+  <!-- Nom -->
+  <text x="100" y="190" font-family="Nunito, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">RéviBF</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Globe -->
+  <circle cx="100" cy="100" r="45" fill="#58CC02" stroke="#4AA802" stroke-width="3"/>
+  <!-- Continents (stylisés) -->
+  <path d="M75 80 Q80 75 90 80 Q95 90 85 95 Q75 90 75 80" fill="#4AA802"/>
+  <path d="M110 85 Q120 80 130 85 Q125 100 110 100 Q105 95 110 85" fill="#4AA802"/>
+  <!-- Burkina en surbrillance -->
+  <path d="M88 90 L95 88 L100 90 L98 97 L92 98 Z" fill="#FFC800" stroke="#1A1A1A" stroke-width="1"/>
+  <!-- Lignes de latitude / longitude -->
+  <ellipse cx="100" cy="100" rx="45" ry="15" fill="none" stroke="#4AA802" stroke-width="1" opacity="0.5"/>
+  <line x1="55" y1="100" x2="145" y2="100" stroke="#4AA802" stroke-width="1" opacity="0.5"/>
+  <!-- Nom -->
+  <text x="100" y="190" font-family="Nunito, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">RéviBF</text>
+</svg>

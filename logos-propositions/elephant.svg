@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Corps -->
+  <ellipse cx="100" cy="125" rx="50" ry="40" fill="#58CC02"/>
+  <!-- Tête -->
+  <circle cx="100" cy="85" r="35" fill="#58CC02"/>
+  <!-- Oreilles -->
+  <ellipse cx="65" cy="80" rx="20" ry="25" fill="#58CC02"/>
+  <ellipse cx="135" cy="80" rx="20" ry="25" fill="#58CC02"/>
+  <!-- Trompe -->
+  <path d="M100 100 Q100 130 90 135 Q80 130 85 120" fill="none" stroke="#58CC02" stroke-width="8" stroke-linecap="round"/>
+  <!-- Yeux -->
+  <circle cx="88" cy="80" r="4" fill="#1A1A1A"/>
+  <circle cx="112" cy="80" r="4" fill="#1A1A1A"/>
+  <!-- Défenses -->
+  <path d="M90 100 L85 115 L90 120" fill="white" stroke="#ccc" stroke-width="1"/>
+  <path d="M110 100 L115 115 L110 120" fill="white" stroke="#ccc" stroke-width="1"/>
+  <!-- Nom -->
+  <text x="100" y="185" font-family="Nunito, sans-serif" font-weight="900" font-size="24" fill="#58CC02" text-anchor="middle">RéviBF</text>
+</svg>

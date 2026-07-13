@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Corps -->
+  <ellipse cx="100" cy="120" rx="45" ry="50" fill="#58CC02"/>
+  <!-- Ventre -->
+  <ellipse cx="100" cy="130" rx="30" ry="35" fill="#FFC800"/>
+  <!-- Yeux -->
+  <circle cx="80" cy="90" r="18" fill="white"/>
+  <circle cx="120" cy="90" r="18" fill="white"/>
+  <circle cx="80" cy="90" r="8" fill="#1A1A1A"/>
+  <circle cx="120" cy="90" r="8" fill="#1A1A1A"/>
+  <!-- Bec -->
+  <polygon points="100,100 94,110 106,110" fill="#FF9600"/>
+  <!-- Ailes (livres) -->
+  <rect x="40" y="100" width="20" height="30" rx="3" fill="#FFC800" transform="rotate(-15 50 115)"/>
+  <rect x="140" y="100" width="20" height="30" rx="3" fill="#FFC800" transform="rotate(15 150 115)"/>
+  <!-- Nom -->
+  <text x="100" y="185" font-family="Nunito, sans-serif" font-weight="900" font-size="24" fill="#58CC02" text-anchor="middle">RéviBF</text>
+</svg>

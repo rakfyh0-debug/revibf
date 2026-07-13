@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Dégradé vert -->
+    <linearGradient id="gradVert" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E3B1F"/>
+      <stop offset="100%" stop-color="#1A5C2A"/>
+    </linearGradient>
+    <radialGradient id="fondGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5F5F5"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+    <filter id="ombre" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    <filter id="ombreLegere" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="400" height="400" fill="url(#fondGrad)" rx="24"/>
+
+  <!-- Cercle extérieur décoratif -->
+  <circle cx="200" cy="170" r="95" fill="none" stroke="url(#gradVert)" stroke-width="2" opacity="0.3"/>
+  <circle cx="200" cy="170" r="85" fill="none" stroke="url(#gradVert)" stroke-width="1" opacity="0.15"/>
+
+  <!-- Icône éléphant agrandie -->
+  <g transform="translate(200,170)">
+    <!-- Cercle vert plus grand -->
+    <circle cx="0" cy="0" r="65" fill="url(#gradVert)" filter="url(#ombre)"/>
+    <!-- Éléphant simplifié, taille augmentée -->
+    <g transform="scale(1.2)">
+      <ellipse cx="0" cy="12" rx="16" ry="14" fill="white" />
+      <circle cx="0" cy="-6" r="13" fill="white" />
+      <ellipse cx="-13" cy="-8" rx="7" ry="10" fill="white" />
+      <ellipse cx="13" cy="-8" rx="7" ry="10" fill="white" />
+      <path d="M0 4 Q0 18 -4 22 Q-8 24 -6 20" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+      <circle cx="-5" cy="-8" r="1.5" fill="#0E3B1F" />
+      <circle cx="5" cy="-8" r="1.5" fill="#0E3B1F" />
+    </g>
+  </g>
+
+  <!-- Feuilles décoratives autour -->
+  <g fill="url(#gradVert)" opacity="0.9">
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(0 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(45 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(90 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(135 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(180 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(225 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(270 200 170)"/>
+    <path d="M120 100 Q110 85 125 80 Q140 85 120 100" transform="rotate(315 200 170)"/>
+  </g>
+
+  <!-- Lettre R stylisée avec base prolongée -->
+  <g transform="translate(200, 290)" fill="url(#gradVert)" filter="url(#ombreLegere)">
+    <!-- Chemin du R : jambe verticale, courbe, et base allongée vers la droite -->
+    <path d="M-22 25 L-22 -25 L-4 -25 Q12 -25 12 -10 Q12 0 2 5 L12 25 L0 25 L-8 8 L-10 8 L-10 25 Z M-10 -5 L-10 -15 L-2 -15 Q4 -15 4 -10 Q4 -5 -2 -5 Z" />
+  </g>
+
+  <!-- Petites étoiles conservées -->
+  <circle cx="100" cy="130" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="300" cy="130" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="100" cy="240" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="300" cy="240" r="2" fill="#1A5C2A" opacity="0.4"/>
+</svg>

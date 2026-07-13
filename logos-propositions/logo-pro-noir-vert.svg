@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fond blanc cassé (discret) -->
+  <rect width="200" height="200" fill="#FAFAFA" rx="20" />
+
+  <!-- Cercle vert bouteille -->
+  <circle cx="100" cy="85" r="42" fill="#1A5C2A" />
+
+  <!-- Silhouette d'éléphant minimaliste (blanc) -->
+  <g transform="translate(100,85) scale(0.85)">
+    <!-- Corps -->
+    <ellipse cx="0" cy="15" rx="18" ry="16" fill="white" />
+    <!-- Tête -->
+    <circle cx="0" cy="-5" r="14" fill="white" />
+    <!-- Oreilles -->
+    <ellipse cx="-14" cy="-8" rx="8" ry="11" fill="white" />
+    <ellipse cx="14" cy="-8" rx="8" ry="11" fill="white" />
+    <!-- Trompe -->
+    <path d="M0 5 Q0 20 -4 24 Q-8 26 -6 22" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <!-- Œil (petit point noir) -->
+    <circle cx="-5" cy="-7" r="1.5" fill="#1A5C2A" />
+    <circle cx="5" cy="-7" r="1.5" fill="#1A5C2A" />
+  </g>
+
+  <!-- Nom RéviBF -->
+  <text x="100" y="155" font-family="'Inter', sans-serif" font-weight="700" font-size="28" fill="#1A1A1A" text-anchor="middle" letter-spacing="-0.5">Révi<span fill="#1A5C2A">BF</span></text>
+
+  <!-- Tagline -->
+  <text x="100" y="175" font-family="'Inter', sans-serif" font-weight="500" font-size="10" fill="#666666" text-anchor="middle" letter-spacing="1.5">RÉVISION · EXAMENS · BURKINA</text>
+</svg>

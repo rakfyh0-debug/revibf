@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Dégradé vert principal -->
+    <linearGradient id="gradVert" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E3B1F"/>
+      <stop offset="100%" stop-color="#1A5C2A"/>
+    </linearGradient>
+    <!-- Dégradé plus clair pour le cercle -->
+    <linearGradient id="gradVertClair" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1A5C2A"/>
+      <stop offset="100%" stop-color="#2D7A4A"/>
+    </linearGradient>
+    <!-- Fond -->
+    <radialGradient id="fondGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5F5F5"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+    <!-- Ombre portée -->
+    <filter id="ombre" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    <filter id="ombreLegere" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+    <!-- Ombre pour le texte -->
+    <filter id="ombreTexte" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="400" height="400" fill="url(#fondGrad)" rx="24"/>
+
+  <!-- Anneaux décoratifs -->
+  <circle cx="200" cy="170" r="95" fill="none" stroke="url(#gradVert)" stroke-width="2" opacity="0.3"/>
+  <circle cx="200" cy="170" r="88" fill="none" stroke="url(#gradVert)" stroke-width="1" opacity="0.15"/>
+  <!-- Discret anneau de points -->
+  <circle cx="200" cy="170" r="72" fill="none" stroke="url(#gradVertClair)" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+
+  <!-- Icône : cercle vert + éléphant détaillé -->
+  <g transform="translate(200,170)">
+    <!-- Cercle principal -->
+    <circle cx="0" cy="0" r="58" fill="url(#gradVert)" filter="url(#ombre)"/>
+    <!-- Ombre sous l'éléphant -->
+    <ellipse cx="0" cy="20" rx="20" ry="6" fill="#000000" opacity="0.1"/>
+    <!-- Éléphant -->
+    <g transform="scale(0.95)">
+      <!-- Corps -->
+      <ellipse cx="0" cy="12" rx="16" ry="14" fill="white" />
+      <!-- Tête -->
+      <circle cx="0" cy="-6" r="13" fill="white" />
+      <!-- Oreilles -->
+      <ellipse cx="-13" cy="-8" rx="7" ry="10" fill="white" />
+      <ellipse cx="13" cy="-8" rx="7" ry="10" fill="white" />
+      <!-- Intérieur des oreilles (détail) -->
+      <ellipse cx="-13" cy="-8" rx="4" ry="6" fill="#E8F0E8" />
+      <ellipse cx="13" cy="-8" rx="4" ry="6" fill="#E8F0E8" />
+      <!-- Trompe -->
+      <path d="M0 4 Q0 18 -4 22 Q-8 24 -6 20" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+      <!-- Défense (détail) -->
+      <path d="M-5 8 Q-8 12 -7 16" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+      <!-- Œil avec reflet -->
+      <circle cx="-5" cy="-8" r="1.5" fill="#0E3B1F" />
+      <circle cx="5" cy="-8" r="1.5" fill="#0E3B1F" />
+      <circle cx="-4.5" cy="-9" r="0.6" fill="white" />
+      <circle cx="5.5" cy="-9" r="0.6" fill="white" />
+      <!-- Ride sur le front (détail) -->
+      <path d="M-4 -3 Q0 -5 4 -3" fill="none" stroke="#DCE8DC" stroke-width="0.8" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Feuilles décoratives (avec nervure) -->
+  <g fill="url(#gradVertClair)" opacity="0.95">
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(0 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(45 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(90 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(135 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(180 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(225 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(270 200 170)"/>
+    <path d="M118 102 Q108 86 122 82 Q134 86 118 102" transform="rotate(315 200 170)"/>
+  </g>
+  <!-- Nervures des feuilles -->
+  <g stroke="#0E3B1F" stroke-width="0.8" opacity="0.3">
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(0 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(45 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(90 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(135 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(180 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(225 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(270 200 170)"/>
+    <line x1="118" y1="90" x2="122" y2="82" transform="rotate(315 200 170)"/>
+  </g>
+
+  <!-- Nom RéviBF avec effet -->
+  <text x="200" y="295" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="800" font-size="48" fill="url(#gradVert)" text-anchor="middle" letter-spacing="-1.5" filter="url(#ombreTexte)">Révi<span fill="#1A5C2A">BF</span></text>
+
+  <!-- Ligne de séparation -->
+  <line x1="140" y1="310" x2="260" y2="310" stroke="url(#gradVert)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Tagline -->
+  <text x="200" y="335" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#555555" text-anchor="middle" letter-spacing="2.5">RÉVISION · EXAMENS · BURKINA FASO</text>
+
+  <!-- Étoiles décoratives -->
+  <circle cx="100" cy="130" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="300" cy="130" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="100" cy="240" r="2" fill="#1A5C2A" opacity="0.4"/>
+  <circle cx="300" cy="240" r="2" fill="#1A5C2A" opacity="0.4"/>
+</svg>

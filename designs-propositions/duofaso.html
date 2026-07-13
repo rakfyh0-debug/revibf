@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RéviBF – DuoFaso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Quicksand', sans-serif; background: #FFFFFF; color: #4A4A4A; }
+    header { background: #58CC02; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.8rem; color: #FFFFFF; display: flex; align-items: center; gap: 0.5rem; }
+    .logo span { background: #FFC800; color: #4A4A4A; padding: 0.2rem 0.6rem; border-radius: 1rem; font-size: 1.2rem; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav a { color: #FFFFFF; text-decoration: none; font-weight: 600; }
+    .hero { background: linear-gradient(180deg, #58CC02 0%, #7DE044 100%); padding: 3rem 1.5rem 5rem; text-align: center; border-radius: 0 0 2rem 2rem; }
+    .hero h1 { font-family: 'Nunito', sans-serif; font-size: 2.8rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem; }
+    .hero p { color: #E5FFCC; font-size: 1.1rem; max-width: 500px; margin: 0 auto 1.5rem; }
+    .streak { background: #FF9600; color: #fff; display: inline-block; padding: 0.5rem 1.2rem; border-radius: 2rem; font-weight: 700; font-size: 1rem; margin-bottom: 1rem; }
+    .btn { display: inline-block; padding: 1rem 2rem; border-radius: 1.5rem; font-weight: 700; text-decoration: none; margin: 0.5rem; box-shadow: 0 4px 0 rgba(0,0,0,0.1); transition: 0.1s; }
+    .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.1); }
+    .btn-primary { background: #FFC800; color: #4A4A4A; }
+    .btn-secondary { background: #FFFFFF; color: #58CC02; }
+    .progress-section { padding: 2rem 1.5rem; max-width: 600px; margin: -2rem auto 0; background: #FFFFFF; border-radius: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.05); position: relative; }
+    .progress-bar { height: 12px; background: #E5E5E5; border-radius: 1rem; margin: 1rem 0; }
+    .progress-fill { height: 100%; background: #FFC800; border-radius: 1rem; width: 60%; }
+    .cards { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; padding: 2rem 1.5rem; }
+    .card { background: #F7F7F7; border-radius: 1.2rem; padding: 1.5rem; width: 140px; text-align: center; border-bottom: 4px solid #58CC02; }
+    .card .icon { font-size: 2.5rem; }
+    .card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; color: #58CC02; }
+    .mascot { position: fixed; bottom: 1rem; right: 1rem; width: 80px; height: 80px; background: #FFC800; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer; }
+    footer { text-align: center; padding: 2rem; color: #AAA; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Révi<span>BF</span></div>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">BEPC</a></li>
+        <li><a href="#">BAC</a></li>
+        <li><a href="#">Culture</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="streak">🔥 Série de 3 jours</div>
+    <h1>Apprends, Révise, Réussis !</h1>
+    <p>Comme Duolingo, mais pour tes examens du Faso. Des quiz amusants, des annales, et une mascotte qui t’encourage.</p>
+    <div>
+      <a href="#" class="btn btn-primary">Commencer le BEPC</a>
+      <a href="#" class="btn btn-secondary">BAC</a>
+    </div>
+  </section>
+  <div class="progress-section">
+    <h3>📊 Ta progression</h3>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <p style="font-size:0.9rem; color:#888;">60% du programme BEPC révisé</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📄</div>
+      <h3>Sujets</h3>
+      <p>PDF corrigés</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎮</div>
+      <h3>Quiz</h3>
+      <p>Gamifiés</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏆</div>
+      <h3>Objectifs</h3>
+      <p>Garde le rythme</p>
+    </div>
+  </div>
+  <div class="mascot" title="Ton coach">🦉</div>
+  <footer>RéviBF · Apprendre en s’amusant · Burkina Faso</footer>
+</body>
+</html>

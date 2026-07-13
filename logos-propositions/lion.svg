@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Crinière -->
+  <circle cx="100" cy="90" r="45" fill="#FF9600"/>
+  <!-- Tête -->
+  <circle cx="100" cy="95" r="30" fill="#FFC800"/>
+  <!-- Oreilles -->
+  <circle cx="70" cy="70" r="12" fill="#FF9600"/>
+  <circle cx="130" cy="70" r="12" fill="#FF9600"/>
+  <!-- Yeux -->
+  <circle cx="88" cy="90" r="5" fill="#1A1A1A"/>
+  <circle cx="112" cy="90" r="5" fill="#1A1A1A"/>
+  <!-- Nez -->
+  <polygon points="100,98 95,105 105,105" fill="#1A1A1A"/>
+  <!-- Moustaches -->
+  <line x1="80" y1="100" x2="60" y2="95" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="80" y1="105" x2="60" y2="105" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="120" y1="100" x2="140" y2="95" stroke="#1A1A1A" stroke-width="2"/>
+  <line x1="120" y1="105" x2="140" y2="105" stroke="#1A1A1A" stroke-width="2"/>
+  <!-- Nom -->
+  <text x="100" y="185" font-family="Nunito, sans-serif" font-weight="900" font-size="24" fill="#58CC02" text-anchor="middle">RéviBF</text>
+</svg>

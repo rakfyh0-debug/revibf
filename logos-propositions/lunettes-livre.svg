@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Livre ouvert -->
+  <path d="M70 130 L100 115 L130 130 L130 155 L100 140 L70 155 Z" fill="#58CC02" stroke="#4AA802" stroke-width="2"/>
+  <!-- Lunettes posées sur le livre -->
+  <circle cx="85" cy="90" r="18" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+  <circle cx="125" cy="90" r="18" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+  <line x1="103" y1="90" x2="107" y2="90" stroke="#1A1A1A" stroke-width="3"/>
+  <!-- Nom -->
+  <text x="100" y="190" font-family="Nunito, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">RéviBF</text>
+</svg>

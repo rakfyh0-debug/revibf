@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Fond soleil -->
+  <circle cx="100" cy="100" r="90" fill="#FFC800" />
+
+  <!-- Ombre portée de l'éléphant -->
+  <ellipse cx="100" cy="170" rx="50" ry="10" fill="#E5B800" opacity="0.6" />
+
+  <!-- Corps -->
+  <ellipse cx="100" cy="125" rx="48" ry="38" fill="#58CC02" />
+
+  <!-- Ventre plus clair -->
+  <ellipse cx="100" cy="130" rx="32" ry="26" fill="#A3E635" />
+
+  <!-- Tête -->
+  <circle cx="100" cy="85" r="34" fill="#58CC02" />
+
+  <!-- Oreilles avec bordure plus foncée -->
+  <ellipse cx="66" cy="80" rx="18" ry="24" fill="#58CC02" stroke="#4AA802" stroke-width="2" />
+  <ellipse cx="134" cy="80" rx="18" ry="24" fill="#58CC02" stroke="#4AA802" stroke-width="2" />
+
+  <!-- Trompe (courbe et plus détaillée) -->
+  <path d="M100 98 Q100 125 92 132 Q85 135 88 125" fill="none" stroke="#58CC02" stroke-width="9" stroke-linecap="round" />
+  <!-- Ombre légère sous la trompe -->
+  <path d="M100 98 Q100 125 92 132 Q85 135 88 125" fill="none" stroke="#4AA802" stroke-width="3" stroke-linecap="round" opacity="0.5" transform="translate(1,1)" />
+
+  <!-- Yeux -->
+  <circle cx="86" cy="78" r="7" fill="#1A1A1A" />
+  <circle cx="114" cy="78" r="7" fill="#1A1A1A" />
+  <!-- Reflets yeux -->
+  <circle cx="88" cy="76" r="2.5" fill="white" />
+  <circle cx="116" cy="76" r="2.5" fill="white" />
+
+  <!-- Joues roses -->
+  <ellipse cx="78" cy="88" rx="6" ry="4" fill="#FFB3B3" opacity="0.8" />
+  <ellipse cx="122" cy="88" rx="6" ry="4" fill="#FFB3B3" opacity="0.8" />
+
+  <!-- Sourire -->
+  <path d="M94 97 Q100 103 106 97" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Défenses -->
+  <path d="M90 100 L85 115 L90 120" fill="white" stroke="#CCCCCC" stroke-width="1.5" stroke-linejoin="round" />
+  <path d="M110 100 L115 115 L110 120" fill="white" stroke="#CCCCCC" stroke-width="1.5" stroke-linejoin="round" />
+
+  <!-- Petit livre jaune dans la trompe ou à côté (optionnel) -->
+  <rect x="75" y="130" width="16" height="12" rx="2" fill="#FFC800" stroke="#E5B800" stroke-width="1" transform="rotate(-15 83 136)" />
+  <line x1="78" y1="134" x2="88" y2="134" stroke="#1A1A1A" stroke-width="1" transform="rotate(-15 83 136)" />
+  <line x1="78" y1="137" x2="88" y2="137" stroke="#1A1A1A" stroke-width="1" transform="rotate(-15 83 136)" />
+
+  <!-- Nom -->
+  <text x="100" y="192" font-family="'Nunito', sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">Révi<span fill="#FFC800">BF</span></text>
+</svg>

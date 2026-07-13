@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Chapeau -->
+  <polygon points="60,100 140,100 100,70" fill="#58CC02" stroke="#4AA802" stroke-width="2"/>
+  <!-- Base du chapeau -->
+  <rect x="55" y="95" width="90" height="10" rx="3" fill="#1A1A1A"/>
+  <!-- Gland -->
+  <path d="M100 70 Q100 55 110 50" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+  <circle cx="110" cy="50" r="5" fill="#FFC800"/>
+  <!-- Nom -->
+  <text x="100" y="190" font-family="Nunito, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">RéviBF</text>
+</svg>

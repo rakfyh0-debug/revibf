@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FFC800"/>
+  <!-- Blason -->
+  <path d="M100 50 L140 70 L140 120 Q140 150 100 160 Q60 150 60 120 L60 70 Z" fill="#58CC02" stroke="#4AA802" stroke-width="3"/>
+  <!-- Étoile dans le blason -->
+  <polygon points="100,85 103,92 110,92 105,97 107,105 100,100 93,105 95,97 90,92 97,92" fill="#FFC800"/>
+  <!-- Nom -->
+  <text x="100" y="190" font-family="Nunito, sans-serif" font-weight="900" font-size="22" fill="#1A1A1A" text-anchor="middle">RéviBF</text>
+</svg>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RéviBF – Minimaliste Épuré</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #1A1A1A; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid #E5E5E5; }
+    nav .logo { font-weight: 700; font-size: 1.8rem; color: #1A6B3A; letter-spacing: -0.5px; }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav a { text-decoration: none; color: #666; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: #1A6B3A; }
+    .hero { padding: 5rem 2rem; text-align: center; background: #F9FCF7; }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #1A1A1A; }
+    .hero span { color: #1A6B3A; }
+    .hero p { font-size: 1.1rem; color: #555; max-width: 500px; margin: 0 auto 2rem; }
+    .btn { padding: 0.9rem 2.2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block; margin: 0 0.5rem; }
+    .btn-primary { background: #1A6B3A; color: white; }
+    .btn-outline { border: 2px solid #1A6B3A; color: #1A6B3A; background: transparent; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+    .card { background: #F9FCF7; border-radius: 1rem; padding: 2rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.05); }
+    .card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .card h3 { font-weight: 600; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.9rem; color: #666; }
+    footer { text-align: center; padding: 2rem; color: #999; font-size: 0.8rem; border-top: 1px solid #E5E5E5; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Révi<span style="color: #D99A2B;">BF</span></div>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">BEPC</a></li>
+      <li><a href="#">BAC</a></li>
+      <li><a href="#">Culture</a></li>
+    </ul>
+  </nav>
+  <div class="hero">
+    <h1>Ta réussite au <span>Burkina Faso</span> commence ici</h1>
+    <p>Une plateforme légère, sans inscription, pensée pour les élèves.</p>
+    <div>
+      <a href="#" class="btn btn-primary">Commencer le BEPC</a>
+      <a href="#" class="btn btn-outline">Préparer le BAC</a>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="icon">📄</div><h3>Sujets</h3><p>Annales officielles corrigées</p></div>
+    <div class="card"><div class="icon">🎯</div><h3>Quiz</h3><p>Teste tes connaissances</p></div>
+    <div class="card"><div class="icon">🌍</div><h3>Culture</h3><p>Histoire, sciences, Afrique</p></div>
+  </div>
+  <footer>RéviBF · Gratuit · Burkina Faso</footer>
+</body>
+</html>

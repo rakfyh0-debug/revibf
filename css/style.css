@@ -42,7 +42,7 @@ nav {
 }
 .logo {
   font-family: 'Fredoka One', cursive;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1.35rem;
   color: #fff;
   cursor: pointer;
@@ -130,7 +130,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   padding: 0.8rem 1.8rem;
   border-radius: 2rem;
   font-family: 'Fredoka One', cursive;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.95rem;
   cursor: pointer;
   border: none;
@@ -156,7 +156,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   margin: -1rem auto 0;
 }
 .stat { text-align: center; }
-.stat-nb { font-family: 'Fredoka One', cursive; font-size: 2.2rem; font-weight: 800; color: var(--vert); }
+.stat-nb { font-family: 'Fredoka One', cursive; font-size: 2.2rem; font-weight: 400; color: var(--vert); }
 .stat-lb  { font-size: .82rem; color: var(--gris); }
 .page-section { max-width: 1000px; margin: 0 auto; padding: 2.5rem 1.5rem; }
 .section-title {
@@ -189,7 +189,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   box-shadow: var(--ombre);
 }
 .exam-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
-.exam-card h2 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; font-weight: 800; margin-bottom: .4rem; }
+.exam-card h2 { font-family: 'Fredoka One', cursive; font-size: 1.6rem; font-weight: 400; margin-bottom: .4rem; }
 .exam-card p  { font-size: .9rem; opacity: .85; margin-bottom: 1.2rem; }
 .card-bepc    { background: linear-gradient(135deg, #1B6B3A, #0d3d20); }
 .card-bac     { background: linear-gradient(135deg, #1a6b8a, #0d3d4d); }
@@ -202,7 +202,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 }
 .page-header.bac-header  { background: linear-gradient(135deg, var(--bleu), #0d3d4d); }
 .page-header.cult-header { background: linear-gradient(135deg, var(--violet), #3d1a5c); }
-.page-header h1 { font-family: 'Fredoka One', cursive; font-size: clamp(1.5rem,4vw,2.2rem); font-weight: 800; margin-bottom: .4rem; }
+.page-header h1 { font-family: 'Fredoka One', cursive; font-size: clamp(1.5rem,4vw,2.2rem); font-weight: 400; margin-bottom: .4rem; }
 .page-header p  { opacity: .85; font-size: .95rem; }
 .tab-bar {
   display: flex;
@@ -219,7 +219,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   padding: .6rem 1.1rem;
   border-radius: 8px;
   font-family: 'Fredoka One', cursive;
-  font-weight: 600;
+  font-weight: 400;
   font-size: .88rem;
   cursor: pointer;
   color: var(--gris);
@@ -245,7 +245,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 }
 .matiere-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.14); border-left-color: var(--or); }
 .matiere-icon { font-size: 1.8rem; margin-bottom: .5rem; }
-.matiere-nom  { font-family: 'Fredoka One', cursive; font-weight: 600; font-size: .95rem; margin-bottom: .2rem; }
+.matiere-nom  { font-family: 'Fredoka One', cursive; font-weight: 400; font-size: .95rem; margin-bottom: .2rem; }
 .matiere-sub  { font-size: .78rem; color: var(--gris); }
 .annale-grid {
   display: grid;
@@ -261,7 +261,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   flex-direction: column;
   gap: .7rem;
 }
-.annale-card h3 { font-family: 'Fredoka One', cursive; font-size: .95rem; font-weight: 700; }
+.annale-card h3 { font-family: 'Fredoka One', cursive; font-size: .95rem; font-weight: 400; }
 .annale-card p  { font-size: .82rem; color: var(--gris); flex: 1; }
 .annale-btns    { display: flex; gap: .5rem; }
 .methodo-grid {
@@ -270,7 +270,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   gap: 1rem;
 }
 .methodo-card { background: var(--carte); border-radius: var(--rayon); box-shadow: var(--ombre); overflow: hidden; }
-.methodo-header { padding: .8rem 1.2rem; font-family: 'Fredoka One', cursive; font-weight: 700; font-size: .9rem; color: #fff; }
+.methodo-header { padding: .8rem 1.2rem; font-family: 'Fredoka One', cursive; font-weight: 400; font-size: .9rem; color: #fff; }
 .methodo-body { padding: 1rem 1.2rem; }
 .methodo-body ol, .methodo-body ul { padding-left: 1.2rem; }
 .methodo-body li { font-size: .88rem; margin-bottom: .4rem; line-height: 1.45; }
@@ -282,7 +282,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   max-width: 680px;
   margin: 0 auto;
 }
-.quiz-titre { font-family: 'Fredoka One', cursive; font-weight: 700; color: var(--vert); margin-bottom: .8rem; }
+.quiz-titre { font-family: 'Fredoka One', cursive; font-weight: 400; color: var(--vert); margin-bottom: .8rem; }
 .score-bar { height: 6px; background: #e0e0e0; border-radius: 99px; margin-bottom: 1rem; overflow: hidden; }
 .score-fill { height: 100%; background: #003366 !important; border-radius: 99px; transition: width .4s ease; }
 .quiz-question { font-size: 1.05rem; font-weight: 500; margin-bottom: 1.2rem; line-height: 1.5; }
@@ -333,10 +333,10 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
   transition: transform .15s, box-shadow .15s;
 }
 .serie-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.14); }
-.serie-lettre { font-family: 'Fredoka One', cursive; font-size: 2rem; font-weight: 800; color: var(--bleu); margin-bottom: .3rem; }
+.serie-lettre { font-family: 'Fredoka One', cursive; font-size: 2rem; font-weight: 400; color: var(--bleu); margin-bottom: .3rem; }
 .serie-nom    { font-size: .82rem; color: var(--gris); }
 .serie-detail { background: var(--carte); border-radius: 16px; box-shadow: var(--ombre); padding: 2rem; }
-.serie-detail h2 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; font-weight: 800; margin-bottom: 1.2rem; color: var(--bleu); }
+.serie-detail h2 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; font-weight: 400; margin-bottom: 1.2rem; color: var(--bleu); }
 .matieres-list { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; }
 .matiere-row {
   display: flex;
@@ -350,7 +350,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 .coeff-badge { background: #003366 !important; color: #fff; padding: .2rem .6rem; border-radius: 99px; font-size: .75rem; font-weight: 700; }
 .info-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
 .info-card { background: var(--carte); border-radius: var(--rayon); box-shadow: var(--ombre); padding: 1.3rem; }
-.info-card h3 { font-family: 'Fredoka One', cursive; font-size: .95rem; font-weight: 700; margin-bottom: .6rem; }
+.info-card h3 { font-family: 'Fredoka One', cursive; font-size: .95rem; font-weight: 400; margin-bottom: .6rem; }
 .info-card ul { padding-left: 1.2rem; }
 .info-card li { font-size: .85rem; margin-bottom: .35rem; }
 .citations-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
@@ -371,7 +371,7 @@ nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
 }
 .culture-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.14); }
 .culture-icon { font-size: 2.2rem; margin-bottom: .6rem; }
-.culture-nom  { font-family: 'Fredoka One', cursive; font-weight: 700; font-size: .95rem; margin-bottom: .3rem; }
+.culture-nom  { font-family: 'Fredoka One', cursive; font-weight: 400; font-size: .95rem; margin-bottom: .3rem; }
 .culture-sub  { font-size: .8rem; color: var(--gris); }
 .alerte { background: #fff3cd; border-left: 4px solid var(--or); border-radius: 8px; padding: .8rem 1rem; font-size: .88rem; margin-bottom: 1.2rem; color: #856404; }
 footer { background: var(--encre); color: rgba(255,255,255,.65); text-align: center; padding: 1.8rem 1.5rem; font-size: .85rem; margin-top: 2rem; }

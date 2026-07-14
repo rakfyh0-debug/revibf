@@ -1,4 +1,4 @@
-const CACHE_NAME = 'revibf-cache-v4';
+const CACHE_NAME = 'revibf-cache-v5';
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -23,21 +23,21 @@ const ASSETS_TO_CACHE = [
   "./cours/chimie/chimie_corps_moleculaires.html",
   "./cours/chimie/chimie_corps_solides.html",
   "./robots.txt",
-  "./cours/svt_partie0_1.html",
-  "./cours/svt_partie2.html",
-  "./cours/svt_partie3.html",
-  "./cours/svt_partie4.html",
-  "./cours/svt_partie5.html",
-  "./cours/francais_bepc.html",
-  "./cours/francais_recapitulatif.html",
-  "./cours/anglais_bepc.html",
-  "./cours/anglais_recapitulatif.html",
-  "./cours/histoire_partie1.html",
-  "./cours/histoire_partie2.html",
-  "./cours/histoire_partie3.html",
-  "./cours/geographie_partie1.html",
-  "./cours/geographie_partie2.html",
-  "./cours/geographie_partie3.html",
+  "./cours/svt/partie0_1.html",
+  "./cours/svt/partie2.html",
+  "./cours/svt/partie3.html",
+  "./cours/svt/partie4.html",
+  "./cours/svt/partie5.html",
+  "./cours/francais/bepc.html",
+  "./cours/francais/recapitulatif.html",
+  "./cours/anglais/bepc.html",
+  "./cours/anglais/recapitulatif.html",
+  "./cours/histoire/partie1.html",
+  "./cours/histoire/partie2.html",
+  "./cours/histoire/partie3.html",
+  "./cours/histoire/geographie_partie1.html",
+  "./cours/histoire/geographie_partie2.html",
+  "./cours/histoire/geographie_partie3.html",
 
 ];
 

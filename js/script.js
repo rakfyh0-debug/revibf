@@ -450,7 +450,6 @@ function pageBEPC() {
   var html = '<div class="page-header"><h1><i class="fas fa-book"></i> Espace BEPC — Classe de 3ème</h1><p>Tout ce qu\'il te faut pour réussir ton BEPC</p></div>';
   html += '<div class="tab-bar">' +
     tb('matieres','<i class="fas fa-book-open"></i> Matières & Fiches',    actif,'bepc') +
-    tb('fiches', '📖 Fiches',     actif,'bepc') +
     tb('annales', '<i class="fas fa-file-pdf"></i> Sujets',     actif,'bepc') +
     tb('methodo', '<i class="fas fa-lightbulb"></i> Méthodologie',actif,'bepc') +
     tb('quiz',    '<i class="fas fa-bullseye"></i> Quiz',        actif,'bepc') +

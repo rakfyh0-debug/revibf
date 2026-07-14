@@ -10,10 +10,11 @@
   --carte:  #FFFFFF;
   --ombre: 0 6px 20px rgba(0,0,0,0.08);
   --rayon: 16px;
+  --font-lecture: 'Nunito', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--font-lecture);
   background: var(--creme);
   color: var(--encre);
   font-size: 16px;

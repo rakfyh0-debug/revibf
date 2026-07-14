@@ -362,5 +362,25 @@ Avec π ≈ 3,14 : V ≈ 36 × 3,14 = 113,04 cm³, soit environ 113,0 cm³.</cod
 Après agrandissement, côté = 2c, donc V' = (2c)³ = 8c³ = 8 × V.
 Le volume est multiplié par 8.</code></pre>
 
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
 </body>
 </html>

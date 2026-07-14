@@ -448,5 +448,25 @@ x &lt; 2</p>
 <p>Cette égalité est toujours vraie, quel que soit x. L'équation admet donc une infinité de solutions.</p>
 <p>L'ensemble des solutions est : S = IR (l'ensemble des nombres réels)</p>
 
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
 </body>
 </html>

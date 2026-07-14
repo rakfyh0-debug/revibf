@@ -326,6 +326,30 @@ function toggleDark() {
   }
 })();
 
+var POLICES = [
+  {id:'nunito',   label:'Nunito (défaut)',   css:"'Nunito', sans-serif"},
+  {id:'georgia',  label:'Georgia',           css:"Georgia, serif"},
+  {id:'verdana',  label:'Verdana',           css:"Verdana, sans-serif"},
+  {id:'segoe',    label:'Segoe UI',          css:"'Segoe UI', Roboto, sans-serif"},
+  {id:'times',    label:'Times New Roman',   css:"'Times New Roman', serif"},
+  {id:'trebuchet',label:'Trebuchet MS',      css:"'Trebuchet MS', sans-serif"},
+  {id:'arial',    label:'Arial',             css:"Arial, sans-serif"},
+  {id:'comic',    label:'Comic Sans MS',     css:"'Comic Sans MS', cursive"},
+  {id:'courier',  label:'Courier New',       css:"'Courier New', monospace"},
+  {id:'palatino', label:'Palatino',          css:"'Palatino Linotype', 'Book Antiqua', Palatino, serif"},
+];
+function appliquerPolice(id) {
+  var p = POLICES.find(function(x){ return x.id === id; }) || POLICES[0];
+  document.documentElement.style.setProperty('--font-lecture', p.css);
+  localStorage.setItem('police', id);
+}
+(function() {
+  var saved = localStorage.getItem('police');
+  if (saved) {
+    var p = POLICES.find(function(x){ return x.id === saved; }) || POLICES[0];
+    document.documentElement.style.setProperty('--font-lecture', p.css);
+  }
+})();
 function toggleSon() {
   __sonActif = !__sonActif;
   var btn = document.getElementById('son-toggle');
@@ -1120,6 +1144,14 @@ function pageParametres() {
   html += '<span>Mode sombre</span>';
   html += '<button class="btn btn-outline" onclick="toggleDark(); rendrePage();" id="btn-dark-param">' + (sombre ? '<i class="fas fa-sun"></i> Désactiver' : '<i class="fas fa-moon"></i> Activer') + '</button>';
   html += '</div>';
+
+  html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem; margin-top:2rem;">Police de lecture</h2>';
+  html += '<select onchange="appliquerPolice(this.value); rendrePage();" style="width:100%; padding:.7rem; border-radius:8px; border:1px solid #ccc; margin-bottom:1.5rem; font-size:1rem;">';
+  var policeActuelle = localStorage.getItem('police') || 'nunito';
+  POLICES.forEach(function(p) {
+    html += '<option value="' + p.id + '" style="font-family:' + p.css + '"' + (p.id === policeActuelle ? ' selected' : '') + '>' + p.label + '</option>';
+  });
+  html += '</select>';
 
   html += '<h2 style="font-family:Lexend; font-size:1.2rem; margin-bottom:1.2rem; margin-top:2rem;">À propos</h2>';
   html += '<button class="btn btn-outline" onclick="document.getElementById(\'apropos-overlay\').style.display=\'flex\'; document.body.style.overflow=\'hidden\';"><i class="fas fa-book-open"></i> Lire À propos de RéviBF</button>';

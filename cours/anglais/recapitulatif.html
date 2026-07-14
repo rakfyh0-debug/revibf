@@ -338,5 +338,25 @@
   </section>
 </article>
 
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
 </body>
 </html>

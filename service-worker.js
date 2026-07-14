@@ -1,4 +1,4 @@
-const CACHE_NAME = 'revibf-cache-v6';
+const CACHE_NAME = 'revibf-cache-v7';
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -63,7 +63,29 @@ self.addEventListener('install', (event) => {
 });
 
 // Interception des requêtes
+const FONTS_CACHE = 'revibf-fonts-cache';
+
 self.addEventListener('fetch', (event) => {
+  const url = event.request.url;
+  const isGoogleFont = url.includes('fonts.googleapis.com') || url.includes('fonts.gstatic.com');
+
+  if (isGoogleFont) {
+    event.respondWith(
+      caches.open(FONTS_CACHE).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          return fetch(event.request).then((networkResponse) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          }).catch(() => cachedResponse);
+        });
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
@@ -78,7 +100,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
-        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+        keys.filter((key) => key !== CACHE_NAME && key !== FONTS_CACHE).map((key) => caches.delete(key))
       );
     }).then(() => self.clients.claim())
   );

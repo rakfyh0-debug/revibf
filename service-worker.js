@@ -1,4 +1,4 @@
-const CACHE_NAME = 'revibf-cache-v5';
+const CACHE_NAME = 'revibf-cache-v6';
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const ASSETS_TO_CACHE = [
   "./css/style.css",
   "./css/design_pro.css",
   "./css/hero_photo.css",
+  "./css/app_nav.css",
   "./css/visuel_extra.css",
   "./js/script.js",
   "./js/culture_data.js",

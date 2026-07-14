@@ -1209,19 +1209,44 @@ function pageParametres() {
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./service-worker.js')
-      .then(reg => console.log('Service Worker enregistré avec succès !', reg.scope))
-      .catch(err => console.log('Échec de l\'enregistrement du Service Worker :', err));
+      .then(reg => {
+        console.log('Service Worker enregistre avec succes !', reg.scope);
+        reg.addEventListener('updatefound', () => {
+          var nouveauSW = reg.installing;
+          if (!nouveauSW) return;
+          nouveauSW.addEventListener('statechange', () => {
+            if (nouveauSW.state === 'installed' && navigator.serviceWorker.controller) {
+              afficherBanniereMAJ(reg);
+            }
+          });
+        });
+      })
+      .catch(err => console.log('Echec de l\'enregistrement du Service Worker :', err));
+
+    var rechargementEnCours = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (rechargementEnCours) return;
+      rechargementEnCours = true;
+      window.location.reload();
+    });
   });
 }
 
-// Enregistrement du Service Worker pour la PWA
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(reg => console.log('Service Worker enregistré avec succès !', reg.scope))
-      .catch(err => console.log('Échec de l\'enregistrement du Service Worker :', err));
-  });
+function afficherBanniereMAJ(reg) {
+  if (document.getElementById('maj-banniere')) return;
+  var b = document.createElement('div');
+  b.id = 'maj-banniere';
+  b.style.cssText = 'position:fixed; bottom:70px; left:1rem; right:1rem; z-index:700; background:var(--vert); color:#fff; padding:.9rem 1.1rem; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.25); display:flex; align-items:center; justify-content:space-between; gap:.8rem; font-size:.9rem;';
+  b.innerHTML = '<span>Nouvelle version disponible</span><button style="background:#fff; color:var(--vert); border:none; padding:.4rem .9rem; border-radius:8px; font-weight:700; cursor:pointer;">Mettre a jour</button>';
+  b.querySelector('button').onclick = function() {
+    if (reg.waiting) {
+      reg.waiting.postMessage({type: 'SKIP_WAITING'});
+    }
+    b.remove();
+  };
+  document.body.appendChild(b);
 }
+
 
 
 

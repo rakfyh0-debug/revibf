@@ -1,4 +1,4 @@
-const CACHE_NAME = 'revibf-cache-v8';
+const CACHE_NAME = 'revibf-cache-v9';
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
@@ -48,7 +48,6 @@ const ASSETS_TO_CACHE = [
 
 // Installation résiliente
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return Promise.all(
@@ -104,4 +103,10 @@ self.addEventListener('activate', (event) => {
       );
     }).then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });

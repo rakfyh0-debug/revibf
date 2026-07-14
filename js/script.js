@@ -377,7 +377,31 @@ function afficherPage(page, params) {
 function retour() {
   history.back();
 }
+function ouvrirFiche(url) {
+  var overlay = document.getElementById('fiche-overlay');
+  var iframe = document.getElementById('fiche-iframe');
+  iframe.src = url;
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  history.pushState({ficheOverlay:true}, '', '#fiche');
+}
+function fermerFiche() {
+  var overlay = document.getElementById('fiche-overlay');
+  overlay.style.display = 'none';
+  document.getElementById('fiche-iframe').src = '';
+  document.body.style.overflow = '';
+  if (window.location.hash === '#fiche') {
+    history.back();
+  }
+}
 window.addEventListener('popstate', function(e){
+  var overlay = document.getElementById('fiche-overlay');
+  if (overlay && overlay.style.display === 'flex') {
+    overlay.style.display = 'none';
+    document.getElementById('fiche-iframe').src = '';
+    document.body.style.overflow = '';
+    return;
+  }
   if (etat.historique.length > 0) {
     var d = etat.historique.pop();
     etat.page   = d.page;
@@ -1081,7 +1105,7 @@ function pageFichesMatiere(matiereId) {
       html += '<div class="annale-card">' +
         '<h3>' + f.label + '</h3>' +
         '<div class="annale-btns">' +
-          '<a class="btn btn-vert btn-sm" href="' + f.fichier + '" target="_blank">📥 Ouvrir la fiche</a>' +
+          '<button class="btn btn-vert btn-sm" onclick="ouvrirFiche(\'' + f.fichier + '\')">📥 Ouvrir la fiche</button>' +
         '</div></div>';
     });
     html += '</div>';
@@ -1105,7 +1129,7 @@ function pageFichesBEPC() {
     html += '<div class="annale-card">' +
       '<h3>' + f.label + '</h3>' +
       '<div class="annale-btns">' +
-        '<a class="btn btn-vert btn-sm" href="' + f.fichier + '" target="_blank">📥 Ouvrir la fiche</a>' +
+        '<button class="btn btn-vert btn-sm" onclick="ouvrirFiche(\'' + f.fichier + '\')">📥 Ouvrir la fiche</button>' +
       '</div></div>';
   });
   html += '</div>';

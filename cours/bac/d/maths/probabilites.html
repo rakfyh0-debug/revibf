@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probabilités – Cours complet Terminale D | RéviBF</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 2rem; line-height: 1.7; }
+    .container { max-width: 1100px; margin: auto; background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    h1 { color: #0f172a; border-left: 6px solid #059669; padding-left: 1rem; }
+    h2 { color: #047857; border-bottom: 2px dashed #a7f3d0; padding-bottom: 0.3rem; margin-top: 2.5rem; }
+    h3 { color: #059669; font-size: 1.25rem; margin-top: 1.8rem; }
+    h4 { color: #10b981; }
+    p { margin: 0.8rem 0; text-align: justify; }
+    ul, ol { margin-left: 1.5rem; }
+    strong { color: #065f46; }
+    .exercice { background: #ecfdf5; border-left: 6px solid #059669; padding: 1rem; margin: 1.5rem 0; border-radius: 8px; }
+    .correction { background: #f0fdf4; border-left: 6px solid #16a34a; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .svg-container { text-align: center; margin: 1.5rem 0; }
+    svg { max-width: 100%; height: auto; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.5rem; text-align: center; }
+    th { background: #d1fae5; }
+    .property { background: #f1f5f9; padding: 0.8rem; border-left: 4px solid #059669; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>PROBABILITÉS – Cours complet Terminale D</h1>
+
+  <div class="chapter">
+    <h2>1. Univers, événements, probabilité</h2>
+    <p>Une expérience aléatoire est une expérience dont on ne peut pas prédire le résultat avec certitude. L'<strong>univers</strong> Ω est l'ensemble de tous les résultats possibles (les issues). Un <strong>événement</strong> A est un sous-ensemble de Ω. On note ∅ l'événement impossible, et Ω l'événement certain.</p>
+    <p>Une <strong>probabilité</strong> P sur Ω est une fonction qui à chaque événement associe un nombre compris entre 0 et 1, telle que :</p>
+    <ul>
+      <li>P(Ω) = 1</li>
+      <li>Si A et B sont incompatibles (A ∩ B = ∅), alors P(A ∪ B) = P(A) + P(B).</li>
+    </ul>
+    <p>Conséquences : P(∅)=0, P(<span style="text-decoration:overline;">A</span>) = 1 – P(A).</p>
+    <div class="svg-container">
+      <svg width="350" height="200" viewBox="0 0 350 200">
+        <rect x="30" y="40" width="280" height="130" fill="none" stroke="black" stroke-width="2"/>
+        <text x="170" y="30" text-anchor="middle" font-weight="bold">Diagramme de Venn</text>
+        <text x="60" y="190">Ω</text>
+        <!-- Événement A -->
+        <circle cx="120" cy="110" r="40" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+        <text x="120" y="115" text-anchor="middle">A</text>
+        <!-- Événement B disjoint? -->
+        <circle cx="230" cy="110" r="40" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+        <text x="230" y="115" text-anchor="middle">B</text>
+        <text x="175" y="130" font-size="10">A ∩ B = ∅</text>
+      </svg>
+    </div>
+    <p>En cas d'équiprobabilité (toutes les issues ont la même probabilité), P(A) = card(A) / card(Ω).</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 1 :</strong> On lance un dé équilibré à 6 faces. Donner l'univers Ω et calculer la probabilité d'obtenir un nombre pair.</p>
+    </div>
+    <div class="correction">
+      <p>Ω = {1,2,3,4,5,6}. card(Ω)=6. Événement P = {2,4,6}. P(P) = 3/6 = 1/2.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>2. Probabilités conditionnelles</h2>
+    <p>La probabilité de A sachant B (B réalisé) est notée P<sub>B</sub>(A) et définie par :<br>
+    <strong>P<sub>B</sub>(A) = P(A ∩ B) / P(B)</strong> (si P(B) ≠ 0).</p>
+    <p>On en déduit : P(A ∩ B) = P(B) × P<sub>B</sub>(A) = P(A) × P<sub>A</sub>(B).</p>
+
+    <h3>2.1 Arbres pondérés</h3>
+    <p>Un arbre pondéré permet de visualiser des expériences successives. Chaque branche porte une probabilité conditionnelle. La somme des probabilités des branches issues d'un même nœud vaut 1.</p>
+    <div class="svg-container">
+      <svg width="400" height="280" viewBox="0 0 400 280">
+        <text x="200" y="20" text-anchor="middle" font-weight="bold">Arbre pondéré</text>
+        <!-- Noeud initial -->
+        <circle cx="200" cy="50" r="4" fill="black"/>
+        <!-- Branche A -->
+        <line x1="200" y1="50" x2="120" y2="110" stroke="black"/>
+        <text x="145" y="75" font-size="11">P(A)=0.6</text>
+        <circle cx="120" cy="110" r="4" fill="black"/><text x="100" y="125">A</text>
+        <!-- Branche <span style="text-decoration:overline;">A</span> -->
+        <line x1="200" y1="50" x2="280" y2="110" stroke="black"/>
+        <text x="255" y="75" font-size="11">P(<span style="text-decoration:overline;">A</span>)=0.4</text>
+        <circle cx="280" cy="110" r="4" fill="black"/><text x="290" y="125"><span style="text-decoration:overline;">A</span></text>
+        <!-- Sous-branches depuis A -->
+        <line x1="120" y1="110" x2="90" y2="170" stroke="black"/>
+        <text x="90" y="145" font-size="10">P<sub>A</sub>(B)=0.7</text>
+        <circle cx="90" cy="170" r="3" fill="red"/><text x="70" y="185">B</text>
+        <line x1="120" y1="110" x2="150" y2="170" stroke="black"/>
+        <text x="130" y="150" font-size="10">P<sub>A</sub>(<span style="text-decoration:overline;">B</span>)=0.3</text>
+        <circle cx="150" cy="170" r="3" fill="red"/><text x="160" y="185"><span style="text-decoration:overline;">B</span></text>
+        <!-- Sous-branches depuis <span style="text-decoration:overline;">A</span> -->
+        <line x1="280" y1="110" x2="250" y2="170" stroke="black"/>
+        <text x="250" y="145" font-size="10">P<sub><span style="text-decoration:overline;">A</span></sub>(B)=0.2</text>
+        <circle cx="250" cy="170" r="3" fill="red"/><text x="235" y="185">B</text>
+        <line x1="280" y1="110" x2="310" y2="170" stroke="black"/>
+        <text x="300" y="150" font-size="10">P<sub><span style="text-decoration:overline;">A</span></sub>(<span style="text-decoration:overline;">B</span>)=0.8</text>
+        <circle cx="310" cy="170" r="3" fill="red"/><text x="320" y="185"><span style="text-decoration:overline;">B</span></text>
+      </svg>
+    </div>
+    <p>La probabilité d'un chemin est le produit des probabilités des branches. Pour obtenir P(B), on somme les probabilités de tous les chemins menant à B (formule des probabilités totales).</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 2 :</strong> Dans une population, 30% sont fumeurs (F). Parmi les fumeurs, 20% ont une maladie respiratoire (M). Parmi les non-fumeurs, 5% ont cette maladie. Calculer P(M).</p>
+    </div>
+    <div class="correction">
+      <p>P(F)=0.3, P(M|F)=0.2, P(M|<span style="text-decoration:overline;">F</span>)=0.05. P(M) = 0.3×0.2 + 0.7×0.05 = 0.06 + 0.035 = 0.095.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>3. Indépendance</h2>
+    <p>Deux événements A et B sont <strong>indépendants</strong> si P(A ∩ B) = P(A) × P(B). Cela équivaut à P<sub>B</sub>(A) = P(A) (lorsque P(B)≠0). L'indépendance est une notion fondamentale pour les répétitions d'expériences.</p>
+    <p>Attention : ne pas confondre incompatibilité (A ∩ B = ∅) et indépendance. Deux événements incompatibles ne sont pas indépendants (sauf cas trivial).</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 3 :</strong> On lance une pièce équilibrée deux fois. Les événements A "obtenir Pile au 1er lancer" et B "obtenir Pile au 2nd lancer" sont-ils indépendants ?</p>
+    </div>
+    <div class="correction">
+      <p>Ω = {PP, PF, FP, FF} équiprobables. P(A)=2/4=1/2, P(B)=1/2. A∩B = {PP} donc P(A∩B)=1/4 = (1/2)×(1/2). Indépendants.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>4. Variable aléatoire discrète</h2>
+    <p>Une <strong>variable aléatoire</strong> X sur Ω est une application qui à chaque issue associe un nombre réel. La loi de probabilité de X est donnée par les valeurs possibles x<sub>i</sub> et les probabilités p<sub>i</sub> = P(X = x<sub>i</sub>).</p>
+    <p><strong>Espérance mathématique :</strong> E(X) = Σ p<sub>i</sub> x<sub>i</sub>. Elle représente la moyenne théorique.<br>
+    <strong>Variance :</strong> V(X) = Σ p<sub>i</sub> (x<sub>i</sub> – E(X))² = E(X²) – [E(X)]².<br>
+    <strong>Écart-type :</strong> σ(X) = √V(X).</p>
+
+    <div class="svg-container">
+      <svg width="350" height="200" viewBox="0 0 350 200">
+        <text x="175" y="20" text-anchor="middle" font-weight="bold">Loi de probabilité (diagramme en bâtons)</text>
+        <line x1="50" y1="160" x2="320" y2="160" stroke="black"/>
+        <line x1="50" y1="160" x2="50" y2="30" stroke="black"/>
+        <!-- Bâtons pour xi -->
+        <line x1="100" y1="160" x2="100" y2="70" stroke="#059669" stroke-width="3"/>
+        <text x="100" y="175" text-anchor="middle">0</text>
+        <text x="100" y="60" text-anchor="middle">0.4</text>
+        <line x1="170" y1="160" x2="170" y2="100" stroke="#059669" stroke-width="3"/>
+        <text x="170" y="175" text-anchor="middle">1</text>
+        <text x="170" y="90" text-anchor="middle">0.3</text>
+        <line x1="240" y1="160" x2="240" y2="120" stroke="#059669" stroke-width="3"/>
+        <text x="240" y="175" text-anchor="middle">2</text>
+        <text x="240" y="110" text-anchor="middle">0.2</text>
+        <line x1="310" y1="160" x2="310" y2="140" stroke="#059669" stroke-width="3"/>
+        <text x="310" y="175" text-anchor="middle">3</text>
+        <text x="310" y="130" text-anchor="middle">0.1</text>
+      </svg>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 4 :</strong> On mise 1€ sur un jeu : on gagne 10€ avec probabilité 0.1, on perd la mise sinon. Soit X le gain net (gain – mise). Déterminer la loi de X, E(X) et décider si le jeu est favorable.</p>
+    </div>
+    <div class="correction">
+      <p>X prend les valeurs : 9 (si gain) avec proba 0.1, et –1 avec proba 0.9. E(X) = 9×0.1 + (–1)×0.9 = 0.9 – 0.9 = 0. Le jeu est équitable.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>5. Loi binomiale</h2>
+    <p>Une épreuve de Bernoulli de paramètre p a deux issues : succès (probabilité p) et échec (probabilité q = 1 – p). La répétition de n épreuves identiques et indépendantes constitue un <strong>schéma de Bernoulli</strong>. La variable aléatoire X qui compte le nombre de succès suit la <strong>loi binomiale B(n, p)</strong>.</p>
+    <p><strong>Formule :</strong> P(X = k) = C<sub>n</sub><sup>k</sup> p<sup>k</sup> (1–p)<sup>n–k</sup>, k = 0, 1, …, n.</p>
+    <p>Espérance : E(X) = n p. Variance : V(X) = n p (1–p).</p>
+
+    <div class="svg-container">
+      <svg width="450" height="280" viewBox="0 0 450 280">
+        <text x="225" y="20" text-anchor="middle" font-weight="bold">Schéma de Bernoulli (n=3)</text>
+        <circle cx="225" cy="50" r="4" fill="black"/>
+        <line x1="225" y1="50" x2="145" y2="110" stroke="black"/><text x="180" y="75" font-size="11">p</text>
+        <circle cx="145" cy="110" r="4" fill="black"/><text x="135" y="125">S</text>
+        <line x1="225" y1="50" x2="305" y2="110" stroke="black"/><text x="275" y="75" font-size="11">q</text>
+        <circle cx="305" cy="110" r="4" fill="black"/><text x="315" y="125">E</text>
+        <!-- étage 2 -->
+        <line x1="145" y1="110" x2="105" y2="170" stroke="black"/><text x="115" y="145" font-size="10">p</text>
+        <circle cx="105" cy="170" r="3" fill="green"/><text x="95" y="185">SS</text>
+        <line x1="145" y1="110" x2="175" y2="170" stroke="black"/><text x="155" y="145" font-size="10">q</text>
+        <circle cx="175" cy="170" r="3" fill="green"/><text x="165" y="185">SE</text>
+        <line x1="305" y1="110" x2="265" y2="170" stroke="black"/><text x="275" y="145" font-size="10">p</text>
+        <circle cx="265" cy="170" r="3" fill="green"/><text x="255" y="185">ES</text>
+        <line x1="305" y1="110" x2="345" y2="170" stroke="black"/><text x="330" y="145" font-size="10">q</text>
+        <circle cx="345" cy="170" r="3" fill="green"/><text x="355" y="185">EE</text>
+        <!-- Résultats finaux -->
+        <text x="225" y="240" text-anchor="middle">X = nombre de S : valeurs 0 (EE), 1 (SE,ES), 2 (SS)</text>
+      </svg>
+    </div>
+
+    <p>Pour calculer C<sub>n</sub><sup>k</sup>, on utilise la factorielle ou le triangle de Pascal. Exemple : C<sub>4</sub><sup>2</sup> = 6.</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 5 :</strong> Un QCM comporte 5 questions, chacune ayant 4 réponses possibles dont une seule correcte. Un candidat répond au hasard. Quelle est la probabilité d'avoir au moins 3 bonnes réponses ?</p>
+    </div>
+    <div class="correction">
+      <p>n=5, p=1/4. X ~ B(5,1/4). P(X≥3) = P(X=3)+P(X=4)+P(X=5).<br>
+      C<sub>5</sub><sup>3</sup>=10, (1/4)³(3/4)²=10×0.015625×0.5625≈0.0879 ; C<sub>5</sub><sup>4</sup>=5, (1/4)⁴(3/4)≈0.0146 ; C<sub>5</sub><sup>5</sup>=1, (1/4)⁵≈0.00098. Somme ≈ 0.1035.</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 6 :</strong> Une usine produit des pièces avec 2% de défaut. On prélève 100 pièces (tirage assimilé à avec remise). Quelle est la probabilité qu'il y ait exactement 3 pièces défectueuses ?</p>
+    </div>
+    <div class="correction">
+      <p>X ~ B(100, 0.02). P(X=3) = C<sub>100</sub><sup>3</sup> (0.02)³ (0.98)<sup>97</sup>. Valeur approchée : 0.182 (calculatrice).</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>6. Variables aléatoires continues (introduction à la loi normale)</h2>
+    <p>Pour de grands échantillons, la loi binomiale peut être approchée par la loi normale. Une variable aléatoire continue a une densité de probabilité f. La probabilité d'un intervalle [a,b] est ∫<sub>a</sub><sup>b</sup> f(x) dx. La loi normale centrée réduite N(0,1) a pour densité φ(x) = (1/√(2π)) e<sup>–x²/2</sup>.</p>
+    <p>En Terminale D, on peut être amené à utiliser une table de la loi normale ou à calculer des probabilités de base avec la calculatrice.</p>
+    <div class="svg-container">
+      <svg width="400" height="250" viewBox="0 0 400 250">
+        <line x1="40" y1="200" x2="360" y2="200" stroke="black"/>
+        <line x1="200" y1="20" x2="200" y2="200" stroke="black" stroke-dasharray="3,3"/>
+        <path d="M 40 200 Q 100 200 150 120 Q 200 40 250 120 Q 300 200 360 200" fill="none" stroke="#059669" stroke-width="2"/>
+        <text x="200" y="215" text-anchor="middle">0</text>
+        <text x="360" y="215">z</text>
+        <text x="200" y="30" text-anchor="middle" font-size="12">Loi normale centrée réduite</text>
+      </svg>
+    </div>
+    <p>On retiendra que P(–1.96 ≤ Z ≤ 1.96) ≈ 0.95.</p>
+  </div>
+
+  <div class="chapter">
+    <h2>7. Théorèmes limites et intervalles de fluctuation</h2>
+    <p>Si X<sub>n</sub> ~ B(n,p), alors pour n grand, la variable centrée réduite (X<sub>n</sub> – np)/√(np(1–p)) converge en loi vers N(0,1). Ceci permet de construire un intervalle de fluctuation asymptotique au seuil 95% :</p>
+    <p>I = [p – 1.96 √(p(1–p)/n) ; p + 1.96 √(p(1–p)/n)].</p>
+    <p>En pratique, on utilise aussi l'intervalle simplifié [p – 1/√n ; p + 1/√n] pour n≥30, np≥5, n(1–p)≥5.</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 7 :</strong> On lance 1000 fois une pièce. Donner un intervalle de fluctuation à 95% pour la fréquence de Pile.</p>
+    </div>
+    <div class="correction">
+      <p>p=0.5, n=1000. Intervalle : 0.5 ± 1.96 √(0.25/1000) = 0.5 ± 1.96×0.0158 ≈ [0.469 ; 0.531].</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2>8. Probabilités totales et théorème de Bayes</h2>
+    <p><strong>Formule des probabilités totales :</strong> Si A<sub>1</sub>, …, A<sub>n</sub> partition de Ω, alors P(B) = Σ P(A<sub>i</sub> ∩ B) = Σ P(A<sub>i</sub>) P<sub>A<sub>i</sub></sub>(B).</p>
+    <p><strong>Théorème de Bayes :</strong> P<sub>B</sub>(A<sub>i</sub>) = P(A<sub>i</sub> ∩ B) / P(B) = [P(A<sub>i</sub>) P<sub>A<sub>i</sub></sub>(B)] / Σ<sub>j</sub> P(A<sub>j</sub>) P<sub>A<sub>j</sub></sub>(B). Permet d'inverser les conditionnements.</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 8 :</strong> Un test pour une maladie a une sensibilité de 95% (P(positif|malade)=0.95) et une spécificité de 90% (P(négatif|non malade)=0.90). La prévalence est 1%. Calculer la probabilité qu'une personne soit malade sachant que son test est positif.</p>
+    </div>
+    <div class="correction">
+      <p>Soit M "malade", T+ "test positif". P(M)=0.01, P(T+|M)=0.95, P(T+|non M)=0.10. Par Bayes : P(M|T+) = (0.01×0.95) / (0.01×0.95 + 0.99×0.10) = 0.0095 / (0.0095+0.099) ≈ 0.0876, soit environ 8.8%.</p>
+    </div>
+  </div>
+
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

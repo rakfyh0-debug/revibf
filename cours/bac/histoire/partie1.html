@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTIE 1 – Le monde de l'entre-deux-guerres à la fin de la Seconde Guerre mondiale | ReviBF</title>
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --card: #ffffff;
+      --text: #1e1e1e;
+      --accent: #8b3a3a;
+      --accent-light: #f4e4e1;
+      --border: #d6cec4;
+      --shadow: 0 6px 18px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); line-height: 1.7; padding: 2rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+    .main-header {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-left: 6px solid var(--accent); text-align: center;
+    }
+    .main-header h1 { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .main-header .sub { font-size: 1.1rem; color: #5e5a55; font-weight: 500; }
+    .chapter-card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-top: 4px solid var(--accent);
+    }
+    .chapter-card h2 { font-size: 1.8rem; color: #5a2e2e; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--border); padding-bottom: 0.7rem; font-weight: 700; }
+    .chapter-card h3 { font-size: 1.3rem; color: #3d2b1f; margin: 1.8rem 0 0.8rem; font-weight: 600; padding-left: 1.2rem; }
+    .chapter-card h3::before { content: "▹"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .chapter-card h4 { font-size: 1.1rem; color: #4a3b2f; margin: 1.2rem 0 0.5rem; font-weight: 600; font-style: italic; }
+    p { margin-bottom: 1rem; text-align: justify; }
+    .highlight { background: #fff6e5; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #c38d4b; margin: 1.3rem 0; font-weight: 500; }
+    ul, ol { margin: 0.8rem 0 1.2rem 1.8rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #a43d3d; font-weight: 700; }
+    .definition-box { background: #f7f3ee; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .definition-box .term { font-weight: 700; color: #5b2e2e; font-size: 1.05rem; }
+    .timeline-graphic {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
+      margin: 1.8rem 0; position: relative; padding: 1rem 0;
+    }
+    .timeline-graphic::before {
+      content: ""; position: absolute; top: 50%; left: 2%; right: 2%; height: 3px;
+      background: #c9b99a; transform: translateY(-50%); z-index: 0;
+    }
+    .timeline-item {
+      background: #fffbf7; border: 2px solid var(--accent); border-radius: 30px;
+      padding: 0.6rem 1.2rem; font-weight: 700; font-size: 0.9rem; color: var(--accent);
+      position: relative; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      min-width: 100px; text-align: center;
+    }
+    .timeline-item span { display: block; font-weight: 400; font-size: 0.8rem; color: #4d4d4d; }
+    .exercises { margin-top: 2rem; background: #fcf9f4; border-radius: 14px; padding: 1.8rem 2rem; border: 1px solid #e0d6c5; }
+    .exercises h3 { margin-top: 0; color: #5e3a2c; font-size: 1.4rem; }
+    details { margin: 1rem 0 0.5rem; background: #ffffff; border: 1px solid #d0c7b8; border-radius: 10px; padding: 0.7rem 1.2rem; }
+    details[open] { background: #fefaf5; border-color: #b39364; }
+    summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.4rem; color: #4a3324; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; display: inline-block; }
+    details[open] summary::before { content: "▾"; }
+    .correction { margin-top: 0.8rem; padding: 1rem 1rem 0.5rem; background: #fff7ed; border-radius: 8px; border-left: 4px solid #c38d4b; }
+    .astuce { background: #f2efe9; border-radius: 12px; padding: 1.2rem 1.6rem; margin-top: 1.8rem; font-size: 0.98rem; border: 1px dashed #a3937c; }
+    .astuce strong { color: #6b4c2b; }
+    .schema-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+    .schema-box { background: #fefcf8; border: 1.5px solid #b4946e; border-radius: 10px; padding: 0.9rem 1.2rem; font-weight: 600; color: #3e2e1f; min-width: 130px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.04); }
+    @media (max-width: 650px) { body { padding: 1rem 0.8rem; } .timeline-graphic { flex-direction: column; align-items: center; gap: 0.8rem; } .timeline-graphic::before { display: none; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="main-header">
+    <h1>PARTIE 1 : Le monde de l'entre-deux-guerres à la fin de la Seconde Guerre mondiale</h1>
+    <div class="sub">Fiches de révision exhaustives – Programme Terminale A4 (Burkina Faso)</div>
+  </header>
+
+  <!-- Chapitre 1 – Crise de 1929 -->
+  <section class="chapter-card">
+    <h2>Chapitre 1 : La crise économique de 1929</h2>
+    <p><strong>Introduction problématisée :</strong> Au lendemain de la Première Guerre mondiale, les États-Unis deviennent la première puissance économique mondiale. La décennie 1920 est marquée par une croissance rapide et une euphorie boursière. Pourtant, le <strong>24 octobre 1929</strong>, la Bourse de New York s'effondre, déclenchant une dépression planétaire. Pourquoi le krach de Wall Street a-t-il entraîné une crise d'une telle ampleur, et comment les sociétés ont-elles réagi face à cette catastrophe ?</p>
+
+    <h3>I. Les causes de la crise</h3>
+    <h4>A. Une prospérité fragile : les « Roaring Twenties »</h4>
+    <p>Les années 1920 sont aux États-Unis une période de forte croissance industrielle, portée par la production automobile de <strong>Ford</strong>, l'électroménager et la construction. La productivité augmente grâce au <strong>taylorisme</strong> et au <strong>fordisme</strong>. Mais cette prospérité repose sur des bases fragiles : l'endettement des ménages, une agriculture en difficulté et une spéculation boursière excessive. Les cours de Wall Street grimpent de manière déconnectée de la valeur réelle des entreprises. Entre 1926 et 1929, l'indice Dow Jones triple. Les investisseurs achètent des titres <strong>« on margin »</strong>, c'est-à-dire à crédit (10 % de couverture seulement). Tant que les cours montent, le système tient, mais la moindre correction peut déclencher une panique.</p>
+
+    <h4>B. La surproduction et la saturation des marchés</h4>
+    <p>L'industrie américaine produit plus que ce que le marché peut absorber. Le pouvoir d'achat des ouvriers ne suit pas la hausse de la production. Dans l'agriculture, les prix s'effondrent dès le milieu des années 1920 à cause d'une offre excédentaire et du retour de la concurrence européenne. Les <strong>farmers</strong>, très endettés, ne peuvent plus rembourser leurs emprunts. Par ailleurs, les barrières douanières (tarif <strong>Fordney-McCumber</strong> de 1922) freinent les exportations. L'Europe, qui peine à se relever de la guerre, absorbe moins de produits américains.</p>
+
+    <h4>C. Les fragilités du système monétaire international</h4>
+    <p>Le retour à l'<strong>étalon-or</strong> dans les années 1920 se fait sans coordination internationale. La livre sterling est surévaluée, le franc français sous-évalué. Les États-Unis prêtent massivement à l'Allemagne pour qu'elle paie les réparations aux Alliés (plan <strong>Dawes</strong> 1924, plan <strong>Young</strong> 1929). Ce circuit financier est vulnérable : si les capitaux américains se retirent, tout l'édifice s'écroule. Le <strong>jeudi 24 octobre 1929</strong> (« Black Thursday »), 12,9 millions d'actions sont mises en vente. Le <strong>mardi 29 octobre</strong>, 16 millions de titres sont cédés ; les cours s'effondrent de 30 % en deux jours.</p>
+
+    <h3>II. Les manifestations de la crise</h3>
+    <h4>A. L'effondrement financier et bancaire</h4>
+    <p>Le krach ruine des millions d'épargnants. Les banques, qui ont prêté aux spéculateurs, ne récupèrent pas leurs fonds. Des milliers d'établissements font faillite : plus de <strong>9 000 banques</strong> ferment entre 1930 et 1933. Le crédit se tarit, la masse monétaire se contracte, provoquant une violente <strong>déflation</strong>. Le cercle vicieux s'enclenche : baisse des prix, baisse de la production, licenciements.</p>
+
+    <h4>B. La dépression industrielle et le chômage de masse</h4>
+    <p>La production industrielle américaine chute de près de <strong>50 %</strong> entre 1929 et 1932. Les usines ferment, le bâtiment s'arrête. Le chômage explose : de 1,5 million en 1929, il passe à près de <strong>13 millions</strong> en 1932 (environ 25 % de la population active). Les soupes populaires et les bidonvilles (« Hoovervilles ») se multiplient. La crise se transmet rapidement au reste du monde par le retrait des capitaux américains et la contraction du commerce international (qui baisse des deux tiers en valeur).</p>
+
+    <h4>C. Une crise mondiale aux effets contrastés</h4>
+    <p>L'Allemagne, très dépendante des prêts américains, est durement touchée : 6 millions de chômeurs en 1932, faillites bancaires en cascade (<strong>Credit-Anstalt</strong> en Autriche en 1931). Le Royaume-Uni abandonne l'étalon-or en 1931. La France, plus rurale et moins dépendante du commerce extérieur, résiste jusqu'en 1931-1932, puis plonge à son tour. Les colonies d'Afrique, intégrées dans l'économie impériale, subissent la chute des cours des matières premières (cacao, coton, café). En <strong>AOF</strong>, les revenus des paysans s'effondrent, aggravant les tensions sociales.</p>
+
+    <h3>III. Les conséquences et les remèdes</h3>
+    <h4>A. Conséquences sociales et politiques</h4>
+    <p>La misère nourrit des mouvements de protestation : marches de la faim aux États-Unis, grèves en Europe. Le capitalisme libéral est discrédité ; certains se tournent vers le communisme ou le fascisme. En Allemagne, le parti nazi progresse aux élections (37 % en juillet 1932) et Hitler devient chancelier le <strong>30 janvier 1933</strong>. En France, la crise favorise l'instabilité ministérielle et l'émeute du <strong>6 février 1934</strong>. En Afrique, la crise accélère les premières revendications sociales et les prémices des mouvements syndicaux.</p>
+
+    <h4>B. Les remèdes traditionnels et le protectionnisme</h4>
+    <p>Face à la crise, la plupart des États adoptent des politiques protectionnistes. Les États-Unis votent le tarif <strong>Hawley-Smoot</strong> (1930), qui aggrave la contraction du commerce mondial. Le Royaume-Uni crée la <strong>préférence impériale</strong> (accords d'Ottawa, 1932). Ces réponses unilatérales empêchent une reprise coordonnée.</p>
+
+    <h4>C. Le New Deal : une réponse interventionniste</h4>
+    <p>Élu en novembre 1932, <strong>Franklin D. Roosevelt</strong> lance le <strong>New Deal</strong> à partir de 1933. Il s'appuie sur les idées de l'économiste <strong>Keynes</strong>, favorable à l'intervention de l'État. Le New Deal repose sur trois volets : <strong>relance</strong> par les grands travaux (TVA, barrages), <strong>régulation</strong> du système bancaire (Glass-Steagall Act) et <strong>aide sociale</strong> (Social Security Act de 1935). Si le New Deal atténue les effets de la crise, la reprise n'est totale qu'avec la Seconde Guerre mondiale.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Krach boursier :</span> effondrement brutal et massif des cours des valeurs mobilières sur un marché financier.</p>
+      <p><span class="term">Déflation :</span> baisse générale et durable des prix, souvent accompagnée d'une contraction de l'activité économique.</p>
+      <p><span class="term">New Deal :</span> ensemble de mesures économiques et sociales mises en œuvre par le président Roosevelt à partir de 1933 pour lutter contre la Grande Dépression.</p>
+    </div>
+
+    <div class="timeline-graphic">
+      <div class="timeline-item">1921-1928<span>Prospérité & spéculation</span></div>
+      <div class="timeline-item">Oct. 1929<span>Krach de Wall Street</span></div>
+      <div class="timeline-item">1930-1932<span>Dépression mondiale</span></div>
+      <div class="timeline-item">1933<span>New Deal</span></div>
+      <div class="timeline-item">1936-1937<span>Rebond partiel</span></div>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>24 octobre 1929</strong> : Jeudi noir – début du krach.</li>
+      <li><strong>29 octobre 1929</strong> : Mardi noir – panique boursière.</li>
+      <li><strong>1931</strong> : Crise bancaire en Europe (Credit-Anstalt).</li>
+      <li><strong>1933</strong> : Arrivée au pouvoir de Roosevelt, lancement du New Deal.</li>
+      <li><strong>1935</strong> : Social Security Act (États-Unis).</li>
+    </ul>
+
+    <div class="astuce">
+      <strong>Astuce du prof pour le Bac :</strong> Attention à ne pas confondre <strong>crise</strong> (retournement conjoncturel) et <strong>dépression</strong> (phase durable de contraction). Montrez la dimension mondiale en citant les colonies (AOF) et la montée des totalitarismes. Les sujets croisent souvent crise économique et conséquences politiques.
+    </div>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 1</h3>
+      <details>
+        <summary>Exercice 1 : Expliquez le rôle de la spéculation boursière dans le déclenchement de la crise.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La spéculation reposait sur l'achat d'actions à crédit (système « on margin »). Tant que les cours montaient, les investisseurs pouvaient rembourser. Mais à la première baisse, les appels de marge ont contraint à vendre massivement, précipitant la chute. La bulle spéculative, gonflée par le crédit facile, a éclaté en octobre 1929.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quelles sont les principales mesures du New Deal ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Le New Deal combine des grands travaux (TVA), la régulation bancaire (Glass-Steagall Act, création de la SEC), des aides agricoles (Agricultural Adjustment Act) et des lois sociales (Social Security Act, 1935). Il inaugure l'intervention de l'État dans l'économie.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 2 – Seconde Guerre mondiale -->
+  <section class="chapter-card">
+    <h2>Chapitre 2 : La Seconde Guerre mondiale (1939-1945)</h2>
+    <p><strong>Introduction problématisée :</strong> La Seconde Guerre mondiale est le conflit le plus meurtrier de l'histoire. Issue des frustrations de la Grande Guerre et de la montée des régimes totalitaires, elle oppose de 1939 à 1945 les forces de l'Axe aux Alliés. En quoi ce conflit, par son ampleur planétaire, sa violence extrême et ses conséquences, a-t-il profondément bouleversé l'ordre mondial ?</p>
+
+    <h3>I. Les causes profondes et immédiates</h3>
+    <h4>A. Le poids du traité de Versailles et le révisionnisme</h4>
+    <p>Le <strong>traité de Versailles</strong> (1919) est perçu en Allemagne comme un <strong>Diktat</strong> humiliant : perte de territoires (Alsace-Lorraine, couloir de Dantzig), limitation de l'armée, lourdes réparations. Ce ressentiment alimente le nationalisme allemand. Hitler, dès son arrivée au pouvoir en 1933, affiche sa volonté de détruire l'ordre versaillais. Il rétablit le service militaire (1935), remilitarise la Rhénanie (1936) et réclame l'<strong>espace vital</strong> (Lebensraum).</p>
+
+    <h4>B. L'expansionnisme des régimes totalitaires</h4>
+    <p>L'Italie fasciste de <strong>Mussolini</strong> envahit l'Éthiopie en 1935. Le Japon, en guerre contre la Chine depuis 1937, cherche à dominer l'Asie orientale. L'Allemagne nazie annexe l'Autriche (<strong>Anschluss</strong>, mars 1938) puis exige les Sudètes. La conférence de <strong>Munich</strong> (septembre 1938) cède à Hitler, qui promet de ne plus faire de revendications territoriales. Mais en mars 1939, il envahit la Tchécoslovaquie, montrant la vanité de la politique d'apaisement.</p>
+
+    <h4>C. L'échec de la sécurité collective et le pacte germano-soviétique</h4>
+    <p>La <strong>SDN</strong> s'est révélée impuissante face aux coups de force (Mandchourie, Éthiopie). Les démocraties, divisées, hésitent à s'opposer frontalement à Hitler. Staline, méfiant, signe le <strong>pacte germano-soviétique</strong> (23 août 1939) : un accord de non-agression qui comporte un partage secret de la Pologne. Ainsi sécurisé à l'Est, Hitler attaque la Pologne le <strong>1er septembre 1939</strong>, déclenchant la guerre.</p>
+
+    <h3>II. Les grandes phases du conflit</h3>
+    <h4>A. Les victoires foudroyantes de l'Axe (1939-1942)</h4>
+    <p>L'Allemagne utilise la <strong>Blitzkrieg</strong> (guerre éclair) : coordination aviation-chars pour percer le front. La Pologne est écrasée en quelques semaines. En avril 1940, le Danemark et la Norvège tombent, puis la Belgique, les Pays-Bas et la France (armistice du <strong>22 juin 1940</strong>). Seul le Royaume-Uni résiste, notamment lors de la <strong>bataille d'Angleterre</strong> (été 1940). En 1941, Hitler lance l'<strong>opération Barbarossa</strong> contre l'URSS (22 juin 1941), rompant le pacte. Le Japon attaque la base américaine de <strong>Pearl Harbor</strong> le <strong>7 décembre 1941</strong>, entraînant l'entrée en guerre des États-Unis. L'Axe est alors à son apogée.</p>
+
+    <h4>B. Le tournant de 1942-1943</h4>
+    <p>Dans le Pacifique, la bataille de <strong>Midway</strong> (juin 1942) stoppe l'expansion japonaise. En Afrique du Nord, les Alliés défont l'Afrikakorps à <strong>El-Alamein</strong> (octobre-novembre 1942) et débarquent en Afrique du Nord (opération Torch, novembre 1942). Sur le front de l'Est, la bataille de <strong>Stalingrad</strong> (juillet 1942 – février 1943) marque un tournant décisif : la VIe armée allemande capitule le 2 février 1943. Désormais, l'initiative change de camp.</p>
+
+    <h4>C. La victoire des Alliés (1943-1945)</h4>
+    <p>Les Alliés débarquent en Sicile (juillet 1943) puis en Italie. Le <strong>6 juin 1944</strong>, le débarquement de Normandie ouvre un second front à l'Ouest. À l'Est, l'Armée rouge avance inexorablement. Le 30 avril 1945, Hitler se suicide ; l'Allemagne capitule le <strong>8 mai 1945</strong>. En Asie, les États-Unis utilisent la bombe atomique : <strong>Hiroshima</strong> le 6 août 1945, <strong>Nagasaki</strong> le 9 août. Le Japon capitule le <strong>2 septembre 1945</strong>.</p>
+
+    <div class="schema-row">
+      <div class="schema-box">Axe : Allemagne, Italie (jusqu'en 1943), Japon</div>
+      <div class="schema-box">Alliés : Royaume-Uni, URSS (à partir de 1941), États-Unis (1941), France libre</div>
+    </div>
+
+    <h3>III. Bilan et conséquences</h3>
+    <h4>A. Bilan humain et matériel</h4>
+    <p>Le conflit a causé plus de <strong>50 millions de morts</strong>, dont une majorité de civils. L'URSS paie le plus lourd tribut (environ 27 millions de morts). Le génocide des Juifs et des Tziganes (la <strong>Shoah</strong>) a conduit à l'extermination de près de <strong>6 millions de personnes</strong>. Les bombardements massifs ont rasé des villes entières (Coventry, Dresde, Tokyo). Les économies sont désorganisées, les infrastructures détruites.</p>
+
+    <h4>B. Bilan moral et juridique</h4>
+    <p>La découverte des camps de concentration et d'extermination provoque un choc mondial. Les Alliés créent le concept de <strong>crime contre l'humanité</strong>. Les procès de <strong>Nuremberg</strong> (novembre 1945 – octobre 1946) jugent les dirigeants nazis ; ceux de <strong>Tokyo</strong> poursuivent les criminels de guerre japonais.</p>
+
+    <h4>C. Conséquences géopolitiques</h4>
+    <p>L'Europe, ruinée, perd sa prédominance. Deux superpuissances émergent : les <strong>États-Unis</strong> et l'<strong>URSS</strong>. La conférence de <strong>Yalta</strong> (février 1945) et celle de <strong>Potsdam</strong> (juillet-août 1945) esquissent un nouvel ordre mondial. L'<strong>ONU</strong> est fondée en juin 1945. La guerre froide débute rapidement, tandis que les empires coloniaux sont fragilisés, ouvrant la voie à la décolonisation.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Blitzkrieg :</span> « guerre éclair » en allemand, tactique offensive combinant chars et aviation pour percer rapidement le front ennemi.</p>
+      <p><span class="term">Crime contre l'humanité :</span> actes inhumains commis de façon systématique contre des populations civiles (extermination, déportation, persécutions).</p>
+      <p><span class="term">Shoah :</span> terme hébreu signifiant « catastrophe », désignant le génocide des Juifs par l'Allemagne nazie.</p>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>1er septembre 1939</strong> : invasion de la Pologne.</li>
+      <li><strong>22 juin 1940</strong> : armistice franco-allemand.</li>
+      <li><strong>22 juin 1941</strong> : opération Barbarossa.</li>
+      <li><strong>7 décembre 1941</strong> : Pearl Harbor.</li>
+      <li><strong>2 février 1943</strong> : capitulation allemande à Stalingrad.</li>
+      <li><strong>6 juin 1944</strong> : débarquement de Normandie.</li>
+      <li><strong>8 mai 1945</strong> : capitulation allemande.</li>
+      <li><strong>6 et 9 août 1945</strong> : bombes atomiques sur Hiroshima et Nagasaki.</li>
+      <li><strong>2 septembre 1945</strong> : capitulation du Japon.</li>
+    </ul>
+
+    <div class="astuce">
+      <strong>Astuce du prof :</strong> Évitez le récit linéaire. Structurez votre dissertation autour des grandes ruptures (mondialisation du conflit, guerre d'anéantissement, entrée dans l'ère nucléaire). Reliez systématiquement les conséquences à la future Guerre froide et à la décolonisation.
+    </div>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 2</h3>
+      <details>
+        <summary>Exercice 1 : Pourquoi la Seconde Guerre mondiale est-elle qualifiée de « guerre d'anéantissement » ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Parce qu'elle vise l'anéantissement total de l'ennemi, sans distinction entre civils et militaires. Les bombardements massifs, les génocides (Shoah) et les violences extrêmes sur le front de l'Est en sont les manifestations.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quels sont les principaux accords conclus à Yalta ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> À Yalta (février 1945), les Alliés décident du partage de l'Allemagne en zones d'occupation, de la création de l'ONU et obtiennent de Staline son engagement à entrer en guerre contre le Japon.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 3 – ONU -->
+  <section class="chapter-card">
+    <h2>Chapitre 3 : L'Organisation des Nations Unies (ONU)</h2>
+    <p><strong>Introduction problématisée :</strong> Née des cendres de la Seconde Guerre mondiale, l'ONU est fondée le <strong>24 octobre 1945</strong> avec l'ambition de préserver les générations futures du fléau de la guerre. Mais dans un monde dominé par les rivalités entre grandes puissances, l'organisation parvient-elle à concilier idéal de paix et réalités géopolitiques ?</p>
+
+    <h3>I. Genèse et fondements de l'ONU</h3>
+    <h4>A. De l'échec de la SDN à la Charte de San Francisco</h4>
+    <p>La Société des Nations (SDN), créée en 1920, n'a pu empêcher les agressions des années 1930. Les Alliés tirent les leçons de cet échec. Dès 1941, la <strong>Charte de l'Atlantique</strong> signée par Roosevelt et Churchill pose les principes d'un nouvel ordre international. En 1944, la conférence de <strong>Dumbarton Oaks</strong> élabore les structures de la future organisation. La <strong>conférence de San Francisco</strong> (avril-juin 1945) réunit 50 États qui signent la Charte le <strong>26 juin 1945</strong>.</p>
+
+    <h4>B. Les principes fondamentaux</h4>
+    <p>La Charte proclame l'égalité souveraine des États, le règlement pacifique des différends et l'interdiction du recours à la force (sauf en cas de légitime défense ou de décision du Conseil de sécurité). L'ONU affirme également le droit des peuples à disposer d'eux-mêmes et la promotion des droits de l'Homme.</p>
+
+    <h4>C. Les objectifs affichés</h4>
+    <p>Maintenir la paix et la sécurité internationales, développer la coopération économique et sociale, promouvoir le respect des droits humains. La <strong>Déclaration universelle des droits de l'Homme</strong>, adoptée le <strong>10 décembre 1948</strong>, reste un texte fondateur.</p>
+
+    <h3>II. Les institutions principales</h3>
+    <h4>A. L'Assemblée générale</h4>
+    <p>Chaque État membre y dispose d'une voix. Elle discute de toute question relevant de la Charte et vote des résolutions (non contraignantes). Elle élit les membres non permanents du Conseil de sécurité et approuve le budget.</p>
+
+    <h4>B. Le Conseil de sécurité</h4>
+    <p>Responsable du maintien de la paix, il compte 15 membres : <strong>5 permanents</strong> (États-Unis, URSS/Russie, Royaume-Uni, France, Chine) dotés du <strong>droit de veto</strong>, et 10 non-permanents élus pour deux ans. Il peut imposer des sanctions économiques ou autoriser l'usage de la force.</p>
+
+    <h4>C. Le Secrétariat général et les institutions spécialisées</h4>
+    <p>Le Secrétaire général, nommé par l'Assemblée sur recommandation du Conseil, est le porte-parole de l'organisation. Des agences spécialisées (UNESCO, FAO, OMS, UNICEF, FMI, Banque mondiale) œuvrent dans les domaines de l'éducation, la santé, l'agriculture, le développement et la finance.</p>
+
+    <h3>III. Bilan et limites de l'ONU</h3>
+    <h4>A. Succès et réalisations</h4>
+    <p>L'ONU a accompagné le mouvement de décolonisation (création de nombreux États depuis 1945), mené des opérations de maintien de la paix (Casques bleus créés en <strong>1948</strong>), coordonné des actions humanitaires et sanitaires (éradication de la variole, campagnes de vaccination). Des conventions internationales sur les droits de l'enfant, le climat ou le droit de la mer ont été adoptées.</p>
+
+    <h4>B. Échecs et blocages</h4>
+    <p>Le droit de veto a souvent paralysé le Conseil de sécurité pendant la Guerre froide. L'organisation n'a pu empêcher des conflits majeurs (guerre du Vietnam, génocide rwandais en <strong>1994</strong>, guerre en Syrie). Certaines interventions ont été critiquées pour leur inefficacité ou leur partialité.</p>
+
+    <h4>C. La question de la réforme</h4>
+    <p>La composition du Conseil de sécurité reflète le monde de 1945. Des pays comme l'Inde, le Brésil, le Japon ou un État africain revendiquent un siège permanent. Les discussions sur la réforme sont bloquées par les rivalités régionales et le conservatisme des « Cinq ».</p>
+
+    <div class="definition-box">
+      <p><span class="term">Droit de veto :</span> prérogative des cinq membres permanents leur permettant de bloquer toute résolution du Conseil de sécurité.</p>
+      <p><span class="term">Casques bleus :</span> forces de maintien de la paix de l'ONU, composées de soldats fournis par les États membres.</p>
+      <p><span class="term">Charte des Nations Unies :</span> traité fondateur de l'ONU, signé le 26 juin 1945 à San Francisco.</p>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>14 août 1941</strong> : Charte de l'Atlantique.</li>
+      <li><strong>26 juin 1945</strong> : signature de la Charte de l'ONU.</li>
+      <li><strong>24 octobre 1945</strong> : entrée en vigueur de la Charte (Journée des Nations Unies).</li>
+      <li><strong>10 décembre 1948</strong> : Déclaration universelle des droits de l'Homme.</li>
+    </ul>
+
+    <div class="astuce">
+      <strong>Astuce du prof :</strong> Ne présentez pas l'ONU comme un « gouvernement mondial ». C'est une organisation intergouvernementale. Montrez le contraste entre ses ambitions universelles et les réalités du rapport de force. Comparez avec la SDN pour souligner les avancées et les limites.
+    </div>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 3</h3>
+      <details>
+        <summary>Exercice 1 : Pourquoi le droit de veto est-il une source de blocage à l'ONU ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Le droit de veto permet à un seul des cinq membres permanents d'empêcher l'adoption d'une résolution, même soutenue par tous les autres États. Cela bloque toute action coercitive contre un allié et paralyse le Conseil de sécurité dans les crises où les grandes puissances s'opposent.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Citez deux opérations de maintien de la paix menées par l'ONU en Afrique.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La <strong>MONUSCO</strong> en République démocratique du Congo (depuis 1999) et la <strong>MINUSMA</strong> au Mali (2013-2023). Ces missions illustrent l'engagement de l'ONU dans la stabilisation du continent.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

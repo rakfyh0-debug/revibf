@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de Français – Terminale A4 (Partie 1) | Burkina Faso</title>
+    <style>
+        :root {
+            --primaire: #1a5c2a;
+            --secondaire: #f4c542;
+            --fond: #fdfbf7;
+            --texte: #2e2e2e;
+            --bordure: #b4975a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--fond); color: var(--texte);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7; padding: 2rem 1.5rem; max-width: 1100px;
+            margin: 0 auto; counter-reset: chapitre;
+        }
+        h1 {
+            font-size: 2.4rem; text-align: center; color: var(--primaire);
+            border-bottom: 4px solid var(--secondaire); padding-bottom: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+        h2 {
+            font-size: 1.8rem; color: var(--primaire); margin: 2.5rem 0 1.2rem 0;
+            border-left: 8px solid var(--secondaire); padding-left: 1rem;
+            counter-increment: chapitre;
+        }
+        h2::before { content: "Chapitre " counter(chapitre) " : "; }
+        h3 {
+            font-size: 1.35rem; color: #3b5e2b; margin: 1.8rem 0 0.8rem 0;
+            border-bottom: 1px dashed var(--bordure); padding-bottom: 0.3rem;
+        }
+        h4 {
+            font-size: 1.15rem; color: #4a6b3a; margin: 1.3rem 0 0.5rem 0;
+            font-style: italic;
+        }
+        .partie {
+            background: white; border-radius: 12px; padding: 2rem 2.2rem;
+            margin: 2rem 0; box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border: 1px solid #e5d5b0;
+        }
+        .definition {
+            background: #f0f7e8; border-left: 5px solid #2d6a4f;
+            padding: 1.2rem 1.5rem; margin: 1.2rem 0; border-radius: 6px;
+        }
+        .exemple {
+            background: #f7f4e0; border-left: 5px solid #c2a34f;
+            padding: 1.2rem 1.5rem; margin: 1.2rem 0; border-radius: 6px;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+        th {
+            background: var(--primaire); color: white;
+            padding: 0.6rem; text-align: left;
+        }
+        td, th { border: 1px solid #ccc; padding: 0.5rem 0.8rem; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .bold { font-weight: bold; }
+        ul, ol { margin-left: 2rem; }
+        li { margin-bottom: 0.5rem; }
+        .footer-note {
+            margin-top: 3rem; font-size: 0.9rem; color: #555;
+            text-align: center; border-top: 1px solid #ddd; padding-top: 1.5rem;
+        }
+        .auteur { color: #8b5a2b; font-weight: 600; }
+        .oeuvre { font-style: italic; }
+    </style>
+</head>
+<body>
+<h1>Programme de Français – Terminale A4<br>Cours détaillé (Première partie)</h1>
+
+<div class="partie" style="background:#faf6ee;">
+    <h2 style="margin-top:0; counter-increment: none;">Introduction générale au programme</h2>
+    <p>Le programme de français en Terminale A4 s'articule autour de deux grands axes : la <strong>maîtrise des techniques d'expression écrite</strong> (résumé, contraction, dissertation, commentaire composé, situation d'intégration) et l'<strong>étude approfondie de la littérature</strong>, en particulier la littérature négro-africaine d'expression française et les littératures francophones. Il s'agit, conformément à l'approche par compétences (APC), de rendre le candidat capable de comprendre, d'analyser et de produire des discours variés, tout en s'appropriant un patrimoine culturel et littéraire riche.</p>
+    <p>Le cours est organisé en chapitres qui couvrent les genres littéraires majeurs (roman, théâtre, poésie), les courants esthétiques, les techniques d'analyse textuelle et les méthodes de production écrite. Cette première partie traite des fondements de la littérature négro-africaine, du roman, du théâtre, et des premiers outils méthodologiques.</p>
+</div>
+
+<div class="partie">
+    <h2>Aperçu historique : La littérature négro-africaine d'expression française</h2>
+    <h3>1. Contexte d'émergence</h3>
+    <p>La littérature négro-africaine écrite en français naît dans un contexte colonial. Les premiers textes sont le fait d'intellectuels formés à l'école occidentale, qui s'approprient la langue du colonisateur pour exprimer une identité culturelle propre. Dès les années 1920-1930, des revues comme <span class="oeuvre">La Revue du Monde Noir</span> ou <span class="oeuvre">Légitime Défense</span> posent les jalons d'une prise de conscience. Il s'agit d'une littérature de témoignage et de revendication.</p>
+    <h3>2. Les grandes périodes</h3>
+    <table>
+        <tr><th>Période</th><th>Caractéristiques</th><th>Auteurs et œuvres majeurs</th></tr>
+        <tr>
+            <td>Années 1920-1940 : Les précurseurs</td>
+            <td>Affirmation d'une voix noire, réhabilitation des cultures africaines, poésie et essais.</td>
+            <td>René Maran (<span class="oeuvre">Batouala</span>, 1921, prix Goncourt), Léopold Sédar Senghor (poèmes).</td>
+        </tr>
+        <tr>
+            <td>Années 1940-1960 : L'âge d'or de la Négritude</td>
+            <td>Mouvement de revendication de l'identité noire, valorisation des valeurs africaines, engagement politique et culturel.</td>
+            <td>Senghor (<span class="oeuvre">Chants d'ombre</span>), Aimé Césaire (<span class="oeuvre">Cahier d'un retour au pays natal</span>), Léon-Gontran Damas (<span class="oeuvre">Pigments</span>).</td>
+        </tr>
+        <tr>
+            <td>Années 1960-1980 : Les indépendances et le désenchantement</td>
+            <td>Critique sociale, roman de mœurs, satire des nouvelles élites, conflit tradition/modernité.</td>
+            <td>Sembène Ousmane (<span class="oeuvre">Les bouts de bois de Dieu</span>), Ahmadou Kourouma (<span class="oeuvre">Les Soleils des indépendances</span>), Mariama Bâ (<span class="oeuvre">Une si longue lettre</span>), Nazi Boni (<span class="oeuvre">Crépuscule des temps anciens</span>).</td>
+        </tr>
+        <tr>
+            <td>Années 1980 à nos jours : Nouvelles écritures</td>
+            <td>Diversification des thèmes, écriture de l'intime, postmodernisme, littérature-monde.</td>
+            <td>Alain Mabanckou (<span class="oeuvre">Verre cassé</span>), Fatou Diome (<span class="oeuvre">Le Ventre de l'Atlantique</span>), Monique Ilboudo (Burkina Faso).</td>
+        </tr>
+    </table>
+    <h3>3. Les principaux courants littéraires</h3>
+    <ul>
+        <li><strong>La Négritude :</strong> Mouvement littéraire et politique né dans les années 1930 sous l'impulsion de Senghor, Césaire et Damas. Il vise à redonner dignité à l'homme noir en célébrant les civilisations africaines et en dénonçant le racisme colonial.</li>
+        <li><strong>Le réalisme social :</strong> À partir des années 1960, de nombreux romanciers décrivent avec minutie les réalités sociales, politiques et économiques de l'Afrique postcoloniale.</li>
+        <li><strong>Le roman de l'immigration et de l'entre-deux :</strong> Thème récurrent chez les écrivains de la diaspora, confrontés aux questions d'identité et d'intégration.</li>
+    </ul>
+</div>
+
+<div class="partie">
+    <h2>Le roman négro-africain</h2>
+    <h3>1. Définition et fonctions</h3>
+    <div class="definition">
+        <p><strong>Roman :</strong> Œuvre narrative de fiction en prose, de longueur variable, qui relate les aventures d'un ou plusieurs personnages dans un cadre spatio-temporel défini. Le roman africain francophone assume souvent une fonction didactique, critique ou mémorielle.</p>
+    </div>
+    <p>Le roman africain s'est imposé comme le genre dominant. Il se caractérise par une grande diversité thématique : conflit des générations, place de la femme, choc des cultures, satire politique, quête identitaire.</p>
+    <h3>2. Les types de romans</h3>
+    <ul>
+        <li><strong>Roman de formation (ou d'apprentissage) :</strong> Il retrace l'évolution psychologique et sociale du héros. Exemple : <span class="oeuvre">L'Enfant noir</span> de Camara Laye.</li>
+        <li><strong>Roman historique :</strong> S'inspire de faits réels pour reconstituer une époque. Exemple : <span class="oeuvre">Crépuscule des temps anciens</span> de Nazi Boni, qui évoque la résistance des Bwaba contre la colonisation.</li>
+        <li><strong>Roman de mœurs :</strong> Décrit et critique la société contemporaine. Exemple : <span class="oeuvre">Les Soleils des indépendances</span> d'Ahmadou Kourouma.</li>
+        <li><strong>Roman épistolaire :</strong> Constitué d'un échange de lettres. Exemple : <span class="oeuvre">Une si longue lettre</span> de Mariama Bâ.</li>
+        <li><strong>Roman engagé :</strong> Dénonce une injustice et appelle au changement. Exemple : <span class="oeuvre">Les bouts de bois de Dieu</span> de Sembène Ousmane.</li>
+    </ul>
+    <h3>3. Étude de quelques œuvres majeures</h3>
+    <h4>A. <span class="oeuvre">L'Enfant noir</span> de Camara Laye (1953)</h4>
+    <p>Roman autobiographique. Le narrateur évoque son enfance en Guinée, entre traditions familiales (la forge, les rites initiatiques) et désir de modernité (l'école française). L'œuvre célèbre la culture malinké tout en montrant les déchirements du départ vers l'Europe.</p>
+    <p><strong>Thèmes :</strong> la nostalgie, le passage à l'âge adulte, l'éducation, le conflit des valeurs.</p>
+    <h4>B. <span class="oeuvre">Sous l'orage</span> de Seydou Badian (1954)</h4>
+    <p>Roman qui met en scène le conflit entre un père traditionaliste et ses enfants acquis aux idées modernes. Le mariage forcé, l'école, la lutte pour l'émancipation sont au cœur du récit. L'œuvre plaide pour une synthèse entre tradition et progrès.</p>
+    <h4>C. <span class="oeuvre">Une si longue lettre</span> de Mariama Bâ (1979)</h4>
+    <p>Sous forme épistolaire, Ramatoulaye écrit à son amie Aïssatou. Elle y confie ses épreuves de veuve, le poids de la polygamie, et dresse un tableau de la condition féminine au Sénégal. Roman majeur du féminisme africain.</p>
+    <h4>D. <span class="oeuvre">Crépuscule des temps anciens</span> de Nazi Boni (1962)</h4>
+    <p>Fresque historique du Burkina Faso précolonial, ce roman met en lumière les luttes intestines et la résistance face à la pénétration coloniale. Il puise dans la tradition orale et les légendes bwa.</p>
+    <h3>4. Outils d'analyse du roman</h3>
+    <ul>
+        <li><strong>Le schéma narratif :</strong> situation initiale, élément perturbateur, péripéties, résolution, situation finale.</li>
+        <li><strong>Les personnages :</strong> principaux, secondaires, adjuvants, opposants. Analyse de leurs fonctions et de leurs relations.</li>
+        <li><strong>L'espace et le temps :</strong> chronologie, ellipses, analepses, valeur symbolique des lieux (village/ville, Afrique/Europe).</li>
+        <li><strong>Le point de vue (focalisation) :</strong> interne, externe, omniscient.</li>
+        <li><strong>Le registre de langue :</strong> réaliste, poétique, ironique, pathétique.</li>
+    </ul>
+</div>
+
+<div class="partie">
+    <h2>Le théâtre négro-africain</h2>
+    <h3>1. Origines et spécificités</h3>
+    <div class="definition">
+        <p><strong>Théâtre :</strong> Genre littéraire destiné à être représenté sur scène. Il combine le texte (didascalies, dialogues) et la performance (jeu des acteurs, mise en scène). Le théâtre africain puise dans les traditions orales (contes, rituels) et s'est modernisé au contact des formes occidentales.</p>
+    </div>
+    <h3>2. Les grandes figures</h3>
+    <ul>
+        <li><span class="auteur">Bernard Dadié</span> (Côte d'Ivoire) : <span class="oeuvre">Monsieur Thôgô-Gnini</span>, satire de l'arrivisme et du mimétisme colonial.</li>
+        <li><span class="auteur">Cheik Aliou Ndao</span> (Sénégal) : <span class="oeuvre">L'Exil d'Albouri</span>, pièce historique sur la résistance à la colonisation.</li>
+        <li><span class="auteur">Koffi Kwahulé</span> (Côte d'Ivoire) : un théâtre contemporain influencé par le jazz et le tragique.</li>
+        <li><span class="auteur">Sony Labou Tansi</span> (Congo) : <span class="oeuvre">La Parenthèse de sang</span>, théâtre de la cruauté et de la dérision du pouvoir.</li>
+    </ul>
+    <h3>3. Thèmes récurrents</h3>
+    <ul>
+        <li>La critique du pouvoir et de la dictature.</li>
+        <li>Le choc des cultures et l'acculturation.</li>
+        <li>La condition de la femme et le mariage forcé.</li>
+        <li>Le retour aux sources et la réhabilitation des rites ancestraux.</li>
+    </ul>
+    <h3>4. Structure d'une pièce de théâtre</h3>
+    <table>
+        <tr><th>Élément</th><th>Définition</th></tr>
+        <tr><td>Acte</td><td>Grande division de la pièce, souvent liée à un changement de lieu ou de temps.</td></tr>
+        <tr><td>Scène</td><td>Subdivision de l'acte, marquée par l'entrée ou la sortie d'un personnage.</td></tr>
+        <tr><td>Dialogue</td><td>Échange verbal entre les personnages.</td></tr>
+        <tr><td>Monologue</td><td>Parole d'un personnage seul en scène, révélant ses pensées.</td></tr>
+        <tr><td>Didascalie</td><td>Indication scénique donnée par l'auteur (gestes, ton, décor).</td></tr>
+        <tr><td>Aparté</td><td>Réplique dite à part, que le public entend mais que les autres personnages sont censés ne pas percevoir.</td></tr>
+    </table>
+    <h3>5. Exemple d'étude : <span class="oeuvre">Monsieur Thôgô-Gnini</span> de Bernard Dadié</h3>
+    <p>Cette comédie satirique met en scène un personnage cupide et hypocrite qui singe les manières du colonisateur blanc pour s'enrichir. La pièce dénonce la corruption et la perte d'identité. La caricature, le comique de geste et de mots sont les principaux ressorts dramatiques.</p>
+</div>
+
+<div class="partie">
+    <h2>La poésie négro-africaine</h2>
+    <h3>1. Du griot au poète moderne</h3>
+    <p>La poésie africaine est profondément liée à la tradition orale. Le poète moderne prolonge la figure du griot, dépositaire de la mémoire collective. La poésie écrite conserve souvent la musicalité, le rythme et les images hérités de l'oralité.</p>
+    <h3>2. La Négritude et ses poètes</h3>
+    <p><span class="auteur">Léopold Sédar Senghor</span> est la figure emblématique. Sa poésie chante la beauté de l'Afrique, l'amour, l'exil, et réconcilie le monde noir avec l'universel. Recueils majeurs : <span class="oeuvre">Chants d'ombre</span>, <span class="oeuvre">Hosties noires</span>, <span class="oeuvre">Éthiopiques</span>.</p>
+    <p><span class="auteur">Aimé Césaire</span>, martiniquais, auteur du <span class="oeuvre">Cahier d'un retour au pays natal</span>, exprime la souffrance et la révolte, dans un style incantatoire et surréaliste.</p>
+    <p><span class="auteur">Léon-Gontran Damas</span>, dans <span class="oeuvre">Pigments</span>, dénonce l'assimilation culturelle et l'aliénation.</p>
+    <h3>3. Les poètes burkinabè</h3>
+    <p>Le Burkina Faso compte plusieurs voix poétiques importantes : <span class="auteur">Frédéric Titinga Pacéré</span>, <span class="auteur">Jean-Pierre Guingané</span>, <span class="auteur">Bernadette Sanou Dao</span>. Leurs poèmes abordent le terroir, l'amour, la liberté et la dignité humaine.</p>
+    <h3>4. Outils d'analyse poétique</h3>
+    <ul>
+        <li><strong>Le vers :</strong> syllabique, libre, verset.</li>
+        <li><strong>Les sonorités :</strong> rimes, allitérations, assonances.</li>
+        <li><strong>Les images :</strong> métaphore, comparaison, personnification, anaphore.</li>
+        <li><strong>Le rythme :</strong> enjambement, rejet, coupe.</li>
+        <li><strong>La tonalité :</strong> lyrique, épique, élégiaque, satirique, pathétique.</li>
+    </ul>
+    <h3>5. Exemple d'analyse : « Femme noire » de Senghor (extrait)</h3>
+    <div class="exemple">
+        <p>« Femme nue, femme noire / Vêtue de ta couleur qui est vie, de ta forme qui est beauté ! »<br>
+        Ce poème célèbre la femme africaine comme incarnation de la beauté et de l'Afrique. Les métaphores (« couleur qui est vie ») et les anaphores glorifient la nature et l'identité. Le rythme envoûtant rappelle le tam-tam.</p>
+    </div>
+</div>
+
+<div class="partie">
+    <h2>Techniques d'expression écrite – Le résumé (rappel et approfondissement)</h2>
+    <h3>1. Définition et enjeux</h3>
+    <p>Le résumé est un exercice de contraction de texte qui consiste à réduire un texte au quart ou au cinquième de sa longueur initiale, en restituant fidèlement l'essentiel des idées. Il évalue la capacité de compréhension, de synthèse et de reformulation.</p>
+    <h3>2. Méthode pas à pas</h3>
+    <ol>
+        <li><strong>Lecture intégrale :</strong> plusieurs fois, pour une compréhension globale.</li>
+        <li><strong>Repérage du thème :</strong> de quoi parle le texte ?</li>
+        <li><strong>Analyse de la structure :</strong> nombre de paragraphes, connecteurs logiques, idée directrice de chaque partie.</li>
+        <li><strong>Suppression des éléments secondaires :</strong> exemples, chiffres précis (sauf essentiels), citations, redondances.</li>
+        <li><strong>Reformulation personnelle :</strong> utiliser ses propres mots, changer la syntaxe, mais conserver le ton neutre.</li>
+        <li><strong>Décompte scrupuleux :</strong> tout mot compte (article, préposition, verbe auxiliaire). Les pourcentages, sigles et nombres en un seul bloc comptent pour un mot.</li>
+    </ol>
+    <h3>3. Pièges à éviter</h3>
+    <ul>
+        <li>Ne pas recopier des phrases entières.</li>
+        <li>Ne pas ajouter d'idée personnelle ni de commentaire.</li>
+        <li>Ne pas déséquilibrer le résumé (une partie disproportionnée).</li>
+        <li>Ne pas oublier de mentionner le nombre de mots utilisés.</li>
+    </ul>
+    <h3>4. Exercice d'application</h3>
+    <div class="exemple">
+        <p><strong>Texte support :</strong> « La langue française, héritée de la colonisation, occupe une place ambivalente dans la société burkinabè. D'un côté, elle est un outil d'ouverture sur le monde et un vecteur d'unité nationale face à la multitude de langues locales. De l'autre, elle peut être perçue comme un frein à l'épanouissement des cultures autochtones. Pour que le multilinguisme soit une richesse, il convient de valoriser aussi bien le français que les langues nationales. » (87 mots)</p>
+        <p><strong>Consigne :</strong> Résumez en 40 mots (± 10%).</p>
+        <p><strong>Proposition de résumé :</strong> Le français au Burkina, hérité de la colonisation, est à la fois un outil d'ouverture et d'unité, mais peut menacer les cultures locales. Pour un multilinguisme harmonieux, il faut promouvoir également les langues nationales. (39 mots)</p>
+    </div>
+</div>
+
+<div class="partie">
+    <h2>Techniques d'expression écrite – La dissertation (bases)</h2>
+    <h3>1. Qu'est-ce qu'une dissertation ?</h3>
+    <p>La dissertation est un exercice d'argumentation structurée qui répond à une question posée à partir d'un sujet. Elle exige la mobilisation de références littéraires et culturelles, une problématisation claire et un plan rigoureux.</p>
+    <h3>2. Les étapes clés</h3>
+    <ul>
+        <li><strong>Analyse du sujet :</strong> définir les termes, repérer la consigne (discuter, expliquer, étayer).</li>
+        <li><strong>Problématique :</strong> formuler la question centrale que le devoir doit résoudre.</li>
+        <li><strong>Recherche d'idées :</strong> au brouillon, lister arguments, exemples, citations.</li>
+        <li><strong>Élaboration du plan :</strong> en deux ou trois parties, subdivisées en deux ou trois sous-parties.</li>
+        <li><strong>Rédaction :</strong> introduction, développement, conclusion.</li>
+    </ul>
+    <h3>3. Les types de plans</h3>
+    <table>
+        <tr><th>Plan</th><th>Caractéristiques</th><th>Exemple de sujet</th></tr>
+        <tr><td>Dialectique</td><td>Thèse / Antithèse / Synthèse</td><td>« La littérature sert-elle uniquement à divertir ? »</td></tr>
+        <tr><td>Thématique</td><td>Plusieurs aspects d'un même thème</td><td>« Les fonctions de la poésie. »</td></tr>
+        <tr><td>Analytique</td><td>Étude d'un fait sous différents angles</td><td>« Les causes de l'exode rural dans le roman africain. »</td></tr>
+    </table>
+</div>
+
+<div class="footer-note">
+    <p>Cours de Français – Terminale A4 (Partie 1). Cette première moitié couvre l'histoire littéraire, les genres majeurs (roman, théâtre, poésie) et les bases du résumé et de la dissertation. La seconde partie approfondira les techniques du commentaire composé, de la situation d'intégration, et proposera des études d'œuvres supplémentaires ainsi que des exercices d'entraînement complets.</p>
+    <p>Programme APC – Burkina Faso, dernière mise à jour : juillet 2026.</p>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

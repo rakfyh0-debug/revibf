@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physique Partie 1 – Cinématique et Dynamique (Détaillé) | RéviBF</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 2rem; line-height: 1.7; }
+    .container { max-width: 1100px; margin: auto; background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    h1 { color: #0f172a; border-left: 6px solid #0284c7; padding-left: 1rem; }
+    h2 { color: #0369a1; border-bottom: 2px dashed #bae6fd; padding-bottom: 0.3rem; margin-top: 2.5rem; }
+    h3 { color: #0284c7; font-size: 1.25rem; margin-top: 1.8rem; }
+    h4 { color: #0ea5e9; }
+    p { margin: 0.8rem 0; text-align: justify; }
+    ul, ol { margin-left: 1.5rem; }
+    strong { color: #075985; }
+    .exercice { background: #f0f9ff; border-left: 6px solid #0284c7; padding: 1rem; margin: 1.5rem 0; border-radius: 8px; }
+    .correction { background: #f0fdf4; border-left: 6px solid #16a34a; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .svg-container { text-align: center; margin: 1.5rem 0; }
+    svg { max-width: 100%; height: auto; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.5rem; text-align: center; }
+    th { background: #e0f2fe; }
+    .formule { background: #e0f2fe; padding: 0.3rem 0.6rem; border-radius: 4px; }
+    .law { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 0.8rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>PHYSIQUE – Partie 1 : Cinématique et Dynamique (Cours détaillé)</h1>
+
+  <!-- ============ CINÉMATIQUE ============ -->
+  <div class="chapter">
+    <h2>1. Cinématique du point matériel</h2>
+    <p>La cinématique est l'étude du mouvement des corps en fonction du temps, indépendamment des causes qui le produisent. On s'intéresse aux notions de position, vitesse et accélération. Le mobile est réduit à son centre d'inertie (point matériel).</p>
+
+    <h3>1.1 Référentiel et repère</h3>
+    <p>Un <strong>référentiel</strong> est un solide de référence par rapport auquel on étudie le mouvement. Il est muni d'un repère d'espace (souvent orthonormé) et d'une horloge. Un référentiel est dit <strong>galiléen</strong> (ou inertiel) si la première loi de Newton s'y applique. Le référentiel terrestre (lié au sol) est approximativement galiléen pour des durées courtes.</p>
+    <p>On choisit un repère orthonormé direct (O; i→, j→, k→). La position du point M est donnée par le <strong>vecteur position</strong> : OM→ = x(t) i→ + y(t) j→ + z(t) k→. Les fonctions x(t), y(t), z(t) sont les <strong>équations horaires</strong> du mouvement.</p>
+    <div class="svg-container">
+      <svg width="350" height="280" viewBox="0 0 350 280">
+        <defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="black"/></marker></defs>
+        <line x1="50" y1="230" x2="300" y2="230" stroke="black" marker-end="url(#arrow)"/><text x="310" y="235">x</text>
+        <line x1="50" y1="230" x2="50" y2="30" stroke="black" marker-end="url(#arrow)"/><text x="40" y="20">y</text>
+        <line x1="50" y1="230" x2="140" y2="170" stroke="black" marker-end="url(#arrow)"/><text x="145" y="165">z</text>
+        <circle cx="180" cy="140" r="4" fill="red"/><text x="185" y="135">M(x,y,z)</text>
+        <!-- projections -->
+        <line x1="180" y1="140" x2="180" y2="230" stroke="gray" stroke-dasharray="4,2"/>
+        <line x1="50" y1="230" x2="180" y2="230" stroke="gray" stroke-dasharray="4,2"/>
+        <line x1="180" y1="140" x2="110" y2="185" stroke="gray" stroke-dasharray="4,2"/>
+        <text x="100" y="245">x</text>
+        <text x="185" y="245">y</text>
+        <text x="120" y="160">z</text>
+      </svg>
+    </div>
+    <p>Pour un mouvement plan, on peut aussi utiliser les <strong>coordonnées polaires</strong> (r, θ) : x = r cosθ, y = r sinθ. Elles sont adaptées aux mouvements circulaires.</p>
+
+    <h3>1.2 Vecteur vitesse</h3>
+    <p>La vitesse moyenne entre t et t+Δt est V→<sub>m</sub> = (ΔOM→)/Δt. La <strong>vitesse instantanée</strong> est la dérivée du vecteur position : V→(t) = dOM→/dt = v<sub>x</sub> i→ + v<sub>y</sub> j→, avec v<sub>x</sub> = dx/dt, v<sub>y</sub> = dy/dt. La norme de la vitesse (notée v) est la valeur absolue du vecteur vitesse : v = √(v<sub>x</sub>² + v<sub>y</sub>²).</p>
+    <p>En coordonnées polaires, V→ = (dr/dt) u<sub>r</sub>→ + r (dθ/dt) u<sub>θ</sub>→. Pour un mouvement circulaire, r = constant, donc V→ = r ω u<sub>θ</sub>→, où ω = dθ/dt est la vitesse angulaire.</p>
+
+    <h3>1.3 Vecteur accélération</h3>
+    <p>L'accélération instantanée est la dérivée de la vitesse : a→ = dV→/dt = (dv<sub>x</sub>/dt) i→ + (dv<sub>y</sub>/dt) j→. En coordonnées polaires : a→ = [(d²r/dt²) – r ω²] u<sub>r</sub>→ + [r (dω/dt) + 2 (dr/dt) ω] u<sub>θ</sub>→. Pour un mouvement circulaire uniforme (r constant, ω constant), a→ = –r ω² u<sub>r</sub>→, dirigée vers le centre.</p>
+
+    <h4>Représentation de Frenet</h4>
+    <p>Dans le repère de Frenet (base (τ→, n→)), le vecteur vitesse est tangent à la trajectoire : V→ = v τ→. L'accélération s'écrit a→ = a<sub>t</sub> τ→ + a<sub>n</sub> n→, avec a<sub>t</sub> = dv/dt (accélération tangentielle, modifie la norme de la vitesse) et a<sub>n</sub> = v²/ρ (accélération normale, modifie la direction, ρ est le rayon de courbure).</p>
+
+    <h3>1.4 Mouvements rectilignes</h3>
+    <p>On se limite à l'axe Ox.</p>
+    <h4>Mouvement rectiligne uniforme (MRU)</h4>
+    <p>Vitesse constante v = v<sub>0</sub>, accélération nulle. Équation horaire : x = v<sub>0</sub> t + x<sub>0</sub>. Graphe x(t) : droite, pente v<sub>0</sub>.</p>
+    <h4>Mouvement rectiligne uniformément varié (MRUV)</h4>
+    <p>Accélération constante a = a<sub>0</sub>. Équations :<br>
+    v = a<sub>0</sub> t + v<sub>0</sub><br>
+    x = ½ a<sub>0</sub> t² + v<sub>0</sub> t + x<sub>0</sub><br>
+    Relation indépendante du temps : v² – v<sub>0</sub>² = 2 a<sub>0</sub> (x – x<sub>0</sub>).</p>
+    <p>Si a<sub>0</sub> > 0, mouvement accéléré ; si a<sub>0</sub> < 0, décéléré.</p>
+
+    <h4>Mouvement rectiligne sinusoïdal (exemple)</h4>
+    <p>Un point peut osciller : x = X<sub>m</sub> cos(ω t + φ). Sa vitesse v = –X<sub>m</sub> ω sin(ω t + φ) et son accélération a = –X<sub>m</sub> ω² cos(ω t + φ) = –ω² x.</p>
+
+    <h3>1.5 Chute libre verticale</h3>
+    <p>Un corps soumis uniquement à son poids (g→ dirigé vers le bas, norme g ≈ 9,8 m/s²). Axe Oz vertical descendant ou ascendant. Avec axe descendant : a<sub>z</sub> = g. Équations : v = g t + v<sub>0</sub>, z = ½ g t² + v<sub>0</sub> t + z<sub>0</sub>. Si lancé vers le haut, on prendra g négatif ou axe vers le haut.</p>
+
+    <h3>1.6 Mouvement d'un projectile dans le champ de pesanteur uniforme</h3>
+    <p>On néglige les frottements de l'air. Le mouvement est parabolique. On choisit un repère (O, x horizontal, z vertical). Accélération : a→ = (0, –g). Conditions initiales : V→<sub>0</sub> (v<sub>0</sub> cosα, v<sub>0</sub> sinα).<br>
+    Équations horaires : x = v<sub>0</sub> cosα t ; z = –½ g t² + v<sub>0</sub> sinα t + z<sub>0</sub>.<br>
+    Équation de la trajectoire : z = –½ g (x/(v<sub>0</sub> cosα))² + x tanα + z<sub>0</sub> (parabole).<br>
+    Portée (retour au sol) : x<sub>max</sub> = (v<sub>0</sub>² sin(2α))/g. Hauteur maximale : h = (v<sub>0</sub>² sin²α)/(2g).</p>
+    <div class="svg-container">
+      <svg width="400" height="250" viewBox="0 0 400 250">
+        <line x1="30" y1="220" x2="370" y2="220" stroke="black"/><text x="380" y="225">x</text>
+        <line x1="30" y1="220" x2="30" y2="20" stroke="black"/><text x="35" y="15">z</text>
+        <path d="M 30,220 Q 200,20 370,220" fill="none" stroke="blue" stroke-width="2"/>
+        <line x1="30" y1="220" x2="100" y2="180" stroke="red" marker-end="url(#arrow)"/>
+        <text x="60" y="170" font-size="11">v0</text>
+        <circle cx="200" cy="80" r="3" fill="red"/><text x="205" y="75">Sommet</text>
+        <text x="200" y="240">Parabole de sureté</text>
+      </svg>
+    </div>
+
+    <h3>1.7 Mouvement circulaire</h3>
+    <p><strong>Mouvement circulaire uniforme (MCU) :</strong> ω = constante. θ = ω t + θ<sub>0</sub>. v = r ω = constante. a<sub>n</sub> = r ω² = v²/r, a<sub>t</sub> = 0.<br>
+    <strong>Mouvement circulaire uniformément varié :</strong> ω' = α (constante). ω = α t + ω<sub>0</sub>. θ = ½ α t² + ω<sub>0</sub> t + θ<sub>0</sub>. Accélérations : a<sub>t</sub> = r α, a<sub>n</sub> = r ω².</p>
+    <div class="svg-container">
+      <svg width="300" height="300" viewBox="0 0 300 300">
+        <circle cx="150" cy="150" r="90" fill="none" stroke="black"/>
+        <circle cx="150" cy="150" r="3" fill="black"/><text x="155" y="145">O</text>
+        <line x1="150" y1="150" x2="240" y2="60" stroke="gray"/>
+        <circle cx="240" cy="60" r="4" fill="red"/><text x="245" y="55">M</text>
+        <line x1="240" y1="60" x2="260" y2="30" stroke="red" marker-end="url(#arrow)"/><text x="265" y="25">V→</text>
+        <line x1="240" y1="60" x2="195" y2="105" stroke="green" marker-end="url(#arrow)"/><text x="175" y="120">a→<sub>n</sub></text>
+        <text x="120" y="240">R</text>
+      </svg>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 1 :</strong> Un objet est lancé verticalement vers le haut avec une vitesse de 20 m/s depuis le sol. Prendre g = 10 m/s². Calculer la hauteur maximale et le temps de vol.</p>
+    </div>
+    <div class="correction">
+      <p>Axe vertical vers le haut. a = –g = –10 m/s². v = –10 t + 20. Au sommet, v = 0 ⇒ t = 2 s. Hauteur max : z = –5 t² + 20 t = –20 + 40 = 20 m. Temps total de vol (aller-retour) : 4 s.</p>
+    </div>
+    <div class="exercice">
+      <p><strong>Exercice 2 :</strong> Un projectile est lancé depuis le sol avec une vitesse de 50 m/s et un angle de 30° par rapport à l'horizontale. Déterminer la portée et la hauteur maximale.</p>
+    </div>
+    <div class="correction">
+      <p>v0 = 50, α = 30°, sin2α = sin60° = √3/2 ≈ 0,866. Portée = (v0² sin2α)/g = 2500 × 0,866 / 9,8 ≈ 221 m. Hauteur max = (v0² sin²α)/(2g) = 2500 × 0,25 / 19,6 ≈ 31,9 m.</p>
+    </div>
+    <div class="exercice">
+      <p><strong>Exercice 3 :</strong> Un mobile décrit un MCU de rayon 50 cm à la vitesse angulaire de 4 rad/s. Calculer la vitesse linéaire et l'accélération normale.</p>
+    </div>
+    <div class="correction">
+      <p>r = 0,5 m. v = r ω = 0,5 × 4 = 2 m/s. a<sub>n</sub> = r ω² = 0,5 × 16 = 8 m/s².</p>
+    </div>
+  </div>
+
+  <!-- ============ DYNAMIQUE ============ -->
+  <div class="chapter">
+    <h2>2. Dynamique du point matériel</h2>
+    <p>La dynamique relie les forces appliquées à un corps et le mouvement qui en résulte. Elle repose sur les trois lois de Newton.</p>
+
+    <div class="law">
+      <strong>1ère loi de Newton (principe d'inertie) :</strong> Dans un référentiel galiléen, si la somme des forces extérieures est nulle, le centre d'inertie d'un solide persévère dans son état de repos ou de mouvement rectiligne uniforme.
+    </div>
+    <div class="law">
+      <strong>2ème loi (relation fondamentale de la dynamique) :</strong> Σ F→<sub>ext</sub> = m a→<sub>G</sub>. La somme vectorielle des forces extérieures est égale au produit de la masse par le vecteur accélération du centre d'inertie. Cette relation permet de déterminer l'accélération puis le mouvement.
+    </div>
+    <div class="law">
+      <strong>3ème loi (principe des actions réciproques) :</strong> Si un corps A exerce une force F→<sub>A/B</sub> sur un corps B, alors B exerce sur A une force opposée : F→<sub>B/A</sub> = –F→<sub>A/B</sub>.
+    </div>
+
+    <h3>2.1 Quantité de mouvement</h3>
+    <p>p→ = m V→. La 2ème loi peut s'écrire Σ F→<sub>ext</sub> = dp→/dt. Pour un système isolé (aucune force extérieure), p→ se conserve.</p>
+
+    <h3>2.2 Travail et puissance</h3>
+    <p><strong>Travail d'une force constante</strong> sur un déplacement rectiligne AB : W<sub>AB</sub>(F→) = F→ · AB→ = F × AB × cos(α). Unité : le joule (J).<br>
+    Si F→ est dans le sens du mouvement, travail moteur (>0) ; opposé, travail résistant (<0) ; perpendiculaire, travail nul.</p>
+    <p><strong>Travail du poids</strong> sur un déplacement quelconque : W(poids) = m g (z<sub>A</sub> – z<sub>B</sub>) (si axe z vertical ascendant).</p>
+    <p><strong>Travail d'une force de frottement constante</strong> : W = –f × d (d distance parcourue).</p>
+    <p><strong>Puissance moyenne</strong> P<sub>m</sub> = W/Δt (en watts, W). Puissance instantanée P = F→ · V→.</p>
+
+    <h3>2.3 Énergie cinétique</h3>
+    <p>E<sub>c</sub> = ½ m v² (en joules). Le <strong>théorème de l'énergie cinétique</strong> (TEC) énonce que la variation d'énergie cinétique d'un solide entre deux instants est égale à la somme des travaux des forces extérieures appliquées : ΔE<sub>c</sub> = E<sub>c</sub>(B) – E<sub>c</sub>(A) = Σ W<sub>AB</sub>(F→<sub>ext</sub>).</p>
+
+    <h3>2.4 Énergie potentielle de pesanteur</h3>
+    <p>E<sub>p</sub> = m g z (en prenant une référence pour z = 0). Le travail du poids peut s'écrire W(poids) = –ΔE<sub>p</sub> = E<sub>p</sub>(A) – E<sub>p</sub>(B).</p>
+    <p><strong>Énergie mécanique</strong> E<sub>m</sub> = E<sub>c</sub> + E<sub>p</sub>. En l'absence de forces non conservatives (frottements, traction), l'énergie mécanique se conserve : E<sub>m</sub> = constante.</p>
+    <p>Si des forces non conservatives travaillent, la variation d'énergie mécanique est égale à la somme des travaux de ces forces : ΔE<sub>m</sub> = W<sub>nc</sub>.</p>
+
+    <h3>2.5 Exemples : plan incliné, pendule simple</h3>
+    <p><strong>Plan incliné sans frottement</strong> : solide de masse m sur un plan incliné d'angle β. Bilan des forces : poids P→ = m g→, réaction normale R→. La 2ème loi projetée sur l'axe parallèle au plan donne m a = m g sinβ, donc a = g sinβ.<br>
+    Si frottements solides avec coefficient de frottement μ, la force de frottement f = μ R<sub>N</sub> avec R<sub>N</sub> = m g cosβ. L'équation devient a = g (sinβ – μ cosβ) (si descente).</p>
+    <div class="svg-container">
+      <svg width="300" height="200" viewBox="0 0 300 200">
+        <line x1="20" y1="180" x2="280" y2="180" stroke="black"/><!-- horizontal -->
+        <line x1="40" y1="180" x2="220" y2="60" stroke="black"/><!-- plan incliné -->
+        <rect x="150" y="85" width="40" height="25" fill="gray" transform="rotate(-34 150 85)"/>
+        <text x="170" y="110" font-size="10">m</text>
+        <line x1="160" y1="80" x2="160" y2="110" stroke="red" marker-end="url(#arrow)"/><text x="140" y="100" font-size="10">P→</text>
+        <!-- angle -->
+        <line x1="40" y1="180" x2="80" y2="180" stroke="black"/>
+        <path d="M 60,180 A 20,20 0 0,1 90,160" fill="none" stroke="black"/>
+        <text x="80" y="155">β</text>
+      </svg>
+    </div>
+    <p><strong>Pendule simple :</strong> masse m suspendue à un fil de longueur L. Équation du mouvement (petites oscillations) : d²θ/dt² + (g/L) θ = 0. Période T = 2π √(L/g) indépendante de l'amplitude (isochronisme).</p>
+
+    <h3>2.6 Oscillations amorties, résonance (notions)</h3>
+    <p>Avec frottement fluide (force proportionnelle à la vitesse), l'amplitude décroît. Si on applique une force excitatrice, on peut observer un phénomène de résonance lorsque la fréquence excitatrice est proche de la fréquence propre.</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 4 :</strong> Un bloc de 5 kg est tiré sur un sol horizontal par une force horizontale constante de 20 N. Le coefficient de frottement cinétique est 0,3. Calculer l'accélération.</p>
+    </div>
+    <div class="correction">
+      <p>Poids = m g = 49 N. Réaction normale = 49 N. Frottement f = μ × R<sub>N</sub> = 0,3 × 49 = 14,7 N. Force résultante horizontale = 20 – 14,7 = 5,3 N. a = F/m = 5,3 / 5 = 1,06 m/s².</p>
+    </div>
+    <div class="exercice">
+      <p><strong>Exercice 5 :</strong> Un enfant de 30 kg descend un toboggan de hauteur 5 m. La vitesse en bas est 8 m/s. Calculer le travail des forces de frottement.</p>
+    </div>
+    <div class="correction">
+      <p>Variation énergie cinétique : ΔE<sub>c</sub> = ½ × 30 × 8² – 0 = 960 J. Travail du poids = m g h = 30 × 9,8 × 5 = 1470 J. TEC : ΔE<sub>c</sub> = W(poids) + W(f). Donc 960 = 1470 + W(f) ⇒ W(f) = –510 J (travail résistant).</p>
+    </div>
+    <div class="exercice">
+      <p><strong>Exercice 6 :</strong> Un pendule simple de longueur 1 m est lâché sans vitesse depuis un angle de 30° par rapport à la verticale. Calculer la vitesse au passage par la verticale (utiliser la conservation de l'énergie, g=10 m/s²).</p>
+    </div>
+    <div class="correction">
+      <p>Altitude de départ par rapport au point le plus bas : h = L (1 – cos30°) = 1 × (1 – √3/2) ≈ 1 – 0,866 = 0,134 m. Conservation : ½ m v² = m g h ⇒ v = √(2 g h) = √(2×10×0,134) ≈ √2,68 ≈ 1,64 m/s.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

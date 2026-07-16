@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTIE 3 – L'Afrique de 1945 à nos jours | ReviBF</title>
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --card: #ffffff;
+      --text: #1e1e1e;
+      --accent: #8b3a3a;
+      --accent-light: #f4e4e1;
+      --border: #d6cec4;
+      --shadow: 0 6px 18px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); line-height: 1.7; padding: 2rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+    .main-header {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-left: 6px solid var(--accent); text-align: center;
+    }
+    .main-header h1 { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .main-header .sub { font-size: 1.1rem; color: #5e5a55; font-weight: 500; }
+    .chapter-card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-top: 4px solid var(--accent);
+    }
+    .chapter-card h2 { font-size: 1.8rem; color: #5a2e2e; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--border); padding-bottom: 0.7rem; font-weight: 700; }
+    .chapter-card h3 { font-size: 1.3rem; color: #3d2b1f; margin: 1.8rem 0 0.8rem; font-weight: 600; padding-left: 1.2rem; position: relative; }
+    .chapter-card h3::before { content: "▹"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .chapter-card h4 { font-size: 1.1rem; color: #4a3b2f; margin: 1.2rem 0 0.5rem; font-weight: 600; font-style: italic; }
+    p { margin-bottom: 1rem; text-align: justify; }
+    .highlight { background: #fff6e5; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #c38d4b; margin: 1.3rem 0; font-weight: 500; }
+    ul, ol { margin: 0.8rem 0 1.2rem 1.8rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #a43d3d; font-weight: 700; }
+    .definition-box { background: #f7f3ee; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .definition-box .term { font-weight: 700; color: #5b2e2e; font-size: 1.05rem; }
+    .timeline-graphic {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
+      margin: 1.8rem 0; position: relative; padding: 1rem 0;
+    }
+    .timeline-graphic::before {
+      content: ""; position: absolute; top: 50%; left: 2%; right: 2%; height: 3px;
+      background: #c9b99a; transform: translateY(-50%); z-index: 0;
+    }
+    .timeline-item {
+      background: #fffbf7; border: 2px solid var(--accent); border-radius: 30px;
+      padding: 0.6rem 1.2rem; font-weight: 700; font-size: 0.9rem; color: var(--accent);
+      position: relative; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      min-width: 100px; text-align: center;
+    }
+    .timeline-item span { display: block; font-weight: 400; font-size: 0.8rem; color: #4d4d4d; }
+    .exercises { margin-top: 2rem; background: #fcf9f4; border-radius: 14px; padding: 1.8rem 2rem; border: 1px solid #e0d6c5; }
+    .exercises h3 { margin-top: 0; color: #5e3a2c; font-size: 1.4rem; }
+    details { margin: 1rem 0 0.5rem; background: #ffffff; border: 1px solid #d0c7b8; border-radius: 10px; padding: 0.7rem 1.2rem; }
+    details[open] { background: #fefaf5; border-color: #b39364; }
+    summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.4rem; color: #4a3324; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; display: inline-block; }
+    details[open] summary::before { content: "▾"; }
+    .correction { margin-top: 0.8rem; padding: 1rem 1rem 0.5rem; background: #fff7ed; border-radius: 8px; border-left: 4px solid #c38d4b; }
+    .schema-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+    .schema-box { background: #fefcf8; border: 1.5px solid #b4946e; border-radius: 10px; padding: 0.9rem 1.2rem; font-weight: 600; color: #3e2e1f; min-width: 130px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.04); }
+    @media (max-width: 650px) { body { padding: 1rem 0.8rem; } .timeline-graphic { flex-direction: column; align-items: center; gap: 0.8rem; } .timeline-graphic::before { display: none; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="main-header">
+    <h1>PARTIE 3 : L'Afrique de 1945 à nos jours</h1>
+    <div class="sub">Fiches de révision exhaustives – Programme Terminale A4 (Burkina Faso)</div>
+  </header>
+
+  <!-- Chapitre 1 – Formes de décolonisation en Afrique -->
+  <section class="chapter-card">
+    <h2>Chapitre 1 : Les formes de décolonisation en Afrique</h2>
+    <p><strong>Introduction problématisée :</strong> Alors que l'Asie accède à l'indépendance dès 1947, l'Afrique reste en grande partie sous domination coloniale jusqu'aux années 1950-1960. Le processus de décolonisation y prend des formes variées : pacifique et négociée dans certaines colonies, violente et conflictuelle dans d'autres. Pourquoi les indépendances africaines ont-elles emprunté des chemins si différents, et comment expliquer l'accélération soudaine de l'année 1960 ?</p>
+
+    <h3>I. Les décolonisations pacifiques et négociées</h3>
+    <h4>A. Le modèle britannique : l'indépendance progressive du Ghana</h4>
+    <p>La Gold Coast, sous l'impulsion de <strong>Kwame Nkrumah</strong> et de son <strong>Convention People's Party</strong>, obtient l'autonomie interne en 1951. Nkrumah, emprisonné puis libéré, négocie habilement avec Londres. Le <strong>6 mars 1957</strong>, la Gold Coast devient le <strong>Ghana</strong>, premier État d'Afrique subsaharienne indépendant. Ce succès inspire d'autres colonies britanniques comme le Nigeria (1960), la Sierra Leone (1961) ou la Tanzanie (1961). La Grande-Bretagne privilégie le <strong>Commonwealth</strong> pour maintenir des liens.</p>
+    <h4>B. Les indépendances sous contrôle français : la Communauté et les transferts pacifiques</h4>
+    <p>Après la loi-cadre <strong>Defferre</strong> de 1956 qui accorde une large autonomie, la Constitution de 1958 crée la <strong>Communauté franco-africaine</strong>. Seul <strong>Guinée</strong>, sous <strong>Sékou Touré</strong>, refuse et proclame son indépendance immédiate le <strong>2 octobre 1958</strong>. En 1960, les autres colonies d'AOF (Sénégal, Côte d'Ivoire, Haute-Volta, etc.) et d'AEF obtiennent l'indépendance par négociation, souvent en signant des accords de coopération avec la France. Cette « <strong>année de l'Afrique</strong> » voit naître 17 nouveaux États. La transition est pacifique, mais la France conserve une influence politique, militaire et monétaire (franc CFA).</p>
+    <h4>C. Les indépendances belges : le cas précipité du Congo</h4>
+    <p>La Belgique, longtemps réticente, octroie brutalement l'indépendance au <strong>Congo</strong> le <strong>30 juin 1960</strong>, sans préparation des élites. Le pays bascule dans le chaos (sécession du Katanga, intervention de l'ONU). Ce cas illustre les risques d'une décolonisation bâclée.</p>
+
+    <h3>II. Les décolonisations violentes et conflictuelles</h3>
+    <h4>A. La guerre d'Algérie (1954-1962)</h4>
+    <p>L'Algérie, colonie de peuplement, voit le <strong>FLN</strong> déclencher une lutte armée le <strong>1er novembre 1954</strong>. La guerre, marquée par des attentats, la torture et une profonde déchirure en France, aboutit aux <strong>accords d'Évian</strong> (18 mars 1962) et à l'indépendance le <strong>5 juillet 1962</strong>. La guerre d'Algérie reste l'exemple le plus sanglant de décolonisation africaine.</p>
+    <h4>B. Les colonies portugaises : des guerres de libération prolongées</h4>
+    <p>Le Portugal de Salazar refuse toute indépendance. Des guérillas marxistes se développent en <strong>Angola</strong> (MPLA), au <strong>Mozambique</strong> (FRELIMO) et en <strong>Guinée-Bissau</strong> (PAIGC). Ces guerres usent le régime portugais jusqu'à la <strong>Révolution des Œillets</strong> (25 avril 1974), qui entraîne rapidement les indépendances en 1975.</p>
+    <h4>C. Les cas particuliers : Rhodésie et Afrique australe</h4>
+    <p>En <strong>Rhodésie du Sud</strong> (actuel Zimbabwe), la minorité blanche proclame unilatéralement l'indépendance en 1965 pour maintenir l'apartheid, provoquant une guerre de libération. En <strong>Namibie</strong> et en <strong>Afrique du Sud</strong>, les luttes contre l'apartheid retardent les indépendances et l'avènement de la démocratie jusqu'aux années 1990.</p>
+
+    <h3>III. Les facteurs d'accélération et les spécificités africaines</h3>
+    <h4>A. L'impact de la Seconde Guerre mondiale et des superpuissances</h4>
+    <p>La guerre a affaibli les métropoles et poussé les États-Unis et l'URSS à soutenir (au moins rhétoriquement) la décolonisation. L'ONU sert de tribune et adopte en 1960 la <strong>Déclaration sur l'octroi de l'indépendance aux pays coloniaux</strong>.</p>
+    <h4>B. Le rôle des élites africaines et des partis politiques</h4>
+    <p>Des leaders comme <strong>Nkrumah</strong>, <strong>Senghor</strong>, <strong>Houphouët-Boigny</strong> ou <strong>Modibo Keïta</strong> portent les revendications. Le <strong>Rassemblement Démocratique Africain (RDA)</strong>, fondé en 1946, coordonne les luttes. Le panafricanisme de <strong>W.E.B. Du Bois</strong> et de <strong>George Padmore</strong> influence cette génération.</p>
+    <h4>C. La diversité des héritages coloniaux</h4>
+    <p>Les formes de décolonisation reflètent les différences de gestion coloniale : assimilation française, indirect rule britannique, paternalisme belge, immobilisme portugais. Ces héritages expliquent la fragmentation politique du continent et les difficultés post-indépendance.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Décolonisation :</span> processus d'accession à l'indépendance des territoires colonisés.</p>
+      <p><span class="term">Communauté française :</span> organisation créée en 1958 regroupant la France et ses colonies d'outre-mer, qui leur offrait une autonomie interne.</p>
+      <p><span class="term">Franc CFA :</span> monnaie commune des colonies françaises d'Afrique, maintenue après les indépendances sous garantie du Trésor français.</p>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>6 mars 1957</strong> : indépendance du Ghana.</li>
+      <li><strong>2 octobre 1958</strong> : indépendance de la Guinée.</li>
+      <li><strong>1960</strong> : année de l'Afrique (17 indépendances).</li>
+      <li><strong>30 juin 1960</strong> : indépendance du Congo-Kinshasa.</li>
+      <li><strong>5 juillet 1962</strong> : indépendance de l'Algérie.</li>
+      <li><strong>1975</strong> : indépendances des colonies portugaises.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 1</h3>
+      <details>
+        <summary>Exercice 1 : Pourquoi le Ghana est-il considéré comme le pionnier de l'indépendance en Afrique noire ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Le Ghana, dirigé par Kwame Nkrumah, a obtenu son indépendance en 1957 par la négociation, montrant qu'une transition pacifique était possible. Il a inspiré d'autres colonies et Nkrumah est devenu le porte-drapeau du panafricanisme.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quelles différences majeures opposent les décolonisations françaises et portugaises en Afrique ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Les colonies françaises accèdent à l'indépendance de manière négociée en 1960, avec maintien de liens forts (Françafrique). Les colonies portugaises doivent mener des guerres de libération jusqu'en 1975 car Lisbonne refusait toute autonomie.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 2 – Évolution politique de la Haute-Volta / Burkina Faso -->
+  <section class="chapter-card">
+    <h2>Chapitre 2 : L'évolution politique de la Haute-Volta (actuel Burkina Faso) de 1960 à nos jours</h2>
+    <p><strong>Introduction problématisée :</strong> Indépendante depuis le <strong>5 août 1960</strong>, la Haute-Volta, devenue <strong>Burkina Faso</strong> en 1984, a connu une trajectoire politique particulièrement mouvementée : quatre Républiques, plusieurs régimes militaires, une révolution radicale, une insurrection populaire et deux coups d'État récents. Comment cette instabilité chronique reflète-t-elle les difficultés de l'enracinement démocratique et les aspirations récurrentes de changement ?</p>
+
+    <h3>I. La Première République (1960-1966) et le régime de Maurice Yaméogo</h3>
+    <h4>A. La marche vers l'indépendance</h4>
+    <p>Territoire de l'<strong>AOF</strong>, la Haute-Volta devient autonome en 1958. Le <strong>Mouvement Voltaïque pour la Démocratie (MVD)</strong> de <strong>Maurice Yaméogo</strong> remporte les élections. Yaméogo proclame l'indépendance le <strong>5 août 1960</strong> et devient le premier président.</p>
+    <h4>B. Un régime autocratique et impopulaire</h4>
+    <p>Dès 1960, Yaméogo instaure un régime de parti unique (l'<strong>Union Démocratique Voltaïque</strong>) et réduit les libertés. Il mène une politique d'austérité drastique, baisse les salaires des fonctionnaires et augmente les impôts. Sa vie personnelle fastueuse contraste avec la pauvreté. Les tensions sociales s'aggravent.</p>
+    <h4>C. La chute : l'insurrection populaire du 3 janvier 1966</h4>
+    <p>Le <strong>3 janvier 1966</strong>, une manifestation massive menée par les syndicats et les étudiants dégénère en émeute. L'armée, conduite par le lieutenant-colonel <strong>Sangoulé Lamizana</strong>, refuse de tirer. Yaméogo remet sa démission le même jour. Lamizana assume le pouvoir.</p>
+
+    <h3>II. Les régimes d'exception et les tentatives de retour à l'ordre constitutionnel (1966-1983)</h3>
+    <h4>A. Lamizana et la longue transition (1966-1980)</h4>
+    <p>Lamizana gouverne d'abord par décrets. Une nouvelle constitution est adoptée en <strong>1970</strong>, instaurant la <strong>Deuxième République</strong> (1970-1974) avec un gouvernement civil partagé. Mais les dissensions entre partis mènent à un blocage. Lamizana dissout l'Assemblée en 1974 et suspend la constitution. Sous pression, il organise un référendum en <strong>1977</strong> et fonde la <strong>Troisième République</strong>. Il remporte l'élection présidentielle de 1978. Son régime est affaibli par des grèves et une contestation sociale croissante.</p>
+    <h4>B. Le coup d'État du 25 novembre 1980 : Saye Zerbo</h4>
+    <p>Le <strong>25 novembre 1980</strong>, le colonel <strong>Saye Zerbo</strong> renverse Lamizana sans effusion de sang. Il instaure le <strong>Comité Militaire de Redressement pour le Progrès National (CMRPN)</strong>. Mais son régime, marqué par une impopularité rapide et des difficultés économiques, est à son tour renversé le <strong>7 novembre 1982</strong> par le commandant <strong>Jean-Baptiste Ouédraogo</strong>.</p>
+    <h4>C. Jean-Baptiste Ouédraogo et l'ascension de Thomas Sankara (1982-1983)</h4>
+    <p>Ouédraogo forme le <strong>Conseil de Salut du Peuple (CSP)</strong> et nomme le capitaine <strong>Thomas Sankara</strong> comme Premier ministre en janvier 1983. Sankara, jeune officier progressiste, se heurte rapidement à l'aile conservatrice du régime. Il est arrêté en mai 1983. Cela provoque une mobilisation de la jeunesse et de la gauche. Le <strong>4 août 1983</strong>, un groupe d'officiers menés par le capitaine <strong>Blaise Compaoré</strong> libère Sankara et prend le pouvoir.</p>
+
+    <h3>III. La Révolution d'août 1983 et le régime Sankara (1983-1987)</h3>
+    <h4>A. Le Conseil National de la Révolution (CNR) et les objectifs</h4>
+    <p>Dès le <strong>4 août 1983</strong>, le <strong>CNR</strong> est créé, avec Sankara comme président. Le pays est rebaptisé <strong>Burkina Faso</strong> (« Patrie des hommes intègres ») le <strong>4 août 1984</strong>, avec un nouveau drapeau et un nouvel hymne. La révolution vise la décolonisation mentale, la justice sociale, l'autosuffisance alimentaire et la lutte contre la corruption.</p>
+    <h4>B. Les grandes réformes et leurs impacts</h4>
+    <p>Sous le slogan « <strong>Produisons ce que nous consommons, consommons ce que nous produisons</strong> », le gouvernement lance des <strong>chantiers populaires</strong>, la <strong>vaccination massive</strong>, la <strong>construction de barrages</strong> et de <strong>centres de santé</strong>. Des <strong>Comités de Défense de la Révolution (CDR)</strong> quadrillent le pays. L'administration est épurée, les privilèges abolis, les symboles de l'impérialisme contestés. La condition de la femme est améliorée (interdiction de l'excision, campagne contre la dot, création d'un ministère de la femme).</p>
+    <h4>C. Les tensions et l'assassinat de Sankara</h4>
+    <p>Le régime se durcit : les libertés publiques sont restreintes, des opposants sont arrêtés. Des dissensions apparaissent au sein du CNR. Le <strong>15 octobre 1987</strong>, Thomas Sankara est assassiné lors d'un coup d'État mené par son compagnon d'armes <strong>Blaise Compaoré</strong>, qui prend le pouvoir.</p>
+
+    <h3>IV. La Quatrième République et le règne de Blaise Compaoré (1987-2014)</h3>
+    <h4>A. La rectification et la mise en place de la IVe République</h4>
+    <p>Compaoré fonde le <strong>Front Populaire</strong> en 1987 et engage une « rectification » de la révolution. Une nouvelle constitution est adoptée par référendum le <strong>2 juin 1991</strong>, instaurant la <strong>Quatrième République</strong>. Le multipartisme est rétabli, mais Compaoré remporte les élections présidentielles de 1991 (boycottées), 1998, 2005 et 2010, dans un contexte de fraudes et d'intimidations.</p>
+    <h4>B. Les caractéristiques du régime Compaoré</h4>
+    <p>S'appuyant sur le <strong>Congrès pour la Démocratie et le Progrès (CDP)</strong>, il maîtrise l'armée, l'administration et les médias. Il mène une politique de libéralisation économique, attire les investissements étrangers, mais la pauvreté reste massive. Le Burkina devient un acteur régional incontournable (médiation en Côte d'Ivoire, au Mali).</p>
+    <h4>C. La montée des contestations et l'article 37</h4>
+    <p>La limitation constitutionnelle du nombre de mandats (article 37) devient un point de tension. Compaoré tente de la modifier en 2014 pour briguer un cinquième mandat. Cela déclenche une vague de protestations. Les <strong>30 et 31 octobre 2014</strong>, des centaines de milliers de personnes descendent dans la rue, l'Assemblée nationale est incendiée. Compaoré démissionne le <strong>31 octobre 2014</strong> et s'exile en Côte d'Ivoire.</p>
+
+    <h3>V. Les transitions et les coups d'État récents (2014 à nos jours)</h3>
+    <h4>A. La transition 2014-2015 et le putsch manqué</h4>
+    <p>Un gouvernement de transition est mis en place sous la présidence de <strong>Michel Kafando</strong>, avec <strong>Isaac Zida</strong> comme Premier ministre. En <strong>septembre 2015</strong>, le <strong>Régiment de Sécurité Présidentielle (RSP)</strong>, fidèle à Compaoré, tente un coup d'État. Le putsch échoue après une forte mobilisation populaire et l'intervention de l'armée loyaliste.</p>
+    <h4>B. Le retour à l'ordre constitutionnel : Roch Marc Christian Kaboré (2015-2022)</h4>
+    <p>L'élection présidentielle de <strong>novembre 2015</strong> voit la victoire de <strong>Roch Marc Christian Kaboré</strong> (MPP). Il est réélu en <strong>2020</strong>. Son mandat est marqué par la dégradation sécuritaire due aux attaques terroristes, une crise humanitaire et une grogne sociale croissante.</p>
+    <h4>C. Les coups d'État de 2022 et la transition actuelle</h4>
+    <p>Le <strong>24 janvier 2022</strong>, le lieutenant-colonel <strong>Paul-Henri Sandaogo Damiba</strong> renverse Kaboré, invoquant l'incapacité à gérer l'insécurité. Son régime de transition, le <strong>MPSR</strong>, est à son tour renversé le <strong>30 septembre 2022</strong> par le capitaine <strong>Ibrahim Traoré</strong>. La transition actuelle, toujours en cours, a fixé un retour à l'ordre constitutionnel prévu pour <strong>2024</strong> (repoussé).</p>
+
+    <div class="definition-box">
+      <p><span class="term">Coup d'État :</span> prise du pouvoir par la force, généralement par l'armée, en dehors des règles constitutionnelles.</p>
+      <p><span class="term">Transition politique :</span> période temporaire entre la chute d'un régime et l'installation d'un nouveau gouvernement constitutionnel.</p>
+      <p><span class="term">Insurrection populaire :</span> soulèvement massif de la population contre le pouvoir en place.</p>
+    </div>
+
+    <div class="timeline-graphic">
+      <div class="timeline-item">1960<span>Indépendance (Yaméogo)</span></div>
+      <div class="timeline-item">1966<span>Insurrection / Lamizana</span></div>
+      <div class="timeline-item">1980<span>Coup Zerbo</span></div>
+      <div class="timeline-item">1983<span>Révolution / Sankara</span></div>
+      <div class="timeline-item">1987<span>Assassinat / Compaoré</span></div>
+      <div class="timeline-item">2014<span>Insurrection / Kafando</span></div>
+      <div class="timeline-item">2022<span>Double coup d'État</span></div>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>5 août 1960</strong> : indépendance de la Haute-Volta.</li>
+      <li><strong>3 janvier 1966</strong> : insurrection, chute de Yaméogo.</li>
+      <li><strong>4 août 1983</strong> : prise du pouvoir par le CNR.</li>
+      <li><strong>4 août 1984</strong> : le pays devient Burkina Faso.</li>
+      <li><strong>15 octobre 1987</strong> : assassinat de Thomas Sankara.</li>
+      <li><strong>2 juin 1991</strong> : adoption de la Constitution de la IVe République.</li>
+      <li><strong>30-31 octobre 2014</strong> : insurrection populaire, démission de Compaoré.</li>
+      <li><strong>24 janvier 2022</strong> : coup d'État de Damiba.</li>
+      <li><strong>30 septembre 2022</strong> : coup d'État de Traoré.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 2</h3>
+      <details>
+        <summary>Exercice 1 : Pourquoi l'insurrection de 1966 est-elle un tournant dans l'histoire politique du Burkina ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Elle met fin au régime autoritaire de Yaméogo et inaugure une longue période d'instabilité marquée par les interventions militaires. Elle montre aussi le poids des syndicats et de la rue dans la vie politique.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quelles sont les principales réformes de la Révolution d'août 1983 ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La Révolution a lancé des campagnes de vaccination, des grands travaux (barrages, écoles), une lutte contre la corruption, la promotion de la femme, le changement du nom et des symboles du pays, et une politique d'autosuffisance alimentaire.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 3 : Expliquez le rôle de l'article 37 dans la chute de Compaoré.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> L'article 37 limitait à deux le nombre de mandats présidentiels. La tentative de Compaoré de le modifier pour briguer un cinquième mandat a provoqué un tollé et déclenché l'insurrection populaire des 30-31 octobre 2014.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 3 – Les problèmes de l'Afrique indépendante -->
+  <section class="chapter-card">
+    <h2>Chapitre 3 : Les problèmes de l'Afrique indépendante</h2>
+    <p><strong>Introduction problématisée :</strong> Porteuse d'immenses espoirs, l'Afrique indépendante a rapidement été confrontée à des défis colossaux. Les fragilités héritées de la colonisation, les erreurs des nouveaux dirigeants et les convoitises extérieures ont souvent transformé les rêves de développement en désillusions. Quels sont les principaux problèmes politiques, économiques et socioculturels auxquels les États africains doivent faire face ?</p>
+
+    <h3>I. Les défis politiques : instabilité, conflits et démocratisation difficile</h3>
+    <h4>A. L'instabilité chronique et les coups d'État</h4>
+    <p>Depuis 1960, l'Afrique a connu plus de 200 coups d'État. Les régimes militaires se sont succédé, souvent justifiés par la corruption ou l'inefficacité des civils. L'instabilité politique bloque tout projet de développement à long terme. Des exemples tragiques jalonnent l'histoire : Idi Amin Dada en Ouganda (1971-1979), Bokassa en Centrafrique (1966-1979), Mobutu au Zaïre (1965-1997). La récente vague de putschs au Sahel (Mali, Burkina, Niger) montre que le phénomène persiste.</p>
+    <h4>B. Les guerres civiles et régionales</h4>
+    <p>Les rivalités ethniques, souvent exacerbées par la colonisation (frontières artificielles), alimentent des conflits meurtriers. La <strong>guerre du Biafra</strong> (1967-1970) au Nigeria, le <strong>génocide rwandais</strong> (1994, 800 000 morts), les guerres du Congo (années 1990-2000) et la guerre civile en Sierra Leone (1991-2002) illustrent la fragilité des constructions nationales.</p>
+    <h4>C. Les difficultés de la démocratisation</h4>
+    <p>Le multipartisme, souvent instauré sous pression extérieure dans les années 1990, reste fragile. Les élections sont régulièrement contestées, les oppositions réprimées. La corruption, le clientélisme et la personnalisation du pouvoir affaiblissent les institutions. Le concept de « <strong>Françafrique</strong> » souligne le rôle ambigu des anciennes puissances coloniales.</p>
+
+    <h3>II. Les défis économiques : dépendance et sous-développement</h3>
+    <h4>A. Le poids de l'héritage colonial</h4>
+    <p>Les économies africaines ont été modelées pour l'exportation de matières premières. Cette extraversion rend les États vulnérables aux fluctuations des cours mondiaux (cacao, café, pétrole, minerais). La monoculture d'exportation a supplanté les cultures vivrières, aggravant l'insécurité alimentaire.</p>
+    <h4>B. La dette et les programmes d'ajustement structurel</h4>
+    <p>Dans les années 1970-1980, l'endettement massif a conduit à une crise. Le <strong>FMI</strong> et la <strong>Banque mondiale</strong> ont imposé des <strong>programmes d'ajustement structurel</strong> (libéralisation, réduction des dépenses publiques) qui ont eu des conséquences sociales désastreuses (baisse des budgets de santé et d'éducation). L'initiative <strong>PPTE</strong> (pays pauvres très endettés) a permis quelques annulations partielles depuis les années 2000.</p>
+    <h4>C. Les défis du développement : infrastructures, industrialisation, chômage</h4>
+    <p>Le déficit d'infrastructures (routes, électricité, eau potable) freine le développement. L'industrialisation reste embryonnaire, le secteur informel domine. Le chômage des jeunes, très élevé, alimente l'émigration clandestine et le recrutement par des groupes armés. La fuite des cerveaux aggrave la situation.</p>
+
+    <h3>III. Les défis socioculturels et l'intégration régionale</h3>
+    <h4>A. Les questions identitaires et la diversité ethnolinguistique</h4>
+    <p>La cohabitation de nombreuses ethnies dans des États-nations artificiels génère des tensions. La <strong>politique de l'ivoirité</strong> en Côte d'Ivoire a ainsi débouché sur une guerre civile (2002-2007). La promotion de l'unité nationale reste un enjeu majeur.</p>
+    <h4>B. L'éducation, la santé et les inégalités</h4>
+    <p>Malgré des progrès, l'accès à l'éducation et à la santé demeure inégal. Le taux d'alphabétisation, surtout des filles, est faible. Les épidémies (VIH/SIDA, Ebola, COVID-19) frappent durement des systèmes de santé fragiles. Les inégalités de revenus s'accroissent.</p>
+    <h4>C. Les enjeux de l'intégration africaine</h4>
+    <p>Pour surmonter l'étroitesse des marchés nationaux, des organisations régionales ont été créées : <strong>CEDEAO</strong> (1975), <strong>UA</strong> (ex-OUA, 1963/2002). La <strong>Zone de libre-échange continentale africaine (ZLECAf)</strong>, lancée en 2021, ambitionne de créer un marché unique. Mais les rivalités entre États, le manque de moyens et la concurrence des puissances étrangères (Chine, États-Unis, Europe) limitent cette intégration.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Françafrique :</span> système de relations officieuses entre la France et ses anciennes colonies africaines, mêlant diplomatie, réseaux d'influence et intérêts économiques.</p>
+      <p><span class="term">Programme d'ajustement structurel (PAS) :</span> ensemble de mesures économiques imposées par le FMI et la Banque mondiale aux pays endettés en échange de prêts.</p>
+      <p><span class="term">Extraversion économique :</span> orientation d'une économie vers l'exportation de matières premières au détriment du marché intérieur.</p>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>1963</strong> : création de l'Organisation de l'Unité Africaine (OUA).</li>
+      <li><strong>1975</strong> : création de la CEDEAO.</li>
+      <li><strong>1994</strong> : génocide au Rwanda.</li>
+      <li><strong>2002</strong> : transformation de l'OUA en Union Africaine (UA).</li>
+      <li><strong>2021</strong> : lancement de la ZLECAf.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 3</h3>
+      <details>
+        <summary>Exercice 1 : Expliquez le lien entre frontières héritées de la colonisation et conflits en Afrique.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Les frontières tracées par les puissances coloniales ont divisé des groupes ethniques et en ont enfermé d'autres ensemble, créant des tensions. Ces rivalités, attisées par des politiques post-indépendance, ont débouché sur des guerres civiles (Nigeria, Rwanda).</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quels sont les principaux objectifs de la CEDEAO ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La CEDEAO vise l'intégration économique de l'Afrique de l'Ouest (libre circulation, union douanière) et, de plus en plus, la sécurité collective (interventions au Liberia, Sierra Leone, Mali).</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

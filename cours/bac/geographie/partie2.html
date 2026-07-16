@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTIE 2 – Les regroupements régionaux et l'Afrique | RéviBF</title>
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --card: #ffffff;
+      --text: #1e1e1e;
+      --accent: #2d6a4f;
+      --accent-light: #e6f2ec;
+      --border: #c4d6ce;
+      --shadow: 0 6px 18px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); line-height: 1.7; padding: 2rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+    .main-header {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-left: 6px solid var(--accent); text-align: center;
+    }
+    .main-header h1 { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .main-header .sub { font-size: 1.1rem; color: #4a5e52; font-weight: 500; }
+    .chapter-card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-top: 4px solid var(--accent);
+    }
+    .chapter-card h2 { font-size: 1.8rem; color: #1b4d3c; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--border); padding-bottom: 0.7rem; font-weight: 700; }
+    .chapter-card h3 { font-size: 1.3rem; color: #2d4a3b; margin: 1.8rem 0 0.8rem; font-weight: 600; padding-left: 1.2rem; position: relative; }
+    .chapter-card h3::before { content: "▹"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .chapter-card h4 { font-size: 1.1rem; color: #3b5c4b; margin: 1.2rem 0 0.5rem; font-weight: 600; font-style: italic; }
+    p { margin-bottom: 1rem; text-align: justify; }
+    .highlight { background: #f0f7f2; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid var(--accent); margin: 1.3rem 0; font-weight: 500; }
+    ul, ol { margin: 0.8rem 0 1.2rem 1.8rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #1b6b3f; font-weight: 700; }
+    .definition-box { background: #f3f6f0; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .definition-box .term { font-weight: 700; color: #1b4d3c; font-size: 1.05rem; }
+    .timeline-graphic {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
+      margin: 1.8rem 0; position: relative; padding: 1rem 0;
+    }
+    .timeline-graphic::before {
+      content: ""; position: absolute; top: 50%; left: 2%; right: 2%; height: 3px;
+      background: #a3c4b5; transform: translateY(-50%); z-index: 0;
+    }
+    .timeline-item {
+      background: #f9fdf8; border: 2px solid var(--accent); border-radius: 30px;
+      padding: 0.6rem 1.2rem; font-weight: 700; font-size: 0.9rem; color: var(--accent);
+      position: relative; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      min-width: 100px; text-align: center;
+    }
+    .timeline-item span { display: block; font-weight: 400; font-size: 0.8rem; color: #4d5d52; }
+    .exercises { margin-top: 2rem; background: #f7fbf5; border-radius: 14px; padding: 1.8rem 2rem; border: 1px solid #d4e2d4; }
+    .exercises h3 { margin-top: 0; color: #2b4f36; font-size: 1.4rem; }
+    details { margin: 1rem 0 0.5rem; background: #ffffff; border: 1px solid #c2d1c2; border-radius: 10px; padding: 0.7rem 1.2rem; }
+    details[open] { background: #f2f9f2; border-color: #7fa37f; }
+    summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.4rem; color: #2b4f36; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; display: inline-block; }
+    details[open] summary::before { content: "▾"; }
+    .correction { margin-top: 0.8rem; padding: 1rem 1rem 0.5rem; background: #edf7ed; border-radius: 8px; border-left: 4px solid var(--accent); }
+    .schema-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+    .schema-box { background: #f6fcf6; border: 1.5px solid #7fa37f; border-radius: 10px; padding: 0.9rem 1.2rem; font-weight: 600; color: #1e3b2b; min-width: 130px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.04); }
+    @media (max-width: 650px) { body { padding: 1rem 0.8rem; } .timeline-graphic { flex-direction: column; align-items: center; gap: 0.8rem; } .timeline-graphic::before { display: none; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="main-header">
+    <h1>PARTIE 2 : Les regroupements régionaux et l'Afrique</h1>
+    <div class="sub">Fiches de révision exhaustives – Programme Terminale A4 (Burkina Faso)</div>
+  </header>
+
+  <!-- Chapitre 1 : UEMOA et CEDEAO -->
+  <section class="chapter-card">
+    <h2>Chapitre 1 : L'intégration sous-régionale : UEMOA et CEDEAO</h2>
+    <p><strong>Introduction problématisée :</strong> Depuis les indépendances, les États de l'Afrique de l'Ouest cherchent à mutualiser leurs forces pour surmonter les handicaps de l'enclavement, de l'étroitesse des marchés et de la fragmentation politique. Deux organisations incarnent cette ambition : l'<strong>UEMOA</strong>, espace monétaire intégré, et la <strong>CEDEAO</strong>, cadre élargi d'intégration économique et politique. Comment ces institutions se complètent-elles, quelles réalisations concrètes ont-elles accomplies et pourquoi l'intégration régionale reste-t-elle un défi en Afrique de l'Ouest ?</p>
+
+    <h3>I. L'UEMOA : une intégration monétaire et économique poussée</h3>
+    <h4>A. Genèse et cadre institutionnel</h4>
+    <p>L'<strong>Union Économique et Monétaire Ouest-Africaine</strong> est née du <strong>Traité de Dakar</strong> signé le <strong>10 janvier 1994</strong> par les sept premiers États membres : Bénin, Burkina Faso, Côte d'Ivoire, Mali, Niger, Sénégal, Togo, rejoints en 1997 par la Guinée-Bissau. Elle prolonge l'ancienne <strong>UMOA</strong> (Union Monétaire Ouest-Africaine) créée en <strong>1962</strong>. Ses institutions clés sont la <strong>Conférence des chefs d'État et de gouvernement</strong> (instance suprême), le <strong>Conseil des ministres</strong> (organe exécutif), la <strong>Commission de l'UEMOA</strong> (siège à Ouagadougou), la <strong>Cour de justice</strong> et la <strong>Cour des comptes</strong>. La monnaie commune, le <strong>franc CFA</strong>, est gérée par la <strong>BCEAO</strong> (Banque Centrale des États de l'Afrique de l'Ouest), et la <strong>BOAD</strong> (Banque Ouest-Africaine de Développement) finance les projets d'infrastructures.</p>
+
+    <h4>B. Objectifs et principes</h4>
+    <p>L'UEMOA vise à créer un <strong>marché commun</strong> par l'harmonisation des politiques économiques, la libre circulation des personnes, des biens, des services et des capitaux, et la convergence des performances macroéconomiques. Elle institue un <strong>tarif extérieur commun (TEC)</strong> depuis 2000, avec quatre taux (0 %, 5 %, 10 %, 20 %) selon les catégories de produits. La surveillance multilatérale impose des critères de convergence : inflation inférieure à 3 %, dette publique inférieure à 70 % du PIB, déficit budgétaire inférieur à 3 %, etc.</p>
+
+    <h4>C. Réalisations majeures</h4>
+    <p>L'UEMOA a permis la libre circulation des ressortissants avec une simple carte d'identité ou passeport en cours de validité. Le <strong>passeport biométrique CEDEAO</strong> est reconnu dans l'espace UEMOA. Des projets d'infrastructures routières (corridors Abidjan-Ouagadougou, Lomé-Ouagadougou), énergétiques (interconnexion électrique) et de télécommunications ont été réalisés grâce à la BOAD. Une <strong>politique agricole commune (PAU)</strong> a été adoptée en 2001 pour assurer la sécurité alimentaire régionale. Le commerce intra-UEMOA a progressé, bien qu'il reste inférieur à 15 % des échanges totaux.</p>
+
+    <h4>D. Difficultés et critiques</h4>
+    <p>Les critères de convergence sont rarement respectés par tous les États, ce qui affaiblit la crédibilité de l'union. Les disparités économiques (poids de la Côte d'Ivoire qui représente 40 % du PIB de l'Union) créent des tensions. La libre circulation est entravée par des tracasseries administratives persistantes. Le franc CFA est critiqué comme une monnaie héritée de la colonisation, avec une parité fixe à l'euro qui limite la souveraineté monétaire. La réforme du franc CFA en <strong>2020</strong> (changement de nom en <strong>Eco</strong> prévu, fin de certaines obligations envers la France) n'a pas encore réglé tous les débats.</p>
+
+    <h3>II. La CEDEAO : une ambition régionale plus large</h3>
+    <h4>A. Création et élargissement</h4>
+    <p>La <strong>Communauté Économique des États de l'Afrique de l'Ouest</strong> est fondée par le <strong>Traité de Lagos</strong> du <strong>28 mai 1975</strong>, regroupant 15 États (les 8 de l'UEMOA plus le Cap-Vert, la Gambie, le Ghana, la Guinée, le Liberia, le Nigeria et la Sierra Leone). Le traité a été révisé en <strong>1993</strong> pour renforcer les institutions et y ajouter une dimension politique et sécuritaire. La Mauritanie s'est retirée en 2000. Le siège est à Abuja, au Nigeria.</p>
+
+    <h4>B. Objectifs globaux</h4>
+    <p>La CEDEAO poursuit l'intégration économique totale : marché commun, union monétaire (projet de monnaie unique <strong>Eco</strong> pour toute la zone), libre circulation des personnes (protocole de <strong>1979</strong>), coopération dans les secteurs de l'agriculture, de l'industrie, des transports et de l'énergie. Depuis les années 1990, elle a développé un volet <strong>paix et sécurité</strong> avec l'<strong>ECOMOG</strong> (force d'intervention ouest-africaine) puis le <strong>Conseil de médiation et de sécurité</strong>.</p>
+
+    <h4>C. Institutions principales</h4>
+    <p>La <strong>Conférence des chefs d'État et de gouvernement</strong> est l'autorité suprême. Le <strong>Conseil des ministres</strong> assure la mise en œuvre. La <strong>Commission de la CEDEAO</strong> (commissaires spécialisés) exécute les décisions. Le <strong>Parlement de la CEDEAO</strong> (siège à Abuja) a un rôle consultatif mais tend vers un pouvoir législatif. La <strong>Cour de justice</strong> règle les différends. Le <strong>Groupe de la Banque d'investissement et de développement de la CEDEAO (BIDC)</strong> finance les projets.</p>
+
+    <h4>D. Réalisations et échecs</h4>
+    <p>Le protocole de libre circulation a permis la suppression des visas, mais des obstacles subsistent (postes de contrôle intempestifs). Le <strong>passeport CEDEAO</strong> est en circulation. La CEDEAO a joué un rôle majeur dans la résolution des conflits : interventions militaires au <strong>Liberia</strong> (1990-2003), en <strong>Sierra Leone</strong> (1997-2000), en <strong>Guinée-Bissau</strong>, et plus récemment au <strong>Mali</strong> et au <strong>Niger</strong> (sanctions, menaces d'intervention). Sur le plan économique, le commerce intra-régional reste faible (environ <strong>10 % des échanges</strong>), en raison de la similarité des productions (produits de base) et du manque d'infrastructures de transport. Le projet d'union monétaire a été repoussé plusieurs fois (2020, 2027) et la cohabitation avec le franc CFA complique la convergence.</p>
+
+    <h3>III. Bilan et perspectives de l'intégration sous-régionale</h3>
+    <h4>A. Complémentarités et rivalités UEMOA/CEDEAO</h4>
+    <p>L'UEMOA apparaît comme un sous-groupe plus intégré au sein de la CEDEAO, avec une monnaie commune effective, ce qui crée un système à deux vitesses. Les pays du franc CFA craignent que l'élargissement de la monnaie unique ne dilue leur stabilité monétaire. Le Nigeria, poids lourd démographique et économique (70 % du PIB de la CEDEAO), reste réticent à abandonner sa monnaie nationale. La dualité engendre parfois des doublons institutionnels et une concurrence entre organisations.</p>
+
+    <h4>B. Défis communs</h4>
+    <p>La lutte contre le terrorisme au Sahel (AES, G5 Sahel) divise les États de la région. L'insécurité alimentaire et les effets du changement climatique nécessitent des réponses coordonnées. La libre circulation est entravée par la fermeture des frontières (exemple entre le Bénin et le Niger suite aux sanctions de la CEDEAO). La jeunesse et le chômage poussent à une migration irrégulière qui interroge la coopération régionale.</p>
+
+    <h4>C. Perspectives d'avenir</h4>
+    <p>La mise en œuvre effective de la <strong>Zone de Libre-Échange Continentale Africaine (ZLECAf)</strong>, lancée en 2021, pourrait donner une impulsion nouvelle en élargissant le marché. La CEDEAO prévoit une relance de l'<strong>Eco</strong> avec des critères révisés, mais les récents retraits du Mali, du Burkina Faso et du Niger de l'organisation (en 2024-2025) menacent la cohésion régionale. Le renforcement des infrastructures de transport (autoroute Abidjan-Lagos, chemins de fer) et l'harmonisation des normes sont essentiels.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Union monétaire :</span> zone où plusieurs pays partagent la même monnaie et une politique monétaire commune.</p>
+      <p><span class="term">Tarif Extérieur Commun (TEC) :</span> droits de douane identiques appliqués par tous les membres d'une union douanière aux produits importés de pays tiers.</p>
+      <p><span class="term">Libre circulation :</span> droit pour les citoyens d'un espace communautaire de se déplacer, résider et travailler sans restriction dans les États membres.</p>
+      <p><span class="term">Convergence macroéconomique :</span> rapprochement des indicateurs économiques (inflation, dette, déficit) entre États membres d'une union.</p>
+    </div>
+
+    <div class="timeline-graphic">
+      <div class="timeline-item">1962<span>Création UMOA</span></div>
+      <div class="timeline-item">1975<span>Traité de Lagos (CEDEAO)</span></div>
+      <div class="timeline-item">1979<span>Protocole libre circulation</span></div>
+      <div class="timeline-item">1993<span>Traité révisé CEDEAO</span></div>
+      <div class="timeline-item">1994<span>Traité UEMOA</span></div>
+      <div class="timeline-item">2000<span>TEC UEMOA</span></div>
+      <div class="timeline-item">2021<span>Lancement ZLECAf</span></div>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>1962</strong> : création de l'UMOA.</li>
+      <li><strong>28 mai 1975</strong> : Traité de Lagos fondant la CEDEAO.</li>
+      <li><strong>10 janvier 1994</strong> : Traité de Dakar fondant l'UEMOA.</li>
+      <li><strong>2000</strong> : entrée en vigueur du TEC de l'UEMOA.</li>
+      <li><strong>2020</strong> : réforme du franc CFA, projet de l'Eco.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 1</h3>
+      <details>
+        <summary>Exercice 1 : Quels sont les avantages d'une union monétaire pour les pays de l'UEMOA ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La monnaie unique élimine les risques de change, favorise les échanges intra-régionaux, assure une stabilité monétaire (liée à l'euro) et permet une politique monétaire commune. La BCEAO mutualise les réserves de change.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Pourquoi le commerce intra-CEDEAO reste-t-il faible ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> À cause des similitudes des productions (matières premières agricoles et minières), des infrastructures de transport insuffisantes, des barrières non tarifaires (tracasseries administratives) et de la faible industrialisation.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 2 : L'Union Africaine -->
+  <section class="chapter-card">
+    <h2>Chapitre 2 : L'Union Africaine (UA)</h2>
+    <p><strong>Introduction problématisée :</strong> Le panafricanisme, mouvement de solidarité entre les peuples africains, a abouti à la création de l'<strong>Organisation de l'Unité Africaine (OUA)</strong> en 1963, puis à sa transformation en <strong>Union Africaine (UA)</strong> en 2002. Face aux défis persistants (conflits, sous-développement, marginalisation dans la mondialisation), l'UA ambitionne d'être l'instrument de la renaissance africaine. Comment est-on passé de l'OUA à l'UA, avec quelles institutions et pour quels résultats ?</p>
+
+    <h3>I. De l'OUA à l'UA : l'évolution du panafricanisme institutionnel</h3>
+    <h4>A. L'OUA (1963-2002) : principes et réalisations</h4>
+    <p>Fondée le <strong>25 mai 1963</strong> à Addis-Abeba par 32 États indépendants, l'OUA est régie par une charte reposant sur les principes de <strong>non-ingérence dans les affaires intérieures</strong>, d'<strong>intangibilité des frontières héritées de la colonisation</strong> et de règlement pacifique des différends. Elle a soutenu la décolonisation (aide aux mouvements de libération) et a œuvré pour l'unité africaine. Cependant, son impuissance face aux conflits internes (guerre du Biafra, génocide rwandais, guerre civile en Angola) et aux régimes autoritaires a été flagrante. Le principe de non-ingérence a souvent paralysé l'organisation.</p>
+
+    <h4>B. La transformation en Union Africaine</h4>
+    <p>Conscients des limites de l'OUA, les dirigeants africains adoptent l'<strong>Acte constitutif de l'Union Africaine</strong> à <strong>Lomé</strong> (Togo) le <strong>11 juillet 2000</strong>. L'UA est officiellement lancée lors du sommet de <strong>Durban</strong> (Afrique du Sud) le <strong>9 juillet 2002</strong>. Ce changement traduit le passage d'une simple coopération politique à une <strong>intégration continentale</strong> plus ambitieuse, inspirée du modèle de l'Union Européenne.</p>
+
+    <h4>C. Nouveaux principes et droit d'ingérence</h4>
+    <p>L'Acte constitutif introduit une innovation majeure : le <strong>droit de l'Union d'intervenir dans un État membre</strong> en cas de crimes de guerre, de génocide ou de crimes contre l'humanité (article 4h). Il promeut la démocratie, l'État de droit et les droits de l'homme, et condamne les changements anticonstitutionnels de gouvernement. La <strong>Charte africaine de la démocratie, des élections et de la gouvernance</strong> (2007) renforce ces principes.</p>
+
+    <h3>II. Les institutions de l'Union Africaine</h3>
+    <h4>A. La Conférence des chefs d'État et de gouvernement</h4>
+    <p>Organe suprême, elle définit les politiques, adopte le budget et élit le président de la Commission. Elle se réunit deux fois par an en session ordinaire. Les décisions se prennent par consensus ou à la majorité des deux tiers.</p>
+
+    <h4>B. La Commission de l'UA</h4>
+    <p>Basée à <strong>Addis-Abeba</strong> (Éthiopie), elle est l'organe exécutif composé d'un président, d'un vice-président et de huit commissaires en charge de portefeuilles (paix et sécurité, affaires politiques, infrastructures, ressources humaines, etc.). Elle met en œuvre les décisions, prépare les budgets et coordonne les activités.</p>
+
+    <h4>C. Le Conseil de paix et de sécurité (CPS)</h4>
+    <p>Créé en 2004, il est l'équivalent africain du Conseil de sécurité de l'ONU. Composé de 15 membres élus, il peut autoriser des interventions militaires, imposer des sanctions et déployer des missions de maintien de la paix (<strong>AMISOM</strong> en Somalie). Il s'appuie sur la <strong>Force africaine en attente</strong>.</p>
+
+    <h4>D. Le Parlement panafricain et autres organes</h4>
+    <p>Siégeant à Midrand (Afrique du Sud), le Parlement panafricain (créé en 2004) compte 265 députés issus des parlements nationaux. Pour l'instant, il n'a qu'un rôle consultatif. L'architecture institutionnelle inclut également la <strong>Cour africaine des droits de l'homme et des peuples</strong> (Arusha), la <strong>Banque africaine de développement</strong> (BAD), le <strong>Mécanisme africain d'évaluation par les pairs (MAEP)</strong> et le <strong>NEPAD</strong> (Nouveau Partenariat pour le Développement de l'Afrique).</p>
+
+    <h3>III. Défis politiques et économiques de l'UA</h3>
+    <h4>A. Défis politiques : paix, sécurité et démocratie</h4>
+    <p>Le continent reste miné par des conflits (Sahel, Corne de l'Afrique, Grands Lacs, Mozambique). L'UA a dû gérer des coups d'État (Mali, Burkina Faso, Guinée) en suspendant les États concernés et en exigeant un retour à l'ordre constitutionnel. Cependant, la volonté politique des États membres est souvent faible, et le financement de la paix dépend à <strong>60 % des bailleurs extérieurs</strong>. La réforme du Conseil de sécurité de l'ONU pour accorder un siège permanent à l'Afrique (position d'<strong>Ezulwini</strong>) reste bloquée.</p>
+
+    <h4>B. Défis économiques : intégration continentale et développement</h4>
+    <p>L'UA a adopté l'<strong>Agenda 2063</strong> en 2015, cadre stratégique pour une Afrique prospère et intégrée. Sa réalisation phare est la <strong>Zone de libre-échange continentale africaine (ZLECAf)</strong>, opérationnelle depuis le <strong>1er janvier 2021</strong>, qui doit créer un marché unique de 1,3 milliard de consommateurs. Les défis restent immenses : diversification des économies, industrialisation, infrastructures (programme PIDA), lutte contre la pauvreté et la fuite des capitaux illicites. La dette souveraine de plusieurs pays menace la stabilité macroéconomique.</p>
+
+    <h4>C. Limites structurelles et critiques</h4>
+    <p>L'UA souffre d'un <strong>manque de moyens financiers</strong> : seuls <strong>40 % de son budget</strong> sont financés par les États membres (le reste provient de partenaires extérieurs, ce qui pose un problème d'autonomie). La bureaucratie est lourde et les décisions peinent à être appliquées. Le sentiment d'appartenance des citoyens à l'UA est faible. Enfin, les rivalités entre puissances africaines (Nigeria, Afrique du Sud, Égypte) compliquent la prise de décision commune.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Panafricanisme :</span> mouvement politique et culturel prônant l'unité et la solidarité des peuples africains et afro-descendants.</p>
+      <p><span class="term">Droit d'ingérence :</span> droit pour une organisation internationale d'intervenir dans un État, y compris militairement, pour protéger les populations contre des violations graves des droits humains.</p>
+      <p><span class="term">Agenda 2063 :</span> plan de développement à long terme de l'Union Africaine visant à faire de l'Afrique un continent paisible, prospère et intégré d'ici 2063.</p>
+      <p><span class="term">ZLECAf :</span> Zone de Libre-Échange Continentale Africaine, visant à éliminer les droits de douane sur 90 % des biens échangés entre pays africains.</p>
+    </div>
+
+    <div class="timeline-graphic">
+      <div class="timeline-item">1963<span>Création OUA</span></div>
+      <div class="timeline-item">2000<span>Acte constitutif UA</span></div>
+      <div class="timeline-item">2002<span>Lancement UA</span></div>
+      <div class="timeline-item">2004<span>Conseil Paix et Sécurité</span></div>
+      <div class="timeline-item">2015<span>Agenda 2063</span></div>
+      <div class="timeline-item">2021<span>Début ZLECAf</span></div>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>25 mai 1963</strong> : fondation de l'OUA à Addis-Abeba.</li>
+      <li><strong>11 juillet 2000</strong> : adoption de l'Acte constitutif de l'UA à Lomé.</li>
+      <li><strong>9 juillet 2002</strong> : lancement officiel de l'UA à Durban.</li>
+      <li><strong>2004</strong> : création du Conseil de paix et de sécurité.</li>
+      <li><strong>1er janvier 2021</strong> : entrée en vigueur de la ZLECAf.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 2</h3>
+      <details>
+        <summary>Exercice 1 : Quelle différence majeure oppose l'OUA à l'UA en matière d'intervention dans les États membres ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> L'OUA reposait sur le principe de non-ingérence absolue. L'UA, avec l'article 4h de son Acte constitutif, autorise l'intervention de l'Union en cas de crimes graves (génocide, crimes contre l'humanité), instaurant un droit d'ingérence.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quels sont les objectifs de l'Agenda 2063 ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Faire de l'Afrique un continent prospère, intégré, en paix, bien gouverné et influent sur la scène mondiale d'ici 2063. Il se décline en projets phares comme la ZLECAf, le passeport africain et le réseau ferroviaire intégré.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

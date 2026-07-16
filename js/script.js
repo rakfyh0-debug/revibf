@@ -444,6 +444,8 @@ function rendrePage() {
     case 'annales-bepc': setBreadcrumb('Accueil › BEPC › Sujets');        app.innerHTML = pageAnnalesBEPC();   break;
     case 'fiches-bepc': setBreadcrumb('Accueil › BEPC › Fiches'); app.innerHTML = pageFichesBEPC(); break;
     case 'fiches-matiere': setBreadcrumb('Accueil › BEPC › Fiches'); app.innerHTML = pageFichesMatiere(etat.params); break;
+    case 'fiches-bac': setBreadcrumb('Accueil › BAC › Fiches'); app.innerHTML = pageFichesBAC(); break;
+    case 'fiches-matiere-bac': setBreadcrumb('Accueil › BAC › Fiches'); app.innerHTML = pageFichesMatiereBac(etat.params); break;
     case 'corriges-bepc': setBreadcrumb('Accueil › BEPC › Corrigés'); app.innerHTML = pageCorrigesBEPC(); break;
     case 'annales-bac':  setBreadcrumb('Accueil › BAC › Sujets');         app.innerHTML = pageAnnalesBAC();    break;
     case 'corriges-bac':  setBreadcrumb('Accueil › BAC › Corrigés'); app.innerHTML = pageCorrigesBAC(); break;
@@ -562,6 +564,7 @@ function pageBAC() {
   var html = '<div class="page-header bac-header"><h1><i class="fas fa-graduation-cap"></i> Espace BAC</h1><p>Choisir ta série et accéder aux ressources adaptées</p></div>';
   html += '<div class="tab-bar">' +
     tb2('series',   '<i class="fas fa-graduation-cap"></i> Séries',            actif,'bac') +
+    tb2('fiches',   '<i class="fas fa-book-open"></i> Matières & Fiches', actif,'bac') +
     tb2('corriges', '<i class="fas fa-file-pen"></i> Corrigés',           actif,'bac') +
     tb2('annales',  '<i class="fas fa-file-pdf"></i> Sujets',           actif,'bac') +
     tb2('methodo',  '<i class="fas fa-lightbulb"></i> Méthodologie',      actif,'bac') +
@@ -569,6 +572,7 @@ function pageBAC() {
     tb2('citations','<i class="fas fa-scroll"></i> Citations',          actif,'bac') +
   '</div><div class="page-section">';
   if (actif==='series')    html += grilleSeries();
+  if (actif==='fiches')    html += pageFichesBAC();
   if (actif==='annales')   html += pageAnnalesBAC();
   if (actif==='corriges')  html += pageCorrigesBAC();
   if (actif==='methodo')   html += grilleMethodo(METHODOLOGIE_BAC);
@@ -1035,6 +1039,161 @@ const FICHES_BEPC = {
     { label: "Géographie Partie 3 — Le monde et la mondialisation", fichier: "cours/histoire/geographie_partie3.html" }
   ]
 };
+
+
+const FICHES_BAC = {
+  a4: {
+    philosophie: [
+      { label: "Partie 1 — La conscience et la connaissance", fichier: "cours/bac/philosophie/partie1_connaissance.html" },
+      { label: "Partie 2 — L'Homme", fichier: "cours/bac/philosophie/partie2_homme.html" },
+      { label: "Partie 3 — Les valeurs et la société", fichier: "cours/bac/philosophie/partie3_valeurs_societe.html" },
+      { label: "Partie 4 — Politique et pouvoir", fichier: "cours/bac/philosophie/partie4_politique_pouvoir.html" },
+      { label: "Méthodologie — Dissertation et commentaire", fichier: "cours/bac/philosophie/methodologie.html" }
+    ],
+    francais: [
+      { label: "Programme littéraire — Partie 1", fichier: "cours/bac/francais/programme_part1.html" },
+      { label: "Programme littéraire — Partie 2", fichier: "cours/bac/francais/programme_part2.html" },
+      { label: "Méthodologie des épreuves — Partie 1", fichier: "cours/bac/francais/methodologie_part1.html" },
+      { label: "Méthodologie des épreuves — Partie 2", fichier: "cours/bac/francais/methodologie_part2.html" }
+    ],
+    histoire: [
+      { label: "Histoire — Partie 1", fichier: "cours/bac/histoire/partie1.html" },
+      { label: "Histoire — Partie 2", fichier: "cours/bac/histoire/partie2.html" },
+      { label: "Histoire — Partie 3", fichier: "cours/bac/histoire/partie3.html" },
+      { label: "Géographie — Partie 1", fichier: "cours/bac/geographie/partie1.html" },
+      { label: "Géographie — Partie 2", fichier: "cours/bac/geographie/partie2.html" },
+      { label: "Géographie — Partie 3", fichier: "cours/bac/geographie/partie3.html" },
+      { label: "Méthodologie — Commentaire et synthèse", fichier: "cours/bac/histoire/methodologie.html" }
+    ],
+    anglais: [
+      { label: "Cours Bac A4", fichier: "cours/bac/anglais/bac.html" },
+      { label: "Révision complète", fichier: "cours/bac/anglais/revision_complete.html" }
+    ],
+    allemand: [
+      { label: "Cours Bac", fichier: "cours/bac/allemand/bac.html" },
+      { label: "Étude de textes", fichier: "cours/bac/allemand/textes.html" }
+    ]
+  },
+  d: {
+    maths: [
+      { label: "Analyse — Chapitres 1 à 3", fichier: "cours/bac/d/maths/analyse_ch1_3.html" },
+      { label: "Analyse — Chapitres 4 à 6", fichier: "cours/bac/d/maths/analyse_ch4_6.html" },
+      { label: "Nombres complexes", fichier: "cours/bac/d/maths/complexes.html" },
+      { label: "Géométrie dans l'espace", fichier: "cours/bac/d/maths/geometrie_espace.html" },
+      { label: "Probabilités", fichier: "cours/bac/d/maths/probabilites.html" },
+      { label: "Statistiques", fichier: "cours/bac/d/maths/statistiques.html" }
+    ],
+    physique: [
+      { label: "Physique — Partie 1 : Cinématique et Dynamique", fichier: "cours/bac/d/physique/partie1.html" },
+      { label: "Physique — Partie 2 : Oscillateurs et Électricité", fichier: "cours/bac/d/physique/partie2.html" },
+      { label: "Physique — Partie 3 : Physique Nucléaire", fichier: "cours/bac/d/physique/partie3.html" },
+      { label: "Chimie — Partie 4 : Cinétique et Chimie Organique", fichier: "cours/bac/d/physique_chimie/partie4.html" },
+      { label: "Physique-Chimie — Partie 5 : Optique et Oxydoréduction", fichier: "cours/bac/d/physique_chimie/partie5.html" }
+    ],
+    svt: [
+      { label: "Hérédité et génétique", fichier: "cours/bac/d/svt/genetique.html" },
+      { label: "Système nerveux et muscle strié", fichier: "cours/bac/d/svt/systeme_nerveux_muscle.html" },
+      { label: "Reproduction et développement", fichier: "cours/bac/d/svt/reproduction.html" },
+      { label: "Écologie et flux d'énergie", fichier: "cours/bac/d/svt/ecologie.html" },
+      { label: "Immunologie", fichier: "cours/bac/d/svt/immunologie.html" }
+    ],
+    francais: [
+      { label: "Programme littéraire — Partie 1", fichier: "cours/bac/francais/programme_part1.html" },
+      { label: "Programme littéraire — Partie 2", fichier: "cours/bac/francais/programme_part2.html" },
+      { label: "Méthodologie des épreuves — Partie 1", fichier: "cours/bac/francais/methodologie_part1.html" },
+      { label: "Méthodologie des épreuves — Partie 2", fichier: "cours/bac/francais/methodologie_part2.html" }
+    ],
+    philosophie: [
+      { label: "Partie 1 — La conscience et la connaissance", fichier: "cours/bac/philosophie/partie1_connaissance.html" },
+      { label: "Partie 2 — L'Homme", fichier: "cours/bac/philosophie/partie2_homme.html" },
+      { label: "Partie 3 — Les valeurs et la société", fichier: "cours/bac/philosophie/partie3_valeurs_societe.html" },
+      { label: "Partie 4 — Politique et pouvoir", fichier: "cours/bac/philosophie/partie4_politique_pouvoir.html" },
+      { label: "Méthodologie — Dissertation et commentaire", fichier: "cours/bac/philosophie/methodologie.html" }
+    ],
+    histoire: [
+      { label: "Histoire — Partie 1", fichier: "cours/bac/histoire/partie1.html" },
+      { label: "Histoire — Partie 2", fichier: "cours/bac/histoire/partie2.html" },
+      { label: "Histoire — Partie 3", fichier: "cours/bac/histoire/partie3.html" },
+      { label: "Géographie — Partie 1", fichier: "cours/bac/geographie/partie1.html" },
+      { label: "Géographie — Partie 2", fichier: "cours/bac/geographie/partie2.html" },
+      { label: "Géographie — Partie 3", fichier: "cours/bac/geographie/partie3.html" },
+      { label: "Méthodologie — Commentaire et synthèse", fichier: "cours/bac/geographie/methodologie.html" }
+    ],
+    anglais: [
+      { label: "Cours Bac", fichier: "cours/bac/anglais/bac.html" },
+      { label: "Révision complète", fichier: "cours/bac/anglais/revision_complete.html" }
+    ]
+  }
+};
+
+const NOMS_MATIERES_BAC = {
+  philosophie: { icon: '<i class="fas fa-brain"></i>', nom: 'Philosophie' },
+  francais:    { icon: '<i class="fas fa-pen"></i>', nom: 'Français' },
+  histoire:    { icon: '<i class="fas fa-landmark"></i>', nom: 'Histoire-Géo' },
+  anglais:     { icon: '<i class="fas fa-comments"></i>', nom: 'Anglais' },
+  allemand:    { icon: '<i class="fas fa-comments"></i>', nom: 'Allemand' },
+  maths:       { icon: '<i class="fas fa-divide"></i>', nom: 'Mathématiques' },
+  physique:    { icon: '<i class="fas fa-bolt"></i>', nom: 'Physique-Chimie' },
+  svt:         { icon: '<i class="fas fa-leaf"></i>', nom: 'SVT' }
+};
+
+function pageFichesBAC() {
+  var serieChoisie = etat.params;
+  var html = '<div class="page-header"><h1><i class="fas fa-book"></i> Fiches BAC</h1><p>Choisis ta série pour voir les fiches disponibles</p></div>';
+  html += '<div class="page-section">';
+
+  if (!serieChoisie || !FICHES_BAC[serieChoisie.toLowerCase()]) {
+    html += '<div class="alerte"><i class="fas fa-lightbulb"></i> Choisis ta série pour voir les matières disponibles.</div>';
+    html += '<div class="series-grid">';
+    SERIES_BAC.forEach(function(s) {
+      html += '<div class="serie-card" onclick="afficherPage(\'fiches-bac\',\''+s.lettre+'\')" style="border-top-color:'+s.couleur+'">' +
+        '<div class="serie-lettre" style="color:'+s.couleur+'">Série '+s.lettre+'</div>' +
+        '<div class="serie-nom">'+s.nom+'</div></div>';
+    });
+    html += '</div>';
+    return html + '</div>';
+  }
+
+  var serieKey = serieChoisie.toLowerCase();
+  var data = FICHES_BAC[serieKey];
+  html += '<button class="btn btn-outline" onclick="afficherPage(\'fiches-bac\')" style="margin-bottom:1.5rem;">\u2190 Changer de série</button>';
+  html += '<div class="matiere-grid">';
+  Object.keys(data).forEach(function(matiereId) {
+    if (!data[matiereId] || data[matiereId].length === 0) return;
+    var info = NOMS_MATIERES_BAC[matiereId] || { icon:'📖', nom: matiereId };
+    html += '<div class="matiere-card" onclick="afficherPage(\'fiches-matiere-bac\',\''+serieKey+':'+matiereId+'\')">' +
+      '<div class="matiere-icon">'+info.icon+'</div>' +
+      '<div class="matiere-nom">'+info.nom+'</div>' +
+      '<div class="matiere-sub">'+data[matiereId].length+' fiche(s)</div></div>';
+  });
+  html += '</div>';
+  return html + '</div>';
+}
+
+function pageFichesMatiereBac(params) {
+  var parts = (params || '').split(':');
+  var serieKey = parts[0];
+  var matiereId = parts[1];
+  var info = NOMS_MATIERES_BAC[matiereId] || { icon:'📖', nom: matiereId };
+  var fiches = (FICHES_BAC[serieKey] && FICHES_BAC[serieKey][matiereId]) ? FICHES_BAC[serieKey][matiereId] : [];
+  var html = '<div class="page-header"><h1>'+info.icon+' Fiches de '+info.nom+' — Série '+serieKey.toUpperCase()+'</h1><p>Choisis une fiche pour réviser</p></div>';
+  html += '<div class="page-section">';
+  html += '<button class="btn btn-outline" onclick="afficherPage(\'fiches-bac\',\''+serieKey+'\')" style="margin-bottom:1.5rem;">\u2190 Retour aux matières</button>';
+  if (fiches.length === 0) {
+    html += '<div class="alerte">Aucune fiche disponible pour le moment.</div>';
+  } else {
+    html += '<div class="annale-grid">';
+    fiches.forEach(function(f) {
+      html += '<div class="annale-card">' +
+        '<h3>'+f.label+'</h3>' +
+        '<div class="annale-btns">' +
+          '<button class="btn btn-vert btn-sm" onclick="ouvrirFiche(\''+f.fichier+'\')">\ud83d\udcc5 Ouvrir la fiche</button>' +
+        '</div></div>';
+    });
+    html += '</div>';
+  }
+  return html + '</div>';
+}
 
 function pageAnnalesBEPCReelles() {
   var html = '<div class="section-title"><i class="fas fa-file-pdf"></i> Sujets BEPC</div>';

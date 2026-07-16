@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTIE 2 – Le monde de 1945 à nos jours | ReviBF</title>
+  <style>
+    :root {
+      --bg: #faf8f2;
+      --card: #ffffff;
+      --text: #1e1e1e;
+      --accent: #8b3a3a;
+      --accent-light: #f4e4e1;
+      --border: #d6cec4;
+      --shadow: 0 6px 18px rgba(0,0,0,0.06);
+      --radius: 16px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); line-height: 1.7; padding: 2rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+    .main-header {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-left: 6px solid var(--accent); text-align: center;
+    }
+    .main-header h1 { font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .main-header .sub { font-size: 1.1rem; color: #5e5a55; font-weight: 500; }
+    .chapter-card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem; border-top: 4px solid var(--accent);
+    }
+    .chapter-card h2 { font-size: 1.8rem; color: #5a2e2e; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--border); padding-bottom: 0.7rem; font-weight: 700; }
+    .chapter-card h3 { font-size: 1.3rem; color: #3d2b1f; margin: 1.8rem 0 0.8rem; font-weight: 600; padding-left: 1.2rem; position: relative; }
+    .chapter-card h3::before { content: "▹"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .chapter-card h4 { font-size: 1.1rem; color: #4a3b2f; margin: 1.2rem 0 0.5rem; font-weight: 600; font-style: italic; }
+    p { margin-bottom: 1rem; text-align: justify; }
+    .highlight { background: #fff6e5; padding: 0.9rem 1.2rem; border-radius: 10px; border-left: 5px solid #c38d4b; margin: 1.3rem 0; font-weight: 500; }
+    ul, ol { margin: 0.8rem 0 1.2rem 1.8rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #a43d3d; font-weight: 700; }
+    .definition-box { background: #f7f3ee; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; }
+    .definition-box .term { font-weight: 700; color: #5b2e2e; font-size: 1.05rem; }
+    .timeline-graphic {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
+      margin: 1.8rem 0; position: relative; padding: 1rem 0;
+    }
+    .timeline-graphic::before {
+      content: ""; position: absolute; top: 50%; left: 2%; right: 2%; height: 3px;
+      background: #c9b99a; transform: translateY(-50%); z-index: 0;
+    }
+    .timeline-item {
+      background: #fffbf7; border: 2px solid var(--accent); border-radius: 30px;
+      padding: 0.6rem 1.2rem; font-weight: 700; font-size: 0.9rem; color: var(--accent);
+      position: relative; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      min-width: 100px; text-align: center;
+    }
+    .timeline-item span { display: block; font-weight: 400; font-size: 0.8rem; color: #4d4d4d; }
+    .exercises { margin-top: 2rem; background: #fcf9f4; border-radius: 14px; padding: 1.8rem 2rem; border: 1px solid #e0d6c5; }
+    .exercises h3 { margin-top: 0; color: #5e3a2c; font-size: 1.4rem; }
+    details { margin: 1rem 0 0.5rem; background: #ffffff; border: 1px solid #d0c7b8; border-radius: 10px; padding: 0.7rem 1.2rem; }
+    details[open] { background: #fefaf5; border-color: #b39364; }
+    summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.4rem; color: #4a3324; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; display: inline-block; }
+    details[open] summary::before { content: "▾"; }
+    .correction { margin-top: 0.8rem; padding: 1rem 1rem 0.5rem; background: #fff7ed; border-radius: 8px; border-left: 4px solid #c38d4b; }
+    .schema-row { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+    .schema-box { background: #fefcf8; border: 1.5px solid #b4946e; border-radius: 10px; padding: 0.9rem 1.2rem; font-weight: 600; color: #3e2e1f; min-width: 130px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.04); }
+    @media (max-width: 650px) { body { padding: 1rem 0.8rem; } .timeline-graphic { flex-direction: column; align-items: center; gap: 0.8rem; } .timeline-graphic::before { display: none; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="main-header">
+    <h1>PARTIE 2 : Le monde de 1945 à nos jours</h1>
+    <div class="sub">Fiches de révision exhaustives – Programme Terminale A4 (Burkina Faso)</div>
+  </header>
+
+  <!-- Chapitre 1 – La Guerre Froide (1947-1991) -->
+  <section class="chapter-card">
+    <h2>Chapitre 1 : La Guerre froide de 1947 à 1991</h2>
+    <p><strong>Introduction problématisée :</strong> Dès la fin de la Seconde Guerre mondiale, l'alliance anti-hitlérienne se fissure. Les États-Unis et l'URSS, porteurs de projets de société antagonistes, s'affrontent indirectement dans un conflit idéologique, militaire et stratégique d'un type nouveau : la <strong>Guerre froide</strong>. Ce conflit, qui s'étend de 1947 à la disparition de l'URSS en 1991, a structuré les relations internationales et profondément marqué tous les continents. Comment cette guerre sans affrontement direct a-t-elle évolué, entre tensions extrêmes, périodes de détente et effondrement final du bloc soviétique ?</p>
+
+    <h3>I. Les origines de la Guerre froide (1945-1947)</h3>
+    <h4>A. La rupture de la Grande Alliance</h4>
+    <p>À <strong>Yalta</strong> (février 1945) et <strong>Potsdam</strong> (juillet-août 1945), les Alliés règlent le sort de l'Allemagne et esquissent les zones d'influence. Mais les désaccords apparaissent rapidement : Staline installe des gouvernements communistes en Europe de l'Est (Pologne, Roumanie, Bulgarie), ce que les Occidentaux considèrent comme une violation des promesses d'élections libres. Le <strong>discours de Fulton</strong> (5 mars 1946) de Winston Churchill dénonce le « rideau de fer » qui s'est abattu sur l'Europe.</p>
+    <h4>B. La doctrine Truman et le plan Marshall</h4>
+    <p>En mars 1947, le président américain <strong>Harry S. Truman</strong> énonce la <strong>doctrine du containment</strong> (endiguement) : il promet d'aider les « peuples libres » à résister à la subversion communiste. Cette doctrine est complétée par le <strong>plan Marshall</strong> (juin 1947), un vaste programme d'aide économique pour la reconstruction de l'Europe, qui vise aussi à contrer l'influence soviétique. Seize pays acceptent cette aide, mais l'URSS force ses satellites à la refuser.</p>
+    <h4>C. La riposte soviétique : doctrine Jdanov et Kominform</h4>
+    <p>En septembre 1947, <strong>Andreï Jdanov</strong> répond par la <strong>doctrine Jdanov</strong> : le monde est désormais divisé en deux camps, le camp « impérialiste et antidémocratique » dirigé par les États-Unis et le camp « anti-impérialiste et démocratique » dirigé par l'URSS. Le <strong>Kominform</strong> (Bureau d'information des partis communistes) est créé pour coordonner l'action communiste en Europe.</p>
+    <h4>D. Les premières crises : Allemagne et Tchécoslovaquie</h4>
+    <p>L'Allemagne devient un point focal. En 1948, les Occidentaux créent une monnaie unique dans leurs zones, prélude à un État ouest-allemand. Staline riposte par le <strong>blocus de Berlin</strong> (juin 1948 – mai 1949). Les Américains organisent un pont aérien qui brise le blocus. En conséquence, deux États allemands naissent : la <strong>RFA</strong> (mai 1949) et la <strong>RDA</strong> (octobre 1949). En <strong>Tchécoslovaquie</strong>, le coup de Prague (février 1948) installe un régime communiste, renforçant la division de l'Europe.</p>
+
+    <h3>II. Les grandes phases et les crises majeures (1949-1985)</h3>
+    <h4>A. La guerre de Corée (1950-1953) : premier conflit chaud périphérique</h4>
+    <p>En juin 1950, la Corée du Nord communiste envahit la Corée du Sud. L'ONU, profitant de l'absence soviétique au Conseil de sécurité, autorise une intervention menée par les États-Unis. La Chine communiste entre en guerre fin 1950. Le conflit se stabilise autour du <strong>38e parallèle</strong> et s'achève par un armistice en <strong>1953</strong>, sans réunification. Cette guerre illustre l'extension de la Guerre froide en Asie.</p>
+    <h4>B. La coexistence pacifique (1955-1962) : entre dialogue et crises</h4>
+    <p>À la mort de Staline (1953), <strong>Nikita Khrouchtchev</strong> prône la <strong>coexistence pacifique</strong> (compétition sans guerre). Pourtant, les crises persistent : <strong>crise de Suez</strong> (1956) où l'URSS menace d'intervenir, <strong>soulèvement de Budapest</strong> (1956) écrasé par les chars soviétiques, construction du <strong>mur de Berlin</strong> (août 1961) pour stopper l'exode des Allemands de l'Est. La crise la plus dangereuse survient à <strong>Cuba</strong> en <strong>octobre 1962</strong> : les États-Unis découvrent des rampes de missiles soviétiques, le monde frôle la guerre nucléaire ; un compromis est trouvé (retrait des missiles soviétiques contre retrait de missiles américains de Turquie).</p>
+    <h4>C. La Détente (1963-1979)</h4>
+    <p>Après Cuba, un dialogue s'installe. Le <strong>téléphone rouge</strong> est établi (1963). La RFA mène l'<strong>Ostpolitik</strong> (Willy Brandt, 1969) pour normaliser les relations avec l'Est. Les accords <strong>SALT I</strong> (1972) limitent les armes stratégiques. La <strong>conférence d'Helsinki</strong> (1975) consacre la détente en Europe et reconnaît les frontières issues de 1945 tout en promouvant les droits de l'Homme.</p>
+    <h4>D. La « guerre fraîche » (1979-1985)</h4>
+    <p>La détente est rompue par l'invasion soviétique de l'<strong>Afghanistan</strong> (décembre 1979). Les États-Unis boycottent les Jeux olympiques de Moscou (1980). <strong>Ronald Reagan</strong> lance un programme de défense spatiale (« guerre des étoiles ») et relance la course aux armements. Les euromissiles (SS-20 soviétiques, Pershing américains) ravivent les tensions en Europe.</p>
+
+    <h3>III. La fin de la Guerre froide et ses conséquences</h3>
+    <h4>A. Gorbatchev et les réformes en URSS</h4>
+    <p>Arrivé au pouvoir en <strong>mars 1985</strong>, <strong>Mikhaïl Gorbatchev</strong> lance la <strong>perestroïka</strong> (restructuration économique) et la <strong>glasnost</strong> (transparence). Sur le plan extérieur, il renonce à la doctrine de souveraineté limitée et entame des négociations de désarmement (traité <strong>INF</strong> en 1987, <strong>START I</strong> en 1991).</p>
+    <h4>B. L'effondrement du bloc de l'Est</h4>
+    <p>En 1989, les régimes communistes s'effondrent en Europe de l'Est. Le <strong>9 novembre 1989</strong>, le mur de Berlin tombe, symbole de la fin de la division de l'Europe. L'Allemagne est réunifiée le <strong>3 octobre 1990</strong>. Le <strong>pacte de Varsovie</strong> est dissous en juillet 1991.</p>
+    <h4>C. La disparition de l'URSS et l'émergence d'un nouvel ordre mondial</h4>
+    <p>Après un putsch manqué en août 1991, l'URSS éclate : <strong>25 décembre 1991</strong>, Gorbatchev démissionne, l'URSS n'existe plus. Les États-Unis demeurent la seule superpuissance. La Guerre froide laisse place à un monde unipolaire mais aussi à de nouveaux conflits (guerre du Golfe, Balkans, terrorisme).</p>
+
+    <div class="definition-box">
+      <p><span class="term">Guerre froide :</span> conflit idéologique, politique et militaire indirect entre les États-Unis et l'URSS de 1947 à 1991, sans affrontement direct entre les deux superpuissances.</p>
+      <p><span class="term">Containment (endiguement) :</span> stratégie américaine visant à empêcher l'expansion du communisme.</p>
+      <p><span class="term">Coexistence pacifique :</span> doctrine khrouchtchévienne admettant une compétition sans guerre entre les deux systèmes.</p>
+      <p><span class="term">Détente :</span> période de relâchement des tensions (1963-1979) marquée par le dialogue et les accords de limitation des armements.</p>
+    </div>
+
+    <div class="timeline-graphic">
+      <div class="timeline-item">1947<span>Doctrine Truman / Jdanov</span></div>
+      <div class="timeline-item">1948-1949<span>Blocus de Berlin</span></div>
+      <div class="timeline-item">1950-1953<span>Guerre de Corée</span></div>
+      <div class="timeline-item">1962<span>Crise de Cuba</span></div>
+      <div class="timeline-item">1975<span>Accords d'Helsinki</span></div>
+      <div class="timeline-item">1989<span>Chute du Mur</span></div>
+      <div class="timeline-item">1991<span>Fin de l'URSS</span></div>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>12 mars 1947</strong> : doctrine Truman.</li>
+      <li><strong>5 juin 1947</strong> : plan Marshall.</li>
+      <li><strong>Juin 1948 – mai 1949</strong> : blocus de Berlin.</li>
+      <li><strong>Août 1961</strong> : construction du mur de Berlin.</li>
+      <li><strong>Octobre 1962</strong> : crise des fusées de Cuba.</li>
+      <li><strong>1er août 1975</strong> : accords d'Helsinki.</li>
+      <li><strong>9 novembre 1989</strong> : chute du mur de Berlin.</li>
+      <li><strong>25 décembre 1991</strong> : dissolution de l'URSS.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 1</h3>
+      <details>
+        <summary>Exercice 1 : Expliquez en quoi la guerre de Corée illustre le concept de guerre limitée dans le cadre de la Guerre froide.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La guerre de Corée oppose indirectement les deux superpuissances (URSS/Chine soutenant le Nord, États-Unis le Sud) sans affrontement direct entre elles. Elle reste localisée au 38e parallèle et s'achève par un armistice, sans vainqueur absolu, illustrant la volonté de ne pas déclencher un conflit nucléaire mondial.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quel rôle a joué la conférence d'Helsinki dans la Détente ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> La conférence d'Helsinki (1975) a institutionnalisé la détente en reconnaissant les frontières européennes issues de 1945 et en engageant les signataires à respecter les droits de l'Homme. Elle a offert un cadre de dialogue et a paradoxalement renforcé les mouvements dissidents à l'Est (effet Helsinki).</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 3 : Pourquoi l'invasion de l'Afghanistan est-elle considérée comme la fin de la Détente ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> L'invasion soviétique de 1979 rompt l'esprit de la Détente, car l'URSS intervient militairement hors de sa zone d'influence traditionnelle. Les États-Unis réagissent par des sanctions, le boycott des JO et une relance de la course aux armements, inaugurant la « guerre fraîche ».</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Chapitre 2 – La décolonisation -->
+  <section class="chapter-card">
+    <h2>Chapitre 2 : La décolonisation</h2>
+    <p><strong>Introduction problématisée :</strong> En 1945, les empires coloniaux européens sortent ébranlés de la guerre. Les peuples colonisés, qui ont participé à l'effort de guerre, exigent leur émancipation. Le mouvement de décolonisation, qui s'étend de l'Asie à l'Afrique entre 1945 et les années 1970, bouleverse la carte du monde et donne naissance au <strong>Tiers-Monde</strong>. Quels facteurs expliquent cette vague d'indépendances, et comment les pays nouvellement indépendants ont-ils cherché à s'affirmer sur la scène internationale ?</p>
+
+    <h3>I. Les causes de la décolonisation</h3>
+    <h4>A. L'affaiblissement des métropoles coloniales</h4>
+    <p>La Seconde Guerre mondiale a ruiné l'Europe et affaibli son prestige. Les défaites de 1940 ont démythifié la puissance des colonisateurs (France, Belgique, Pays-Bas). Les métropoles, occupées ou détruites, n'ont plus les moyens de maintenir leur domination.</p>
+    <h4>B. Le rôle des superpuissances et de l'ONU</h4>
+    <p>Les <strong>États-Unis</strong> (tradition anticolonialiste) et l'<strong>URSS</strong> (hostile par idéologie au colonialisme) soutiennent, au moins rhétoriquement, le droit des peuples à disposer d'eux-mêmes. La <strong>Charte de l'ONU</strong> (1945) proclame ce principe, et l'Assemblée générale devient une tribune pour les mouvements indépendantistes. La <strong>Déclaration sur l'octroi de l'indépendance aux pays et aux peuples coloniaux</strong> (1960) renforce cette pression internationale.</p>
+    <h4>C. La montée des nationalismes et des élites locales</h4>
+    <p>Dans les colonies, des élites formées en Occident développent des revendications nationales. En Inde, le <strong>Congrès national indien</strong> de Gandhi et Nehru réclame l'indépendance depuis l'entre-deux-guerres. En Afrique, des partis comme le <strong>RDA</strong> (Rassemblement démocratique africain, 1946) ou des leaders comme <strong>Kwame Nkrumah</strong> en Gold Coast portent les aspirations à l'autodétermination.</p>
+    <h4>D. Les facteurs socio-économiques et culturels</h4>
+    <p>Les inégalités criantes entre colons et colonisés, l'exploitation économique et le mépris culturel nourrissent le ressentiment. Le mouvement de la <strong>négritude</strong> (Senghor, Césaire, Damas) valorise la culture africaine et conteste la domination occidentale. Les anciens combattants coloniaux, qui ont combattu pour la liberté de l'Europe, exigent la leur.</p>
+
+    <h3>II. Les moyens et les voies de l'émancipation</h3>
+    <h4>A. La voie pacifique et la négociation</h4>
+    <p>Certaines indépendances s'obtiennent par la négociation, comme l'<strong>Inde</strong> (1947), où la résistance non-violente de Gandhi pousse le Royaume-Uni à accorder l'indépendance, mais avec la partition douloureuse en deux États (Inde et Pakistan). En Afrique occidentale française, la loi-cadre <strong>Defferre</strong> (1956) ouvre la voie à l'autonomie, et la plupart des colonies françaises d'Afrique subsaharienne accèdent à l'indépendance en <strong>1960</strong> sans conflit majeur.</p>
+    <h4>B. La lutte armée</h4>
+    <p>Lorsque les métropoles refusent le dialogue, des guerres éclatent. <strong>Guerre d'Indochine</strong> (1946-1954) : le Vietminh de Hô Chi Minh mène une guerre de libération contre la France, qui se solde par la défaite française de <strong>Dien Bien Phu</strong> (1954) et les accords de Genève. <strong>Guerre d'Algérie</strong> (1954-1962) : le FLN engage une lutte armée contre la France, qui aboutit aux accords d'Évian et à l'indépendance en <strong>juillet 1962</strong>. En Afrique portugaise (Angola, Mozambique, Guinée-Bissau), des guérillas marxistes obtiennent l'indépendance après la <strong>Révolution des Œillets</strong> au Portugal (1974).</p>
+    <h4>C. Le rôle des conférences et des organisations internationales</h4>
+    <p>La <strong>conférence de Bandung</strong> (18-24 avril 1955), réunissant 29 pays afro-asiatiques, condamne le colonialisme et proclame les principes de coexistence pacifique. Elle marque l'émergence politique des peuples colonisés. Les Nations unies, par le <strong>Comité de décolonisation</strong> (1961), accélèrent le processus.</p>
+
+    <h3>III. L'émergence du Tiers-Monde et le Mouvement des non-alignés</h3>
+    <h4>A. La naissance du Tiers-Monde : Bandung et ses prolongements</h4>
+    <p>L'expression <strong>« Tiers-Monde »</strong>, forgée par <strong>Alfred Sauvy</strong> en 1952, désigne les pays pauvres, souvent nouvellement indépendants, qui refusent l'alignement sur les deux blocs. Bandung affirme le <strong>neutralisme</strong> et la solidarité afro-asiatique. La <strong>conférence du Caire</strong> (1957) crée l'Organisation de solidarité des peuples afro-asiatiques. En 1961, la <strong>conférence de Belgrade</strong> fonde le <strong>Mouvement des pays non-alignés</strong>.</p>
+    <h4>B. Le Mouvement des non-alignés : principes et acteurs</h4>
+    <p>Les pères fondateurs sont <strong>Nehru</strong> (Inde), <strong>Tito</strong> (Yougoslavie), <strong>Nasser</strong> (Égypte), <strong>Sukarno</strong> (Indonésie) et <strong>Nkrumah</strong> (Ghana). Le mouvement rejette toute alliance militaire avec les blocs, prône le désarmement, la décolonisation totale et un nouvel ordre économique international. Les sommets se succèdent (<strong>Alger 1973</strong>, Colombo 1976, La Havane 1979).</p>
+    <h4>C. Les revendications économiques et les limites du non-alignement</h4>
+    <p>Le Tiers-Monde réclame une redistribution des richesses. La <strong>CNUCED</strong> (Conférence des Nations Unies sur le commerce et le développement, créée en 1964) sert de tribune. Le groupe des <strong>77</strong> (1964) revendique des prix stables pour les matières premières. Mais le non-alignement bute sur les rivalités internes (conflits frontaliers, différences idéologiques) et la dépendance économique persistante envers l'ancien colonisateur.</p>
+
+    <div class="definition-box">
+      <p><span class="term">Décolonisation :</span> processus par lequel les colonies accèdent à l'indépendance et à la souveraineté internationale.</p>
+      <p><span class="term">Tiers-Monde :</span> ensemble des pays pauvres, souvent issus de la décolonisation, qui cherchent une voie alternative aux deux blocs.</p>
+      <p><span class="term">Non-alignement :</span> doctrine de politique étrangère refusant l'adhésion aux alliances militaires des superpuissances tout en favorisant la coopération entre pays en développement.</p>
+      <p><span class="term">Neutralisme :</span> attitude de neutralité active prônée par les pays non alignés.</p>
+    </div>
+
+    <p><strong>Dates clés :</strong></p>
+    <ul>
+      <li><strong>1945</strong> : proclamation de l'indépendance du Vietnam (Hô Chi Minh).</li>
+      <li><strong>15 août 1947</strong> : indépendance de l'Inde et du Pakistan.</li>
+      <li><strong>1954</strong> : fin de la guerre d'Indochine (accords de Genève).</li>
+      <li><strong>18-24 avril 1955</strong> : conférence de Bandung.</li>
+      <li><strong>1960</strong> : « année de l'Afrique » (17 indépendances).</li>
+      <li><strong>1961</strong> : conférence de Belgrade, fondation du Mouvement des non-alignés.</li>
+      <li><strong>5 juillet 1962</strong> : indépendance de l'Algérie.</li>
+      <li><strong>1964</strong> : création de la CNUCED et du Groupe des 77.</li>
+    </ul>
+
+    <div class="exercises">
+      <h3>Exercices – Chapitre 2</h3>
+      <details>
+        <summary>Exercice 1 : Comparez les processus d'indépendance de l'Inde et de l'Algérie.</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> L'Inde obtient son indépendance par la négociation et la non-violence (Gandhi), mais avec une partition sanglante. L'Algérie doit mener une guerre de libération (1954-1962) car la France refuse initialement toute indépendance. Ces deux exemples illustrent les voies opposées de la décolonisation.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 2 : Quel a été l'impact de la conférence de Bandung sur le processus de décolonisation ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Bandung a uni les pays afro-asiatiques, condamné le colonialisme sous toutes ses formes et posé les principes du non-alignement. Elle a accéléré les indépendances africaines et renforcé la légitimité des revendications nationalistes.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Exercice 3 : Pourquoi le non-alignement a-t-il connu des difficultés à partir des années 1970 ?</summary>
+        <div class="correction">
+          <p><strong>Correction :</strong> Les conflits entre pays membres (Inde-Pakistan, guerre Iran-Irak), l'alignement de fait de certains sur l'URSS (Cuba, Vietnam) et la persistance de la dépendance économique ont affaibli la cohésion du mouvement.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
+<script>
+(function() {
+  var POLICES = {
+    nunito:   "'Nunito', sans-serif",
+    georgia:  "Georgia, serif",
+    verdana:  "Verdana, sans-serif",
+    segoe:    "'Segoe UI', Roboto, sans-serif",
+    times:    "'Times New Roman', serif",
+    trebuchet:"'Trebuchet MS', sans-serif",
+    arial:    "Arial, sans-serif",
+    comic:    "'Comic Sans MS', cursive",
+    courier:  "'Courier New', monospace",
+    palatino: "'Palatino Linotype', 'Book Antiqua', Palatino, serif"
+  };
+  var saved = localStorage.getItem('police');
+  if (saved && POLICES[saved]) {
+    document.body.style.fontFamily = POLICES[saved];
+  }
+})();
+</script>
+</body>
+</html>

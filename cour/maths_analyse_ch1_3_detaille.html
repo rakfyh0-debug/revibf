@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse – Limites, Dérivation, ln et exp (Détaillé) | RéviBF</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 2rem; line-height: 1.7; }
+    .container { max-width: 1100px; margin: auto; background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+    h1 { color: #0f172a; border-left: 6px solid #2563eb; padding-left: 1rem; font-size: 2rem; }
+    h2 { color: #1e3a8a; border-bottom: 2px dashed #93c5fd; padding-bottom: 0.3rem; margin-top: 2.5rem; font-size: 1.5rem; }
+    h3 { color: #1e40af; font-size: 1.25rem; margin-top: 1.8rem; }
+    h4 { color: #1d4ed8; }
+    p { margin: 0.8rem 0; text-align: justify; }
+    ul, ol { margin-left: 1.5rem; }
+    strong { color: #075985; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #cbd5e1; padding: 0.5rem; text-align: center; }
+    th { background: #e2e8f0; }
+    .exercice { background: #f0f9ff; border-left: 6px solid #0284c7; padding: 1rem; margin: 1.5rem 0; border-radius: 8px; }
+    .correction { background: #f0fdf4; border-left: 6px solid #16a34a; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .svg-container { text-align: center; margin: 1.5rem 0; }
+    svg { max-width: 100%; height: auto; }
+    .note { background: #fef9c3; border-left: 5px solid #eab308; padding: 0.8rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>ANALYSE – Terminale D (Burkina Faso)<br><small style="color:#475569;">Chapitres 1 à 3 : Limites, Dérivation, Fonctions ln et exp</small></h1>
+
+  <!-- CHAPITRE 1 : LIMITES ET CONTINUITÉ -->
+  <div class="chapter">
+    <h2>1. Limites et continuité des fonctions</h2>
+    <p>La notion de limite est à la base de l'analyse. Elle permet de décrire le comportement d'une fonction lorsque la variable s'approche d'une valeur donnée ou devient très grande. La continuité en découle directement.</p>
+
+    <h3>1.1 Approche intuitive et définitions formelles</h3>
+    <h4>1.1.1 Limite finie en un point fini</h4>
+    <p>Soit a ∈ ℝ et L ∈ ℝ. On dit que <strong>lim<sub>x→a</sub> f(x) = L</strong> si pour tout intervalle ouvert contenant L (aussi petit soit-il), il existe un intervalle ouvert contenant a tel que pour tout x ≠ a dans cet intervalle, f(x) appartient au premier intervalle. Graphiquement, la courbe se rapproche du point (a, L).</p>
+    <p><strong>Exemple fondamental :</strong> f(x) = (x² – 1)/(x – 1) pour x ≠ 1. En simplifiant, f(x) = x+1, donc lim<sub>x→1</sub> f(x) = 2, bien que f ne soit pas définie en 1.</p>
+
+    <h4>1.1.2 Limite infinie en un point</h4>
+    <p>lim<sub>x→a</sub> f(x) = +∞ signifie que f(x) dépasse toute valeur donnée dès que x est assez proche de a. De même pour –∞. Exemple : lim<sub>x→0⁺</sub> 1/x = +∞, lim<sub>x→0⁻</sub> 1/x = –∞.</p>
+
+    <h4>1.1.3 Limite finie à l’infini</h4>
+    <p>lim<sub>x→+∞</sub> f(x) = L si la distance entre f(x) et L devient aussi petite que l’on veut pour x suffisamment grand. Exemple : lim<sub>x→+∞</sub> 1/x = 0.</p>
+
+    <h4>1.1.4 Limite infinie à l’infini</h4>
+    <p>lim<sub>x→+∞</sub> f(x) = +∞ lorsque f(x) devient arbitrairement grande avec x. Exemple : lim<sub>x→+∞</sub> x² = +∞.</p>
+
+    <h3>1.2 Opérations sur les limites</h3>
+    <p>On considère deux fonctions f et g ayant des limites (finies ou infinies). Le tableau ci-dessous résume les règles, en précisant les formes indéterminées (FI).</p>
+    <table>
+      <tr><th>Opération</th><th>lim f</th><th>lim g</th><th>lim (f + g)</th><th>lim (f – g)</th><th>lim (f × g)</th><th>lim (f / g)</th></tr>
+      <tr><td>Cas 1</td><td>L₁</td><td>L₂</td><td>L₁ + L₂</td><td>L₁ – L₂</td><td>L₁ × L₂</td><td>L₁ / L₂ (L₂ ≠ 0)</td></tr>
+      <tr><td>Cas 2</td><td>L₁</td><td>+∞</td><td>+∞</td><td>–∞</td><td>±∞ (signe)</td><td>0</td></tr>
+      <tr><td>Cas 3</td><td>+∞</td><td>+∞</td><td>+∞</td><td>FI</td><td>+∞</td><td>FI</td></tr>
+      <tr><td>Cas 4</td><td>0</td><td>±∞</td><td>±∞</td><td>∓∞</td><td>FI</td><td>0</td></tr>
+    </table>
+    <p><strong>Formes indéterminées :</strong> ∞ – ∞, 0 × ∞, ∞/∞, 0/0, 1<sup>∞</sup> (cette dernière n'est pas au programme mais peut se ramener à exponentielle).</p>
+
+    <h3>1.3 Techniques de levée d'indétermination</h3>
+    <ul>
+      <li><strong>Factorisation :</strong> On met en facteur le terme de plus haut degré. Exemple : pour lim<sub>x→+∞</sub> (3x² – x + 1)/(x – 2), on factorise x² au numérateur et x au dénominateur.</li>
+      <li><strong>Quantité conjuguée :</strong> Pour les expressions avec des racines carrées. Exemple : (√(x+1) – 1)/x.</li>
+      <li><strong>Utilisation des limites de référence et croissances comparées.</strong></li>
+      <li><strong>Règle de l'Hôpital (hors programme) :</strong> non exigible, mais peut être évoquée.</li>
+    </ul>
+
+    <h3>1.4 Limites de référence</h3>
+    <table>
+      <tr><th>Fonction</th><th>Limite</th></tr>
+      <tr><td>lim<sub>x→0</sub> (sin x)/x = 1</td><td>lim<sub>x→0</sub> (1 – cos x)/x² = 1/2</td></tr>
+      <tr><td>lim<sub>x→+∞</sub> (ln x)/x<sup>α</sup> = 0 (α > 0)</td><td>lim<sub>x→0⁺</sub> x<sup>α</sup> ln x = 0 (α > 0)</td></tr>
+      <tr><td>lim<sub>x→+∞</sub> e<sup>x</sup>/x<sup>α</sup> = +∞ (α > 0)</td><td>lim<sub>x→–∞</sub> |x|<sup>α</sup> e<sup>x</sup> = 0</td></tr>
+    </table>
+
+    <h3>1.5 Théorèmes de comparaison</h3>
+    <p><strong>Théorème des gendarmes :</strong> Si pour x assez grand, u(x) ≤ f(x) ≤ v(x) et lim u = lim v = L (fini), alors lim f = L.<br>
+    <strong>Extension à l'infini :</strong> Si u(x) ≤ f(x) et lim u = +∞, alors lim f = +∞.<br>
+    <strong>Utilisation de la valeur absolue :</strong> Si |f(x) – L| ≤ g(x) et lim g(x) = 0, alors lim f(x) = L.</p>
+
+    <h3>1.6 Continuité</h3>
+    <p><strong>Définition :</strong> f est continue en a si lim<sub>x→a</sub> f(x) = f(a). Graphiquement, pas de saut. Les fonctions usuelles (polynômes, rationnelles, racines, trigonométriques, exponentielles, logarithmes) sont continues sur leur domaine de définition.</p>
+    <p><strong>Prolongement par continuité :</strong> Si f n'est pas définie en a mais admet une limite finie L, on peut la prolonger en posant g(a) = L.</p>
+
+    <h3>1.7 Théorème des valeurs intermédiaires (TVI)</h3>
+    <p><strong>Énoncé :</strong> Soit f continue sur un intervalle I, a, b dans I, a < b. Pour tout réel k compris entre f(a) et f(b), il existe au moins un c ∈ [a, b] tel que f(c) = k.<br>
+    <strong>Corollaire pour résolution d'équation :</strong> Si f(a) × f(b) < 0, alors l'équation f(x) = 0 admet au moins une solution dans ]a, b[.</p>
+    <p><strong>Méthode de dichotomie :</strong> On partage l'intervalle en deux et on conserve la moitié où f change de signe, jusqu'à la précision voulue.</p>
+
+    <div class="svg-container">
+      <svg width="500" height="300" viewBox="0 0 500 300">
+        <line x1="50" y1="250" x2="450" y2="250" stroke="black"/>
+        <line x1="70" y1="30" x2="70" y2="270" stroke="black"/>
+        <path d="M 60,200 Q 150,60 250,100 T 400,40" stroke="#2563eb" stroke-width="2" fill="none"/>
+        <!-- points a et b -->
+        <circle cx="120" cy="155" r="4" fill="red"/><text x="100" y="145" font-size="12">f(a)>0</text>
+        <circle cx="350" cy="120" r="4" fill="red"/><text x="355" y="115" font-size="12">f(b)<0</text>
+        <!-- intersection axe -->
+        <circle cx="220" cy="250" r="3" fill="green"/><text x="220" y="270" font-size="12">c (f(c)=0)</text>
+        <text x="250" y="295" font-size="13">Illustration du TVI</text>
+      </svg>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 1 :</strong> Déterminer lim<sub>x→+∞</sub> (√(x² + 3x) – x).</p>
+    </div>
+    <div class="correction">
+      <p>Forme ∞ – ∞. On utilise la quantité conjuguée :<br>
+      √(x² + 3x) – x = ( (x²+3x) – x² ) / (√(x²+3x) + x) = 3x / (√(x²+3x) + x).<br>
+      On factorise x : = 3 / (√(1 + 3/x) + 1). Quand x→+∞, √(1+3/x) → 1, donc la limite est 3/2.</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 2 :</strong> Montrer que l'équation e<sup>x</sup> + x – 2 = 0 admet une unique solution dans ℝ.</p>
+    </div>
+    <div class="correction">
+      <p>f(x)=e<sup>x</sup>+x–2 est strictement croissante (dérivée e<sup>x</sup>+1>0). f(0)= –1, f(1)=e–1>0. D'après le TVI, il existe un unique c∈]0,1[ tel que f(c)=0.</p>
+    </div>
+
+  </div>
+
+  <!-- CHAPITRE 2 : DÉRIVATION -->
+  <div class="chapter">
+    <h2>2. Dérivation</h2>
+    <p>La dérivée mesure la vitesse de variation d'une fonction. Elle permet de déterminer les tangentes, les variations, les extremums.</p>
+
+    <h3>2.1 Nombre dérivé et fonction dérivée</h3>
+    <p><strong>Définition :</strong> f est dérivable en a si la limite lim<sub>h→0</sub> (f(a+h) – f(a))/h existe et est finie. Cette limite est notée f '(a). Géométriquement, c'est le coefficient directeur de la tangente au point (a, f(a)).</p>
+    <p>La fonction dérivée f ' est définie là où la limite existe.</p>
+
+    <h3>2.2 Dérivées des fonctions usuelles</h3>
+    <table>
+      <tr><th>Fonction</th><th>Dérivée</th><th>Domaine de validité</th></tr>
+      <tr><td>k (constante)</td><td>0</td><td>ℝ</td></tr>
+      <tr><td>x</td><td>1</td><td>ℝ</td></tr>
+      <tr><td>x<sup>n</sup> (n∈ℚ)</td><td>n x<sup>n–1</sup></td><td>ℝ si n∈ℕ, ]0,+∞[ si n non entier</td></tr>
+      <tr><td>1/x</td><td>–1/x²</td><td>ℝ*</td></tr>
+      <tr><td>√x</td><td>1/(2√x)</td><td>]0,+∞[</td></tr>
+      <tr><td>sin x</td><td>cos x</td><td>ℝ</td></tr>
+      <tr><td>cos x</td><td>–sin x</td><td>ℝ</td></tr>
+      <tr><td>ln x</td><td>1/x</td><td>]0,+∞[</td></tr>
+      <tr><td>e<sup>x</sup></td><td>e<sup>x</sup></td><td>ℝ</td></tr>
+    </table>
+
+    <h3>2.3 Règles de dérivation</h3>
+    <ul>
+      <li>(u + v)' = u' + v'</li>
+      <li>(k u)' = k u'</li>
+      <li>(u v)' = u' v + u v'</li>
+      <li>(u/v)' = (u'v – u v') / v² (v non nulle)</li>
+      <li>(u<sup>n</sup>)' = n u' u<sup>n–1</sup></li>
+      <li>Fonction composée : (g ∘ f)'(x) = g'(f(x)) × f'(x)</li>
+    </ul>
+    <p><strong>Exemple de composée :</strong> f(x) = e<sup>2x+1</sup>, f '(x) = 2 e<sup>2x+1</sup>. Ou f(x) = ln(3x+1), f '(x) = 3/(3x+1).</p>
+
+    <h3>2.4 Équation de la tangente</h3>
+    <p>Tangente au point d'abscisse a : y = f '(a)(x – a) + f(a).</p>
+    <div class="svg-container">
+      <svg width="400" height="250" viewBox="0 0 400 250">
+        <line x1="40" y1="200" x2="380" y2="200" stroke="black"/>
+        <line x1="60" y1="20" x2="60" y2="220" stroke="black"/>
+        <path d="M 60,180 Q 150,70 300,110 T 380,140" stroke="#2563eb" stroke-width="2" fill="none"/>
+        <circle cx="180" cy="120" r="4" fill="red"/>
+        <line x1="90" y1="180" x2="270" y2="80" stroke="red" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="200" y="105" font-size="12" fill="red">Tangente</text>
+        <text x="180" y="135" font-size="11">(a, f(a))</text>
+      </svg>
+    </div>
+
+    <h3>2.5 Lien entre signe de la dérivée et variations</h3>
+    <p>Si f '(x) ≥ 0 sur un intervalle, f est croissante ; si f '(x) ≤ 0, f est décroissante. Si f ' s'annule en changeant de signe, on a un extremum local.</p>
+    <p><strong>Tableau de variations :</strong> on étudie le signe de f ' et on en déduit les flèches.</p>
+
+    <h3>2.6 Théorèmes de Rolle et des accroissements finis</h3>
+    <p><strong>Rolle :</strong> f continue sur [a,b], dérivable sur ]a,b[, f(a)=f(b) ⇒ ∃ c∈]a,b[ avec f '(c)=0.</p>
+    <p><strong>Accroissements finis :</strong> ∃ c∈]a,b[ tel que f(b) – f(a) = f '(c) (b – a).</p>
+
+    <h3>2.7 Dérivées successives</h3>
+    <p>On peut dériver plusieurs fois : f '', f '''… La dérivée seconde donne des informations sur la convexité. Si f ''(x) ≥ 0, la fonction est convexe (sa courbe est au-dessus de ses tangentes).</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 3 :</strong> Soit f(x) = (x²+1)/(x–1). Déterminer le domaine, f '(x), et les variations.</p>
+    </div>
+    <div class="correction">
+      <p>Domaine : ℝ \ {1}. f '(x) = [2x(x–1) – (x²+1)]/(x–1)² = (x² – 2x – 1)/(x–1)². Signe : le dénominateur >0, le numérateur a pour racines 1±√2. Tableau : croissante sur ]–∞, 1–√2] et [1+√2,+∞[, décroissante sur [1–√2,1[ et ]1,1+√2].</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 4 :</strong> Montrer que pour tout x > –1, ln(1+x) ≤ x.</p>
+    </div>
+    <div class="correction">
+      <p>Soit g(x) = ln(1+x) – x. g'(x) = 1/(1+x) – 1 = –x/(1+x). Sur ]–1,0[, g' >0 ; sur ]0,+∞[, g' <0. g admet un maximum en 0 : g(0)=0, donc g(x) ≤ 0 pour tout x, d'où l'inégalité.</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 5 :</strong> Application économique (si taux d'accroissement). Mais on peut proposer un exercice sur la tangente : Déterminer les points de la courbe y = x³ – 3x où la tangente est horizontale.</p>
+    </div>
+    <div class="correction">
+      <p>Tangente horizontale ⇔ f '(x)=0. f '(x)=3x²–3=3(x–1)(x+1). Donc x = –1 et x = 1. Points : (–1, 2) et (1, –2).</p>
+    </div>
+  </div>
+
+  <!-- CHAPITRE 3 : LOGARITHME NÉPÉRIEN ET EXPONENTIELLE -->
+  <div class="chapter">
+    <h2>3. Fonction logarithme népérien et exponentielle</h2>
+    <p>Le logarithme népérien et l'exponentielle sont deux fonctions réciproques fondamentales. Elles apparaissent dans les modèles de croissance, décroissance, et dans la résolution d'équations.</p>
+
+    <h3>3.1 Logarithme népérien (ln)</h3>
+    <p><strong>Définition :</strong> La fonction ln est l'unique primitive de x ↦ 1/x sur ]0,+∞[ qui s'annule en 1. Elle est strictement croissante, continue, dérivable, ln'(x) = 1/x. ln 1 = 0, ln e = 1.</p>
+    <p><strong>Propriétés algébriques :</strong> Pour a, b > 0, ln(ab) = ln a + ln b, ln(a/b) = ln a – ln b, ln(a<sup>n</sup>) = n ln a (n réel).</p>
+
+    <h4>3.1.1 Limites et croissance comparée</h4>
+    <ul>
+      <li>lim<sub>x→0⁺</sub> ln x = –∞, lim<sub>x→+∞</sub> ln x = +∞</li>
+      <li>lim<sub>x→+∞</sub> (ln x)/x<sup>α</sup> = 0 (α > 0) : « les puissances l'emportent sur le logarithme ».</li>
+      <li>lim<sub>x→0⁺</sub> x<sup>α</sup> ln x = 0.</li>
+    </ul>
+
+    <h4>3.1.2 Représentation graphique</h4>
+    <div class="svg-container">
+      <svg width="350" height="250" viewBox="0 0 350 250">
+        <line x1="50" y1="200" x2="320" y2="200" stroke="black"/>
+        <line x1="70" y1="30" x2="70" y2="240" stroke="black"/>
+        <path d="M 70,190 Q 110,170 170,120 Q 220,80 320,30" stroke="#16a34a" stroke-width="2" fill="none"/>
+        <text x="280" y="40" font-size="12" fill="#16a34a">y = ln x</text>
+        <circle cx="170" cy="120" r="3" fill="red"/><text x="175" y="115" font-size="10">(e,1)</text>
+      </svg>
+    </div>
+
+    <h3>3.2 Fonction exponentielle (e<sup>x</sup>)</h3>
+    <p><strong>Définition :</strong> La fonction exponentielle est la réciproque de ln : pour tout x réel, y = e<sup>x</sup> ⇔ x = ln y (y>0). Elle est strictement croissante, dérivable, (e<sup>x</sup>)' = e<sup>x</sup>. e<sup>0</sup> = 1.</p>
+    <p><strong>Propriétés :</strong> e<sup>a+b</sup> = e<sup>a</sup> e<sup>b</sup>, e<sup>a–b</sup> = e<sup>a</sup>/e<sup>b</sup>, (e<sup>a</sup>)<sup>n</sup> = e<sup>na</sup>, e<sup>ln x</sup> = x, ln(e<sup>x</sup>) = x.</p>
+
+    <h4>3.2.1 Limites et croissance comparée</h4>
+    <ul>
+      <li>lim<sub>x→+∞</sub> e<sup>x</sup> = +∞, lim<sub>x→–∞</sub> e<sup>x</sup> = 0</li>
+      <li>lim<sub>x→+∞</sub> e<sup>x</sup>/x<sup>α</sup> = +∞ (α > 0) : « l'exponentielle l'emporte sur les puissances ».</li>
+      <li>lim<sub>x→–∞</sub> |x|<sup>α</sup> e<sup>x</sup> = 0.</li>
+    </ul>
+
+    <h4>3.2.2 Courbe</h4>
+    <div class="svg-container">
+      <svg width="350" height="250" viewBox="0 0 350 250">
+        <line x1="50" y1="200" x2="320" y2="200" stroke="black"/>
+        <line x1="70" y1="30" x2="70" y2="240" stroke="black"/>
+        <path d="M 70,220 Q 100,210 150,160 Q 200,100 280,40" stroke="#dc2626" stroke-width="2" fill="none"/>
+        <text x="240" y="50" font-size="12" fill="#dc2626">y = e<sup>x</sup></text>
+        <circle cx="140" cy="180" r="3" fill="red"/><text x="110" y="175" font-size="10">(0,1)</text>
+      </svg>
+    </div>
+
+    <h3>3.3 Résolution d'équations et inéquations</h3>
+    <p>Utiliser la bijectivité : ln A = ln B ⇔ A = B (A,B>0) ; e<sup>A</sup> = e<sup>B</sup> ⇔ A = B. Inéquations : ln A < ln B ⇔ A < B ; e<sup>A</sup> < e<sup>B</sup> ⇔ A < B.</p>
+
+    <div class="exercice">
+      <p><strong>Exercice 6 :</strong> Résoudre e<sup>2x</sup> – 3 e<sup>x</sup> – 4 = 0.</p>
+    </div>
+    <div class="correction">
+      <p>Poser X = e<sup>x</sup> > 0. X² – 3X – 4 = 0 → X = 4 ou X = –1 (rejeté). Donc e<sup>x</sup> = 4 → x = ln 4 = 2 ln 2.</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 7 :</strong> Étudier la fonction f(x) = x ln x – x et dresser son tableau de variations.</p>
+    </div>
+    <div class="correction">
+      <p>Domaine ]0,+∞[. f '(x) = ln x + 1 – 1 = ln x. f '(x) = 0 pour x=1. f ' négative sur ]0,1[, positive sur ]1,+∞[. f décroît puis croît. Minimum f(1) = –1. Limites : en 0⁺, f(x) → 0 (car x ln x →0) ; en +∞, f(x) → +∞.</p>
+    </div>
+
+    <div class="exercice">
+      <p><strong>Exercice 8 :</strong> Déterminer les limites aux bornes de f(x) = ln(x+1) / x.</p>
+    </div>
+    <div class="correction">
+      <p>Domaine ]–1,0[∪]0,+∞[. En 0, forme 0/0 : on reconnaît le nombre dérivé de ln(1+x) en 0, limite = 1. En –1⁺, ln(0⁺)= –∞, donc limite –∞. En +∞, par croissance comparée, (ln x)/x →0, donc ici pareil : 0.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

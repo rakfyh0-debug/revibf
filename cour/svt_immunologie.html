@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immunologie – SVT Terminale D | RéviBF</title>
+  <style>
+    :root {
+      --bg: #faf8f8; --card: #ffffff; --text: #1c1c1c;
+      --accent: #b71c1c; --border: #ef9a9a; --shadow: 0 6px 18px rgba(0,0,0,0.05);
+      --radius: 14px; --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); font-family: var(--font); color: var(--text); line-height: 1.7; padding: 2rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+    .main-header {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2rem 2rem; border-left: 6px solid var(--accent); text-align: center;
+    }
+    .main-header h1 { font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+    .main-header .sub { font-size: 1.05rem; color: #5e3a3a; }
+    .section-card {
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2rem 2rem; border-top: 4px solid var(--accent);
+    }
+    .section-card h2 { font-size: 1.7rem; color: #7f0000; margin-bottom: 1.4rem; border-bottom: 2px dashed var(--border); padding-bottom: 0.6rem; }
+    .section-card h3 { font-size: 1.3rem; color: #9b2c2c; margin: 1.5rem 0 0.8rem; font-weight: 600; }
+    .section-card h4 { font-size: 1.1rem; color: #b34343; margin: 1rem 0 0.5rem; font-style: italic; }
+    p { margin-bottom: 1rem; text-align: justify; }
+    ul, ol { margin: 0.8rem 0 1.2rem 1.8rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: #b71c1c; font-weight: 700; }
+    .highlight { background: #ffebee; padding: 0.8rem 1.2rem; border-radius: 8px; border-left: 5px solid var(--accent); margin: 1.2rem 0; }
+    .svg-container { text-align: center; margin: 1.5rem 0; }
+    svg { max-width: 100%; height: auto; }
+    .definition-box { background: #fce4ec; border: 1px solid #ef9a9a; border-radius: 10px; padding: 1rem 1.5rem; margin: 1.2rem 0; }
+    .definition-box .term { font-weight: 700; color: #7f0000; }
+    .exercises { margin-top: 2rem; background: #fff5f5; border-radius: 14px; padding: 1.8rem 2rem; border: 1px solid #ef9a9a; }
+    .exercises h3 { margin-top: 0; color: #9b2c2c; font-size: 1.4rem; }
+    details { margin: 1rem 0 0.5rem; background: #fff; border: 1px solid #ef9a9a; border-radius: 10px; padding: 0.7rem 1.2rem; }
+    details[open] { background: #fffafa; border-color: #d32f2f; }
+    summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.4rem; color: #9b2c2c; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; font-size: 1.2rem; color: var(--accent); }
+    details[open] summary::before { content: "▾"; }
+    .correction { margin-top: 0.8rem; padding: 1rem; background: #ffebee; border-radius: 8px; border-left: 4px solid var(--accent); }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ef9a9a; padding: 0.5rem; text-align: center; }
+    th { background: #ffcdd2; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="main-header">
+    <h1>Immunologie</h1>
+    <div class="sub">Fiche exhaustive – Terminale D Burkina Faso</div>
+  </header>
+
+  <section class="section-card">
+    <h2>Introduction</h2>
+    <p>L’immunologie étudie les mécanismes de défense de l’organisme contre les agents pathogènes (virus, bactéries, parasites) et les cellules tumorales. Elle repose sur la distinction entre <strong>soi</strong> (molécules propres) et <strong>non-soi</strong> (molécules étrangères). Deux types de réponses coopèrent : l’immunité innée (rapide, non spécifique) et l’immunité adaptative (spécifique, mémoire). Le <strong>VIH</strong>, en ciblant les lymphocytes T CD4, illustre l’effondrement de ces défenses.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>I. Le soi et le non-soi</h2>
+    <h3>1.1 Marqueurs du soi</h3>
+    <p>Les cellules de l’organisme portent à leur surface des molécules du <strong>Complexe Majeur d’Histocompatibilité (CMH)</strong>. Chez l’Homme, on parle de <strong>HLA</strong> (Human Leukocyte Antigen). Les molécules de <strong>classe I</strong> sont présentes sur toutes les cellules nucléées et présentent des peptides endogènes aux lymphocytes T CD8. Les molécules de <strong>classe II</strong> sont restreintes aux cellules présentatrices d’antigènes (CPA) et activent les lymphocytes T CD4.</p>
+    <p>Le soi est défini pendant la vie fœtale par une sélection clonale qui élimine les lymphocytes reconnaissant des antigènes du soi (tolérance centrale).</p>
+    <h3>1.2 Antigènes et immunogénicité</h3>
+    <p>Un <strong>antigène</strong> est une molécule capable d’induire une réponse immunitaire. Une partie de l’antigène, l’<strong>épitope</strong> (ou déterminant antigénique), est reconnue par les récepteurs des lymphocytes. Les antigènes peuvent être solubles (toxines) ou particulaires (bactéries).</p>
+  </section>
+
+  <section class="section-card">
+    <h2>II. Organes et cellules de l'immunité</h2>
+    <h3>2.1 Organes lymphoïdes</h3>
+    <p><strong>Organes centraux (primaires)</strong> : moelle osseuse (production des cellules souches hématopoïétiques, maturation des lymphocytes B) et thymus (maturation des lymphocytes T).</p>
+    <p><strong>Organes périphériques (secondaires)</strong> : ganglions lymphatiques, rate, amygdales, plaques de Peyer. Lieux de rencontre antigène-lymphocyte et d’activation.</p>
+    <h3>2.2 Principales cellules immunitaires</h3>
+    <ul>
+      <li><strong>Phagocytes</strong> (macrophages, polynucléaires neutrophiles) : immunité innée, phagocytose, présentation antigénique.</li>
+      <li><strong>Lymphocytes B</strong> : immunité humorale (anticorps).</li>
+      <li><strong>Lymphocytes T</strong> : T CD4 auxiliaires (helper), T CD8 cytotoxiques.</li>
+      <li><strong>Cellules dendritiques</strong> : sentinelles, capturent les antigènes et activent les lymphocytes T naïfs.</li>
+      <li><strong>Cellules NK</strong> : lymphocytes non spécifiques, destruction des cellules anormales.</li>
+    </ul>
+    <div class="svg-container">
+      <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+        <text x="250" y="25" text-anchor="middle" font-weight="bold" fill="#b71c1c">Lignées hématopoïétiques</text>
+        <!-- Cellule souche -->
+        <ellipse cx="250" cy="60" rx="60" ry="25" fill="#ffcdd2" stroke="#b71c1c"/>
+        <text x="250" y="65" text-anchor="middle" font-size="11">Cellule souche hématopoïétique</text>
+        <!-- Branches -->
+        <line x1="210" y1="85" x2="120" y2="140" stroke="#333"/>
+        <line x1="250" y1="85" x2="200" y2="140" stroke="#333"/>
+        <line x1="290" y1="85" x2="380" y2="140" stroke="#333"/>
+        <!-- Progéniteur lymphoïde -->
+        <rect x="60" y="140" width="120" height="30" fill="#f48fb1" stroke="#ad1457"/><text x="120" y="160" text-anchor="middle" font-size="10">Prog. lymphoïde</text>
+        <!-- Progéniteur myéloïde -->
+        <rect x="140" y="140" width="120" height="30" fill="#ce93d8" stroke="#6a1b9a"/><text x="200" y="160" text-anchor="middle" font-size="10">Prog. myéloïde</text>
+        <!-- Progéniteur érythrocytaire -->
+        <rect x="320" y="140" width="120" height="30" fill="#ef9a9a" stroke="#c62828"/><text x="380" y="160" text-anchor="middle" font-size="10">Prog. érythroïde</text>
+        <!-- Descendants -->
+        <line x1="120" y1="170" x2="80" y2="220" stroke="#333"/><text x="60" y="215" font-size="9">LB</text>
+        <line x1="120" y1="170" x2="160" y2="220" stroke="#333"/><text x="150" y="215" font-size="9">LT</text>
+        <line x1="200" y1="170" x2="180" y2="220" stroke="#333"/><text x="170" y="215" font-size="9">Monocyte</text>
+        <line x1="200" y1="170" x2="230" y2="220" stroke="#333"/><text x="220" y="215" font-size="9">Granulocyte</text>
+        <line x1="380" y1="170" x2="380" y2="220" stroke="#333"/><text x="370" y="215" font-size="9">Hématie</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>III. Réponse immunitaire innée</h2>
+    <h3>3.1 Barrières physiques et chimiques</h3>
+    <p>Peau (kératine, pH acide), muqueuses (mucus, lysozyme), flore commensale.</p>
+    <h3>3.2 Réaction inflammatoire</h3>
+    <p>Libération de médiateurs (histamine, prostaglandines) → vasodilatation, œdème, chaleur, douleur. Afflux de phagocytes.</p>
+    <h3>3.3 Phagocytose</h3>
+    <div class="svg-container">
+      <svg viewBox="0 0 650 280" xmlns="http://www.w3.org/2000/svg">
+        <text x="325" y="25" text-anchor="middle" font-weight="bold" fill="#b71c1c">Étapes de la phagocytose</text>
+        <!-- Bactérie -->
+        <ellipse cx="100" cy="130" rx="30" ry="15" fill="#aed581" stroke="#33691e"/>
+        <text x="100" y="165" text-anchor="middle" font-size="10">Bactérie</text>
+        <!-- Macrophage -->
+        <path d="M 300 100 Q 330 80 360 100 Q 380 130 360 160 Q 330 180 300 160 Q 280 130 300 100" fill="#ffcdd2" stroke="#b71c1c"/>
+        <text x="330" y="135" text-anchor="middle" font-size="10">Macrophage</text>
+        <!-- Flèche adhésion -->
+        <line x1="130" y1="130" x2="280" y2="130" stroke="#d32f2f" marker-end="url(#phag)"/><text x="205" y="125" font-size="9">Adhésion</text>
+        <!-- Phagosome -->
+        <circle cx="450" cy="100" r="25" fill="#ffcdd2" stroke="#b71c1c"/><circle cx="445" cy="95" r="12" fill="#aed581"/><text x="450" y="145" text-anchor="middle" font-size="9">Phagosome</text>
+        <!-- Phagolysosome -->
+        <circle cx="550" cy="160" r="25" fill="#ffcdd2" stroke="#b71c1c"/><circle cx="545" cy="155" r="12" fill="#e0e0e0"/><text x="550" y="205" text-anchor="middle" font-size="9">Phagolysosome</text>
+        <line x1="475" y1="110" x2="525" y2="150" stroke="#333" marker-end="url(#phag)"/>
+        <defs><marker id="phag" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"><path d="M0,0 L10,5 L0,10 z" fill="#d32f2f"/></marker></defs>
+      </svg>
+    </div>
+    <p>Après adhésion, la bactérie est internalisée dans un <strong>phagosome</strong> qui fusionne avec un lysosome (phagolysosome). Les enzymes lysosomales et les radicaux oxygénés détruisent le pathogène.</p>
+    <h3>3.4 Système du complément</h3>
+    <p>Ensemble de protéines plasmatiques activées en cascade, aboutissant à la lyse de la cible (complexe d'attaque membranaire) et à l'opsonisation (facilite la phagocytose).</p>
+  </section>
+
+  <section class="section-card">
+    <h2>IV. Réponse immunitaire adaptative</h2>
+    <h3>4.1 Caractéristiques</h3>
+    <p>Spécificité (reconnaissance d'un antigène), diversité, mémoire, tolérance au soi.</p>
+    <h3>4.2 Réponse humorale (anticorps)</h3>
+    <p>Les lymphocytes B activés se différencient en <strong>plasmocytes</strong> sécrétant des <strong>anticorps</strong> (immunoglobulines). Structure en Y : 2 chaînes lourdes, 2 chaînes légères, région variable (Fab) liant l'antigène, région constante (Fc).</p>
+    <div class="svg-container">
+      <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
+        <text x="150" y="25" text-anchor="middle" font-weight="bold" fill="#b71c1c">Anticorps (IgG)</text>
+        <!-- Chaîne lourde -->
+        <path d="M 100 60 L 100 180 Q 100 200 80 200 Q 60 200 60 180 L 60 120" fill="none" stroke="#1976d2" stroke-width="5"/>
+        <path d="M 200 60 L 200 180 Q 200 200 220 200 Q 240 200 240 180 L 240 120" fill="none" stroke="#1976d2" stroke-width="5"/>
+        <!-- Chaîne légère -->
+        <path d="M 100 60 L 120 60 Q 130 60 130 75 L 130 130" fill="none" stroke="#388e3c" stroke-width="4"/>
+        <path d="M 200 60 L 180 60 Q 170 60 170 75 L 170 130" fill="none" stroke="#388e3c" stroke-width="4"/>
+        <!-- Régions -->
+        <text x="80" y="100" font-size="9" fill="#1976d2">Région Fab</text>
+        <text x="190" y="100" font-size="9" fill="#1976d2">Fab</text>
+        <text x="130" y="210" font-size="9" fill="#1976d2">Région Fc</text>
+        <text x="100" y="240" font-size="9" fill="#388e3c">Chaîne légère</text>
+        <text x="190" y="240" font-size="9" fill="#1976d2">Chaîne lourde</text>
+      </svg>
+    </div>
+    <p>Les anticorps neutralisent les toxines, agglutinent les pathogènes, activent le complément et facilitent la phagocytose (opsonisation).</p>
+    <h3>4.3 Réponse cellulaire (LT CD8)</h3>
+    <p>Les LT CD8 cytotoxiques reconnaissent une cellule infectée via le CMH I présentant un peptide viral. Ils induisent l'<strong>apoptose</strong> (perforine, granzymes) ou la lyse.</p>
+    <h3>4.4 Coopération cellulaire</h3>
+    <p>Les CPA (macrophages, dendritiques) phagocytent, apprêtent l'antigène et le présentent via le CMH II aux LT CD4. Les LT CD4 activés sécrètent des interleukines (IL-2) qui stimulent la prolifération des LB et des LT CD8.</p>
+    <div class="svg-container">
+      <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+        <text x="300" y="25" text-anchor="middle" font-weight="bold" fill="#b71c1c">Coopération cellulaire</text>
+        <!-- CPA -->
+        <rect x="60" y="80" width="100" height="50" fill="#ce93d8" stroke="#6a1b9a"/><text x="110" y="110" text-anchor="middle">CPA (CMH II)</text>
+        <!-- LT CD4 -->
+        <rect x="250" y="80" width="100" height="50" fill="#90caf9" stroke="#1565c0"/><text x="300" y="110" text-anchor="middle">LT CD4</text>
+        <!-- LT CD8 -->
+        <rect x="440" y="40" width="100" height="50" fill="#a5d6a7" stroke="#2e7d32"/><text x="490" y="70" text-anchor="middle">LT CD8</text>
+        <!-- LB -->
+        <rect x="440" y="160" width="100" height="50" fill="#fff176" stroke="#f9a825"/><text x="490" y="190" text-anchor="middle">LB</text>
+        <!-- Flèches -->
+        <line x1="160" y1="105" x2="240" y2="105" stroke="#333" marker-end="url(#arrC)"/>
+        <text x="200" y="100" font-size="9">Activation</text>
+        <line x1="350" y1="105" x2="430" y2="65" stroke="#333" marker-end="url(#arrC)"/>
+        <text x="390" y="80" font-size="9">IL-2</text>
+        <line x1="350" y1="105" x2="430" y2="185" stroke="#333" marker-end="url(#arrC)"/>
+        <text x="390" y="150" font-size="9">IL-2</text>
+        <defs><marker id="arrC" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>
+      </svg>
+    </div>
+    <h3>4.5 Mémoire immunitaire</h3>
+    <p>Lors du premier contact, la réponse primaire est lente et faible. Des <strong>cellules mémoire</strong> (LB et LT) persistent. Lors du second contact, la réponse secondaire est plus rapide, plus intense et protectrice (base de la vaccination).</p>
+  </section>
+
+  <section class="section-card">
+    <h2>V. VIH / SIDA</h2>
+    <h3>5.1 Structure du VIH</h3>
+    <p>Virus enveloppé à ARN. Glycoprotéines de surface <strong>gp120</strong> et <strong>gp41</strong>. Capside conique contenant deux copies d'ARN, transcriptase inverse, intégrase, protéase.</p>
+    <div class="svg-container">
+      <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+        <text x="200" y="25" text-anchor="middle" font-weight="bold" fill="#b71c1c">Structure du VIH</text>
+        <circle cx="200" cy="140" r="80" fill="none" stroke="#d32f2f" stroke-width="2"/>
+        <circle cx="200" cy="140" r="70" fill="#ffcdd2" stroke="#d32f2f"/>
+        <!-- gp120 -->
+        <circle cx="200" cy="60" r="8" fill="#e91e63"/><text x="215" y="60" font-size="8">gp120</text>
+        <circle cx="260" cy="80" r="8" fill="#e91e63"/><text x="270" y="80" font-size="8">gp120</text>
+        <circle cx="140" cy="80" r="8" fill="#e91e63"/><text x="120" y="80" font-size="8">gp120</text>
+        <!-- Capside -->
+        <polygon points="170,110 230,110 250,170 150,170" fill="#ef9a9a" stroke="#c62828"/>
+        <text x="200" y="145" text-anchor="middle" font-size="9">Capside</text>
+        <!-- ARN -->
+        <line x1="190" y1="130" x2="180" y2="150" stroke="#1a237e" stroke-width="2"/><line x1="210" y1="130" x2="220" y2="150" stroke="#1a237e" stroke-width="2"/>
+        <text x="200" y="165" font-size="8">ARN</text>
+        <!-- Transcriptase inverse -->
+        <circle cx="175" cy="155" r="5" fill="#ffa726"/><text x="165" y="170" font-size="7">TI</text>
+      </svg>
+    </div>
+    <h3>5.2 Cycle viral</h3>
+    <ol>
+      <li><strong>Fixation</strong> de gp120 au récepteur CD4 et corécepteur CCR5/CXCR4.</li>
+      <li><strong>Fusion</strong> des membranes et entrée de la capside.</li>
+      <li><strong>Transcription inverse</strong> : ARN viral → ADN proviral.</li>
+      <li><strong>Intégration</strong> de l'ADN proviral dans le génome de la cellule hôte (intégrase).</li>
+      <li><strong>Réplication</strong> et production de nouvelles particules virales.</li>
+    </ol>
+    <h3>5.3 Évolution de l'infection</h3>
+    <p><strong>Phase aiguë</strong> : forte charge virale, baisse transitoire des LT CD4. <strong>Phase chronique asymptomatique</strong> : équilibre entre destruction et régénération des LT CD4. <strong>Phase SIDA</strong> : LT CD4 &lt; 200/µL, infections opportunistes.</p>
+    <div class="svg-container">
+      <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+        <text x="300" y="20" text-anchor="middle" font-weight="bold" fill="#b71c1c">Évolution de l'infection VIH</text>
+        <line x1="60" y1="200" x2="560" y2="200" stroke="#333"/><text x="580" y="205" font-size="9">Temps</text>
+        <line x1="60" y1="40" x2="60" y2="200" stroke="#333"/><text x="30" y="120" font-size="9" transform="rotate(-90 30,120)">Cellules / Charge virale</text>
+        <!-- Courbe LT CD4 -->
+        <polyline points="60,70 150,60 250,100 400,110 520,180" fill="none" stroke="#2e7d32" stroke-width="2"/>
+        <text x="520" y="175" font-size="9" fill="#2e7d32">LT CD4</text>
+        <!-- Courbe charge virale -->
+        <polyline points="60,190 80,170 120,100 180,150 250,170 350,165 450,175 500,150 540,180" fill="none" stroke="#d32f2f" stroke-width="2"/>
+        <text x="500" y="145" font-size="9" fill="#d32f2f">Charge virale</text>
+        <!-- Phases -->
+        <text x="120" y="230" font-size="9">Primo-infection</text>
+        <text x="300" y="230" font-size="9">Phase asymptomatique</text>
+        <text x="480" y="230" font-size="9">SIDA</text>
+      </svg>
+    </div>
+    <h3>5.4 Prévention et traitement</h3>
+    <p><strong>Prévention</strong> : préservatif, dépistage, traitement des mères séropositives, PrEP. <strong>Traitement</strong> : multithérapie antirétrovirale (inhibiteurs de transcriptase inverse, intégrase, protéase). Pas de vaccin efficace à ce jour.</p>
+  </section>
+
+  <section class="section-card">
+    <h2>Définitions clés</h2>
+    <div class="definition-box">
+      <p><span class="term">Antigène</span> : molécule étrangère capable d'induire une réponse immunitaire.</p>
+      <p><span class="term">Épitope</span> : partie de l'antigène reconnue par un anticorps ou un récepteur T.</p>
+      <p><span class="term">CMH</span> : Complexe Majeur d'Histocompatibilité, molécules présentatrices d'antigènes.</p>
+      <p><span class="term">Cytotoxicité</span> : capacité d'un LT CD8 à tuer une cellule cible.</p>
+      <p><span class="term">Opsonisation</span> : fixation d'anticorps ou du complément facilitant la phagocytose.</p>
+      <p><span class="term">Plasmocyte</span> : lymphocyte B activé sécrétant des anticorps.</p>
+      <p><span class="term">SIDA</span> : syndrome d'immunodéficience acquise, stade ultime de l'infection par le VIH.</p>
+    </div>
+  </section>
+
+  <section class="section-card exercises">
+    <h3>Exercices</h3>
+    <details>
+      <summary>1. Décrivez le rôle des lymphocytes T CD4 dans la réponse adaptative.</summary>
+      <div class="correction">
+        <p>Les LT CD4, activés par la présentation antigénique via CMH II, sécrètent des cytokines (IL-2) qui activent la prolifération et la différenciation des LB en plasmocytes et des LT CD8 en cytotoxiques. Ils orchestrent la réponse immunitaire.</p>
+      </div>
+    </details>
+    <details>
+      <summary>2. Pourquoi la réponse secondaire à un antigène est-elle plus rapide et plus intense ?</summary>
+      <div class="correction">
+        <p>Grâce aux cellules mémoire (LB et LT) générées lors de la réponse primaire. Elles sont plus nombreuses et déjà adaptées, permettant une activation immédiate et une production massive d'anticorps.</p>
+      </div>
+    </details>
+    <details>
+      <summary>3. Comment le VIH échappe-t-il au système immunitaire ?</summary>
+      <div class="correction">
+        <p>Le VIH mute rapidement (variabilité antigénique), infecte les LT CD4 eux-mêmes (affaiblissant la réponse), et peut rester latent dans des cellules réservoirs.</p>
+      </div>
+    </details>
+  </section>
+</div>
+</body>
+</html>

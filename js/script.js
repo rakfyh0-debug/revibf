@@ -12,71 +12,7 @@ const SERIES_BAC = [
   { lettre:'D',  nom:'Sciences de la Vie',             couleur:'#1B6B3A' },
 ];
 
-const DETAIL_SERIES = {
-  A4: {
-    description: 'Serie axee sur les humanites, la philosophie et les langues. Ideale pour les eleves passionnes de litterature, d\'histoire et de reflexion.',
-    principales: [
-      { nom:'Philosophie',          coeff:4 },
-      { nom:'Francais',             coeff:4 },
-      { nom:'Histoire-Geographie',  coeff:3 },
-      { nom:'Anglais (LV1)',        coeff:3 },
-      { nom:'Langue vivante 2',     coeff:2 },
-    ],
-    secondaires: [
-      { nom:'Mathematiques', coeff:2 },
-      { nom:'SVT',           coeff:1 },
-      { nom:'EPS',           coeff:1 },
-    ],
-    programme: [
-      { matiere:'Philosophie', chapitres:['La conscience et l\'inconscient','La liberte et le determinisme','L\'Etat et le pouvoir politique','La morale et le devoir','Le bonheur et le sens de la vie','La verite et la science'] },
-      { matiere:'Francais', chapitres:['Le commentaire de texte litteraire','La dissertation litteraire','Les mouvements litteraires (Romantisme, Realisme, Negritude)','L\'argumentation et les figures de style','L\'analyse de l\'image et du discours'] },
-      { matiere:'Histoire-Geographie', chapitres:['Les grandes puissances mondiales','La decolonisation de l\'Afrique','Les organisations internationales (ONU, UA)','La mondialisation et ses enjeux','Le Burkina Faso dans le contexte regional'] },
-      { matiere:'Anglais', chapitres:['Grammar: tenses and modal verbs','Reading comprehension','Essay writing','Civilisation des pays anglophones'] },
-    ],
-    debouches: 'Droit, Lettres, Sciences politiques, Journalisme, Diplomatie, Enseignement, Sciences humaines.'
-  },
-  D: {
-    description: 'Serie axee sur les sciences de la nature et de la vie. Recommandee pour les eleves visant la medecine, la biologie ou l\'agronomie.',
-    principales: [
-      { nom:'SVT',            coeff:5 },
-      { nom:'Mathematiques',  coeff:4 },
-      { nom:'Physique-Chimie',coeff:4 },
-      { nom:'Francais',       coeff:3 },
-    ],
-    secondaires: [
-      { nom:'Anglais',      coeff:2 },
-      { nom:'Histoire-Geo', coeff:2 },
-      { nom:'Philosophie',  coeff:2 },
-      { nom:'EPS',          coeff:1 },
-    ],
-    programme: [
-      { matiere:'SVT', chapitres:['La genetique et l\'heredite','Le systeme nerveux et hormonal','La reproduction humaine','L\'ecologie et les ecosystemes','L\'immunologie et les defenses de l\'organisme','L\'evolution des especes'] },
-      { matiere:'Mathematiques', chapitres:['Les fonctions numeriques et leurs derivees','Les suites numeriques','Les probabilites et statistiques','La geometrie dans l\'espace','Les equations differentielles simples'] },
-      { matiere:'Physique-Chimie', chapitres:['La mecanique du point','L\'electricite et les circuits','Les reactions acide-base','La chimie organique de base','L\'optique geometrique'] },
-      { matiere:'Francais', chapitres:['Le commentaire de texte','La dissertation','Les textes argumentatifs scientifiques'] },
-    ],
-    debouches: 'Medecine, Pharmacie, Biologie, Agronomie, Sciences infirmieres, Veterinaire, Recherche scientifique.'
-  }
-};
 
-const CONSEILS_SERIES = {
-  A4: [
-    'Lis regulierement des oeuvres litteraires africaines et classiques pour enrichir ta culture generale.',
-    'Entraine-toi a la dissertation philosophique chaque semaine, meme sur des sujets simples.',
-    'Apprends par coeur 10 a 15 citations de philosophes pour illustrer tes copies.',
-    'Travaille ton expression ecrite : la qualite du francais compte beaucoup dans cette serie.',
-    'Ne neglige pas les Mathematiques et la SVT : elles ont un coefficient plus faible mais peuvent faire la difference.',
-    'Suis l\'actualite internationale pour le Histoire-Geographie et la culture generale.'
-  ],
-  D: [
-    'Maitrise parfaitement les formules de Mathematiques et de Physique-Chimie : elles reviennent souvent.',
-    'Fais des fiches de SVT par chapitre avec des schemas annotes.',
-    'Entraine-toi sur les sujets des 3 dernieres annees en conditions chronometrees.',
-    'Travaille la methode de resolution de problemes : presentation claire, etapes logiques.',
-    'Le Francais a un coefficient non negligeable : ne le delaisse pas au profit des sciences.',
-    'Revise tes bases de chimie organique, souvent source d\'erreurs au Bac.'
-  ]
-};
 
 const ANNALES_BEPC = [
   {annee:'2023', matiere:'Mathématiques',   sujet:'Sujet officiel BEPC 2023 — Maths',    difficulte:'Moyen'   },
@@ -449,9 +385,6 @@ function rendrePage() {
     case 'corriges-bepc': setBreadcrumb('Accueil › BEPC › Corrigés'); app.innerHTML = pageCorrigesBEPC(); break;
     case 'annales-bac':  setBreadcrumb('Accueil › BAC › Sujets');         app.innerHTML = pageAnnalesBAC();    break;
     case 'corriges-bac':  setBreadcrumb('Accueil › BAC › Corrigés'); app.innerHTML = pageCorrigesBAC(); break;
-    case 'serie-detail': rendreSerieDetail();                              break;
-    case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
-    case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
     case 'quiz-serie':   setBreadcrumb('Accueil > BAC > Quiz Serie ' + etat.params); app.innerHTML = pageQuizSerie(); break;
     case 'parametres': setBreadcrumb('Accueil > Paramètres'); app.innerHTML = pageParametres(); break;
     default:             app.innerHTML = pageAccueil();
@@ -560,10 +493,10 @@ function grilleMethodo(liste) {
 
 
 function pageBAC() {
-  var actif = etat.tabActif['bac'] || 'series';
+  var actif = etat.tabActif['bac'] || 'fiches';
   var html = '<div class="page-header bac-header"><h1><i class="fas fa-graduation-cap"></i> Espace BAC</h1><p>Choisir ta série et accéder aux ressources adaptées</p></div>';
   html += '<div class="tab-bar">' +
-    tb2('series',   '<i class="fas fa-graduation-cap"></i> Séries',            actif,'bac') +
+    tb2('quiz',     '<i class="fas fa-bullseye"></i> Quiz',                     actif,'bac') +
     tb2('fiches',   '<i class="fas fa-book-open"></i> Matières & Fiches', actif,'bac') +
     tb2('corriges', '<i class="fas fa-file-pen"></i> Corrigés',           actif,'bac') +
     tb2('annales',  '<i class="fas fa-file-pdf"></i> Sujets',           actif,'bac') +
@@ -571,7 +504,7 @@ function pageBAC() {
     tb2('candidats','🧑 Candidats Libres',   actif,'bac') +
     tb2('citations','<i class="fas fa-scroll"></i> Citations',          actif,'bac') +
   '</div><div class="page-section">';
-  if (actif==='series')    html += grilleSeries();
+  if (actif==='quiz')      html += grilleQuizSeries();
   if (actif==='fiches')    html += pageFichesBAC();
   if (actif==='annales')   html += pageAnnalesBAC();
   if (actif==='corriges')  html += pageCorrigesBAC();
@@ -581,63 +514,18 @@ function pageBAC() {
   return html + '</div>';
 }
 
-function grilleSeries() {
-  var html = '<div class="section-title"><i class="fas fa-graduation-cap"></i> Choisir ta série</div>';
-  html += '<div class="alerte"><i class="fas fa-lightbulb"></i> Clique sur ta série pour voir les matières et coefficients.</div>';
+function grilleQuizSeries() {
+  var html = '<div class="section-title"><i class="fas fa-bullseye"></i> Choisir ta série</div>';
+  html += '<div class="alerte"><i class="fas fa-lightbulb"></i> Clique sur ta série pour commencer le quiz.</div>';
   html += '<div class="series-grid">';
   SERIES_BAC.forEach(function(s) {
-    html += '<div class="serie-card" onclick="afficherPage(\'serie-detail\',\''+s.lettre+'\')" style="border-top-color:'+s.couleur+'">' +
+    html += '<div class="serie-card" onclick="afficherPage(\'quiz-serie\',\''+s.lettre+'\')" style="border-top-color:'+s.couleur+'">' +
       '<div class="serie-lettre" style="color:'+s.couleur+'">Série '+s.lettre+'</div>' +
       '<div class="serie-nom">'+s.nom+'</div></div>';
   });
   return html + '</div>';
 }
 
-function rendreSerieDetail() {
-  var app = document.getElementById('app');
-  var lettre = etat.params;
-  var d = DETAIL_SERIES[lettre];
-  var s = SERIES_BAC.find(function(x){return x.lettre===lettre;});
-  if (!d || !s) { app.innerHTML='<div class="page-section"><p>Serie introuvable.</p></div>'; return; }
-  setBreadcrumb('Accueil > BAC > Serie '+lettre);
-  var html = '<div class="page-header bac-header"><h1>Serie '+lettre+' -- '+s.nom+'</h1><p>'+d.description+'</p></div>';
-  html += '<div class="page-section"><div class="serie-detail">';
-
-  html += '<h2>Matieres principales</h2><div class="matieres-list">';
-  d.principales.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'</div>'; });
-  html += '</div>';
-
-  html += '<h2>Matieres secondaires</h2><div class="matieres-list">';
-  d.secondaires.forEach(function(m){ html += '<div class="matiere-row">'+m.nom+'</div>'; });
-  html += '</div>';
-
-  if (d.programme) {
-    html += '<h2>Programme par matiere</h2>';
-    d.programme.forEach(function(p) {
-      html += '<div style="margin-bottom:1rem"><div style="font-family:Inter,sans-serif;font-weight:700;font-size:.95rem;color:var(--bleu);margin-bottom:.5rem">'+p.matiere+'</div><ul style="padding-left:1.2rem">';
-      p.chapitres.forEach(function(ch) { html += '<li style="font-size:.88rem;margin-bottom:.3rem">'+ch+'</li>'; });
-      html += '</ul></div>';
-    });
-  }
-
-  if (typeof CONSEILS_SERIES !== 'undefined' && CONSEILS_SERIES[lettre]) {
-    html += '<h2>Conseils de revision</h2><div class="alerte" style="background:#eaf5ee;border-left-color:var(--vert);color:#1B6B3A">';
-    html += '<ul style="padding-left:1.2rem;margin:0">';
-    CONSEILS_SERIES[lettre].forEach(function(c) { html += '<li style="margin-bottom:.4rem">'+c+'</li>'; });
-    html += '</ul></div>';
-  }
-
-  if (d.debouches) {
-    html += '<h2>Debouches possibles</h2><p style="font-size:.9rem;color:var(--gris)">'+d.debouches+'</p>';
-  }
-
-  html += '<div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem">' +
-    '<button class="btn btn-or" onclick="afficherPage(\'quiz-serie\',\''+lettre+'\')">Quiz de la serie</button>' +
-    '<button class="btn btn-bleu" onclick="afficherPage(\'annales-bac\')">Voir les annales</button>' +
-    '<button class="btn btn-outline" onclick="retour()">Changer de serie</button>' +
-  '</div></div></div>';
-  app.innerHTML = html;
-}
 
 function pageQuizSerie() {
   var lettre = etat.params;
@@ -1413,7 +1301,7 @@ var __TABBAR_MAP__ = {
   accueil: 'accueil',
   bepc: 'bepc', 'annales-bepc': 'bepc', 'corriges-bepc': 'bepc', quiz: 'bepc',
   bac: 'bac', 'annales-bac': 'bac', 'corriges-bac': 'bac',
-  'serie-detail': 'bac', 'quiz-serie': 'bac',
+  'quiz-serie': 'bac',
   culture: 'culture', 'culture-quiz': 'culture', 'culture-quiz-jour': 'culture'
 };
 function syncTabbar() {

@@ -301,13 +301,18 @@ let etat = { serieSelectionnee: null,
   tabActif:{}
 };
 
-function afficherPage(page, params) {
-  etat.historique.push({page:etat.page, params:etat.params});
+function afficherPage(page, params, opts) {
+  opts = opts || {};
   etat.page   = page;
   etat.params = params || null;
   rendrePage();
   window.scrollTo({top:0, behavior:'smooth'});
-  history.pushState({page:page, params:params}, '', '#'+page);
+  var state = {type:'page', page:page, params:params};
+  if (opts.replace) {
+    history.replaceState(state, '', '#'+page);
+  } else {
+    history.pushState(state, '', '#'+page);
+  }
 }
 
 function retour() {
@@ -319,7 +324,7 @@ function ouvrirFiche(url) {
   iframe.src = url;
   overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  history.pushState({ficheOverlay:true}, '', '#fiche');
+  history.pushState({type:'fiche', url:url, page:etat.page, params:etat.params}, '', '#fiche');
 }
 function fermerFiche() {
   var overlay = document.getElementById('fiche-overlay');
@@ -332,16 +337,20 @@ function fermerFiche() {
 }
 window.addEventListener('popstate', function(e){
   var overlay = document.getElementById('fiche-overlay');
+  var st = e.state;
   if (overlay && overlay.style.display === 'flex') {
     overlay.style.display = 'none';
     document.getElementById('fiche-iframe').src = '';
     document.body.style.overflow = '';
-    return;
   }
-  if (etat.historique.length > 0) {
-    var d = etat.historique.pop();
-    etat.page   = d.page;
-    etat.params = d.params;
+  if (st && st.type === 'page') {
+    etat.page = st.page;
+    etat.params = st.params;
+    rendrePage();
+    window.scrollTo({top:0, behavior:'smooth'});
+  } else if (!st) {
+    etat.page = 'accueil';
+    etat.params = null;
     rendrePage();
     window.scrollTo({top:0, behavior:'smooth'});
   }
@@ -848,7 +857,7 @@ function buildQuizRefaire() {
   wrap.innerHTML = tmp.querySelector('#qwrap').innerHTML;
 }
 
-document.addEventListener('DOMContentLoaded', function(){ afficherPage('accueil'); });
+document.addEventListener('DOMContentLoaded', function(){ afficherPage('accueil', null, {replace:true}); });
 
 /* ── ANNALES REELLES BEPC ── */
 const ANNALES_BEPC_REELLES = {
@@ -1266,6 +1275,10 @@ if ('serviceWorker' in navigator) {
               afficherBanniereMAJ(reg);
             }
           });
+        });
+        setInterval(() => reg.update(), 60 * 60 * 1000);
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update();
         });
       })
       .catch(err => console.log('Echec de l\'enregistrement du Service Worker :', err));

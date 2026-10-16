@@ -38,13 +38,13 @@
 <body>
 <header id="navbar">
   <nav>
-    <a class="logo" onclick="afficherPage('accueil')"><img src="images/logo.svg" alt="RéviBF" style="height: 40px; vertical-align: middle;"></a>
+    <a class="logo" href="#" onclick="event.preventDefault();afficherPage('accueil')"><img src="images/logo.svg" alt="RéviBF" style="height: 40px; vertical-align: middle;"></a>
     <ul id="nav-links">
-      <li><a onclick="afficherPage('accueil')">Accueil</a></li>
-      <li><a onclick="afficherPage('bepc')">BEPC</a></li>
-      <li><a onclick="afficherPage('bac')">BAC</a></li>
-      <li><a onclick="afficherPage('culture')">Culture Générale</a></li>
-      <li><a onclick="afficherPage('parametres')">⚙️ Paramètres</a></li>
+      <li><a href=\"#\" onclick=\"event.preventDefault();afficherPage('accueil')\">Accueil</a></li>
+      <li><a href=\"#\" onclick=\"event.preventDefault();afficherPage('bepc')\">BEPC</a></li>
+      <li><a href=\"#\" onclick=\"event.preventDefault();afficherPage('bac')\">BAC</a></li>
+      <li><a href=\"#\" onclick=\"event.preventDefault();afficherPage('culture')\">Culture Générale</a></li>
+      <li><a href=\"#\" onclick=\"event.preventDefault();afficherPage('parametres')\">⚙️ Paramètres</a></li>
     </ul>
     <button class="dark-toggle" id="dark-toggle" onclick="toggleDark()" title="Mode sombre">🌙</button>
     <button class="son-toggle" id="son-toggle" onclick="toggleSon()" title="Activer/Couper le son">🔊</button>

@@ -889,8 +889,6 @@ const ANNALES_BEPC_REELLES = {
   anglais: [
     { label:'Sujet Anglais 2026 — 1er Tour',    fichier:'annales/bepc/anglais/sujet_2026_tour1.pdf' },
     { label:'Sujet Anglais 2025 — Blanc',       fichier:'annales/bepc/anglais/blanc_2025.pdf' },
-    { label:'Sujet Anglais — École Catholique p1', fichier:'annales/bepc/anglais/sujet_anglais_p1.pdf' },
-    { label:'Sujet Anglais — École Catholique p2', fichier:'annales/bepc/anglais/sujet_anglais_p2.pdf' },
   ],
   histoire: [
     { label:'Sujet Histoire-Géo 2026 — 1er Tour', fichier:'annales/bepc/histoire/sujet_2026_tour1.pdf' },

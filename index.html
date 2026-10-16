@@ -34,6 +34,7 @@
     <link rel="icon" type="image/svg+xml" href="images/logo-icone.svg">
     <link rel="icon" type="image/png" href="images/favicon-32.png">
 <link rel="manifest" href="./manifest.json">
+<style>.seo-statique{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
 <body>
 <header id="navbar">
@@ -57,7 +58,20 @@
     <button onclick="retour()">← Retour</button>
   </div>
 </div>
-<main id="app"></main>
+<main id="app"><div class="seo-statique">
+  <h1>RéviBF — Révision gratuite du BEPC et du BAC au Burkina Faso</h1>
+  <p>RéviBF est une plateforme gratuite pour les élèves du Burkina Faso : sujets d'annales en PDF, quiz interactifs et fiches de révision pour le BEPC et le BAC (séries A4 et D), en maths, SVT, physique-chimie, français, anglais, histoire-géographie et philosophie.</p>
+  <h2>Fiches de révision</h2>
+  <ul>
+    <li><a href="cours/bac/philosophie/methodologie.html">Philosophie BAC : méthodologie</a></li>
+    <li><a href="cours/bac/d/maths/analyse_ch1_3.html">Mathématiques BAC D : analyse</a></li>
+    <li><a href="cours/physique/physique_mecanique.html">Physique : mécanique</a></li>
+    <li><a href="cours/svt/partie2.html">SVT : cours</a></li>
+    <li><a href="cours/histoire/partie1.html">Histoire-Géographie : cours</a></li>
+    <li><a href="cours/francais/bepc.html">Français BEPC</a></li>
+    <li><a href="cours/anglais/bepc.html">Anglais BEPC</a></li>
+  </ul>
+</div></main>
 
 <nav class="app-tabbar" id="app-tabbar">
   <button class="app-tab" data-page="accueil" onclick="afficherPage('accueil')">
